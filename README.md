@@ -26,4 +26,6 @@
 
 ---
 
+<div align=center>
 ![这个图来自于新浪微博](https://ww2.sinaimg.cn/mw690/e1b09291jw8f6vitoh23pj213k13kq7c.jpg)
+</div>
