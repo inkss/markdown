@@ -2,7 +2,7 @@
 
 > 用Ubuntu系统也快半年了，最近因为Ubuntu系统出了些意外(我动内核搞挂了又懒得修)，于是就决定直接重装。然而手上又有一张刻录好的Deepin光盘，索性体验下Deepin系统(上次安装似乎是在一年前)，最终体验下来，感觉**Deepin真的很让人省心很多，人性化之处是方方面面的**。就打算正式使用Deepin系统，所以写这个文章也做*以后备份使用*。
 
-![neofetch](http://upload-images.jianshu.io/upload_images/6490512-21b7bce3cad5a272.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![neofetch](https://camo.githubusercontent.com/e037953203654a4ddb69401b252cec7a1d4f862e/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f363439303531322d323162376263653363616435613237322e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
 ---
 
@@ -48,7 +48,7 @@ Chrome(默认的这个版本**无法登录浏览器的谷歌账号**，我需要
 
 ### 4.修订Dock
 
-![Dock](http://upload-images.jianshu.io/upload_images/6490512-9b94218ed62f68b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Dock](https://camo.githubusercontent.com/710ab5819ec133401882aacfd95c426cca5b9b6d/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f363439303531322d396239343231386564363266363862342e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
 在Deepin的官网里看到过，Deepin的Dock分可编辑区和不可编辑区，可是对我来说不可编辑区的一些是没用处的，在搜索时发现了这些是以插件的形式存在的，那解决方法就简单了。
 
@@ -119,7 +119,7 @@ Guake:F12刷出来一个终端。
 
 ### 3.安装VMware
 
-![VMware](http://upload-images.jianshu.io/upload_images/6490512-e080f00748e4b3ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![VMware](https://camo.githubusercontent.com/570c4b188ab8770d8f9d6d239857819184d4b561/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f363439303531322d653038306630303734386534623365662e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
 商店里的自然不是最新的且有些不太一样的感觉，还是自行去官网下载自行安装罢了。下载地址：[vmware for linux](https://www.vmware.com/products/workstation-for-linux.html).下载下来的格式是.bundle，其安装方式为:
 
@@ -170,7 +170,7 @@ Guake:F12刷出来一个终端。
 
 ### 5.安装simplescreenrecorder
 
-![Simplescreenrecorder](http://upload-images.jianshu.io/upload_images/6490512-b531df6e2d57119e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Simplescreenrecorder](https://camo.githubusercontent.com/424a6a791b7208a5850099f4488d75205e0ff70d/687474703a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f363439303531322d623533316466366532643537313139652e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430)
 
 这是一个录屏软件，在深度的源里有，特别好用。它就像Windows下的bdcamsetup一样爽，主要是那个**跟随鼠标录制**，讲真深度的录屏纯纯只是拿来截GIF了。
 
