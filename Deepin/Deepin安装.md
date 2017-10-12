@@ -12,9 +12,9 @@
 
 无论是刻录在光盘上还是U盘里，这一步都很简单，接下来就是安装Deepin系统。
 
-因为我是准备了彻底重装系统，所以事先是**清空了整张硬盘删除了分区表**。而使用linux的习惯也是/home分区和/根分区分开，为了重装时节省同步数据的时间，所以在默认的操作下安装硬盘是自行选择的。
+因为我是准备了彻底重装系统，所以事先是**清空了整张硬盘删除了分区表**。而使用linux的习惯也是`/home`分区和`/`根分区分开，为了重装时节省同步数据的时间，所以在默认的操作下安装硬盘这部分是自行选择的。
 
-因为没有分区表，所以sd1先分出一个efi分区，至于大小deepin下默认的最小大小是300M，我搜索了一些资料没有找到详细的，索性我就分了512MB。接着是sd2挂载成根分区，sd3挂载成/home分区，具体大小视硬盘而定。因为我笔记本16G内存，所以就不分swap分区了。接下来就是正常的安装过程。
+因为没有分区表，所以sd1先分成一个efi分区，至于大小deepin下默认的最小大小是300M，我搜索了一些资料没有找到详细的，索性我就分了512MB。接着是sd2挂载成根分区，sd3挂载成/home分区，具体大小视硬盘而定。因为我笔记本16G内存，所以就不分swap分区了。接下来就是正常的安装过程。
 
 这样做和**win下的C、D盘，重装系统时删C保D**一个道理。
 
@@ -61,7 +61,7 @@ Chrome(默认的这个版本**无法登录浏览器的谷歌账号**，我需要
 
 首先，去Github下载deb安装包，地址是:[LinxGem33/OSX-Arc-White](https://github.com/LinxGem33/OSX-Arc-White/releases)。然后，打开到安装包的目录，右键开启终端执行命令:`sudo dpkg -i xxxx.deb`安装主题。
 
-Ubuntu下有个管理主题的unity-tweak-tool，同理Gtk桌面也有个**gnome-tweak-tool**，但是似乎deepin的设置里本就进行主题之类的设置了。
+Ubuntu下有个管理主题的unity-tweak-tool，同理Gtk桌面也有个**gnome-tweak-tool**，但是似乎deepin的设置里本就能进行主题之类的管理。
 
 此外在Ubuntu下用惯了文泉驿微米黑，默认的Deepin字体不太适应而且11号也觉得小，改成微米黑后再设置12号大小。
 
@@ -101,9 +101,9 @@ BieachBit:这个清理软件在Ubuntu的时候就在使用，很实用。
 
 新立得软件包管理器。
 
-Nautilus:只谈在终端下，`sudo nautilus`打开root权限文件比我记不住名字的深度文件管理器要方便。
+Nautilus:只谈在终端下，`sudo nautilus`打开root权限的文件管理器比我记不住名字的深度文件管理器要方便。
 
-Guake:F12刷出来一个终端。
+Guake:F12嗖的刷出来一个终端。
 
 ### 2.安装谷歌浏览器
 
@@ -135,7 +135,7 @@ Guake:F12刷出来一个终端。
 
 ### 4.安装FreeFileSync
 
-在中在Windows时就使用的同步软件放在Linux下依旧好用，只时商店不是最新，而且同步的软件还是自己配置吧。
+在Windows时就使用的同步软件，放在Linux下依旧好用，只是商店不是最新，而且同步的软件还是自己配置吧。
 
 下载地址是：[Download FreeFileSync 9.4](https://www.freefilesync.org/download.php)
 
@@ -172,7 +172,7 @@ Guake:F12刷出来一个终端。
 
 ![Simplescreenrecorder](http://upload-images.jianshu.io/upload_images/6490512-b531df6e2d57119e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-这是一个录屏软件，在深度的源里有，特别好用。它就像Windows下的bdcamsetup一样爽，主要是那个**跟随鼠标录制**，讲真深度的录屏纯纯只是拿来截GIF了。
+这是一个录屏软件，在深度的源里有，特别好用。它就像Windows下的Bandicam一样爽，主要是那个**跟随鼠标录制**，讲真深度的录屏纯纯只是拿来截GIF了。
 
     # 终端执行
     sudo apt-get install simplescreenrecorder
@@ -181,15 +181,132 @@ Guake:F12刷出来一个终端。
 
 ## 三、开发环境搭建
 
+* 编程之类的个人喜欢**自行安装**
+
 ### 1.Oracle Jdk配置
+
+最新的JDK是1.9，不过我用的是1.8。下载地址是[JDK1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)、[JSK1.9](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)。
+
+将下载的文件解压，JDK的目录原则上是可以放在任意目录的，但是我以前留下来的代码一直是把f放在：`/usr/lib/jvm/jdk1.8`，原因是如果安装OpenJDK，openjdk的目录就是在/usr/lib/jvm/目录下，潜意识里想放在这儿。
+
+接下来是配置环境变量，看了一下，Deepin是用environment，但是profile也能其效果哇所以就用以前的代码哈哈。Linux下环境变量同一个变量多个值的写法是：`export PATH=$PATH:目录一:目录二:目录三`
+
+    # 终端下输入
+    sudo gedit /etc/profile
+
+    # 打开文本编辑器后，在最下面添加：
+    export JAVA_HOME=/usr/lib/jvm/jdk1.8
+
+    export JRE_HOME=${JAVA_HOME}/jre
+
+    export CLASSPATH=.:${JAVA_HOME}/lib:{JRE_HOME}/lib
+
+    export PATH=$PATH:{JAVA_HOME}/lib:
+
+然后保存退出，接下来在终端下继续输入
+
+    # 使环境变量生效
+    source /etc/profile
+
+然后就是，在Profile的第35行`tty | egrep -q tty[1-6] && export LC_ALL=C`，把它注释掉吧，不然source时会报：`no matches found: tty[1-6]`
+
+接下来是添加软链接：
+
+    sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8/bin/java 300
+
+    sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8/bin/javac 300
+
+    sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.8/bin/jar 300
+
+此时，终端输入`java -version`应该能出结果了，但是此时也一定会出现：
+
+    Picked up_JAVA_OPTIONS:-Dawt.useSystemAAFontSettings=gasp
+
+Deepin的锅，Ubuntu下没见过。解决方案有两种：
+
+* rm /etc/profile.d/java-awt-font-gasp.sh
+
+* 没搜到，忘了，反正就是在profile里加一句什么来着
+
+**多个JDK的切换**，就是在添加软链接时除了告诉系统这个路径存在这个JDk外，还提供了优先级。然而我们也可以手动切换：
+
+    # 切换xxx
+    sudo update-alternatives --config xxx
+
+比如切换JDK，就用java替代xxx输入就行，当然如果系统里只有一个选择，那自然是不需要切换的。
 
 ### 2.Anaconda3配置
 
+Anaconda3里的是Python3.6.1，首先自然是去官方下载：[Anaconda installer archive](https://repo.continuum.io/archive/),我备份的一个是Anaconda3-4.4.0-Linux-x86_64.sh，它最新都到5.0.0.1了嗝。下载下来是.sh文件，终端下输入：
+
+    # 执行
+    ./Anaconda3-5.0.0.1-Linux-x86_64.sh
+
+然后是一堆东西，一直点回车。然后它会问你是否安装，这时候输入yes安装，接下来是**指定安装目录**，不指定就直接回车，我这里是老规矩统一改到/home/inks/inks/APP目录里。最后一个询问是问你要不要**把Anaconda3加入到shell的环境变量**里，这是选择yes是吧。
+
+值得注意的是，它默认添加到bash的环境变量里了，如果你是跟我一样吧shell换成了oh-my-zsh，则手动修改下。
+
+    # 修改zsh终端的环境变量
+    gedit /home/yourname/.zshc
+
+    # 修改bash终端的环境变量
+    gedit /home/yourname/.bashrc
+
 ### 3.JavaWeb开发环境搭建[IDEA+MySQL+Tomcat]
+
+轮到我的JavaWeb了，本学期的作业就在Deepin上写了。自然的，IDEA去官网下载：[IntelliJ IDEA](https://www.jetbrains.com/idea/)。至于激活，不负责任的讲就是万能某宝。接着下载Tomcat：[Apache Tomcat®](https://tomcat.apache.org/download-80.cgi)。先安装最简单的MySQL。
+
+    sudo apt-get install mysql-server
+
+    sudo apt-get install mysql-client
+
+    sudo apt-get install mysql-workbench
+
+Tomcat随便解压到一个地方，IDEA的特性，不需要配置它的环境变量。然后是IDEA，将下载下来的.tar.gz解压，进入到解压文件的`~/bin`目录里，打开终端输入./idea.sh开始安装。(jetbrains家的软件安装都是同样的到bin目录执行.sh文件安装)
+
+简述一下安装：显示选择导入配置，没有就不选择，接下来就是选择一些主题之类的，此外启动器的图标也在此时设置，如果此时没有设置也可以在安装完成后通过`Configure->Create Desktob Entry`设置图标。
+
+接下来详述JavaWeb项目的配置：
+
+IDEA在默认情况下是不往Tomcat的webapps导出生成的项目，除非是采用Maven构建的项目。IDEA的编译后的输出目录是在项目目录下的/out目录里，所以与Eclipse最大的区别是不需要在web建立lib，和一些博客里提到的修改IDEA的导出目录。
+
+建立JavaWeb项目步骤：
+
+* Create New Project
+
+* 选择JavaWeb Enterprise
+
+* 下拉勾选Web Application
+
+* 点开Application Server选择Tomcat server，修改Tomcat Home为你的Tomcat解压目录
+
+* 设置Project SDK，点New就会直接到你环境变量里写的JDK目录，确认即可
+
+* Next 然后输入你的Project name
+
+* Finish 完成创建
+
+接着是项目的结构配置，以前总结过，参考:[IDEA部署JavaWeb项目](http://www.jianshu.com/p/df68db55af12)。
+
+![](http://upload-images.jianshu.io/upload_images/6490512-d2f0449df9e51aa4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 4.Android SDK配置
 
+先下载：[sdk-tools-windows-3859397.zip](https://developer.android.com/studio/index.html?hl=zh-cn)
+
+然后解压它，它包含了tools目录，比如现在的目录是`~/SDK/tools`，那么环境变量接写成：（**先参考JDK环境变量的配置**）
+
+    # 这是我存在SDK的目录，依据自己情况更改
+    export ANDROID_SDK_HOME=/home/inks/inks/APP/SDK
+
+    # 前面的是JDK的
+    export PATH=$PATH:${JAVA_HOME}/lib:${ANDROID_SDK_HOME}/tools:${ANDROID_SDK_HOME}/platform-tools
+
+此时你是没有platform-tools目录的，这个是在Android Studio安装时把SDK目录指定到这个SDK文件夹后就有了。
+
 ### 5.Android Studio 3.x预览版安装搭建
+
+预览版的下载地址是：[Android Studio 3.0](https://developer.android.com/studio/preview/index.html?hl=zh-cn),Android Studio是基于IDEA社区版，所以**安装方法和IDEA类似**，第一次安装会报一个让你**设置proxy**的，我这里一直挂着全局代理都没辙依旧报，**直接点取消**就行。然后**手动指定SDK的目录**，然后哗啦啦下载，SDK的下载速度最快了，我这边差不多每次都每秒十兆左右。
 
 ### 6.一些编辑器Atom/VsCode/sublime
 
