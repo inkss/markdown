@@ -2,6 +2,8 @@
 
 > 用Ubuntu系统也快半年了，最近因为Ubuntu系统出了些意外(我动内核搞挂了又懒得修)，于是就决定直接重装。然而手上又有一张刻录好的Deepin光盘，索性体验下Deepin系统(上次安装似乎是在一年前)，最终体验下来，感觉**Deepin真的很让人省心很多，人性化之处是方方面面的**。就打算正式使用Deepin系统，所以写这个文章也做*以后备份使用*。
 
+![neofetch](http://upload-images.jianshu.io/upload_images/6490512-21b7bce3cad5a272.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ---
 
 ## 一、基础性配置
@@ -45,6 +47,8 @@ Chrome(默认的这个版本**无法登录浏览器的谷歌账号**，我需要
 说起来，对双系统兴趣真的是不大了。曾经最疯狂的时候，仗着主板legacy和uefi都能使用，一台电脑里装了四个系统:*UEFI下Win10引导win7，Leagacy下Ubuntu引导Kali*。现在想想也是有毒。
 
 ### 4.修订Dock
+
+![Dock](http://upload-images.jianshu.io/upload_images/6490512-9b94218ed62f68b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 在Deepin的官网里看到过，Deepin的Dock分可编辑区和不可编辑区，可是对我来说不可编辑区的一些是没用处的，在搜索时发现了这些是以插件的形式存在的，那解决方法就简单了。
 
@@ -115,6 +119,8 @@ Guake:F12刷出来一个终端。
 
 ### 3.安装VMware
 
+![VMware](http://upload-images.jianshu.io/upload_images/6490512-e080f00748e4b3ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 商店里的自然不是最新的且有些不太一样的感觉，还是自行去官网下载自行安装罢了。下载地址：[vmware for linux](https://www.vmware.com/products/workstation-for-linux.html).下载下来的格式是.bundle，其安装方式为:
 
     # 赋予可执行权限 | 也可以右键属性设置
@@ -163,6 +169,8 @@ Guake:F12刷出来一个终端。
 此时会弹出一个**创建启动器**的窗口，填上名称点击图片修改好图片，至于命令，就打开到安装目录下的可执行文件就可以了。注释写不写无所谓。
 
 ### 5.安装simplescreenrecorder
+
+![Simplescreenrecorder](http://upload-images.jianshu.io/upload_images/6490512-b531df6e2d57119e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 这是一个录屏软件，在深度的源里有，特别好用。它就像Windows下的bdcamsetup一样爽，主要是那个**跟随鼠标录制**，讲真深度的录屏纯纯只是拿来截GIF了。
 
