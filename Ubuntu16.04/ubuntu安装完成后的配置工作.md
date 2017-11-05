@@ -130,7 +130,7 @@ linux的环境变量写法(适用于多个目录)：export PATH=$PATH:目录一:
 
     export CLASSPATH=.:${JAVA_HOME}/lib:{JRE_HOME}/lib
 
-    export PATH=$PATH:{JAVA_HOME}/lib:
+    export PATH=$PATH:{JAVA_HOME}/bin:
 
     //JAVA_HOME的值根据你的解压目录自行写入，然后保存退出
 

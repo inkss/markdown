@@ -201,7 +201,7 @@ Guake:F12嗖的刷出来一个终端。
 
     export CLASSPATH=.:${JAVA_HOME}/lib:{JRE_HOME}/lib
 
-    export PATH=$PATH:{JAVA_HOME}/lib:
+    export PATH=$PATH:{JAVA_HOME}/bin:
 
 然后保存退出，接下来在终端下继续输入
 
