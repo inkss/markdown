@@ -167,7 +167,7 @@
 
 20.安装一个显示CPU 内存的软件
 
-    sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor  
+    sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
     sudo apt-get update
     派生到我的代码片
 
