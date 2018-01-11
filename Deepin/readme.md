@@ -1,3 +1,3 @@
 # Deepin迁移笔记
 
-迁移到Deepin系统上
+Deepin上的种种

@@ -1,19 +1,11 @@
 # 迁移系统到Deepin 15.5
 
-更新记录：
-
-2017.11.11：*根据Deepin15.5更改、修订*
-
-2017.10.31：*删除口语化表述*
-
----
-
 ## 一、安装
 
 ### 1.1 获取镜像
 
 * 从深度官网下载镜像：[最新版本-深度科技](https://www.deepin.org/download/)
-* 校验MD5值：`50bb7b2a67ef0034830d6c94fb27926f`
+* 校验MD5值
 
 ### 1.2 制作启动盘
 
@@ -180,7 +172,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 ### 4.1 Oracle Jdk配置
 
 目前（2017.11）最新JDK版本为1.9.
-下载地址:[JDK1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)、[JDK1.9](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html)。
+下载地址:[JDK1.8](http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html)、[JDK1.9](http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520-zhs.html)。
 
 解压下载文件，JDK目录原则上可以放在任意目录的。
 本文中使用的JDK目录：`/usr/lib/jvm/jdk1.8`
