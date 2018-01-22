@@ -2,8 +2,8 @@
 
 参考资源：
 
-* 《Python学习手册》Mark Lutz
+* [2017最新版Python零基础入门](http://study.163.com/course/courseMain.htm?courseId=1003907006) 传播智客-黑马程序员
 
-* [Python教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000) 廖雪峰
+* [Python开发21天入门必备](http://study.163.com/course/courseMain.htm?courseId=1004526016) 路飞学城
 
-* [Python3](http://www.runoob.com/python3/python3-tutorial.html) 菜鸟学院
+* [零基础入门学习Python](http://study.163.com/course/courseMain.htm?courseId=378003) 小甲鱼
