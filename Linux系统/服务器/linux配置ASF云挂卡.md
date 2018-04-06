@@ -17,7 +17,7 @@ vim /etc/hosts
 添加以下内容：
 
 ```vim
-23.52.74.146 steamcommunity.com #服务器重启后失效
+23.50.18.229 steamcommunity.com #服务器重启后失效
 ```
 
 2.使用[AnotherSteamCommunityFix](https://github.com/zyfworks/AnotherSteamCommunityFix)。
@@ -116,13 +116,14 @@ sudo yum install dotnet-sdk-2.1.103
 
 3.1 安装
 
-假设你将ASF的压缩包上传到根目录
+当前最新正式版为：3.1.1.1
 
 ```shell
 mkdir ASF
-mv ASF-linux-x64.zip ASF
+wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.1.1.1/ASF-generic.zip
+mv ASF-generic.zip ASF
 cd ASF
-uzip ASF-linux-x64.zip
+uzip ASF-generic.zip
 ```
 
 3.2 配置ASF本地化

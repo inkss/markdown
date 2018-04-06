@@ -40,6 +40,8 @@ systemctl enable httpd.service
 
 在浏览器中输入服务器IP地址（或域名），如果能打开Apache的测试网页则代表成功。
 
+![测试页面](pic1/Linux-1.png)
+
 ## 3.安装MySQL（MariaDB）
 
 （1）安装MySQL服务
@@ -79,6 +81,8 @@ mysql_secure_installation
 ```ssh
 mysql -u root -p
 ```
+
+![Mysql](pic1/Linux-mysql.png)
 
 ## 4.安装PHP
 
@@ -121,6 +125,8 @@ vim /var/www/html/info.php
 ```
 
 保存之后，使用浏览器访问/info.php页面，如果能显示PHP的信息，则验证成功。
+
+![PHP测试](pic1/Linux-2.png)
 
 ## 5.安装PhpMyAdmin
 
@@ -192,6 +198,8 @@ systemctl restart httpd.service
 
 使用浏览器访问IP/phpmyadmin页面，如果能正常打开登录，则验证成功。
 
+![数据库验证](pic1/Linux-3.png)
+
 ## 6.配置Https链接
 
 （1）安装SSL
@@ -235,7 +243,11 @@ vim /etc/httpd/conf/httpd.conf
 修改AllowOverride字段值:
 
 ```vim
-AllowOverride All  #原来是None，需要改成All
+<Directory "/var/www/html">
+  ...
+  AllowOverride All  #原来是None，需要改成All
+  ...
+</Directory>
 ```
 
 3.2 在80端口的网站根目录/var/www/html下新建文件
@@ -262,6 +274,8 @@ systemctl restart httpd.service
 （4）测试验证
 
 浏览器输入http开头的域名，观察浏览器地址是否跳转为https链接。
+
+![测试Https](pic1/Linux-4.png)
 
 ---
 
