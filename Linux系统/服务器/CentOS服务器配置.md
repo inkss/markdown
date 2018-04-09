@@ -47,7 +47,7 @@ systemctl enable httpd.service
 （1）安装MySQL服务
 
 ```ssh
-yum install mariadb‐service mariadb
+yum install mariadb mariadb-server.x86_64
 ```
 
 （2）开启MySQL服务

@@ -123,7 +123,7 @@ mkdir ASF
 wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.1.1.1/ASF-generic.zip
 mv ASF-generic.zip ASF
 cd ASF
-uzip ASF-generic.zip
+unzip ASF-generic.zip
 ```
 
 3.2 配置ASF本地化
@@ -171,13 +171,13 @@ cd /ASF #进入到ASF所在目录
 添加可执行文件ArchiSteamFarm 权限
 
 ```shell
-chmod +x ArchiSteamFarm
+chmod +x ArchiSteamFarm.sh
 ```
 
 执行程序
 
 ```shell
-./ArchiSteamFarm
+./ArchiSteamFarm.sh
 ```
 
 当前页面按ctrl +a +d进入后台
