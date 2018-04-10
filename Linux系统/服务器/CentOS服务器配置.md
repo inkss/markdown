@@ -82,8 +82,6 @@ mysql_secure_installation
 mysql -u root -p
 ```
 
-![Mysql](pic1/Linux-mysql.png)
-
 ## 4.安装PHP
 
 （1）安装PHP服务
