@@ -107,7 +107,7 @@ return {
 }
 ```
 
-截止到目前，你**应该拥有的目录结构**应该为：
+截止到目前，你**应该拥有的目录结构**为：
 
 ```tree
 .
@@ -178,7 +178,7 @@ mkdir -p ~/.klei/DoNotStarveTogether
 
 （6）制作启动脚本
 
-回到家目录 `cd ~` ,在该目录下使用Vim创建 `startDST.sh` 脚本，内容如下：
+回到家目录 `cd ~` ,在该目录下创建 `vim startDST.sh` 脚本，内容如下：
 
 ```sh
 #!/bin/bash
@@ -207,7 +207,7 @@ run_shared+=(-monitor_parent_process $$)
 chmod +x ./startDST.sh
 ```
 
-> 注意：脚本中左后两行代表了启动Caves和Master，两个实例大约共需要1.2G左右的内存，如果只玩地上部分，可以将含有Caves一行删除。
+> 注意：脚本中最后两行代表了启动Caves和Master，两个实例大约共需要1.2G左右的内存，如果只玩地上部分，可以将含有Caves一行删除。
 
 （7）启动游戏
 
