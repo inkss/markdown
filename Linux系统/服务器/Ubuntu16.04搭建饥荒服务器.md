@@ -12,9 +12,9 @@
 
 ![主页](pic2/main.png)
 
-（1）获取 UserID
+（1）获取 UserID 和 cluster_token
 
-点击个人资料（见上图的中的 1），在打开的界面中找到 UserID 值，记录下来（该值为你在饥荒中的玩家 ID ）。
+点击个人资料（见上图的中的 1），在打开的界面中找到 UserID 值，记录下来（该值为你在饥荒中的玩家 ID ）；找到 Generate Server Token获取cluster_token。
 
 （2）配置地图
 
@@ -74,6 +74,8 @@
 （6）简要的配置
 
 * 需要为服务器指定管理员，在 Cluster_1 目录下，新建 `adminlist.txt` 文件，将前面获取到的 UserID 复制到该文件。
+
+* cluster_token.txt 中的文件里里的 token 需要修改成前文获取到的（默认里面的无法在服务端使用）。
 
 * 因为在选择 MOD 时，是已经在创意工坊下载好了，但是在服务器端，服务器还未下载，所以需要先告诉饥荒需要下载的内容 。
 
@@ -221,7 +223,7 @@ screen -S DST
 
 ![ID](pic2/ID.png)
 
-点击Generate Server Token获取cluster_token，同时也记录UserID值。
+点击Generate Server Token 获取 cluster_token ，同时也记录 UserID 值。
 
 （2）游戏配置文件（本地进行）
 
