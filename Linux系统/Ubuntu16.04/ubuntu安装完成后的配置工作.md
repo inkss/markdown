@@ -71,7 +71,7 @@ Ubuntu使用到的deb安装包请点击[搜狗输入法官网](http://pinyin.sog
     没host，上shadowsocks！！！
     sudo add-apt-repository ppa:hzwhuang/ss-qt5
     sudo apt-get update
-sudo apt-get install shadowsocks-qt5
+    sudo apt-get install shadowsocks-qt5
 
 **4.主题美化篇 unity-tweak-tool、Flatabulous主题、oh-my-zsh终端、字体**:
 
