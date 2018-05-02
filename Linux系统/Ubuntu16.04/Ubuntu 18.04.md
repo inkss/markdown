@@ -1,6 +1,6 @@
 # Ubuntu 18.04 记录
 
-![MyFile](https://upload-images.jianshu.io/upload_images/6490512-a6ea2a80876b08ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![MyPC](https://upload-images.jianshu.io/upload_images/6490512-a6ea2a80876b08ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 一、MySQL 5.7 root 账户密码
 
@@ -112,6 +112,4 @@ http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main
 
 1. [Ubuntu18.04快速安装eclipse](https://blog.csdn.net/qq_34330400/article/details/80112291)
 
-1. [Ubuntu 16.04 LTS如何使用Snap软件包](https://www.sysgeek.cn/use-snap-packages-ubuntu-16-04/)![![![Ubuntu 18-2018-05-02-20-06-39.png](https://upload-images.jianshu.io/upload_images/6490512-95ff26a69ec015a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-](https://upload-images.jianshu.io/upload_images/6490512-1e82ae9ca69d8542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-](https://upload-images.jianshu.io/upload_images/6490512-0f9620ce44d184a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+1. [Ubuntu 16.04 LTS如何使用Snap软件包](https://www.sysgeek.cn/use-snap-packages-ubuntu-16-04/)
