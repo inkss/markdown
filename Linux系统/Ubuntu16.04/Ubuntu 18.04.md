@@ -76,9 +76,10 @@ http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu artful main
 
 （2）oh-my-zsh 终端
 
-    sudo add-apt-repository ppa:hzwhuang/ss-qt5
-    sudo apt update
-    sudo apt install shadowsocks-qt5
+    sudo apt-get install git
+    sudo apt-get install zsh
+    wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+    chsh -s /usr/bin/zsh
 
 （3）Docky
 
