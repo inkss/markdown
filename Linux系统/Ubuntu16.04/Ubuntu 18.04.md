@@ -1,6 +1,6 @@
 # Ubuntu 18.04 记录
 
-![MyPC](https://upload-images.jianshu.io/upload_images/6490512-a6ea2a80876b08ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://upload-images.jianshu.io/upload_images/6490512-16ad00ef07896b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 一、MySQL 5.7 root 账户密码
 
