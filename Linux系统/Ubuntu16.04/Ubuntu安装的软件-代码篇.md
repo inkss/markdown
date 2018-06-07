@@ -1,6 +1,6 @@
 # 命令行代码篇
 
-1.neofetch 一款可以在shell图形显示系统信息的软件
+1.neofetch 一款可以在 shell 图形显示系统信息的软件
 
     sudo add-apt-repository ppa:dawidd0811/neofetch
     sudo apt-get update
@@ -20,19 +20,19 @@
 
 ---
 
-4.修改zsh终端的环境变量
+4.修改 zsh 终端的环境变量
 
     gedit /home/yourname/.zshc
 
 ---
 
-5.修改bash终端的环境变量
+5.修改 bash 终端的环境变量
 
     gedit /home/youname/.bashrc
 
 ---
 
-6.Mysql系列软件安装
+6.Mysql 系列软件安装
 
     sudo apt-get install mysql-server
     sudo apt-get install mysql-client
@@ -56,7 +56,7 @@
 
 ---
 
-9.安装一个底部Dock软件 Docky
+9.安装一个底部 Dock 软件 Docky
 
     sudo add-apt-repository ppa:ricotz/docky
     sudo apt-get update
@@ -73,7 +73,7 @@
 
 ---
 
-11.打开一个root权限的文件管理器
+11.打开一个 root 权限的文件管理器
 
     sudo nautilus
 
@@ -93,14 +93,14 @@
 
 ---
 
-14.查看所有shell以及怎么切换默认shell
+14.查看所有 shell 以及怎么切换默认 shell
 
     cat /etc/shells
     chsh -s /xxx/xxxx
 
 ---
 
-15.安装oh-my-zsh
+15.安装 oh-my-zsh
 
     sudo apt-get install git
     sudo apt-get install zsh
@@ -109,7 +109,7 @@
 
 ---
 
-16.安装flatabulous主题
+16.安装 flatabulous 主题
 
     sudo add-apt-repository ppa:noobslab/themes
     sudo apt-get update
@@ -117,7 +117,7 @@
 
 ---
 
-17.关闭Ubuntu访客模式
+17.关闭 Ubuntu 访客模式
 
     cd /usr/share/lightdm/lightdm.conf.d/
     sudo gedit 50-no-guest.conf
@@ -129,11 +129,11 @@
 
 ---
 
-18.安装vim并配置vim
+18.安装 vim 并配置 vim
 
     sudo apt-get install vim
 
-    #配置vim
+    #配置 vim
     sudo gedit ~/.vimrc
 
     #输入以下内容
@@ -165,7 +165,7 @@
 
 ---
 
-20.安装一个显示CPU 内存的软件
+20.安装一个显示 CPU 内存的软件
 
     sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
     sudo apt-get update
@@ -183,14 +183,14 @@
 
 ---
 
-22.修复vmware虚拟机中Windows没有显卡驱动支持
+22.修复 vmware 虚拟机中 Windows 没有显卡驱动支持
 
-    #在vmx文件中末端添加
+    #在 vmx 文件中末端添加
     svga.guestBackedPrimaryAware = "TRUE"
 
 ---
 
-23.安装sublime
+23.安装 sublime
 
     sudo add-apt-repository ppa:webupd8team/sublime-text-3
     sudo apt-get update
@@ -202,7 +202,7 @@
 
     import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
 
-    激活sublime
+    激活 sublime
     Michael Barnes
     Single User License
     EA7E-821385
@@ -217,7 +217,7 @@
 
 ---
 
-24.安装一个截取GIF图案的软件
+24.安装一个截取 GIF 图案的软件
 
     sudo add-apt-repository ppa:peek-developers/stable
     sudo apt update

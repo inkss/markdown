@@ -1,6 +1,6 @@
 # 学习笔记
 
-本项目主要是利用Markdown记录的笔记。
+本项目主要是利用 Markdown 记录的笔记。
 
 包含一些杂七杂八的零时想法。
 
@@ -8,12 +8,12 @@
 
 ## 附录
 
-> Markdown图床解决方案
+> Markdown 图床解决方案
 
     一些简单粗暴又奇葩有效的方法
 
     方案一：
-        将图片转成base64,利用markdown的语法：
+        将图片转成 base64,利用 markdown 的语法：
             ![](data:image/png;base64,xxxxxx)
         此外可以利用链接语法：
             ![][pic]
@@ -24,7 +24,7 @@
         新浪微博相册（没有防盗链）
 
     方案三：
-        上传到GitHub。
+        上传到 GitHub。
 
 ---
 
