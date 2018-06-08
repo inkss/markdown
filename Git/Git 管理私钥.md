@@ -45,3 +45,15 @@ ssh -T git@github.com
 git config --global user.name "name"
 git config --global user.email "email"
 ```
+
+## 附录
+
+对于 Linux 系统，如果是直接复制 config 和 id_rsa 文件多半会收到下列提示：
+
+    Bad owner or permissions on ...
+    permissions are too open error
+
+很明显，是权限的问题使得私钥未被接收，所以修改这两个文件的权限即可：
+
+    chmod 400 ~/.ssh/config
+    chmod 400 ~/.ssh/id_rsa
