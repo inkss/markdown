@@ -21,7 +21,7 @@ JRebel 的社区激活取消了，不能用分享到脸书的方式激活插件�
     127.0.0.1 omg.cc
     ```
 
-* IDEA 中打开 JRebel 的激活界面。URL 处填写 `http://omg.cc:/8888`
+* IDEA 中打开 JRebel 的激活界面。URL 处填写 `http://omg.cc:8888/你找的GUID`
 
 ## 3 以上
 
