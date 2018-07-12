@@ -1,6 +1,6 @@
 # Ubuntu
 
-![](http://upload-images.jianshu.io/upload_images/6490512-cb3eb2eff18f816d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](assets/6490512-cb3eb2eff18f816d.png)
 
 > 注：这篇文章是对在前文的一次修订，采用 visual studio code 编写。涵盖从 Ubuntu .
 
@@ -19,7 +19,7 @@ sudo apt-get upgrade
 
     在右下角处有一个检查**系统更新**的按钮
 
-![](http://upload-images.jianshu.io/upload_images/6490512-b90c8f99d4b972bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](assets/6490512-b90c8f99d4b972bd.png)
 
 * **系统设置 -> 语言支持**
 
@@ -40,13 +40,13 @@ Ubuntu 使用到的 deb 安装包请点击[搜狗输入法官网](http://pinyin.
 
     将输入源修改成只有**搜狗拼音**（*如果点加号后找不到搜狗可以注销/重启一次*）
 
-![输入法配置](http://upload-images.jianshu.io/upload_images/6490512-8da1a9d1330c5d12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![输入法配置](assets/6490512-8da1a9d1330c5d12.png)
 
 * **修改fcitx配置**
 
     在已安装的软件列表中找到 **Fcitx 配置**，将输入法更改成：第一个为键盘-汉语，第二个为搜狗拼音。
 
-![输入法配置](http://upload-images.jianshu.io/upload_images/6490512-05fb75bac9d110f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![输入法配置](assets/6490512-05fb75bac9d110f2.png)
 
 ---
 
@@ -69,7 +69,7 @@ Ubuntu 使用到的 deb 安装包请点击[搜狗输入法官网](http://pinyin.
 **3.修改 hosts 篇**:
 
     # 没 host，上 shadowsocks！！！
-
+    
     sudo add-apt-repository ppa:hzwhuang/ss-qt5
     sudo apt-get update
     sudo apt-get install shadowsocks-qt5
@@ -78,7 +78,7 @@ Ubuntu 使用到的 deb 安装包请点击[搜狗输入法官网](http://pinyin.
 
 对于 unity 桌面来说 unity-tweak-tool 简直神器，这个软件我在别的博客里见的不止一次，不知道他们的截图为什么都是统一的英文版，但是他是有中文的！*其功能强大，可做修改的地方极多，自行尝试咯。*
 
-![unity-tweak-tool](http://upload-images.jianshu.io/upload_images/6490512-eeaedba9376bd234.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![unity-tweak-tool](assets/6490512-eeaedba9376bd234.png)
 
 4.1 Flatabulous 主题，几乎所有说到主题美化的帖子都会提及它吧，博主的代码建议**按照顺序进行。**
 
@@ -122,30 +122,30 @@ linux 上的 jdk 分 OracleJDK 和 OpenJDK 两种。可以都安装，通过控�
 linux 的环境变量写法(适用于多个目录)：export PATH=$PATH:目录一:目录二:目录三
 
     sudo gedit /etc/profile
-
+    
     # 打开文本编辑器后，在最下面添加：
-
+    
     export JAVA_HOME=/usr/lib/jvm/jdk1.8
-
+    
     export JRE_HOME=${JAVA_HOME}/jre
-
+    
     export CLASSPATH=.:${JAVA_HOME}/lib:{JRE_HOME}/lib
-
+    
     export PATH=$PATH:{JAVA_HOME}/bin:
-
+    
     //JAVA_HOME的值根据你的解压目录自行写入，然后保存退出
-
+    
     source /etc/profile
-
+    
     # 在 shell 里输入此使环境变量生效（注销用户也是可以的）
 
 接下来给刚刚配置好的 JDK 添加软链接：
 
     ```shell
     sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8/bin/java 300
-
+    
     sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8/bin/javac 300
-
+    
     sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.8/bin/jar 300
     ```
 它告诉系统这个路径存在这个JDk外，还提供了优先级。软链接是可以删除的，怎么删除百度吧。不过这个时候就算shell里输入 `java -version` 也是没有的，可以通过 `sudo update-alternatives --config xxx` 手动选择，或者重启/注销一次。
@@ -178,7 +178,7 @@ timedatectl
 
 在安装上 crossover 后，打开拖动 QQ 轻聊版的图标就可以拖出一个 QQ 的桌面图标，修改一下 icon 数据添上图标，然后把它**锁定到启动器**，以后就可以快速启动了。
 
-![QQ](http://upload-images.jianshu.io/upload_images/6490512-47a8f613a79ad7fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![QQ](assets/6490512-47a8f613a79ad7fb.png)
 
 ---
 
@@ -208,4 +208,4 @@ sudo apt-get update
 sudo apt-get install typora
 ```
 
-![Typora](http://upload-images.jianshu.io/upload_images/6490512-ed67e4b62f6260fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Typora](assets/6490512-ed67e4b62f6260fd.png)
