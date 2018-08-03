@@ -3,7 +3,7 @@
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
 - 简介：曾经记录过一篇安装 [Ubuntu 18.04 的注意事项文章](Ubuntu 18.04.md)，但是所有过程都是在虚拟机下进行的，本次则使用双系统的方式对系统进行安装。在内容上包括：系统的安装、配置、美化和一些软件安装介绍。
-- 地址：本文章原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（推荐使用 [Typora](https://typora.io/) 阅读）。
+- 地址：[本文章](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu%2018.04%20%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md#(1)-Gnome-tweak-tool)原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中(推荐下载后使用 [Typora](https://typora.io/) 阅读)。
 
 ------
 
