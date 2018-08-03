@@ -2,8 +2,8 @@
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
-- 简介：曾经记录过一篇安装 [Ubuntu 18.04 的注意事项文章](Ubuntu 18.04.md)，但是所有过程都是在虚拟机下进行的，本次则使用双系统的方式对系统进行安装。在内容上包括：系统的安装、配置、美化和一些软件安装介绍。
-- 地址：[本文章](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu%2018.04%20%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md#(1)-Gnome-tweak-tool)原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中(推荐下载后使用 [Typora](https://typora.io/) 阅读)。
+- 简介：曾经记录过一篇安装 Ubuntu 18.04 的注意事项文章，但是所有过程都是在虚拟机下进行的，本次则使用双系统的方式对系统进行安装。在内容上包括：系统的安装、配置、美化和一些软件安装介绍。
+- 地址：[本文章](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（推荐下载后使用 [Typora](https://typora.io/) 阅读）。
 
 ------
 
@@ -17,13 +17,13 @@
   * [（1）不可或缺的更新](#1-不可或缺的更新)
   * [（2）双系统的时区问题](#2-双系统的时区问题)
   * [（3）更换终端类型](#3-更换终端类型)
-
 * [三、配置与美化系统](#三-配置与美化系统)
-  * [（1）Gnome-tweak-tool](#1-Gnome-tweak-tool)
-  * [（2）主题、图标、字体](#2-主题、图标、字体)
+  * [（1）Gnome-tweak-tool](#1-gnome-tweak-tool)
+  * [（2）主题 图标 字体](#2-主题-图标-字体)
   * [（3）搜狗输入法](#3-搜狗输入法)
-  * [（4）底栏 Docky](#4-底栏-Docky)
+  * [（4）底栏 Docky](#4-底栏-docky)
 * [四、软件安装与记录](#四-软件安装与记录)
+  * [（1）Deepin-Wine 环境 QQ、TIM 等 ](#1-DeepinWine-环境-QQ)
 
 ------
 
@@ -129,7 +129,7 @@ sudo apt install chrome-gnome-shell
 
 > 上图中主题和图标的的下载地址：[OSX-Arc](https://www.gnome-look.org/p/1167049/)、[MacOS Icon](https://www.gnome-look.org/p/1102582/)
 
-### 2 主题、图标、字体
+### 2 主题 图标 字体
 
 下载的主题如果的 deb 包的形式，安装方式见下文。而如果是压缩包的形式，那么就只能解压它放到对应的目录中了，这个目录有两种，区别上类似于 Windows 环境变量里的个人和系统。为了方便起见全放在系统里。
 
@@ -204,3 +204,22 @@ sudo apt install docky
 
 ## 四 软件安装与记录
 
+###  1 DeepinWine 环境 QQ
+
+曾经试用过一次 CrossOver ，用其安装了一次 TIM ，心想如果没太大毛病就购买这个软件了，只是蛮遗憾的一堆小问题，虽然不影响使用，但是影响体验呀。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，所以这里也是**借用 Deepin 的贡献**达到使用 QQ 的目的。
+
+参考内容地址：[多发行版通过！目前 Linux 上真正完美稳定的 wine QQ 方案](https://www.lulinux.com/archives/1319)
+
+首先需要在本机安装 Deepin-Wine 环境：[**deepin-wine-ubuntu**](https://github.com/wszqkzqk/deepin-wine-ubuntu)
+
+然后克隆或者下载压缩包到本机，在终端下执行命令：`./install.sh` 安装环境即可。
+
+下载容器的地址：[Index of /deepin/pool/non-free/d/](http://mirrors.aliyun.com/deepin/pool/non-free/d/) ，其 ReadMe 中写的很清楚，这里不再重复。
+
+> **关于托盘**：安装 *TopIconPlus* 的 gnome-shell 扩展：
+>
+> ```sh
+> sudo apt install gnome-shell-extension-top-icons-plus gnome-tweaks
+> ```
+>
+> 然后在所有软件中找到**优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus*
