@@ -1,4 +1,4 @@
-# Ubuntu 18.04 安装、配置和美化
+Ubuntu 18.04 安装、配置和美化
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
@@ -119,11 +119,30 @@ Ubuntu 18.04 与 16.04 最大的变动就是抛弃了 Unity 桌面，使用 Gnom
 
 ```sh
 sudo apt install gnome-tweak-tool
-sudo apt install gnome-shell-extensions
-sudo apt install chrome-gnome-shell
 ```
 
-此时，用快捷键 Super + A 打开应用列表，选择软件 *优化* ，该软件提供了大量对系统外观的更改选项，先到**扩展**中开启 **User thems** ，如此便能修改 *shell* （别的扩展根据需求开启）。
+然后移步到 **Ubuntu 软件**→**附加组件**，在此处选择相应的 Shell 组件。
+
+**Gnome 扩展推荐：**
+
+| 扩展                                | 简要功能描述                        |
+| :---------------------------------- | :---------------------------------- |
+| User Themes                         | 允许本地安装使用 Shell 主题         |
+| Clipboard Indicator                 | 剪切板管理工具                      |
+| Hide Top Bar                        | 全屏时自动隐藏顶栏                  |
+| OpenWeather                         | 顶栏显示天气情况（支持中文）        |
+| TaskBar                             | 类似于 Windows 任务栏的显示效果     |
+| TopIcons Plus                       | 顶栏显示应用图标（托盘显示）        |
+| Places Status Indicator             | 提供快捷目录入口（同文件管理器）    |
+| Coverflow Alt-Tab                   | Alt Tab 切换应用（更酷炫的界面）    |
+| Caffeine                            | 取消自动锁屏（应用前台允许下）      |
+| Sound Input & Output Device Chooser | 更方便的调整声音、亮度              |
+| Lock Keys                           | 顶栏显示 Numlock 和 Capslock 的状态 |
+| EasyScreenCast                      | 录屏工具（录制质量优秀）            |
+| Screenshot Tool                     | 截图工具（挺方便）                  |
+| Dash to Dock                        | Dock                                |
+
+![1533467539404](assets/1533467539404.png)
 
 推荐一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
 
@@ -262,6 +281,8 @@ Exec=sudo netease-cloud-music %U
 > 原因，在终端下可以通过 `sudo netease-cloud-music` 打开软件，只是无疑这个方法很是繁琐，所以不如将这个 sudo 放到 desktop 中，这样当点击应用图标后就是已管理员权限启动的，而且不需要密码。
 >
 > 参考资料地址：[（已解决）ubuntu下网易云音乐无法打开](https://blog.csdn.net/Handoking/article/details/81026651)
+
+![1533467698254](assets/1533467698254.png)
 
 ### 3 一般性软件安装
 
