@@ -1,4 +1,4 @@
-Ubuntu 18.04 安装、配置和美化
+# Ubuntu 18.04 安装、配置和美化
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
@@ -26,6 +26,7 @@ Ubuntu 18.04 安装、配置和美化
   * [（1）Deepin-Wine 环境：QQ、百度网盘、微信等 ](#1-deepinwine-环境)
   * [（2）网易云音乐（解决无法打开软件的问题）](#2-网易云音乐)
   * [（3）一般性软件安装（谷歌、SS、Typora 等）](#3-一般性软件安装)
+  * [（4）Ubuntu 18.04 Gnome 必备扩展](#4-gnome-扩展)
 
 ------
 
@@ -111,7 +112,7 @@ chsh -s /usr/bin/zsh
 
 ## 三 配置与美化系统
 
-![1533284784832](assets/1533284784832.png)
+![1533563621414](assets/1533563621414.png)
 
 ### 1 Gnome-tweak-tool
 
@@ -121,30 +122,11 @@ Ubuntu 18.04 与 16.04 最大的变动就是抛弃了 Unity 桌面，使用 Gnom
 sudo apt install gnome-tweak-tool
 ```
 
-然后移步到 **Ubuntu 软件**→**附加组件**，在此处选择相应的 Shell 组件。
+然后移步到 **Ubuntu 软件**→**附加组件**，在此处安装相应的 Shell 组件。
 
-**Gnome 扩展推荐：**
+为了自定义 Shell 主题，需要搜索安装插件：*User Themes*
 
-| 扩展                                | 简要功能描述                        |
-| :---------------------------------- | :---------------------------------- |
-| User Themes                         | 允许本地安装使用 Shell 主题         |
-| Clipboard Indicator                 | 剪切板管理工具                      |
-| Hide Top Bar                        | 全屏时自动隐藏顶栏                  |
-| OpenWeather                         | 顶栏显示天气情况（支持中文）        |
-| TaskBar                             | 类似于 Windows 任务栏的显示效果     |
-| TopIcons Plus                       | 顶栏显示应用图标（托盘显示）        |
-| Places Status Indicator             | 提供快捷目录入口（同文件管理器）    |
-| Coverflow Alt-Tab                   | Alt Tab 切换应用（更酷炫的界面）    |
-| Caffeine                            | 取消自动锁屏（应用前台允许下）      |
-| Sound Input & Output Device Chooser | 更方便的调整声音、亮度              |
-| Lock Keys                           | 顶栏显示 Numlock 和 Capslock 的状态 |
-| EasyScreenCast                      | 录屏工具（录制质量优秀）            |
-| Screenshot Tool                     | 截图工具（挺方便）                  |
-| Dash to Dock                        | Dock                                |
-
-![1533467539404](assets/1533467539404.png)
-
-推荐一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
+附录：一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
 
 ![1533284853720](assets/1533284853720.png)
 
@@ -247,7 +229,7 @@ sudo apt install docky
 
 ### 2 网易云音乐
 
-在写这篇文章时，操作系统版本为：Ubuntu 18.04.1 LTS x86_64 ；网易云音乐版本为：1.1.0
+在写这篇文章时，操作系统版本为：`Ubuntu 18.04.1 LTS x86_64` ；网易云音乐版本为：`1.1.0`
 
 首先去网易云音乐官网[下载安装包](https://music.163.com/#/download)（Ubuntu 16.04 64 位），然后就是正常的 deb 包安装过程。
 
@@ -286,9 +268,19 @@ Exec=sudo netease-cloud-music %U
 
 ### 3 一般性软件安装
 
-相对麻烦的软件安装记录完毕，下文记录一些其他软件的安装。
+* 导航：
 
-（1）谷歌浏览器
+  [（1）谷歌浏览器](#(1)-谷歌浏览器)
+
+  [（2）Shadowsocks](#(2)-Shadowsocks)
+
+  [（3）Neofetch](#(3)-Neofetch)
+
+  [（4）Typora](#(4)-Typora)
+
+相对麻烦的软件安装记录完毕，下文记录一些其他软件的安装：
+
+#### (1) 谷歌浏览器
 
 ```sh
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
@@ -297,7 +289,7 @@ sudo apt-get update
 sudo apt-get install google-chrome-stable
 ```
 
-（2）Shadowsocks
+####  (2) Shadowsocks
 
 下载地址：[**shadowsocks-qt5**](https://github.com/shadowsocks/shadowsocks-qt5/releases)
 
@@ -313,7 +305,7 @@ sudo apt-get install google-chrome-stable
 
 > 如此代理，是为全局代理。而如何使用 PAC 呢，请让你的 SS 提供商提供支持在线填写过滤规则的面板。
 
-（3）Neofetch
+#### (3) Neofetch
 
 ```sh
 sudo apt install neofetch
@@ -321,10 +313,67 @@ sudo apt install neofetch
 
 这是一款支持终端下查询系统配置信息的软件（实际上除了装逼一无所用）
 
-![1533294017123](assets/1533294017123.png)
+![1533563016828](assets/1533563016828.png)
+
+#### (4) Typora
+
+一款非常好用的 MD 编辑、阅读软件。
+
+```sh
+# optional, but recommended
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+
+# add Typora's repository
+sudo add-apt-repository 'deb https://typora.io/linux ./'
+sudo apt-get update
+
+# install typora
+sudo apt-get install typora
+```
+
+![1533563472295](assets/1533563472295.png)
+
+### 4 Gnome 扩展
+
+Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下额一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种通过浏览器对 Gnome 插件的安装管理方式：
+
+首先安装 Chrome Gnome Shell ：
+
+```sh
+sudo apt install chrome-gnome-shell
+```
+
+然后安装浏览器插件**（谷歌浏览器）**：[Chrome 网上应用商店](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
+
+浏览器插件安装完成后点击 *插件图标* 就能进入：**[Shell 扩展商店](https://extensions.gnome.org/)**
+
+* **Gnome 扩展推荐：**
+
+| 扩展                                                         | 简要功能描述                          |
+| :----------------------------------------------------------- | :------------------------------------ |
+| [Autohide Battery](https://extensions.gnome.org/extension/595/autohide-battery/) | 自动隐藏电源（充电状态下已满）        |
+| [Caffeine](https://extensions.gnome.org/extension/517/caffeine/) | 取消自动锁屏（应用前台允许下）        |
+| [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/) | 剪切板管理工具                        |
+| [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/) | Alt Tab 切换应用（更酷炫的界面）      |
+| [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) | Dock （没 Docky 好看,但能添加收藏夹） |
+| [EasyScreenCast](https://extensions.gnome.org/extension/690/easyscreencast/) | 录屏工具（录制质量优秀）              |
+| [Extension update notifier](https://extensions.gnome.org/extension/1166/extension-update-notifier/) | 自动推送所有扩展的更新信息            |
+| [Hide Top Bar](https://extensions.gnome.org/extension/545/hide-top-bar/) | 全屏时自动隐藏顶栏                    |
+| [HiKitty](https://extensions.gnome.org/extension/1391/hikitty/) | 一个有趣的扩展（放松必备）            |
+| [Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/) | 顶栏显示 Numlock 和 Capslock 的状态   |
+| [Never close calendar event](https://extensions.gnome.org/extension/1439/never-close-calendar-event/) | 从不清除日历事件                      |
+| [OpenWeather](https://extensions.gnome.org/extension/750/openweather/) | 顶栏显示天气情况（支持中文）          |
+| [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) | 提供快捷目录入口（同文件管理器）      |
+| [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) | 移除可移动设备                        |
+| [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/) | 截图工具（挺方便）                    |
+| [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) | 更方便的调整声音、亮度                |
+| [TaskBar](https://extensions.gnome.org/extension/584/taskbar/) | 类似于 Windows 任务栏的显示效果       |
+| [Time ++](https://extensions.gnome.org/extension/1238/time/) | 番茄钟（闹钟、秒表、计时器）          |
+| [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 顶栏显示应用图标（托盘显示）          |
+| [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题           |
 
 未完待续 ing...
 
 ------
 
-[**回到顶部**](#目录) @ 三六九
+[**回到顶部**](#目录) © Inkss
