@@ -365,7 +365,7 @@ sudo apt install chrome-gnome-shell
 
 ### 5 使用 Snap 包安装软件
 
-#### (1) Snap 简介
+#### （1）Snap 简介
 
 > **What is a snap?**
 >
@@ -377,9 +377,9 @@ sudo apt install chrome-gnome-shell
 
 在 Ubuntu 16.04 时，Ubuntu 系统就已经内置了 Snap ，Snap 打包的应用不同于 deb 安装包，其包含了各种依赖环境等等（另外一个和 Snap 类似的是 Flatpak ，Deepin 正在使用的就是这个）。
 
-#### (2) Snap 命令
+#### （2）Snap 命令
 
-* （1）登录 Snap Store
+* 登录 Snap Store
 
 ```sh
 # 这个账户是你的 UBuntu One 账户（https://login.ubuntu.com/+login）
@@ -391,7 +391,7 @@ snap logout
 
 Snap 通常从 Snap Store 安装。您可以在不登录的情况下与 Snap Store 进行交互，但登录可提供许多优势。这些优势包括能够访问您的私人快照和管理快照而无需设备上的 root 。概括来说：**可以不登录，但是大部分命令就需要使用 sudo ，登录账户后则无需使用**。此外登录账户后才可以发布 snap 包。
 
-* （2） 查找 snap 包
+* 查找 snap 包
 
 ```sh
 # 默认情况下只会发现发布到stable发布渠道的快照
@@ -401,7 +401,7 @@ snap find <query>
 --private：搜索死人 snap 包
 ```
 
-* （3）安装 snap 包
+* 安装 snap 包
 
 ```sh
 # 在系统中安装名为 snap 的包
@@ -412,14 +412,14 @@ snap install <snap>
 --classic：将 snap 设置为经典模式并禁用安全限制。
 ```
 
-* （4） 删除 snap 包
+* 删除 snap 包
 
 ```sh
 # 删除名为 snap 的包（包括其数据和公共数据目录）
 snap remove <snap>
 ```
 
-* （5）更新 snap 包
+* 更新 snap 包
 
 ```sh
 # 默认情况下，snap 每天会在后台自动更新系统中的 snap 包
@@ -430,14 +430,14 @@ snap refresh <snap>
 --list：显示可用的快照以进行刷新
 ```
 
-* （6）还原 snap 包
+* 还原 snap 包
 
 ```sh
 # 回复到初始安装状态
 snap revert <snap>
 ```
 
-* （7）禁用与启用
+* 禁用与启用
 
 ```sh
 # 禁用快照。快照的二进制文件和服务将不再可用。但是所有数据仍然可用，并且可以轻松再次启用快照。
@@ -447,7 +447,7 @@ snap disable <snap>
 snap enable <snap>
 ```
 
-* （8）列出所有 snap 包
+* 列出所有 snap 包
 
 ```sh
 # 显示当前系统中安装的 snap 包的摘要
@@ -456,31 +456,31 @@ snap list <snap>
 
 更多 snap 的命令用法可在终端下：`man snap` 查看，或者浏览器访问：[snap: command reference](https://docs.snapcraft.io/reference/snap-command)
 
-#### (3) 使用 snap 安装软件
+#### （3）使用 snap 安装软件
 
 - Pycharm：
 
-  ```sh
-  snap install pycharm-professional --classic
-  ```
+```sh
+snap install pycharm-professional --classic
+```
 
 - IDEA：
 
-  ```sh
-  snap install intellij-idea-ultimate --classic
-  ```
+```sh
+snap install intellij-idea-ultimate --classic
+```
 
 - Android Studio：
 
-  ```sh
-  snap install android-studio --classic
-  ```
+```sh
+snap install android-studio --classic
+```
 
 - Sublime：
 
-  ```sh
-  snap install sublime-text --classic
-  ```
+```sh
+snap install sublime-text --classic
+```
 
 未完待续 ing...
 
