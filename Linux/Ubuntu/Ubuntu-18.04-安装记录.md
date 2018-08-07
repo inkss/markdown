@@ -27,6 +27,7 @@
   * [（2）网易云音乐（解决无法打开软件的问题）](#2-网易云音乐)
   * [（3）一般性软件安装（谷歌、SS、Typora 等）](#3-一般性软件安装)
   * [（4）Ubuntu 18.04 Gnome 必备扩展](#4-gnome-扩展)
+  * [（5）使用 Snap 包安装软件（含介绍）](#5-使用-snap-包安装软件)
 
 ------
 
@@ -268,16 +269,6 @@ Exec=sudo netease-cloud-music %U
 
 ### 3 一般性软件安装
 
-* 导航：
-
-  [（1）谷歌浏览器](#(1)-谷歌浏览器)
-
-  [（2）Shadowsocks](#(2)-Shadowsocks)
-
-  [（3）Neofetch](#(3)-Neofetch)
-
-  [（4）Typora](#(4)-Typora)
-
 相对麻烦的软件安装记录完毕，下文记录一些其他软件的安装：
 
 #### (1) 谷歌浏览器
@@ -335,7 +326,7 @@ sudo apt-get install typora
 
 ### 4 Gnome 扩展
 
-Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下额一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种通过浏览器对 Gnome 插件的安装管理方式：
+Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下的一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种通过浏览器对 Gnome 插件的安装管理方式：
 
 首先安装 Chrome Gnome Shell ：
 
@@ -372,8 +363,127 @@ sudo apt install chrome-gnome-shell
 | [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 顶栏显示应用图标（托盘显示）          |
 | [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题           |
 
+### 5 使用 Snap 包安装软件
+
+#### (1) Snap 简介
+
+> **What is a snap?**
+>
+> A `snap` :
+>
+> * is a squashFS filesystem containing your app code and a `snap.yaml` file containing specific metadata. It has a read-only file-system and, once installed, a writable area.
+> * is self-contained. It bundles most of the libraries and runtimes it needs and can be updated and reverted without affecting the rest of the system.
+> * is confined from the OS and other apps through security mechanisms, but can exchange content and functions with other snaps according to fine-grained policies controlled by the user and the OS defaults.
+
+在 Ubuntu 16.04 时，Ubuntu 系统就已经内置了 Snap ，Snap 打包的应用不同于 deb 安装包，其包含了各种依赖环境等等（另外一个和 Snap 类似的是 Flatpak ，Deepin 正在使用的就是这个）。
+
+#### (2) Snap 命令
+
+* （1）登录 Snap Store
+
+```sh
+# 这个账户是你的 UBuntu One 账户（https://login.ubuntu.com/+login）
+sudo snap login xxxxx@gmail.com
+
+# 退出账户
+snap logout
+```
+
+Snap 通常从 Snap Store 安装。您可以在不登录的情况下与 Snap Store 进行交互，但登录可提供许多优势。这些优势包括能够访问您的私人快照和管理快照而无需设备上的 root 。概括来说：**可以不登录，但是大部分命令就需要使用 sudo ，登录账户后则无需使用**。此外登录账户后才可以发布 snap 包。
+
+* （2） 查找 snap 包
+
+```sh
+# 默认情况下只会发现发布到stable发布渠道的快照
+snap find <query>
+
+# 附加命令
+--private：搜索死人 snap 包
+```
+
+* （3）安装 snap 包
+
+```sh
+# 在系统中安装名为 snap 的包
+snap install <snap>
+
+# 附加命令
+--devmode：将 snap 设置为开发模式并禁用安全限制。
+--classic：将 snap 设置为经典模式并禁用安全限制。
+```
+
+* （4） 删除 snap 包
+
+```sh
+# 删除名为 snap 的包（包括其数据和公共数据目录）
+snap remove <snap>
+```
+
+* （5）更新 snap 包
+
+```sh
+# 默认情况下，snap 每天会在后台自动更新系统中的 snap 包
+# 当然也可以手动指定更新
+snap refresh <snap>
+
+# 附加命令
+--list：显示可用的快照以进行刷新
+```
+
+* （6）还原 snap 包
+
+```sh
+# 回复到初始安装状态
+snap revert <snap>
+```
+
+* （7）禁用与启用
+
+```sh
+# 禁用快照。快照的二进制文件和服务将不再可用。但是所有数据仍然可用，并且可以轻松再次启用快照。
+snap disable <snap>
+
+# 启用快照
+snap enable <snap>
+```
+
+* （8）列出所有 snap 包
+
+```sh
+# 显示当前系统中安装的 snap 包的摘要
+snap list <snap> 
+```
+
+更多 snap 的命令用法可在终端下：`man snap` 查看，或者浏览器访问：[snap: command reference](https://docs.snapcraft.io/reference/snap-command)
+
+#### (3) 使用 snap 安装软件
+
+- Pycharm：
+
+  ```sh
+  snap install pycharm-professional --classic
+  ```
+
+- IDEA：
+
+  ```sh
+  snap install intellij-idea-ultimate --classic
+  ```
+
+- Android Studio：
+
+  ```sh
+  snap install android-studio --classic
+  ```
+
+- Sublime：
+
+  ```sh
+  snap install sublime-text --classic
+  ```
+
 未完待续 ing...
 
 ------
 
-[**回到顶部**](#目录) © Inkss
+[**回到顶部**](#目录) © inkss
