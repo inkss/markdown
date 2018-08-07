@@ -168,7 +168,7 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
 
 接下来介绍安装步骤：
 
-首先下载主题包，为 zip 压缩吧，解压出目录，使用 `sudo nautilus` 打开带权限的文件管理器。
+首先下载主题包，为 zip 压缩包，解压出目录，使用 `sudo nautilus` 打开带权限的文件管理器。
 
 定位到目录：`boot/grub` ，在该目录下新建文件夹：`themes` ，把解压出的目录拷贝到文件夹中。
 
@@ -181,7 +181,7 @@ sudo gedit /etc/default/grub
 在该文件末尾添加：
 
 ```sh
-#GRUB_THEME="/boot/grub/themes/主题包文件夹名称/theme.txt"
+# GRUB_THEME="/boot/grub/themes/主题包文件夹名称/theme.txt"
 GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
 ```
 
@@ -362,15 +362,15 @@ sudo apt-get install typora
 
 #### (5) Albert
 
-这是一款非常好用的 *软件启动器* ，我在安装的时候按照添加 *PPA* 的方法安装失败了，如此便去其官网（[GitHub](https://albertlauncher.github.io/docs/installing/)）查找了一下，步骤上略显繁琐，这里记录一下：
+这是一款非常好用的 *软件启动器* ，我在安装的时候按照添加 *PPA* 的方法安装失败了，如此便去其官网（[GitHub-Albert](https://albertlauncher.github.io/docs/installing/)）查找了一下，步骤上略显繁琐，这里记录一下：
 
 先这样：
 
 ```sh
 wget -nv -O Release.key \
   https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-apt-key add - < Release.key
-apt-get update
+sudo apt-key add - < Release.key
+sudo apt-get update
 ```
 
 然后这样：
