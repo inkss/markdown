@@ -20,8 +20,9 @@
 * [三、配置与美化系统](#三-配置与美化系统)
   * [（1）Gnome-tweak-tool](#1-gnome-tweak-tool)
   * [（2）主题 图标 字体](#2-主题-图标-字体)
-  * [（3）搜狗输入法](#3-搜狗输入法)
-  * [（4）底栏 Docky](#4-底栏-docky)
+  * [（3）Grub 启动项美化](#3-grub-启动项美化)
+  * [（4）搜狗输入法](#4-搜狗输入法)
+  * [（5）底栏 Docky](#5-底栏-docky)
 * [四、软件安装与记录](#四-软件安装与记录)
   * [（1）Deepin-Wine 环境：QQ、百度网盘、微信等 ](#1-deepinwine-环境)
   * [（2）网易云音乐（解决无法打开软件的问题）](#2-网易云音乐)
@@ -125,7 +126,7 @@ sudo apt install gnome-tweak-tool
 
 然后移步到 **Ubuntu 软件**→**附加组件**，在此处安装相应的 Shell 组件。
 
-为了自定义 Shell 主题，需要搜索安装插件：*User Themes*
+为了自定义 Shell 主题，需要搜索安装插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
 
 附录：一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
 
@@ -135,20 +136,20 @@ sudo apt install gnome-tweak-tool
 
 ### 2 主题 图标 字体
 
-下载的主题如果是 deb 包的形式，安装方式见下文。而如果是压缩包的形式，那么就只能解压它放到对应的目录中了，这个目录有两种，区别上类似于 Windows 环境变量里的个人和系统。为了方便起见全放在系统里。
+下载的主题如果是 deb 包的形式，安装方式见下文。而如果是压缩包的形式，那么就只能解压它放到对应的目录中了，这个目录有两种，区别上类似于 Windows 环境变量里的个人和系统。
 
-- 主题存放目录：`/usr/share/themes`
-- 图标存放目录：`/usr/share/icons`
-- 字体存放目录：`/usr/share/fonts`
+- 主题存放目录：`/usr/share/themes` 或 `~/.themes`
+- 图标存放目录：`/usr/share/icons` 或 `~/.icons`
+- 字体存放目录：`/usr/share/fonts` 或 `~/.fonts`
 
-以上三个目录需要 root 权限才能修改，秉着有图形界面就不用终端的心态：
+*usr/share* 目录需要 root 权限才能修改，秉着有图形界面就不用终端的心态：
 
 ```sh
 # 终端下打开一个具有管理员权限的文件管理器
 # 打开后终端最小化，不要关闭
 sudo nautilus
 
-# 或者也可以在终端下使用 mv cp 等命令操作
+# 或者将相关文件放在本地目录中
 ```
 
 附录一个在 Linux 下特别好用的字体：*文泉驿系列字体*
@@ -157,7 +158,42 @@ sudo nautilus
 sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
 ```
 
-### 3 搜狗输入法
+### 3 Grub 启动项美化
+
+首先下载主题包：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
+
+这里使用的主题包为：[Fallout ](https://www.gnome-look.org/p/1230882/)
+
+![img](assets/1efc768bd7a1683b1e19c689d1eed7f7c070.gif)
+
+接下来介绍安装步骤：
+
+首先下载主题包，为 zip 压缩吧，解压出目录，使用 `sudo nautilus` 打开带权限的文件管理器。
+
+定位到目录：`boot/grub` ，在该目录下新建文件夹：`themes` ，把解压出的目录拷贝到文件夹中。
+
+接着终端下调用 geidt 修改 *grub* 文件：
+
+```sh
+sudo gedit /etc/default/grub
+```
+
+在该文件末尾添加：
+
+```sh
+#GRUB_THEME="/boot/grub/themes/主题包文件夹名称/theme.txt"
+GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
+```
+
+最后更新配置文件：
+
+```su
+sudo update-grub
+```
+
+> 重启系统以见证效果。另外谈到 grub 就不得不谈到 `/boot/grub/grub.cfg` ，这个文件才是事实上的配置文件，操纵此文件一个不慎就整个系统进不去。所谓更新配置文件就是重新生成 *grub.cfg* 的过程。
+
+### 4 搜狗输入法
 
 Ubuntu 18.04 没有提供 Fcitx 输入框架，所以先安装该框架：
 
@@ -188,7 +224,7 @@ sudo apt install -f
 >
 > ![1533284916734](assets/1533284916734.png)
 
-### 4 底栏 Docky
+### 5 底栏 Docky
 
 这是一个能做到和 MAC 类似效果的 Dock 软件，颜值上比 Ubuntu 自带的好了很多。
 
@@ -323,6 +359,29 @@ sudo apt-get install typora
 ```
 
 ![1533563472295](assets/1533563472295.png)
+
+#### (5) Albert
+
+这是一款非常好用的 *软件启动器* ，我在安装的时候按照添加 *PPA* 的方法安装失败了，如此便去其官网（[GitHub](https://albertlauncher.github.io/docs/installing/)）查找了一下，步骤上略显繁琐，这里记录一下：
+
+先这样：
+
+```sh
+wget -nv -O Release.key \
+  https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+apt-key add - < Release.key
+apt-get update
+```
+
+然后这样：
+
+```sh
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+sudo apt-get update
+sudo apt-get install albert
+```
+
+![1533658672899](assets/1533658672899.png)
 
 ### 4 Gnome 扩展
 
