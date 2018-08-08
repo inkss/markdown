@@ -2,7 +2,7 @@
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
-- 简介：曾经记录过一篇安装 Ubuntu 18.04 的注意事项文章，但是所有过程都是在虚拟机下进行的，本次则使用双系统的方式对系统进行安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
+- 简介：曾经记录过一篇安装 Ubuntu 18.04 的注意事项文章，但是只记录了一些安装时小坑的处理，本次则使用双系统的方式对系统进行安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
 - 地址：[本文章](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（推荐下载后使用 [Typora](https://typora.io/) 阅读）。
 
 ------
@@ -64,10 +64,10 @@
 
 正常的安装过程，诸如对 BIOS 进行设置之类，网上教程很多，这里不多赘述。
 
-> 在到 *安装类型* 这一步时，如果你在上一步压缩完分区后，没有新建简单卷，那么就会多出一个**安装 Ubuntu，与 Windows boot manager 共存**这一选项，那么就只需默认无脑下一步即可。
->
-> 而如果需要自主划分分区，就选择 *其他选项 。*分区只推荐划分出根 `/` 和家目录 `/home`。
->
+在到 *安装类型* 这一步时，如果你在上一步压缩完分区后，没有新建简单卷，那么就会多出一个**安装 Ubuntu，与 Windows boot manager 共存**这一选项，那么就只需默认无脑下一步即可。
+
+而如果需要自主划分分区，就选择 *其他选项 。*分区只推荐划分出根 `/` 和家目录 `/home`。
+
 > 注意1：为了系统的稳定，安装过程中请连上网络，勾选**安装 Ubuntu 时下载更新**。
 >
 > 注意2：安装时选择**最小安装**，除非你对雷鸟、LibreOffice  之类的软件感兴趣。
@@ -149,7 +149,7 @@ sudo apt install gnome-tweak-tool
 # 打开后终端最小化，不要关闭
 sudo nautilus
 
-# 或者将相关文件放在本地目录中
+# 或者放到本地目录中
 ```
 
 附录一个在 Linux 下特别好用的字体：*文泉驿系列字体*
@@ -160,7 +160,7 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
 
 ### 3 Grub 启动项美化
 
-首先下载主题包：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
+主题包地址：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
 
 这里使用的主题包为：[Fallout ](https://www.gnome-look.org/p/1230882/)
 
@@ -168,9 +168,9 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
 
 接下来介绍安装步骤：
 
-首先下载主题包，为 zip 压缩包，解压出目录，使用 `sudo nautilus` 打开带权限的文件管理器。
+首先下载主题包，为 zip 压缩包，解压出文件，使用 `sudo nautilus` 打开带权限的文件管理器。
 
-定位到目录：`boot/grub` ，在该目录下新建文件夹：`themes` ，把解压出的目录拷贝到文件夹中。
+定位到目录：`boot/grub`，在该目录下新建文件夹：`themes`，把解压出的目录拷贝到文件夹中。
 
 接着终端下调用 geidt 修改 *grub* 文件：
 
@@ -248,8 +248,6 @@ sudo apt install docky
 
 曾经试用过一次 CrossOver ，用其安装了一次 TIM ，心想如果没太大毛病就购买这个软件了，只是蛮遗憾的一堆小问题，虽然不影响使用，但是影响体验呀。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，所以这里也是**借用 Deepin 的贡献**达到使用 QQ 的目的。
 
-参考资料地址：[多发行版通过！目前 Linux 上真正完美稳定的 wine QQ 方案](https://www.lulinux.com/archives/1319)
-
 首先需要在本机下载 Deepin-Wine 环境：[**deepin-wine-ubuntu**](https://github.com/wszqkzqk/deepin-wine-ubuntu)
 
 克隆或者下载压缩包到本机，在终端下执行命令：`./install.sh` 安装环境即可。
@@ -262,7 +260,9 @@ sudo apt install docky
 > sudo apt install gnome-shell-extension-top-icons-plus gnome-tweaks
 > ```
 >
-> 然后在所有软件中找到**优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus*
+> 然后在所有软件中找到**优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus* 。
+>
+> 参考资料地址：[多发行版通过！目前 Linux 上真正完美稳定的 wine QQ 方案](https://www.lulinux.com/archives/1319)
 
 ### 2 网易云音乐
 
@@ -307,7 +307,7 @@ Exec=sudo netease-cloud-music %U
 
 相对麻烦的软件安装记录完毕，下文记录一些其他软件的安装：
 
-#### (1) 谷歌浏览器
+#### (1) Chrome
 
 ```sh
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
@@ -383,6 +383,36 @@ sudo apt-get install albert
 
 ![1533658672899](assets/1533658672899.png)
 
+#### (6) popup-dict
+
+ Linux 下的划词翻译工具，支持使用有道等多种翻译服务。
+
+功能特点：
+
+* 目前只支持英文->中文翻译，支持单词和短语
+* 主要针对 Gnome 桌面环境，不保证其它环境下的正常使用
+* 鼠标划词翻译，弹窗显示
+* 智能处理选中内容（去除两端非英文字符、压缩空白字符、删除换行符等）
+* 弹窗显示一段时间后自动关闭。若鼠标在弹窗中，延迟关闭
+* 点击弹窗中链接可打开有道词典网页版
+
+安装过程：
+
+```sh
+# 安装 pip3 ，如果已有请忽略此步骤
+sudo apt install python3-pip
+
+# 安装 PyGObject 依赖
+sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
+
+# 安装 popup-dict
+sudo pip3 install popupdict
+```
+
+运行软件：使用 Gnome 扩展  [`Popup dict Switcher`](https://extensions.gnome.org/extension/1349/popup-dict-switcher/)
+
+![img](assets/popup.png)
+
 ### 4 Gnome 扩展
 
 Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下的一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种通过浏览器对 Gnome 插件的安装管理方式：
@@ -410,17 +440,22 @@ sudo apt install chrome-gnome-shell
 | [Extension update notifier](https://extensions.gnome.org/extension/1166/extension-update-notifier/) | 自动推送所有扩展的更新信息            |
 | [Hide Top Bar](https://extensions.gnome.org/extension/545/hide-top-bar/) | 全屏时自动隐藏顶栏                    |
 | [HiKitty](https://extensions.gnome.org/extension/1391/hikitty/) | 一个有趣的扩展（放松必备）            |
+| [Internet speed meter](https://extensions.gnome.org/extension/1461/internet-speed-meter/) | 顶栏显示当前网络速度                  |
 | [Lock Keys](https://extensions.gnome.org/extension/36/lock-keys/) | 顶栏显示 Numlock 和 Capslock 的状态   |
 | [Never close calendar event](https://extensions.gnome.org/extension/1439/never-close-calendar-event/) | 从不清除日历事件                      |
 | [OpenWeather](https://extensions.gnome.org/extension/750/openweather/) | 顶栏显示天气情况（支持中文）          |
 | [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) | 提供快捷目录入口（同文件管理器）      |
+| [Popup dict Switcher](https://extensions.gnome.org/extension/1349/popup-dict-switcher/) | 一键开关划词翻译                      |
 | [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) | 移除可移动设备                        |
 | [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/) | 截图工具（挺方便）                    |
 | [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) | 更方便的调整声音、亮度                |
+| [System-monitor](https://extensions.gnome.org/extension/120/system-monitor/) | 在状态栏中显示系统信息（很多类型）    |
 | [TaskBar](https://extensions.gnome.org/extension/584/taskbar/) | 类似于 Windows 任务栏的显示效果       |
 | [Time ++](https://extensions.gnome.org/extension/1238/time/) | 番茄钟（闹钟、秒表、计时器）          |
 | [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 顶栏显示应用图标（托盘显示）          |
 | [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题           |
+
+> 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，如果存在安装失败的情况，请检查依赖情况。
 
 ### 5 使用 Snap 包安装软件
 
@@ -428,7 +463,7 @@ sudo apt install chrome-gnome-shell
 
 > **What is a snap?**
 >
-> A `snap` :
+> A Snap :
 >
 > * is a squashFS filesystem containing your app code and a `snap.yaml` file containing specific metadata. It has a read-only file-system and, once installed, a writable area.
 > * is self-contained. It bundles most of the libraries and runtimes it needs and can be updated and reverted without affecting the rest of the system.
