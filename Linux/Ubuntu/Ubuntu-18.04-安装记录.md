@@ -2,33 +2,33 @@
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
-- 简介：曾经记录过一篇安装 Ubuntu 18.04 的注意事项文章，但是只记录了一些安装时小坑的处理，本次则使用双系统的方式对系统进行安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
+- 简介：曾经记录过一篇安装 Ubuntu 18.04 的注意事项文章，但是只记录了一些安装后小坑的处理，本次则使用双系统的方式对系统进行安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
 - 地址：[本文章](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（推荐下载后使用 [Typora](https://typora.io/) 阅读）。
 
 ------
 
 ## 目录
 
-* [一、安装操作系统](#一-安装操作系统)
-  * [（1）引导盘](#1-引导盘)
-  * [（2）分区](#2-分区)
-  * [（3）安装系统](#3-安装系统)
-* [二、初步系统配置](#二-初步系统配置)
-  * [（1）不可或缺的更新](#1-不可或缺的更新)
-  * [（2）双系统的时区问题](#2-双系统的时区问题)
-  * [（3）更换终端类型](#3-更换终端类型)
-* [三、配置与美化系统](#三-配置与美化系统)
-  * [（1）Gnome-tweak-tool](#1-gnome-tweak-tool)
-  * [（2）主题 图标 字体](#2-主题-图标-字体)
-  * [（3）Grub 启动项美化](#3-grub-启动项美化)
-  * [（4）搜狗输入法](#4-搜狗输入法)
-  * [（5）底栏 Docky](#5-底栏-docky)
-* [四、软件安装与记录](#四-软件安装与记录)
-  * [（1）Deepin-Wine 环境：QQ、百度网盘、微信等 ](#1-deepinwine-环境)
-  * [（2）网易云音乐（解决无法打开软件的问题）](#2-网易云音乐)
-  * [（3）一般性软件安装（谷歌、SS、Typora 等）](#3-一般性软件安装)
-  * [（4）Ubuntu 18.04 Gnome 必备扩展](#4-gnome-扩展)
-  * [（5）使用 Snap 包安装软件（含介绍）](#5-使用-snap-包安装软件)
+* [一 安装操作系统](#一-安装操作系统)
+  * [1 引导盘](#1-引导盘)
+  * [2 分区](#2-分区)
+  * [3 安装系统](#3-安装系统)
+* [二 初步系统配置](#二-初步系统配置)
+  * [1 不可或缺的更新](#1-不可或缺的更新)
+  * [2 双系统的时区问题](#2-双系统的时区问题)
+  * [3 更换终端类型](#3-更换终端类型)
+* [三 配置与美化系统](#三-配置与美化系统)
+  * [1 Gnome-tweak-tool](#1-gnome-tweak-tool)
+  * [2 主题 图标 字体](#2-主题-图标-字体)
+  * [3 Grub 启动项美化](#3-grub-启动项美化)
+  * [4 搜狗输入法](#4-搜狗输入法)
+  * [5 底栏 Docky](#5-底栏-docky)
+* [四 软件安装与记录](#四-软件安装与记录)
+  * [1 Deepin-Wine 环境：QQ、百度网盘、微信等 ](#1-deepinwine-环境)
+  * [2 网易云音乐（解决无法打开软件的问题）](#2-网易云音乐)
+  * [3 一般性软件安装（谷歌、SS、Typora 等）](#3-一般性软件安装)
+  * [4 Ubuntu 18.04 Gnome 必备扩展](#4-gnome-扩展)
+  * [5 使用 Snap 包安装软件（含介绍）](#5-使用-snap-包安装软件)
 
 ------
 
@@ -126,7 +126,7 @@ sudo apt install gnome-tweak-tool
 
 然后移步到 **Ubuntu 软件**→**附加组件**，在此处安装相应的 Shell 组件。
 
-为了自定义 Shell 主题，需要搜索安装插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
+为了自定义 Shell 主题，需要搜索安装启用插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
 
 附录：一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
 
@@ -254,11 +254,7 @@ sudo apt install docky
 
 下载容器的地址：[Index of /deepin/pool/non-free/d/](http://mirrors.aliyun.com/deepin/pool/non-free/d/) ，其 ReadMe 中写的很清楚，这里不再重复。
 
-> **关于托盘**：安装 *TopIconPlus* 的 gnome-shell 扩展：
->
-> ```sh
-> sudo apt install gnome-shell-extension-top-icons-plus gnome-tweaks
-> ```
+> **关于托盘**：安装 *TopIconPlus* 的 gnome-shell 扩展。
 >
 > 然后在所有软件中找到**优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus* 。
 >
@@ -307,7 +303,7 @@ Exec=sudo netease-cloud-music %U
 
 相对麻烦的软件安装记录完毕，下文记录一些其他软件的安装：
 
-#### (1) Chrome
+#### 3.1 Chrome
 
 ```sh
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
@@ -316,7 +312,7 @@ sudo apt-get update
 sudo apt-get install google-chrome-stable
 ```
 
-####  (2) Shadowsocks
+####  3.2 Shadowsocks
 
 下载地址：[**shadowsocks-qt5**](https://github.com/shadowsocks/shadowsocks-qt5/releases)
 
@@ -332,7 +328,7 @@ sudo apt-get install google-chrome-stable
 
 > 如此代理，是为全局代理。而如何使用 PAC 呢，请让你的 SS 提供商提供支持在线填写过滤规则的面板。
 
-#### (3) Neofetch
+#### 3.3 Neofetch
 
 ```sh
 sudo apt install neofetch
@@ -342,7 +338,7 @@ sudo apt install neofetch
 
 ![1533563016828](assets/1533563016828.png)
 
-#### (4) Typora
+#### 3.4 Typora
 
 一款非常好用的 MD 编辑、阅读软件。
 
@@ -360,7 +356,7 @@ sudo apt-get install typora
 
 ![1533563472295](assets/1533563472295.png)
 
-#### (5) Albert
+#### 3.5 Albert
 
 这是一款非常好用的 *软件启动器* ，我在安装的时候按照添加 *PPA* 的方法安装失败了，如此便去其官网（[GitHub-Albert](https://albertlauncher.github.io/docs/installing/)）查找了一下，步骤上略显繁琐，这里记录一下：
 
@@ -383,7 +379,7 @@ sudo apt-get install albert
 
 ![1533658672899](assets/1533658672899.png)
 
-#### (6) popup-dict
+#### 3.6 popup-dict
 
  Linux 下的划词翻译工具，支持使用有道等多种翻译服务。
 
@@ -455,11 +451,11 @@ sudo apt install chrome-gnome-shell
 | [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 顶栏显示应用图标（托盘显示）          |
 | [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题           |
 
-> 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，如果存在安装失败的情况，请检查依赖情况。
+> 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，如果存在安装失败的情况，请检查是否满足依赖。
 
 ### 5 使用 Snap 包安装软件
 
-#### （1）Snap 简介
+#### 5.1 Snap 简介
 
 > **What is a snap?**
 >
@@ -471,7 +467,7 @@ sudo apt install chrome-gnome-shell
 
 在 Ubuntu 16.04 时，Ubuntu 系统就已经内置了 Snap ，Snap 打包的应用不同于 deb 安装包，其包含了各种依赖环境等等（另外一个和 Snap 类似的是 Flatpak ，Deepin 正在使用的就是这个）。
 
-#### （2）Snap 命令
+#### 5.2 Snap 命令
 
 * 登录 Snap Store
 
@@ -550,7 +546,7 @@ snap list <snap>
 
 更多 snap 的命令用法可在终端下：`man snap` 查看，或者浏览器访问：[snap: command reference](https://docs.snapcraft.io/reference/snap-command)
 
-#### （3）使用 snap 安装软件
+#### 5.3 使用 snap 安装软件
 
 - Pycharm：
 
