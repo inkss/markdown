@@ -72,6 +72,8 @@
 >
 > 注意2：安装时选择**最小安装**，除非你对雷鸟、LibreOffice  之类的软件感兴趣。
 
+------
+
 ## 二 初步系统配置
 
 ### 1 不可或缺的更新
@@ -111,6 +113,8 @@ chsh -s /usr/bin/zsh
 ```
 
 > 重启系统以生效。
+
+-------
 
 ## 三 配置与美化系统
 
@@ -241,6 +245,8 @@ sudo apt install docky
 **`/apps/docky-2/Docky/Items/DockyItem`**
 
 取消 *ShowDockyItem* 的勾选状态（决定是否显示 第一个 Docky）
+
+------
 
 ## 四 软件安装与记录
 
@@ -419,7 +425,7 @@ Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下�
 sudo apt install chrome-gnome-shell
 ```
 
-然后安装浏览器插件**（谷歌浏览器）**：[Chrome 网上应用商店](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
+然后安装浏览器插件（**谷歌浏览器**）：[Chrome 网上应用商店](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
 
 浏览器插件安装完成后点击 *插件图标* 就能进入：**[Shell 扩展商店](https://extensions.gnome.org/)**
 
