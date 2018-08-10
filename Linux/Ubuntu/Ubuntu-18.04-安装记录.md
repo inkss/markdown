@@ -3,7 +3,7 @@
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
 - 简介：曾经记录过一篇安装 Ubuntu 18.04 的注意事项文章，但是只记录了一些安装后小坑的处理，本次则使用双系统的方式对系统进行安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
-- 地址：[本文章](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（推荐下载后使用 [Typora](https://typora.io/) 阅读）。
+- 地址：本文章[原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（推荐下载后使用 [Typora](https://typora.io/) 阅读）。
 
 ------
 
@@ -46,9 +46,15 @@
 
 - 刻录到 U 盘：
 
-  Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是需要注意的是这个工具刻录后的 U 盘只有 Legacy 引导 ，所以只能抛弃该软件。然后在网上简单的搜索后找到了另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)*，提到了其具有**免安装、绿色版、支持 UEFI 引导**的特点，那么就选用它了。
+  - 解压镜像文件：
 
-> 刻录过程不多赘述，Rufus 刻录时分区类型选择 `GPT`。
+    准备一个干净的 FAT32 的 U 盘（ *NTFS 不行* ），使用压缩工具（ *WinRAR，7z 等* ）对 Ubuntu 的镜像文件进行解压，解压目录为 U 盘根目录。
+
+  - 使用刻录工具：
+
+    Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是需要注意的是这个工具刻录后的 U 盘只有 Legacy 引导 ，所以只能抛弃该软件。然后在网上简单的搜索后找到了另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)*，提到了其具有**免安装、绿色版、支持 UEFI 引导**的特点，那么就选用它了。
+
+> 刻录到 U 盘的方式二选一，过程不多赘述，使用 Rufus 刻录时分区类型选择 `GPT`。
 
 ### 2 分区
 
@@ -78,13 +84,13 @@
 
 ### 1 不可或缺的更新
 
-如果在上一步中勾选了安装 Ubuntu 时下载更新，那么大部分的更新已经下载完毕。
+如果在上一步中勾选了安装 Ubuntu 时下载更新，那么大部分的系统更新已经下载完毕。
 
 不过为了确保，先移步到**设置**→**详细信息**，点击右下角的**检查更新**，如果存在更新，那么完成相应的更新操作。
 
 接着移步到**设置**→**区域和语言**→**管理已安装的语言**，在此处完成一个更新下载。
 
-最后，为了确保全部内容都更新完毕，打开终端使用命令安装更新：
+最后，为了确保系统和软件都更新完毕，打开终端使用命令安装更新：
 
 ```sh
 sudo apt update
@@ -95,7 +101,7 @@ sudo apt upgrade
 
 ### 2 双系统的时区问题
 
-双系统下 WIndows 与 Ubuntu 的时间将会不相同，原因不多阐述，解决方案如下：
+双系统下 Windows 与 Ubuntu 的时间将会不相同，原因不多阐述，解决方案如下：
 
 ```sh
 timedatectl set-local-rtc 1
@@ -130,7 +136,7 @@ sudo apt install gnome-tweak-tool
 
 然后移步到 **Ubuntu 软件**→**附加组件**，在此处安装相应的 Shell 组件。
 
-为了自定义 Shell 主题，需要搜索安装启用插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
+为了自定义 Shell 主题，需要安装、启用插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
 
 附录：一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
 
@@ -146,7 +152,7 @@ sudo apt install gnome-tweak-tool
 - 图标存放目录：`/usr/share/icons` 或 `~/.icons`
 - 字体存放目录：`/usr/share/fonts` 或 `~/.fonts`
 
-*usr/share* 目录需要 root 权限才能修改，秉着有图形界面就不用终端的心态：
+*/usr/share* 目录需要 root 权限才能修改，秉着有图形界面就不用终端的心态：
 
 ```sh
 # 终端下打开一个具有管理员权限的文件管理器
@@ -172,11 +178,11 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
 
 接下来介绍安装步骤：
 
-首先下载主题包，为 zip 压缩包，解压出文件，使用 `sudo nautilus` 打开带权限的文件管理器。
+首先下载主题包，为 zip 压缩包。解压出文件，使用 `sudo nautilus` 打开带权限的文件管理器。
 
-定位到目录：`boot/grub`，在该目录下新建文件夹：`themes`，把解压出的目录拷贝到文件夹中。
+定位到目录：`/boot/grub`，在该目录下新建文件夹：`themes`，把解压出的文件拷贝到文件夹中。
 
-接着终端下调用 geidt 修改 *grub* 文件：
+接着终端下调用 gedit 修改 *grub* 文件：
 
 ```sh
 sudo gedit /etc/default/grub
@@ -195,7 +201,7 @@ GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
 sudo update-grub
 ```
 
-> 重启系统以见证效果。另外谈到 grub 就不得不谈到 `/boot/grub/grub.cfg` ，这个文件才是事实上的配置文件，操纵此文件一个不慎就整个系统进不去。所谓更新配置文件就是重新生成 *grub.cfg* 的过程。
+> 重启系统以见证效果。另外谈到 grub 就不得不谈到 `/boot/grub/grub.cfg` ，这个文件才是事实上的配置文件，操纵此文件一个不慎就整个系统凉凉。所谓更新配置文件就是重新生成 *grub.cfg* 的过程。
 
 ### 4 搜狗输入法
 
@@ -218,7 +224,7 @@ sudo apt install -f
 # 一般 deb 包都是如此安装的，如果失败就去解决依赖问题
 ```
 
-然后移步到**设置**→**区域和语言**，删除一部分输入源，只保留 *汉语*  。接着选择**管理已安装的语言**，修改 *键盘输入法系统* 为 **fcitx** ，关闭窗口，打开所有程序，选择软件  **Fctix 配置**，选择加号添加搜狗输入法（见下图）：
+然后移步到**设置**→**区域和语言**，删除一部分输入源，只保留 *汉语*  。接着选择**管理已安装的语言**，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置**，选择加号添加搜狗输入法（见下图）：
 
 ![1533284894634](assets/1533284894634.png)
 
@@ -252,7 +258,7 @@ sudo apt install docky
 
 ###  1 DeepinWine 环境
 
-曾经试用过一次 CrossOver ，用其安装了一次 TIM ，心想如果没太大毛病就购买这个软件了，只是蛮遗憾的一堆小问题，虽然不影响使用，但是影响体验呀。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，所以这里也是**借用 Deepin 的贡献**达到使用 QQ 的目的。
+曾经试用过一次 CrossOver ，用其安装了 TIM ，心想如果没太大毛病就购买这个软件了，只是蛮遗憾的一堆小问题，虽然不影响使用，但是影响体验呀。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，所以这里也是**借用 Deepin 的贡献**达到使用 QQ 的目的。
 
 首先需要在本机下载 Deepin-Wine 环境：[**deepin-wine-ubuntu**](https://github.com/wszqkzqk/deepin-wine-ubuntu)
 
@@ -266,13 +272,15 @@ sudo apt install docky
 >
 > 参考资料地址：[多发行版通过！目前 Linux 上真正完美稳定的 wine QQ 方案](https://www.lulinux.com/archives/1319)
 
+![](assets/95147.png)
+
 ### 2 网易云音乐
 
 在写这篇文章时，操作系统版本为：`Ubuntu 18.04.1 LTS x86_64` ；网易云音乐版本为：`1.1.0`
 
 首先去网易云音乐官网[下载安装包](https://music.163.com/#/download)（Ubuntu 16.04 64 位），然后就是正常的 deb 包安装过程。
 
-安装完毕后，会发现在应用列表中点击应用图标无法启动软件（**当前版本如此**），解决方法：
+安装完毕后，会发现在应用列表中点击应用图标无法启动软件（**当前版本如此**），解决方案：
 
 先获取操作系统的用户名：
 
@@ -281,7 +289,7 @@ sudo apt install docky
 whoami
 ```
 
-记录输出的内容，如我的用户名为：`inkss`，然后终端下修改 sudo 组：
+记录输出的内容，如我的用户名为：`inkss`，然后终端下修改 sudoers ：
 
 ```sh
 sudo gedit /etc/sudoers
@@ -314,8 +322,8 @@ Exec=sudo netease-cloud-music %U
 ```sh
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install google-chrome-stable
+sudo apt update
+sudo apt install google-chrome-stable
 ```
 
 ####  3.2 Shadowsocks
@@ -346,7 +354,7 @@ sudo apt install neofetch
 
 #### 3.4 Typora
 
-一款非常好用的 MD 编辑、阅读软件。
+这是一款非常好用的 MD 编辑、阅读软件。
 
 ```sh
 # optional, but recommended
@@ -369,8 +377,7 @@ sudo apt-get install typora
 先这样：
 
 ```sh
-wget -nv -O Release.key \
-  https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+wget -nv -O Release.key \ https://build.opensuse.org/projects/home:manuelschneid3r/public_key
 sudo apt-key add - < Release.key
 sudo apt-get update
 ```
@@ -379,8 +386,8 @@ sudo apt-get update
 
 ```sh
 sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-sudo apt-get update
-sudo apt-get install albert
+sudo apt update
+sudo apt install albert
 ```
 
 ![1533658672899](assets/1533658672899.png)
@@ -494,7 +501,7 @@ Snap 通常从 Snap Store 安装。您可以在不登录的情况下与 Snap Sto
 snap find <query>
 
 # 附加命令
---private：搜索死人 snap 包
+--private：搜索私人 snap 包
 ```
 
 * 安装 snap 包
