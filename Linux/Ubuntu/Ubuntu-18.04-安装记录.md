@@ -29,6 +29,7 @@
   * [3 一般性软件安装（谷歌、SS、Typora 等）](#3-一般性软件安装)
   * [4 Ubuntu 18.04 Gnome 必备扩展](#4-gnome-扩展)
   * [5 使用 Snap 包安装软件（含介绍）](#5-使用-snap-包安装软件)
+  * [6 文件备份同步（本地 & 云端）](#6-文件备份同步)
 
 ------
 
@@ -264,7 +265,7 @@ sudo apt install docky
 
 克隆或者下载压缩包到本机，在终端下执行命令：`./install.sh` 安装环境即可。
 
-下载容器的地址：[Index of /deepin/pool/non-free/d/](http://mirrors.aliyun.com/deepin/pool/non-free/d/) ，其 ReadMe 中写的很清楚，这里不再重复。
+容器下载地址：[Index of /deepin/pool/non-free/d/](http://mirrors.aliyun.com/deepin/pool/non-free/d/) ，使用方法见仓库中的 ReadMe 文件。
 
 > **关于托盘**：安装 *TopIconPlus* 的 gnome-shell 扩展。
 >
@@ -436,7 +437,7 @@ sudo apt install chrome-gnome-shell
 
 浏览器插件安装完成后点击 *插件图标* 就能进入：**[Shell 扩展商店](https://extensions.gnome.org/)**
 
-* **Gnome 扩展推荐：**
+#### Gnome 扩展推荐
 
 | 扩展                                                         | 简要功能描述                          |
 | :----------------------------------------------------------- | :------------------------------------ |
@@ -584,6 +585,49 @@ snap install android-studio --classic
 ```sh
 snap install sublime-text --classic
 ```
+
+### 6 文件备份同步
+
+#### 6.1 FreeFileSync
+
+[FreeFileSync](https://freefilesync.org/) 是一款本地同步**备份**软件：如将本地硬盘上的文件同步到移动硬盘上。可以做到增量备份、自动识别差异项等。同步方式有：*双向、镜像、更新* 。
+
+本身是一款免费的跨平台软件（Windows、MAC、Linux），可以通过捐赠获得免安装版本（然而只有 Windows 和 MAC 版）。
+
+下载地址：[Download FreeFileSync](https://freefilesync.org/download.php)
+
+Linux 版本下载文件为一个压缩包，解压后直接点击 *FreeFileSync* 文件就能使用，所以也就没有桌面图标啦。
+
+解决图标（有工具就绝对不手写的态度）：
+
+```sh
+# 安装软件 gnome-desktop-item-edit
+# –-no-install-recommends 参数避免安装非必须的文件，从而减小体积
+sudo apt install --no-install-recommends gnome-panel
+
+# 创建应用程序启动方式
+sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
+```
+
+![1533959661913](assets/1533959661913.png)
+
+执行命令后会打开如上图所示窗口，然后就是一些参数的填写：
+
+命令：点浏览展开到解压目录，选择 *FreeFileSync* 的可执行文件（图中解压目录位于 `~/App/` 目录）。
+
+图标：解压包中有一个名为 *Resources.zip* 的压缩包，含有一些图片，从中选取软件图标。
+
+![1533960457242](assets/1533960457242.png)
+
+#### 6.2 坚果云
+
+[坚果云](https://www.jianguoyun.com/) 是一款云端**同步**软件，与同类的 *OneDrive* 相比，坚果云做到了全平台兼容。
+
+其免费版本使用流量限制、空间不限原则（下载 3G/月，上传 1G/月）；专业版一年 42G 空间、不限流量，*199.90* 元（*差不多是处于打折状态下 Office 365 的价格，有 1T OneDrive 空间*）。
+
+下载地址：[坚果云 Linux 版](https://www.jianguoyun.com/s/downloads/linux) （普通的 deb 安装包）
+
+![1533960707407](assets/1533960707407.png)
 
 未完待续 ing...
 
