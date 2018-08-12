@@ -29,7 +29,7 @@
   * [3 一般性软件安装（谷歌、SS、Typora 等）](#3-一般性软件安装)
   * [4 Ubuntu 18.04 Gnome 必备扩展](#4-gnome-扩展)
   * [5 使用 Snap 包安装软件（含介绍）](#5-使用-snap-包安装软件)
-  * [6 文件备份同步（本地 & 云端）](#6-文件备份同步)
+  * [6 文件备份同步传输（本地 & 云端 & 局域网）](#6-文件备份同步)
 
 ------
 
@@ -628,6 +628,55 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 下载地址：[坚果云 Linux 版](https://www.jianguoyun.com/s/downloads/linux) （普通的 deb 安装包）
 
 ![1533960707407](assets/1533960707407.png)
+
+#### 6.3 Chfs
+
+
+
+该程序是一个免费的、HTTP 协议的文件共享服务器，使用浏览器可以快速访问。它具有以下特点：
+
+* 单个文件，整个软件只有一个可执行程序，无配置文件等其他文件
+* 跨平台运行，支持主流平台：Windows，Linux 和 Mac
+* 界面简洁，简单易用
+* 支持扫码下载和手机端访问，手机与电脑之间共享文件非常方便
+* 支持账户权限控制和地址过滤
+* 支持快速分享文字片段
+
+与其他常用文件共享方式（如 FTP，飞秋，网盘，自己建站）相比，具有使用简单，适用场景更多的优点，在个人使用以及共享给他人的场景中非常方便快捷。
+
+下载地址：[CuteHttpFileServer](http://iscute.cn/chfs) ，使用方案见网站说明。
+
+![1534069524287](assets/1534069524287.png)
+
+【可选】添加快捷功能到右键
+
+![1534069594104](assets/1534069594104.png)
+
+首先安装软件 **[Filemanager-actions](https://github.com/GNOME/filemanager-actions)**：
+
+```sh
+# 添加 PPA
+sudo add-apt-repository ppa:daniel-marynicz/filemanager-actions
+
+# 安装 Nautilus 管理器的，软件名称：fma-config-tool
+sudo apt-get install filemanager-actions-nautilus-extension
+```
+
+在应用列表中找到：*Filemanager-Actions* ，打开软件：
+
+![1534069966195](assets/1534069966195.png)
+
+**文件**选项可以新建菜单和动作。相应命令填写内容如下：
+
+打开连接：
+
+* 命令：*路径*：`chfs` ；*参数*：`--port=8988 --path=%f` ；*工作目录*：`%f`
+* 执行：*Execution mode*：`显示输出`
+
+关闭连接：
+
+* 命令：*路径*：`kill` ；*参数*：`$(pidof chfs)` ；*工作目录*：`%d`
+* 执行：*Execution mode*：`显示输出`
 
 未完待续 ing...
 
