@@ -1,3 +1,5 @@
+![1534597006386](assets/1534597006386.png)
+
 # Ubuntu 18.04 安装、配置和美化
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
@@ -49,11 +51,11 @@
 
   - 解压镜像文件：
 
-    准备一个干净的 FAT32 的 U 盘（ *NTFS 不行* ），使用压缩工具（ *WinRAR，7z 等* ）对 Ubuntu 的镜像文件进行解压，解压目录为 U 盘根目录。
+    准备一个 **干净** 的 FAT32 的 U 盘（ *NTFS 不行* ），使用压缩工具（ *WinRAR，7z 等* ）对 Ubuntu 的镜像文件进行解压，解压目录为 U 盘根目录。
 
   - 使用刻录工具：
 
-    Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是需要注意的是这个工具刻录后的 U 盘只有 Legacy 引导 ，所以只能抛弃该软件。然后在网上简单的搜索后找到了另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)*，提到了其具有**免安装、绿色版、支持 UEFI 引导**的特点，那么就选用它了。
+    Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是需要注意的是这个工具刻录后的 U 盘只有 Legacy 引导 ，所以只能抛弃该软件。然后在网上简单的搜索后找到了另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)*，提到了其具有 **免安装、绿色版、支持 UEFI 引导** 的特点，那么就选用它了。
 
 > 刻录到 U 盘的方式二选一，过程不多赘述，使用 Rufus 刻录时分区类型选择 `GPT`。
 
@@ -61,23 +63,23 @@
 
 本次目标是做一个双系统出来，所以保留原 Windows 系统，压缩出一个分区给 Ubuntu 使用。
 
-打开 Windows 的文件管理器（快捷键 Win + E），展开顶部选择**计算机**→**管理**。
+打开 Windows 的文件管理器（快捷键 Win + E），展开顶部选择 **计算机**→**管理**。
 
-然后选择**磁盘管理工具**，对相应分区进行压缩。
+然后选择 **磁盘管理工具** ，对相应分区进行压缩。
 
-> 具体的压缩教程可搜索查询，需要注意一下对压缩后的新分区**不要新建简单卷或格式化**。
+> 具体的压缩教程可搜索查询，需要注意一下对压缩后的新分区 **不要新建简单卷或格式化** 。
 
 ### 3 安装系统
 
 正常的安装过程，诸如对 BIOS 进行设置之类，网上教程很多，这里不多赘述。
 
-在到 *安装类型* 这一步时，如果你在上一步压缩完分区后，没有新建简单卷，那么就会多出一个**安装 Ubuntu，与 Windows boot manager 共存**这一选项，那么就只需默认无脑下一步即可。
+在到 *安装类型* 这一步时，如果你在上一步压缩完分区后，没有新建简单卷，那么就会多出一个 **安装 Ubuntu，与 Windows boot manager 共存** 这一选项，那么就只需默认无脑下一步即可。
 
 而如果需要自主划分分区，就选择 *其他选项 。*分区只推荐划分出根 `/` 和家目录 `/home`。
 
-> 注意1：为了系统的稳定，安装过程中请连上网络，勾选**安装 Ubuntu 时下载更新**。
+> 注意1：为了系统的稳定，安装过程中请连上网络，勾选 **安装 Ubuntu 时下载更新** 。
 >
-> 注意2：安装时选择**最小安装**，除非你对雷鸟、LibreOffice  之类的软件感兴趣。
+> 注意2：安装时选择 **最小安装** ，除非你对雷鸟、LibreOffice  之类的软件感兴趣。
 
 ------
 
@@ -87,9 +89,9 @@
 
 如果在上一步中勾选了安装 Ubuntu 时下载更新，那么大部分的系统更新已经下载完毕。
 
-不过为了确保，先移步到**设置**→**详细信息**，点击右下角的**检查更新**，如果存在更新，那么完成相应的更新操作。
+先移步到 **设置**→**详细信息** ，点击右下角的 **检查更新** ，如果存在软件更新，那么完成相应的更新操作。
 
-接着移步到**设置**→**区域和语言**→**管理已安装的语言**，在此处完成一个更新下载。
+接着移步到 **设置**→**区域和语言**→**管理已安装的语言** ，在此处完成一个更新下载。
 
 最后，为了确保系统和软件都更新完毕，打开终端使用命令安装更新：
 
@@ -125,7 +127,7 @@ chsh -s /usr/bin/zsh
 
 ## 三 配置与美化系统
 
-![1533563621414](assets/1533563621414.png)
+![截屏_2018-08-17-101725-1920x1080](assets/截屏_2018-08-17-101725-1920x1080.png)
 
 ### 1 Gnome-tweak-tool
 
@@ -135,15 +137,15 @@ Ubuntu 18.04 与 16.04 最大的变动就是抛弃了 Unity 桌面，使用 Gnom
 sudo apt install gnome-tweak-tool
 ```
 
-然后移步到 **Ubuntu 软件**→**附加组件**，在此处安装相应的 Shell 组件。
+然后移步到 **Ubuntu 软件**→**附加组件** ，在此处安装相应的 Shell 组件。
 
 为了自定义 Shell 主题，需要安装、启用插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
 
 附录：一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
 
-![1533284853720](assets/1533284853720.png)
+![1534597132879](assets/1534597132879.png)
 
-> 上图中主题和图标的的下载地址：[OSX-Arc](https://www.gnome-look.org/p/1167049/)、[MacOS Icon](https://www.gnome-look.org/p/1102582/)
+> 上图中主题和图标的的下载地址：[Sierra-light](https://www.opendesktop.org/c/1460761561)、[MacOS Icon](https://www.gnome-look.org/p/1102582/)
 
 ### 2 主题 图标 字体
 
@@ -160,7 +162,7 @@ sudo apt install gnome-tweak-tool
 # 打开后终端最小化，不要关闭
 sudo nautilus
 
-# 或者放到本地目录中
+# 或者放到本地目录中就无需 root 权限了
 ```
 
 附录一个在 Linux 下特别好用的字体：*文泉驿系列字体*
@@ -225,7 +227,7 @@ sudo apt install -f
 # 一般 deb 包都是如此安装的，如果失败就去解决依赖问题
 ```
 
-然后移步到**设置**→**区域和语言**，删除一部分输入源，只保留 *汉语*  。接着选择**管理已安装的语言**，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置**，选择加号添加搜狗输入法（见下图）：
+然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留 *汉语*  。接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置 **，选择加号添加搜狗输入法（见下图）：
 
 ![1533284894634](assets/1533284894634.png)
 
@@ -259,21 +261,21 @@ sudo apt install docky
 
 ###  1 DeepinWine 环境
 
-曾经试用过一次 CrossOver ，用其安装了 TIM ，心想如果没太大毛病就购买这个软件了，只是蛮遗憾的一堆小问题，虽然不影响使用，但是影响体验呀。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，所以这里也是**借用 Deepin 的贡献**达到使用 QQ 的目的。
+曾经试用过一次 CrossOver ，用其安装了 TIM ，心想如果没太大毛病就购买这个软件了，只是蛮遗憾的一堆小问题，虽然不影响使用，但是影响体验呀。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，所以这里也是 **借用 Deepin 的贡献** 达到使用 QQ 的目的。
 
 首先需要在本机下载 Deepin-Wine 环境：[**deepin-wine-ubuntu**](https://github.com/wszqkzqk/deepin-wine-ubuntu)
 
-克隆或者下载压缩包到本机，在终端下执行命令：`./install.sh` 安装环境即可。
+克隆或者下载压缩包到本机，解压后在终端下执行命令：`./install.sh` 安装环境即可。
 
 容器下载地址：[Index of /deepin/pool/non-free/d/](http://mirrors.aliyun.com/deepin/pool/non-free/d/) ，使用方法见仓库中的 ReadMe 文件。
 
 > **关于托盘**：安装 *TopIconPlus* 的 gnome-shell 扩展。
 >
-> 然后在所有软件中找到**优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus* 。
+> 然后在所有软件中找到 **优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus* 。
 >
 > 参考资料地址：[多发行版通过！目前 Linux 上真正完美稳定的 wine QQ 方案](https://www.lulinux.com/archives/1319)
 
-![](assets/95147.png)
+![截屏_2018-08-17-104030-1920x1080](assets/截屏_2018-08-17-104030-1920x1080.png)
 
 ### 2 网易云音乐
 
@@ -312,7 +314,7 @@ Exec=sudo netease-cloud-music %U
 >
 > 参考资料地址：[（已解决）ubuntu下网易云音乐无法打开](https://blog.csdn.net/Handoking/article/details/81026651)
 
-![1533467698254](assets/1533467698254.png)
+![截屏_2018-08-17-104625-1920x1080](assets/截屏_2018-08-17-104625-1920x1080.png)
 
 ### 3 一般性软件安装
 
@@ -333,13 +335,13 @@ sudo apt install google-chrome-stable
 
 下载到的是 AppImage 格式，是可以直接双击运行的。
 
-* 关于自启动：打开应用列表找到 *启动应用程序* ，选择**添加**，命令中点浏览，选择安装程序即可。 
+* 关于自启动：打开应用列表找到 *启动应用程序* ，选择 **添加** ，命令中点浏览，选择安装程序即可。 
 
 * 关于代理类型：
 
-  软件中的**配置编辑器**，本地地址：`127.0.0.1`，本地端口：`1080`，服务器类型：`SOCKS5`
+  软件中的 **配置编辑器** ，本地地址：`127.0.0.1`，本地端口：`1080`，服务器类型：`SOCKS5`
 
-  系统**设置**中，**网络**→**网络代理**，类型选择手动。Socks 主机：`127.0.0.1` `1080` ，其余的置空。
+  系统 **设置** 中，**网络**→**网络代理** ，类型选择手动。Socks 主机：`127.0.0.1` `1080` ，其余的置空。
 
 > 如此代理，是为全局代理。而如何使用 PAC 呢，请让你的 SS 提供商提供支持在线填写过滤规则的面板。
 
@@ -369,7 +371,7 @@ sudo apt-get update
 sudo apt-get install typora
 ```
 
-![1533563472295](assets/1533563472295.png)
+![1534597786810](assets/1534597786810.png)
 
 #### 3.5 Albert
 
@@ -590,7 +592,7 @@ snap install sublime-text --classic
 
 #### 6.1 FreeFileSync
 
-[FreeFileSync](https://freefilesync.org/) 是一款本地同步**备份**软件：如将本地硬盘上的文件同步到移动硬盘上。可以做到增量备份、自动识别差异项等。同步方式有：*双向、镜像、更新* 。
+[FreeFileSync](https://freefilesync.org/) 是一款本地同步 **备份** 软件：如将本地硬盘上的文件同步到移动硬盘上。可以做到增量备份、自动识别差异项等。同步方式有：*双向、镜像、更新* 。
 
 本身是一款免费的跨平台软件（Windows、MAC、Linux），可以通过捐赠获得免安装版本（然而只有 Windows 和 MAC 版）。
 
@@ -650,7 +652,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 【可选】添加快捷功能到右键
 
-![1534069594104](assets/1534069594104.png)
+![1534597914391](assets/1534597914391.png)
 
 首先安装软件 **[Filemanager-actions](https://github.com/GNOME/filemanager-actions)**：
 
@@ -677,8 +679,6 @@ sudo apt-get install filemanager-actions-nautilus-extension
 
 * 命令：*路径*：`kill` ；*参数*：`$(pidof chfs)` ；*工作目录*：`%d`
 * 执行：*Execution mode*：`显示输出`
-
-未完待续 ing...
 
 ------
 
