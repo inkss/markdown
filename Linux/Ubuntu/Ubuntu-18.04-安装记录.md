@@ -5,7 +5,7 @@
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
 - 简介：曾经记录过一篇安装 Ubuntu 18.04 的注意事项文章，但是只记录了一些安装后小坑的处理，本次则使用双系统的方式对系统进行安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
-- 地址：本文章[原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（推荐下载后使用 [Typora](https://typora.io/) 阅读）。
+- 地址：本文章[原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[PDF 版本下载](https://github.com/inkss/markdown/raw/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.pdf)）。
 
 ------
 
@@ -143,7 +143,7 @@ sudo apt install gnome-tweak-tool
 
 附录：一个下载主题的网站：[Gnome-look](https://www.gnome-look.org/) 
 
-![1534597132879](assets/1534597132879.png)
+![1534600724112](assets/1534600724112.png)
 
 > 上图中主题和图标的的下载地址：[Sierra-light](https://www.opendesktop.org/c/1460761561)、[MacOS Icon](https://www.gnome-look.org/p/1102582/)
 
@@ -229,13 +229,13 @@ sudo apt install -f
 
 然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留 *汉语*  。接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置 **，选择加号添加搜狗输入法（见下图）：
 
-![1533284894634](assets/1533284894634.png)
+![1534600787168](assets/1534600787168.png)
 
 > 如果没有找到搜狗，就重启系统，再次重复以上步骤即可。
 >
 > 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 
 >
-> ![1533284916734](assets/1533284916734.png)
+> ![1534600823337](assets/1534600823337.png)
 
 ### 5 底栏 Docky
 
@@ -314,7 +314,7 @@ Exec=sudo netease-cloud-music %U
 >
 > 参考资料地址：[（已解决）ubuntu下网易云音乐无法打开](https://blog.csdn.net/Handoking/article/details/81026651)
 
-![截屏_2018-08-17-104625-1920x1080](assets/截屏_2018-08-17-104625-1920x1080.png)
+![1534600685241](assets/1534600685241.png)
 
 ### 3 一般性软件安装
 
@@ -351,13 +351,13 @@ sudo apt install google-chrome-stable
 sudo apt install neofetch
 ```
 
-这是一款支持终端下查询系统配置信息的软件（实际上除了装逼一无所用）
+终端下查询系统配置信息。
 
-![1533563016828](assets/1533563016828.png)
+![1534600529220](assets/1534600529220.png)
 
 #### 3.4 Typora
 
-这是一款非常好用的 MD 编辑、阅读软件。
+颜值很高的实时 MD 编辑、阅读软件。
 
 ```sh
 # optional, but recommended
@@ -365,13 +365,13 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
 
 # add Typora's repository
 sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo apt-get update
+sudo apt update
 
 # install typora
-sudo apt-get install typora
+sudo apt install typora
 ```
 
-![1534597786810](assets/1534597786810.png)
+![1534600622552](assets/1534600622552.png)
 
 #### 3.5 Albert
 
@@ -382,7 +382,7 @@ sudo apt-get install typora
 ```sh
 wget -nv -O Release.key \ https://build.opensuse.org/projects/home:manuelschneid3r/public_key
 sudo apt-key add - < Release.key
-sudo apt-get update
+sudo apt update
 ```
 
 然后这样：
@@ -393,7 +393,7 @@ sudo apt update
 sudo apt install albert
 ```
 
-![1533658672899](assets/1533658672899.png)
+![1534600966339](assets/1534600966339.png)
 
 #### 3.6 popup-dict
 
@@ -423,7 +423,7 @@ sudo pip3 install popupdict
 
 运行软件：使用 Gnome 扩展  [`Popup dict Switcher`](https://extensions.gnome.org/extension/1349/popup-dict-switcher/)
 
-![img](assets/popup.png)
+![1534601133498](assets/1534601133498.png)
 
 ### 4 Gnome 扩展
 
@@ -468,6 +468,8 @@ sudo apt install chrome-gnome-shell
 | [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题           |
 
 > 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，如果存在安装失败的情况，请检查是否满足依赖。
+
+![1534601235454](assets/1534601235454.png)
 
 ### 5 使用 Snap 包安装软件
 
@@ -611,7 +613,7 @@ sudo apt install --no-install-recommends gnome-panel
 sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 ```
 
-![1533959661913](assets/1533959661913.png)
+![1534601353291](assets/1534601353291.png)
 
 执行命令后会打开如上图所示窗口，然后就是一些参数的填写：
 
@@ -619,7 +621,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 图标：解压包中有一个名为 *Resources.zip* 的压缩包，含有一些图片，从中选取软件图标。
 
-![1533960457242](assets/1533960457242.png)
+![1534601461327](assets/1534601461327.png)
 
 #### 6.2 坚果云
 
@@ -629,11 +631,9 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[坚果云 Linux 版](https://www.jianguoyun.com/s/downloads/linux) （普通的 deb 安装包）
 
-![1533960707407](assets/1533960707407.png)
+![1534601497593](assets/1534601497593.png)
 
 #### 6.3 Chfs
-
-
 
 该程序是一个免费的、HTTP 协议的文件共享服务器，使用浏览器可以快速访问。它具有以下特点：
 
@@ -648,7 +648,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[CuteHttpFileServer](http://iscute.cn/chfs) ，使用方案见网站说明。
 
-![1534069524287](assets/1534069524287.png)
+![1534601590131](assets/1534601590131.png)
 
 【可选】添加快捷功能到右键
 
@@ -661,14 +661,10 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 sudo add-apt-repository ppa:daniel-marynicz/filemanager-actions
 
 # 安装 Nautilus 管理器的，软件名称：fma-config-tool
-sudo apt-get install filemanager-actions-nautilus-extension
+sudo apt install filemanager-actions-nautilus-extension
 ```
 
-在应用列表中找到：*Filemanager-Actions* ，打开软件：
-
-![1534069966195](assets/1534069966195.png)
-
-**文件**选项可以新建菜单和动作。相应命令填写内容如下：
+在应用列表中找到：*Filemanager-Actions* ，**文件**选项可以新建菜单和动作。相应命令填写内容如下：
 
 打开连接：
 
@@ -679,6 +675,8 @@ sudo apt-get install filemanager-actions-nautilus-extension
 
 * 命令：*路径*：`kill` ；*参数*：`$(pidof chfs)` ；*工作目录*：`%d`
 * 执行：*Execution mode*：`显示输出`
+
+![1534601669302](assets/1534601669302.png)
 
 ------
 
