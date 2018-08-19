@@ -4,7 +4,7 @@
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
-- 简介：使用双系统的方式对系统进行安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
+- 简介：使用双系统的方式进行系统安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
 - 地址：本文章[原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[PDF 版本下载](https://github.com/inkss/markdown/raw/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.pdf)）。
 
 ------
@@ -89,7 +89,7 @@
 
 如果在上一步中勾选了安装 Ubuntu 时下载更新，那么大部分的系统更新已经下载完毕。
 
-先移步到 **设置**→**详细信息** ，点击右下角的 **检查更新** ，如果存在软件更新，那么完成相应的更新操作。
+先移步到 **设置**→**详细信息** ，点击右下角的 **检查更新** ，如果存在软件更新，那么完成相应的更新。
 
 接着移步到 **设置**→**区域和语言**→**管理已安装的语言** ，在此处完成一个更新下载。
 
@@ -100,7 +100,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-也可以不使用命令行，使用 *软件更新器* 对系统和软件进行更新。
+**也可以不使用命令行**，使用 *软件更新器* 对系统和软件进行更新。
 
 ### 2 双系统的时区问题
 
@@ -112,7 +112,7 @@ timedatectl set-local-rtc 1
 
 ### 3 更换终端类型
 
-这里推荐使用 **oh-my-zsh** ，因为其具有十分方便的 *Tab* 补全能力：
+这里推荐使用 **oh-my-zsh** ，因为其具有十分智能的 *Tab* 补全能力：
 
 ```sh
 sudo apt-get install git
@@ -131,7 +131,7 @@ chsh -s /usr/bin/zsh
 
 ### 1 Gnome-tweak-tool
 
-Ubuntu 18.04 与 16.04 最大的变动就是抛弃了 Unity 桌面，使用 Gnome ，所以先安装以下工具：
+Ubuntu 18.04 与 16.04 最大的变动就是抛弃了 Unity 桌面，转而使用 Gnome ，所以先安装以下工具：
 
 ```sh
 sudo apt install gnome-tweak-tool
@@ -155,7 +155,7 @@ sudo apt install gnome-tweak-tool
 - 图标存放目录：`/usr/share/icons` 或 `~/.icons`
 - 字体存放目录：`/usr/share/fonts` 或 `~/.fonts`
 
-*/usr/share* 目录需要 root 权限才能修改，秉着有图形界面就不用终端的心态：
+其中 */usr/share* 目录需要 root 权限才能修改，秉着有图形界面就不用终端的心态：
 
 ```sh
 # 终端下打开一个具有管理员权限的文件管理器
@@ -185,7 +185,7 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
 
 定位到目录：`/boot/grub`，在该目录下新建文件夹：`themes`，把解压出的文件拷贝到文件夹中。
 
-接着终端下调用 gedit 修改 *grub* 文件：
+接着（终端下）使用 gedit 修改 *grub* 文件：
 
 ```sh
 sudo gedit /etc/default/grub
@@ -214,7 +214,7 @@ Ubuntu 18.04 没有提供 Fcitx 输入框架，所以先安装该框架：
 sudo apt install fcitx
 ```
 
-接着到[搜狗输入法官网](https://pinyin.sogou.com/linux/?r=pinyin)下载输入法安装包，将会下载到一个 deb 格式的安装包，安装它：
+先到[搜狗输入法官网](https://pinyin.sogou.com/linux/?r=pinyin)下载输入法安装包，将会下载到一个 deb 格式的安装包，安装它：
 
 ```sh
 # 首先移步到文件管理器的下载目录，终端下输入以下命令进行安装
@@ -233,9 +233,9 @@ sudo apt install -f
 
 > 如果没有找到搜狗，就重启系统，再次重复以上步骤即可。
 >
-> 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 
->
-> ![1534600823337](assets/1534600823337.png)
+> 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 。
+
+![1534600823337](assets/1534600823337.png)
 
 ### 5 底栏 Docky
 
@@ -265,7 +265,7 @@ sudo apt install docky
 
 首先需要在本机下载 Deepin-Wine 环境：[**deepin-wine-ubuntu**](https://github.com/wszqkzqk/deepin-wine-ubuntu)
 
-克隆或者下载压缩包到本机，解压后在终端下执行命令：`./install.sh` 安装环境即可。
+克隆或者下载压缩包到本机，**解压后**在终端目录下执行命令：`./install.sh` 安装环境即可。
 
 容器下载地址：[Index of /deepin/pool/non-free/d/](http://mirrors.aliyun.com/deepin/pool/non-free/d/) ，使用方法见仓库中的 ReadMe 文件。
 
@@ -273,7 +273,6 @@ sudo apt install docky
 >
 > 然后在所有软件中找到 **优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus* 。
 >
-> 参考资料地址：[多发行版通过！目前 Linux 上真正完美稳定的 wine QQ 方案](https://www.lulinux.com/archives/1319)
 
 ![截屏_2018-08-17-104030-1920x1080](assets/截屏_2018-08-17-104030-1920x1080.png)
 
@@ -283,7 +282,7 @@ sudo apt install docky
 
 首先去网易云音乐官网[下载安装包](https://music.163.com/#/download)（Ubuntu 16.04 64 位），然后就是正常的 deb 包安装过程。
 
-安装完毕后，会发现在应用列表中点击应用图标无法启动软件（**当前版本如此**），解决方案：
+安装完毕后，会发现在应用列表中**点击应用图标无法启动软件**（ *当前版本如此* ），解决方案：
 
 先获取操作系统的用户名：
 
@@ -310,7 +309,7 @@ sudo gedit /usr/share/applications/netease-cloud-music.desktop
 Exec=sudo netease-cloud-music %U
 ```
 
-> 原因，在终端下可以通过 `sudo netease-cloud-music` 打开软件，只是无疑这个方法很是繁琐，所以不如将这个 sudo 放到 desktop 中，这样当点击应用图标后就是已管理员权限启动的，而且不需要密码。
+> 另外一种选择是在点击应用图标后，再点击右上角的菜单选择关机按钮，在弹出 *系统将在 60s 后关机* 界面后，网易云音乐在 60s 关机之前就能弹出界面。原因不详，暂时没查出相关事件。
 >
 > 参考资料地址：[（已解决）ubuntu下网易云音乐无法打开](https://blog.csdn.net/Handoking/article/details/81026651)
 
@@ -393,7 +392,7 @@ sudo apt update
 sudo apt install albert
 ```
 
-![1534600966339](assets/1534600966339.png)
+![1534646953596](assets/1534646953596.png)
 
 #### 3.6 popup-dict
 
@@ -427,7 +426,7 @@ sudo pip3 install popupdict
 
 ### 4 Gnome 扩展
 
-Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下的一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种通过浏览器对 Gnome 插件的安装管理方式：
+Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下的一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种**通过浏览器对 Gnome 插件的安装管理**方式：
 
 首先安装 Chrome Gnome Shell ：
 
@@ -467,7 +466,7 @@ sudo apt install chrome-gnome-shell
 | [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 顶栏显示应用图标（托盘显示）          |
 | [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题           |
 
-> 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，如果存在安装失败的情况，请检查是否满足依赖。
+> 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，如果存在安装失败的情况，请检查 **是否满足依赖** 。
 
 ![1534601235454](assets/1534601235454.png)
 
@@ -502,11 +501,8 @@ Snap 通常从 Snap Store 安装。您可以在不登录的情况下与 Snap Sto
 * 查找 snap 包
 
 ```sh
-# 默认情况下只会发现发布到stable发布渠道的快照
+# 默认情况下只会搜索发布到 stable 渠道的快照
 snap find <query>
-
-# 附加命令
---private：搜索私人 snap 包
 ```
 
 * 安装 snap 包
@@ -548,7 +544,7 @@ snap revert <snap>
 * 禁用与启用
 
 ```sh
-# 禁用快照。快照的二进制文件和服务将不再可用。但是所有数据仍然可用，并且可以轻松再次启用快照。
+# 禁用快照，快照的二进制文件和服务将不再可用。但是所有数据仍然可用，并且可以轻松再次启用快照
 snap disable <snap>
 
 # 启用快照
@@ -639,10 +635,8 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 * 单个文件，整个软件只有一个可执行程序，无配置文件等其他文件
 * 跨平台运行，支持主流平台：Windows，Linux 和 Mac
-* 界面简洁，简单易用
 * 支持扫码下载和手机端访问，手机与电脑之间共享文件非常方便
 * 支持账户权限控制和地址过滤
-* 支持快速分享文字片段
 
 与其他常用文件共享方式（如 FTP，飞秋，网盘，自己建站）相比，具有使用简单，适用场景更多的优点，在个人使用以及共享给他人的场景中非常方便快捷。
 
