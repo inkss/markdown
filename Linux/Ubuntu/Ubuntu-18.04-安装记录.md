@@ -4,7 +4,7 @@
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
-- 简介：使用双系统的方式进行系统安装。内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
+- 简介：主题上侧重基础日常使用环境的搭建，内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
 - 地址：本文章[原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[PDF 版本下载](https://github.com/inkss/markdown/raw/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.pdf)）。
 
 ------
@@ -39,7 +39,7 @@
 
 ### 1 引导盘
 
-鉴于现在都 18 年了，是时候抛弃 Legacy 引导，完全采用 UEFI 引导了。
+鉴于现在都 8102 年了，是时候完全抛弃 Legacy 引导，只采用 UEFI 引导了。
 
 而这里有两种选择（所有操作均在 Windows 下进行）：
 
@@ -65,7 +65,7 @@
 
 打开 Windows 的文件管理器（快捷键 Win + E），展开顶部选择 **计算机**→**管理**。
 
-然后选择 **磁盘管理工具** ，对相应分区进行压缩。
+然后选择 **磁盘管理工具** ，对相应分区进行压缩（单系统需求用户可以直接格盘重装）。
 
 > 具体的压缩教程可搜索查询，需要注意一下对压缩后的新分区 **不要新建简单卷或格式化** 。
 
@@ -75,7 +75,7 @@
 
 在到 *安装类型* 这一步时，如果你在上一步压缩完分区后，没有新建简单卷，那么就会多出一个 **安装 Ubuntu，与 Windows boot manager 共存** 这一选项，那么就只需默认无脑下一步即可。
 
-而如果需要自主划分分区，就选择 *其他选项 。*分区只推荐划分出根 `/` 和家目录 `/home`。
+而如果需要自主划分分区，就选择 *其他选项* 。分区只推荐划分出根 `/` 和家目录 `/home`。
 
 > 注意1：为了系统的稳定，安装过程中请连上网络，勾选 **安装 Ubuntu 时下载更新** 。
 >
@@ -165,7 +165,7 @@ sudo nautilus
 # 或者放到本地目录中就无需 root 权限了
 ```
 
-附录一个在 Linux 下特别好用的字体：*文泉驿系列字体*
+附录一个专为 Linux 设计的字体：*文泉驿系列字体*
 
 ```sh
 sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
@@ -183,7 +183,7 @@ sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
 
 首先下载主题包，为 zip 压缩包。解压出文件，使用 `sudo nautilus` 打开带权限的文件管理器。
 
-定位到目录：`/boot/grub`，在该目录下新建文件夹：`themes`，把解压出的文件拷贝到文件夹中。
+定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，把解压出的文件拷贝到文件夹中。
 
 接着（终端下）使用 gedit 修改 *grub* 文件：
 
@@ -227,7 +227,7 @@ sudo apt install -f
 # 一般 deb 包都是如此安装的，如果失败就去解决依赖问题
 ```
 
-然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留 *汉语*  。接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置 **，选择加号添加搜狗输入法（见下图）：
+然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留 *汉语*  。接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置** ，选择加号添加搜狗输入法（见下图）：
 
 ![1534600787168](assets/1534600787168.png)
 
@@ -265,13 +265,13 @@ sudo apt install docky
 
 首先需要在本机下载 Deepin-Wine 环境：[**deepin-wine-ubuntu**](https://github.com/wszqkzqk/deepin-wine-ubuntu)
 
-克隆或者下载压缩包到本机，**解压后**在终端目录下执行命令：`./install.sh` 安装环境即可。
+克隆或下载压缩包到本机，**解压后** 在终端目录下执行命令：`./install.sh` 安装环境。
 
 容器下载地址：[Index of /deepin/pool/non-free/d/](http://mirrors.aliyun.com/deepin/pool/non-free/d/) ，使用方法见仓库中的 ReadMe 文件。
 
 > **关于托盘**：安装 *TopIconPlus* 的 gnome-shell 扩展。
 >
-> 然后在所有软件中找到 **优化 (Gnome-tweak-tool) **，在扩展中打开 *Topicons plus* 。
+> 然后在所有软件中找到 **优化 (Gnome-tweak-tool)** ，在扩展中打开 *Topicons plus* 。
 >
 
 ![截屏_2018-08-17-104030-1920x1080](assets/截屏_2018-08-17-104030-1920x1080.png)
@@ -282,7 +282,7 @@ sudo apt install docky
 
 首先去网易云音乐官网[下载安装包](https://music.163.com/#/download)（Ubuntu 16.04 64 位），然后就是正常的 deb 包安装过程。
 
-安装完毕后，会发现在应用列表中**点击应用图标无法启动软件**（ *当前版本如此* ），解决方案：
+安装完毕后，会发现在应用列表中**点击应用图标无法启动软件** *（当前版本如此）*，解决方案：
 
 先获取操作系统的用户名：
 
@@ -309,7 +309,7 @@ sudo gedit /usr/share/applications/netease-cloud-music.desktop
 Exec=sudo netease-cloud-music %U
 ```
 
-> 另外一种选择是在点击应用图标后，再点击右上角的菜单选择关机按钮，在弹出 *系统将在 60s 后关机* 界面后，网易云音乐在 60s 关机之前就能弹出界面。原因不详，暂时没查出相关事件。
+> 另外一种选择是在点击应用图标后，再点击右上角的菜单选择关机按钮，在弹出 *系统将在 60s 后关机* 界面后，网易云音乐在 60s 关机之前就能弹出界面。原因不详，暂时没查出相关触发事件。
 >
 > 参考资料地址：[（已解决）ubuntu下网易云音乐无法打开](https://blog.csdn.net/Handoking/article/details/81026651)
 
@@ -374,7 +374,7 @@ sudo apt install typora
 
 #### 3.5 Albert
 
-这是一款非常好用的 *软件启动器* ，我在安装的时候按照添加 *PPA* 的方法安装失败了，如此便去其官网（[GitHub-Albert](https://albertlauncher.github.io/docs/installing/)）查找了一下，步骤上略显繁琐，这里记录一下：
+很实用的 *软件启动器* ，我在安装的时候按照添加 *PPA* 的方法安装失败了，如此便去其官网（[GitHub-Albert](https://albertlauncher.github.io/docs/installing/)）查找了一下，步骤上略显繁琐，这里记录一下：
 
 先这样：
 
@@ -426,7 +426,7 @@ sudo pip3 install popupdict
 
 ### 4 Gnome 扩展
 
-Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下的一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种**通过浏览器对 Gnome 插件的安装管理**方式：
+Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下的一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。在 [Gnome-tweak-tool](#1-gnome-tweak-tool) 一节中就提到通过 Ubuntu 软件中心下载、安装和管理 Gnome 扩展（附加组件），下面介绍一种 **通过浏览器对 Gnome 插件的安装管理** 方式：
 
 首先安装 Chrome Gnome Shell ：
 
@@ -621,7 +621,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 #### 6.2 坚果云
 
-[坚果云](https://www.jianguoyun.com/) 是一款云端**同步**软件，与同类的 *OneDrive* 相比，坚果云做到了全平台兼容。
+[坚果云](https://www.jianguoyun.com/) 是一款云端 **同步** 软件，与同类的 *OneDrive* 相比，坚果云做到了全平台兼容。
 
 其免费版本使用流量限制、空间不限原则（下载 3G/月，上传 1G/月）；专业版一年 42G 空间、不限流量，*199.90* 元（*差不多是处于打折状态下 Office 365 的价格，有 1T OneDrive 空间*）。
 
@@ -638,7 +638,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 * 支持扫码下载和手机端访问，手机与电脑之间共享文件非常方便
 * 支持账户权限控制和地址过滤
 
-与其他常用文件共享方式（如 FTP，飞秋，网盘，自己建站）相比，具有使用简单，适用场景更多的优点，在个人使用以及共享给他人的场景中非常方便快捷。
+与其他常用文件共享方式（如 FTP，飞秋，网盘，自己建站）相比，具有使用简单，适用场景更多的优点，在 **个人使用以及共享给他人的场景中非常方便快捷** 。
 
 下载地址：[CuteHttpFileServer](http://iscute.cn/chfs) ，使用方案见网站说明。
 
@@ -658,7 +658,7 @@ sudo add-apt-repository ppa:daniel-marynicz/filemanager-actions
 sudo apt install filemanager-actions-nautilus-extension
 ```
 
-在应用列表中找到：*Filemanager-Actions* ，**文件**选项可以新建菜单和动作。相应命令填写内容如下：
+在应用列表中找到：*Filemanager-Actions* ，**文件** 选项可以新建菜单和动作。相应命令填写内容如下：
 
 打开连接：
 
