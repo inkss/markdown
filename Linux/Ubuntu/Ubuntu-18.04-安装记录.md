@@ -4,7 +4,7 @@
 
 - 概述：UEFI 引导下的 Win10 与 Ubuntu 双系统安装记录。
 - 前置：在 Windows 系统上通过压缩卷给 Ubuntu 划分空间安装之。
-- 简介：主题上侧重基础日常使用环境的搭建，内容上包括：系统的安装、配置、美化和一些软件的安装介绍。
+- 简介：主题上侧重日常使用环境的搭建，内容上包括：系统的安装、配置、美化和一些软件的安装说明。
 - 地址：本文章[原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md)存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[PDF 版本下载](https://github.com/inkss/markdown/raw/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.pdf)）。
 
 ------
