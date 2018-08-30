@@ -32,6 +32,7 @@
   * [4 Ubuntu 18.04 Gnome 扩展推荐](#4-gnome-扩展)
   * [5 使用 Snap 包安装软件](#5-使用-snap-包安装软件)
   * [6 文件备份同步传输（本地 & 云端 & 局域网）](#6-文件备份同步)
+  * [7 触摸板手势（libinput-gestures）](#7-触摸板手势)
 
 ------
 
@@ -127,7 +128,7 @@ chsh -s /usr/bin/zsh
 
 ## 三 配置与美化系统
 
-![截屏_2018-08-17-101725-1920x1080](assets/截屏_2018-08-17-101725-1920x1080.png)
+![1535633126605](assets/1535633126605.png)
 
 ### 1 Gnome-tweak-tool
 
@@ -229,13 +230,13 @@ sudo apt install -f
 
 然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留 *汉语*  。接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置** ，选择加号添加搜狗输入法（见下图）：
 
-![1534600787168](assets/1534600787168.png)
+![1535633290754](assets/1535633290754.png)
 
 > 如果没有找到搜狗，就重启系统，再次重复以上步骤即可。
 >
 > 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 。
 
-![1534600823337](assets/1534600823337.png)
+![1535633389141](assets/1535633389141.png)
 
 ### 5 底栏 Docky
 
@@ -273,8 +274,6 @@ sudo apt install docky
 >
 > 然后在所有软件中找到 **优化 (Gnome-tweak-tool)** ，在扩展中打开 *Topicons plus* 。
 >
-
-![截屏_2018-08-17-104030-1920x1080](assets/截屏_2018-08-17-104030-1920x1080.png)
 
 ### 2 网易云音乐
 
@@ -392,7 +391,7 @@ sudo apt update
 sudo apt install albert
 ```
 
-![1534646953596](assets/1534646953596.png)
+![1535633663658](assets/1535633663658.png)
 
 #### 3.6 popup-dict
 
@@ -609,7 +608,7 @@ sudo apt install --no-install-recommends gnome-panel
 sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 ```
 
-![1534601353291](assets/1534601353291.png)
+![1535633929426](assets/1535633929426.png)
 
 执行命令后会打开如上图所示窗口，然后就是一些参数的填写：
 
@@ -627,7 +626,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[坚果云 Linux 版](https://www.jianguoyun.com/s/downloads/linux) （普通的 deb 安装包）
 
-![1534601497593](assets/1534601497593.png)
+![1535633980730](assets/1535633980730.png)
 
 #### 6.3 Chfs
 
@@ -646,7 +645,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 【可选】添加快捷功能到右键
 
-![1534597914391](assets/1534597914391.png)
+![1535634261102](assets/1535634261102.png)
 
 首先安装软件 **[Filemanager-actions](https://github.com/GNOME/filemanager-actions)**：
 
@@ -672,6 +671,66 @@ sudo apt install filemanager-actions-nautilus-extension
 
 ![1534601669302](assets/1534601669302.png)
 
+### 7 触摸板手势
+
+触摸板手势这里有两个选择： [touchegg](https://github.com/JoseExposito/touchegg) 和 [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
+
+touchegg 从提交记录上看似乎有些年代偏久了，而且 Issues 也有一堆问题，所以这里选用 libinput-gestures 。
+
+**安装步骤：**
+
+IMPORTANT: You must be a member of the *input* group to have permission to read the touchpad device:
+
+```sh
+sudo gpasswd -a $USER input # 完成之后重启操作系统
+```
+
+Debian and Ubuntu users may also need to install `libinput-tools` if that package exists in your release:
+
+```sh
+sudo apt install libinput-tools
+```
+
+Install this software:
+
+```sh
+git clone https://github.com/bulletmark/libinput-gestures.git
+cd libinput-gestures
+sudo make install # (or sudo ./libinput-gestures-setup install)
+```
+
+**启动和停止：**
+
+```sh
+libinput-gestures-setup start
+libinput-gestures-setup autostart
+
+libinput-gestures-setup stop
+libinput-gestures-setup autostop
+```
+
+**卸载：**
+
+```sh
+libinput-gestures-setup stop
+libinput-gestures-setup autostop
+sudo libinput-gestures-setup uninstall
+```
+
 ------
 
-[**回到顶部**](#目录) © inkss
+## 附录
+
+**软件图标（.desktop）文件位置：**
+
+* `/usr/share/applications` # 大部分启动图标都在此
+* `~/.local/share/applications` # 一部分本地图标
+* `/var/lib/snapd/desktop/applications` # snap 类软件在此
+
+对于 **.desktop* 文件，可以使用文本编辑器对图标或名称之类的进行修改。
+
+![2018-08-30 21-22-09 的屏幕截图](assets/2018-08-30 21-22-09 的屏幕截图.png)
+
+![2018-08-30 21-22-55 的屏幕截图](assets/2018-08-30 21-22-55 的屏幕截图.png)
+
+[**回到顶部**](#top) © inkss
