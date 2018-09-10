@@ -441,6 +441,7 @@ sudo apt install chrome-gnome-shell
 
 | 扩展                                                         | 简要功能描述                          |
 | :----------------------------------------------------------- | :------------------------------------ |
+| [Appfolders Management extension](https://extensions.gnome.org/extension/1217/appfolders-manager/) | 添加文件夹                            |
 | [Autohide Battery](https://extensions.gnome.org/extension/595/autohide-battery/) | 自动隐藏电源（充电状态下已满）        |
 | [Caffeine](https://extensions.gnome.org/extension/517/caffeine/) | 取消自动锁屏（应用前台允许下）        |
 | [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/) | 剪切板管理工具                        |
@@ -729,8 +730,10 @@ sudo libinput-gestures-setup uninstall
 
 对于 **.desktop* 文件，可以使用文本编辑器对图标或名称之类的进行修改。
 
-![](assets/20180830212209.png)
+------
 
-![](assets/20180830212255.png)
+![](assets/截屏_2018-09-10-165520-1920x1080.png)
+
+------
 
 [**回到顶部**](#top) © inkss

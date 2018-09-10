@@ -18,7 +18,9 @@ git config --global https.proxy 'socks5://127.0.0.1:1080'
 所以还是需要对终端进行代理，首先需要修改终端的环境变量，修改文件并追加以下内容：
 
 ```sh
-
+export http_proxy=socks5://127.0.0.1:1080
+export https_proxy=socks5://127.0.0.1:1080
+# 注意：wget 不支持的协议类型 “socks5”
 ```
 
 * 如果你的 Shell 还是默认的  Bash ，那么修改需要修改的文件位于：`~/.bashrc`
@@ -27,7 +29,7 @@ git config --global https.proxy 'socks5://127.0.0.1:1080'
 然后接下来只需要使其生效：
 
 ```sh
-sourch ~/.bashrc # 或者 .zshrc
+source ~/.bashrc # 或者 .zshrc
 ```
 
 关闭这个终端，重新打开一个新的终端进行测试：
