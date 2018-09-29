@@ -63,7 +63,7 @@ npm install
 neat_enable: true
 neat_html:
   enable: true
-  exclude:  
+  exclude: 
 neat_css:
   enable: true
   exclude:
@@ -141,7 +141,7 @@ hexo clean && hexo g -d
 首先，本来就全都是 **静态文件** ，所以可以把 **缓存过期时间** 设置的久一些，有新内容的时候主动去服务商哪里提交更新缓存；然后借助 CDN 可以在域名解析上做处理：
 
 * 对 CDN 的域名解析类型设置为 **国内** ，即国内地址走 CDN 加速。
-* 而 **国外** 就直接解析到 Github 的的 IP 上，类型 A 记录。
+* 而 **国外** 就直接解析到 Github 的的 IP 上，类型 CNAME 记录。
 
 （2）OSS 对象存储
 
