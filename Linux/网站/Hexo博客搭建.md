@@ -9,6 +9,8 @@ categories: 教程
 translate_title: hexo-blog-build
 ---
 
+# 网址：[猫的三千六百年](http://inkss.cn)
+
 > 本文偏向于记录备份，非新手向教程，仅供参考。 :cat:
 
 先说搭建这个博客的原因：在搭建博客之前我的所有的文章都是存储在 [inkss/markdown](https://github.com/inkss/markdown) 仓库中，直到某天 **在投简历的时候发现有的要求填写博客链接** ，掐指一算在玩腻饥荒后似乎还闲置着一个腾讯云的学生主机，索性自己折腾一个博客出来。而以简单快速为目的话，还是主推： `Hexo` 。
