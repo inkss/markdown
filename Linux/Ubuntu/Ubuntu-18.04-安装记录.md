@@ -283,34 +283,19 @@ sudo apt install docky
 
 安装完毕后，会发现在应用列表中**点击应用图标无法启动软件** *（当前版本如此）*，解决方案：
 
-先获取操作系统的用户名：
-
 ```sh
-# 终端下输入下列命令
-whoami
-```
-
-记录输出的内容，如我的用户名为：`inkss`，然后终端下修改 sudoers ：
-
-```sh
-sudo gedit /etc/sudoers
-
-# 在打开的文本编辑器中，添加一行（inkss 为我的用户名）：
-inkss ALL = NOPASSWD: /usr/bin/netease-cloud-music
-```
-
-接着修改网易云音乐的启动图标：
-
-```sh
+# 修改网易云音乐的启动图标：
 sudo gedit /usr/share/applications/netease-cloud-music.desktop
 
-# 修改 Exec 这一行内容：
-Exec=sudo netease-cloud-music %U
+# 修改 Exec 这一行内容为：
+Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U"
+
+# 附录：网易云音乐配置及缓存目录：
+~/.config/netease-cloud-music
+~/.cache/netease-cloud-music
 ```
 
-> 另外一种选择是在点击应用图标后，再点击右上角的菜单选择关机按钮，在弹出 *系统将在 60s 后关机* 界面后，网易云音乐在 60s 关机之前就能弹出界面。原因不详，暂时没查出相关触发事件。
->
-> 参考资料地址：[（已解决）ubuntu下网易云音乐无法打开](https://blog.csdn.net/Handoking/article/details/81026651)
+> 参考资料地址：[Ubuntu 18.04 装了网易云音乐，难道只能用 sudo 启动吗？- @Fancy 解答](https://www.zhihu.com/question/277330447/answer/478510195)
 
 ![1534600685241](assets/1534600685241.png)
 
