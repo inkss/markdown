@@ -8,7 +8,6 @@
 ## 安装操作系统
 
 - 下载 Ubuntu 镜像：[Download Ubuntu Desktop](https://www.ubuntu.com/download/desktop)
-
 - 解压镜像到 U 盘根目录（FAT32）
 - 重启进 U 盘：最小安装、全程联网、下载更新
 
@@ -39,15 +38,15 @@
 ## 主题、字体、壁纸等
 
 - Gnome-tweak-tool：`sudo apt install gnome-tweak-tool`
-- 自定义 Shell ：所有软件->Ubuntu 软件->搜索 "User Theres"->安装扩展
-- 下载主题 Sierra ：[Sierra-light.tar.xz](https://www.opendesktop.org/c/1460761561)，解压目录文件到：`~/.themes`
-- 下载光标 oxy-blue ：[oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压目录文件到：`~/.icons`
+- 自定义 Shell ：所有软件(Win+A)->Ubuntu 软件->搜索 "User Themes"->安装扩展
+- 下载主题 Sierra ：[Sierra-light.tar.xz](https://www.opendesktop.org/c/1460761561)，解压文件到：`~/.themes`
+- 下载光标 oxy-blue ：[oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压文件到：`~/.icons`
 - 安装图标 suru-plus ：`sudo git clone https://github.com/gusbemacbe/suru-plus.git /usr/share/icons/Suru++`
 - 安装 Grub 主题 Fallout ：`wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash`
 - 安装字体 文泉驿微米黑/正黑：`sudo apt install fonts-wqy-microhei fonts-wqy-zenhei`
 - 安装终端字体 powerline ：`sudo apt-get install fonts-powerline`
-- 激活自定义 shell ：所有程序->优化->扩展-> User Themes
-- 激活主题、字体、图标等：所有程序->优化->外观/字体
+- 激活自定义 shell ：所有软件->优化->扩展-> User Themes
+- 激活主题、字体、图标等：所有软件->优化->外观/字体
 
 ## 中文输入法-搜狗
 
@@ -267,6 +266,13 @@ sudo apt install google-chrome-stable
   GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'; # 赋权
   FLUSH PRIVILEGES; # 更新
   ```
+
+- **Hexo | Node.js**
+  - 安装 NVM ：`wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh`
+  - 安装 Node：`nvm install stable`
+  - 安装 Hexo：`npm install -g hexo-cli`
+
+
 
 ## Git 配置
 
