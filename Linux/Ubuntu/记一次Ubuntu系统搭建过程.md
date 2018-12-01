@@ -291,6 +291,24 @@ sudo apt install google-chrome-stable
 
 ## 截图
 
+【桌面】
+
 ![inkss-Ubuntu_1121_004207-1920x1080](assets/记一次Ubuntu系统搭建过程/inkss-Ubuntu_1121_004207-1920x1080.png)
 
-![inkss-Ubuntu_1121_004427-1920x1080](assets/记一次Ubuntu系统搭建过程/inkss-Ubuntu_1121_004427-1920x1080.png)
+![工作区 1_004](../../../../图片/Ubuntu截图/工作区 1_004.png)
+
+【软件列表】
+
+![工作区 1_002](assets/记一次Ubuntu系统搭建过程/工作区 1_002.png)
+
+![工作区 1_003](assets/记一次Ubuntu系统搭建过程/工作区 1_003.png)
+
+【主题字体等】
+
+![GNOME Tweaks_005](assets/记一次Ubuntu系统搭建过程/GNOME Tweaks_005.png)
+
+![1543670920135](assets/记一次Ubuntu系统搭建过程/1543670920135.png)
+
+【文件管理器】
+
+![1543671067637](assets/记一次Ubuntu系统搭建过程/1543671067637.png)
