@@ -114,13 +114,13 @@ sudo apt install gnome-tweak-tool
 
 ### 2. 主题 图标 字体
 
-下载的主题如果是 deb 包的形式，安装方式见下文。而如果是压缩包的形式，那么就只能解压它放到对应的目录中了，这个目录有两种，区别上类似于 Windows 环境变量里的个人和系统。
+安装目录有两种，区别上类似于 Windows 环境变量里的个人和系统。
 
 - 主题存放目录：`/usr/share/themes` 或 `~/.themes`
 - 图标存放目录：`/usr/share/icons` 或 `~/.icons`
 - 字体存放目录：`/usr/share/fonts` 或 `~/.fonts`
 
-其中 */usr/share* 目录需要 root 权限才能修改，秉着有图形界面就不用终端的心态（使用文件管理器）：
+其中 */usr/share* 目录需要 root 权限才能修改，对文件管理器提权后打开：
 
 ```sh
 sudo nautilus
@@ -171,7 +171,7 @@ sudo apt install fcitx
 sudo gdebi xxxxxx.deb
 ```
 
-然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留汉语，接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fctix 配置** ，选择加号添加搜狗输入法。
+然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留汉语，接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **fcitx 配置** ，选择加号添加搜狗输入法。
 
 > 如果没有找到搜狗，就重启系统，再次重复以上步骤即可。
 >
@@ -334,7 +334,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 [**坚果云**](https://www.jianguoyun.com/) 是一款云端 **同步** 软件，与同类的 *OneDrive* 相比，坚果云做到了全平台兼容。
 
-其免费版本使用流量限制、空间不限原则（下载 3G/月，上传 1G/月）；专业版一年 42G 空间、不限流量，*199.90* 元（*差不多是处于打折状态下 Office 365 的价格，有 1T OneDrive 空间*）。
+其免费版本流量限制、空间不限（下载 3G/月，上传 1G/月）；专业版一年 42G 空间、不限流量，*199.90* 元（*差不多是处于打折状态下 Office 365 的价格，有 1T OneDrive 空间*）。
 
 下载地址：[坚果云 Linux 版](https://www.jianguoyun.com/s/downloads/linux) （普通的 deb 安装包）
 
