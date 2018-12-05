@@ -628,8 +628,24 @@ sudo update-alternatives --config <name>
 
 ## 七、截图
 
+- **桌面**
 
+![桌面1](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/1.png)
 
-------
+![桌面2](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/2.png)
 
-[**回到顶部**](#top) © inkss
+- **软件列表**
+
+![软件列表1](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/3.png)
+
+![软件列表2](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/4.png)
+
+- **主题配置**
+
+![主题配置1](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/5.png)
+
+![主题配置2](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/6.png)
+
+- **文件管理器**
+
+![文件管理器](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/7.png)
