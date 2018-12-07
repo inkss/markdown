@@ -1,15 +1,21 @@
-![Ubuntu 18.04 安装、配置和美化](assets/Ubuntu18.04安装记录/001.png)
+![Ubuntu 18.04 安装、配置和美化](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/001.png)
 
 - 概述：Ubuntu 18.04 LTS X86_64 安装记录 :two_hearts:。
 - 简介：日常使用环境的搭建，内容上包括：系统安装、配置、美化和软件安装说明。
-- 地址：本文章 [原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu-18.04-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[PDF 版本下载](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/Ubuntu18.04.pdf)）。
+- 地址：本文章 [原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[PDF 版本下载](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/Ubuntu18.04.pdf)）。
 - 定位：新手向，含有一定解释性说明，另一版本见：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
+
+> **写在前面的话**：
+>
+> 最初使用 Ubuntu 系统大约是 Ubuntu 14.04 的时候，当时真是开机就报崩溃，还不知道如何解决，于是便作罢了，第一次初见就结束的很快很快。后来到了 16 版本算是好了些许，或许因知识的积累，倒也不至于不知所措，这一过程中深刻感受到网上充斥着太多良莠不齐、不成体系的文章，后来在整理文件、笔记时，便萌生了何不自己记录一些这一系列的所有过程，方便自查也能帮助他人。
+>
+> 这篇文章的定位新手向，不打算记录一些专业性很强的东西，一切只为了配置一个普遍适用的 Ubuntu 系统，为了避免东抄西抄，本文章采用 [CC BY-NC-SA 4.0](http://link.zhihu.com/?target=https%3A//creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议吧。
 
 ------
 
-## 一、安装操作系统
+## 1.安装操作系统
 
-### 1. 引导盘
+### 1.1 引导盘
 
 鉴于现在都 8102 年了，是时候完全抛弃 Legacy 引导，只采用 UEFI 引导了。
 
@@ -17,7 +23,7 @@
 
 - 刻录到光盘：
 
-  使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在着 Legacy 和 UEFI 两种引导项，只需通过 UEFI 形式读入光盘。
+  使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在 Legacy , UEFI 两种引导项，只需通过 UEFI 形式读入光盘。
 
 - 刻录到 U 盘：
 
@@ -31,7 +37,7 @@
 
 > 刻录到 U 盘的方式二选一，过程不多赘述，使用 Rufus 刻录时分区类型选择 `GPT`。
 
-### 2. 分区
+### 1.2 分区
 
 基本思路：利用 Windows 系统中的磁盘管理工具压缩出一个新分区给 Ubuntu 使用。
 
@@ -39,9 +45,9 @@
 
 然后选择 **磁盘管理工具** ，对相应分区进行压缩（所谓压缩分区也可视为切割分区）。
 
-> 具体的压缩教程可搜索查询，需要注意一下对压缩后的新分区 **不要新建简单卷或格式化** 。
+> 具体的压缩方法可搜索查询，需要注意一下对压缩后的新分区 **不要新建简单卷或格式化** 。
 
-### 3. 安装系统
+### 1.3 安装系统
 
 正常的安装过程，诸如对 BIOS 进行设置之类，网上教程很多，这里不多赘述。
 
@@ -53,19 +59,21 @@
 >
 > 注意2：安装时选择 **最小安装** ，可以避免安装诸如：雷鸟、LibreOffice  之类的软件。
 >
-> 注意3：关于交换分区（Swap 分区），如果真的需要，可以使用 swap 文件代替 swap 分区。
+> 注意3：关于交换分区（Swap 分区），可以使用 swap 文件代替 swap 分区。
+>
+> 注意4：UEFI 模式，记得准备一个 **EFI** **(ESP)** 分区，否则无法写入 Grub 引导项。
 
 ------
 
-## 二、初步系统配置
+## 2.初步系统配置
 
-### 1. 第一次更新
+### 2.1 第一次更新
 
-先移步到 **所有软件 (Win + A)**→**软件更新器** ，等待软件完成自动更新。
+先移步到 **所有软件 (Win + A)**→**软件更新器** ，等待系统完成更新。
 
 接着移步到 **所有软件**→**设置**→**区域和语言**→**管理已安装的语言** ，完成语言列表的更新。
 
-### 2. 双系统的时区问题
+### 2.2 双系统的时区问题
 
 双系统下 Windows 与 Ubuntu 的时间将会不相同，原因不多阐述，解决方案如下：
 
@@ -73,9 +81,9 @@
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 
-### 3. 更换终端类型
+### 2.3 更换终端类型
 
-这里推荐使用 **oh-my-zsh** ，因为其具有十分智能的 *Tab* 补全能力：
+- **oh-my-zsh**
 
 ```sh
 sudo apt install git
@@ -84,9 +92,23 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 chsh -s /usr/bin/zsh
 ```
 
-> 重启系统以生效。
+- **fish**
 
-### 4. 终端下软件包安装器
+```sh
+sudo apt-add-repository ppa:fish-shell/release-2
+sudo apt-get update
+sudo apt-get install fish
+chsh -s /usr/bin/fish
+```
+
+```sh
+set fish_greeting 
+fish_config
+```
+
+> 二选一，重启系统以生效。
+
+### 2.4 终端下软件包安装器
 
 **Gdebi** ：相比于 GUI ，在终端下安装 deb 包可以获得更多的信息提示，但是使用 `dpkg` 命令又无法自动解决依赖问题，所以这里建议使用 `gdebi` 安装器替代以上两者。
 
@@ -96,9 +118,9 @@ sudo apt install gdebi
 
 -------
 
-## 三、自定义主题
+## 3.自定义主题
 
-### 1. Gnome-tweak-tool
+### 3.1 Gnome-tweak-tool
 
 Ubuntu 18.04 抛弃了 Unity ，转而使用 Gnome ，故先安装以下工具：
 
@@ -110,9 +132,9 @@ sudo apt install gnome-tweak-tool
 
 为了自定义 Shell 主题，需要安装、启用插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
 
-附录一个美化类资源下载网站：[Gnome-look](https://www.gnome-look.org/) ，主题、图标等均能在其网站中下载到。
+附录一个美化资源下载网站：[Gnome-look](https://www.gnome-look.org/) ，主题、图标等均能在其网站中下载到。
 
-### 2. 主题 图标 字体
+### 3.2 主题 图标 字体
 
 安装目录有两种，区别上类似于 Windows 环境变量里的个人和系统。
 
@@ -120,19 +142,19 @@ sudo apt install gnome-tweak-tool
 - 图标存放目录：`/usr/share/icons` 或 `~/.icons`
 - 字体存放目录：`/usr/share/fonts` 或 `~/.fonts`
 
-其中 */usr/share* 目录需要 root 权限才能修改，对文件管理器提权后打开：
+其中 */usr/share* 目录需要 root 权限才能修改，可以对文件管理提权后打开：
 
 ```sh
 sudo nautilus
 ```
 
-### 3. Grub 启动项美化
+### 3.3 Grub 启动项美化
 
 主题包地址：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
 
 然后是 **通用安装步骤** ：
 
-首先下载主题包，为多压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
+首先下载主题包，多为 压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
 
 定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，把解压出的文件拷贝到文件夹中。
 
@@ -157,7 +179,7 @@ sudo update-grub
 
 > 谈到 grub 就不得不谈到 `/boot/grub/grub.cfg` ，这个文件才是事实上的配置文件，操纵此文件一个不慎就整个系统凉凉。所谓更新配置文件就是重新生成 *grub.cfg* 的过程。
 
-### 4. 搜狗输入法
+### 3.4 搜狗输入法
 
 Ubuntu 18.04 没有提供 Fcitx 输入框架，先安装框架：
 
@@ -171,15 +193,15 @@ sudo apt install fcitx
 sudo gdebi xxxxxx.deb
 ```
 
-然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留汉语，接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **fcitx 配置** ，选择加号添加搜狗输入法。
+然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留汉语，接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fcitx 配置** ，选择加号添加搜狗输入法。
 
 > 如果没有找到搜狗，就重启系统，再次重复以上步骤即可。
 >
 > 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 。
 
-### 5. 底栏 Docky
+### 3.5 底栏 Docky
 
-这是一个能做到和 MAC 类似效果的 Dock 软件，颜值上比 Ubuntu 自带 Dock 好了些许。
+一个第三方 Dock 软件，颜值上比 Ubuntu 自带 Dock 好了些许。
 
 首先把自带的 Dock 设置为 *自动隐藏* ：**设置**→**Dock**→**自动隐藏 Dock** ，然后安装软件：
 
@@ -195,7 +217,7 @@ sudo apt install docky
 
 取消 *ShowDockyItem* 的勾选状态（决定是否显示 第一个 Docky）
 
-### 6. 本例中主题配置
+### 3.6 本例中的主题配置
 
 - **系统主题 Sieera** ：[Sierra-light.tar.xz](https://www.opendesktop.org/c/1460761561)，解压文件到：`~/.themes`
 - **鼠标光标 oxy-blue** ：[oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压文件到：`~/.icons`
@@ -206,11 +228,11 @@ sudo apt install docky
 
 ------
 
-## 四、部分软件安装记录
+## 4.部分软件安装记录
 
-###  1. DeepinWine
+###  4.1 DeepinWine
 
-曾经试用过一次 CrossOver ，用其安装了 TIM ，心想如果没太大毛病就购买这个软件了，只是出现了一堆小问题，虽不影响使用，但影响体验。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，这里也是 **借用 Deepin 的贡献** 达到使用 QQ 的目的。
+曾经试用过一次 CrossOver ，安装了 TIM ，心想如果没太大毛病就购买这个软件了，只是出现了一堆小问题，虽不影响使用，但影响体验。所以真的很感叹 Deepin 封装的 TIM/QQ 的稳定性，这里也是 **借用 Deepin 的贡献** 达到使用 QQ 的目的。
 
 首先需要在本机下载 Deepin-Wine 环境：[**deepin-wine-ubuntu**](https://github.com/wszqkzqk/deepin-wine-ubuntu)
 
@@ -223,7 +245,7 @@ sudo apt install docky
 > 然后在所有软件中找到 **优化 (Gnome-tweak-tool)** ，在扩展中打开 *Topicons plus* 。
 >
 
-### 2. Gnome 扩展
+### 4.2 Gnome 扩展
 
 Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下的一些 Shell 扩展在 Ubuntu 18.04 中就可以使用了。
 
@@ -239,7 +261,7 @@ sudo apt install chrome-gnome-shell
 
 浏览器插件安装完成后点击 *插件图标* 就能进入：**[Shell 扩展商店](https://extensions.gnome.org/)**
 
-**Gnome 扩展推荐** :
+**Gnome 扩展推荐**（点击链接进入） :
 
 | 扩展                                                         | 简要功能描述                         |
 | :----------------------------------------------------------- | :----------------------------------- |
@@ -272,9 +294,9 @@ sudo apt install chrome-gnome-shell
 | [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 顶栏显示应用图标（托盘显示）         |
 | [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题          |
 
-> 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，如果存在安装失败的情况，请检查 **是否满足依赖** 。
+> 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，若出现安装失败，请检查 **是否满足相关依赖** 。
 
-### 3. Snap 安装软件
+### 4.3 Snap 安装软件
 
 * 登录 Snap Store（这个账户是你的 UBuntu One 账户（https://login.ubuntu.com/+login ）
 
@@ -284,7 +306,7 @@ sudo snap login xxxxx@gmail.com
 
 - 退出账户
 
-```:v:
+```sh
 snap logout
 ```
 
@@ -303,17 +325,19 @@ snap enable <snap>   # 启用
 
 * 更多 snap 的命令用法可在终端下：`man snap` 查看，或者浏览器访问：[snap: command reference](https://docs.snapcraft.io/reference/snap-command)
 
-### 4. 文件备份同步
+> 某种意义上说，正是因为 snap 的出现，才使得 Ubuntu 系统里的软件种类多了很多。
 
-#### 4.1 本地同步备份
+### 4.4 文件备份同步
+
+#### 4.4.1 本地同步备份
 
 [**FreeFileSync**](https://freefilesync.org/) 是一款本地同步 **备份** 软件：如将本地硬盘上的文件同步到移动硬盘上。可以做到增量备份、自动识别差异项等。同步方式有：*双向、镜像、更新* 。
 
-本身是一款免费的跨平台软件（Windows、MAC、Linux），可以通过捐赠获得免安装版本（然而只有 Windows 和 MAC 版）。
+本身是一款免费的跨平台软件（Windows、MAC、Linux），可以通过捐赠获得免安装版本（相对于 Windows 和 MAC ）。
 
 下载地址：[Download FreeFileSync](https://freefilesync.org/download.php) ，Linux 版本下载文件为一个压缩包，解压后直接点击 *FreeFileSync* 文件就能使用。
 
-因为没有图标，这里给出写入图片的方式（有工具就绝对不手写的态度）：
+因为没有图标，这里给出写入图标的方式（有工具就绝对不手写）：
 
 ```sh
 # –-no-install-recommends 参数避免安装非必须的文件，从而减小体积
@@ -326,11 +350,11 @@ sudo apt install --no-install-recommends gnome-panel
 sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 ```
 
-命令：点浏览展开到解压目录，选择 *FreeFileSync* 的可执行文件（图中解压目录位于 `~/App/` 目录）。
+命令：点浏览展开到解压目录，选择 *FreeFileSync* 的可执行文件。
 
 图标：解压包中有一个名为 *Resources.zip* 的压缩包，含有一些图片，从中选取软件图标。
 
-#### 4.2 云端同步备份
+#### 4.4.2 云端同步备份
 
 [**坚果云**](https://www.jianguoyun.com/) 是一款云端 **同步** 软件，与同类的 *OneDrive* 相比，坚果云做到了全平台兼容。
 
@@ -338,9 +362,9 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[坚果云 Linux 版](https://www.jianguoyun.com/s/downloads/linux) （普通的 deb 安装包）
 
-#### 4.3 局域网文件互传
+#### 4.4.3 局域网文件互传
 
-**Chfs** 该程序是一个免费的、HTTP 协议的文件共享服务器，使用浏览器可以快速访问。它具有以下特点：
+**Chfs** 是一个免费的、HTTP 协议的文件共享服务器，使用浏览器可以快速访问。它具有以下特点：
 
 * **单个文件**，整个软件只有一个可执行程序，无配置文件等其他文件
 * 跨平台运行，支持主流平台：Windows，Linux 和 Mac
@@ -349,30 +373,9 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[CuteHttpFileServer](http://iscute.cn/chfs) ，使用方案见网站说明。
 
-【可选】添加快捷功能到右键
+#### 4.4.4 在线文件管理器
 
-首先安装软件 **[Filemanager-actions](https://github.com/GNOME/filemanager-actions)** 软件名称：fma-config-tool：
-
-```sh
-sudo add-apt-repository ppa:daniel-marynicz/filemanager-actions
-sudo apt install filemanager-actions-nautilus-extension
-```
-
-在应用列表中找到：*Filemanager-Actions* ，**文件** 选项可以新建菜单和动作。相应命令填写内容如下：
-
-打开连接：
-
-* 命令：*路径*：`chfs` ；*参数*：`--port=8988 --path=%f` ；*工作目录*：`%f`
-* 执行：*Execution mode*：`显示输出`
-
-关闭连接：
-
-* 命令：*路径*：`kill` ；*参数*：`$(pidof chfs)` ；*工作目录*：`%d`
-* 执行：*Execution mode*：`显示输出`
-
-#### 4.4 在线文件管理器
-
-使用基于 **Caddy** 的 **FileManager** 模块搭建。
+基于 **Caddy** 的 **FileManager** 模块，除此之外还可以使用 webdav 模块启用 webdav 功能。
 
 - 安装 Caddy
 
@@ -398,7 +401,7 @@ curl https://getcaddy.com | bash -s personal http.filemanager
 
 打开网址：http://localhost:8080 访问，默认的用户名和密码均为：`admin` （可以手写一个脚本自动运行）。
 
-#### 4.5 系统快照备份
+#### 4.4.5 系统快照备份
 
 制作快照的软件 **TimeShift** ，可以对整个分区进行备份，以分区为单位进行恢复。这里安装它即可：
 
@@ -406,13 +409,13 @@ curl https://getcaddy.com | bash -s personal http.filemanager
 sudo apt install timeshift
 ```
 
-### 5. 网易云音乐
+### 4.5 网易云音乐
 
-> 在写这篇文章时，操作系统版本为：`Ubuntu 18.04.1 LTS x86_64` ；网易云音乐版本为：`1.1.0`
+> 在写这篇文章时，操作系统为：`Ubuntu 18.04.1 LTS x86_64` ；网易云音乐为：`1.1.0`
 
 首先去网易云音乐官网 [下载安装包](https://music.163.com/#/download)（Ubuntu 16.04 64 位），然后就是正常的 deb 包安装过程。
 
-安装完毕后，会发现在应用列表中**点击应用图标无法启动软件** *（当前版本如此）*，解决方案：
+安装完毕后，会发现在应用列表中 **点击应用图标无法启动软件** ，解决方案：
 
 - 修改网易云音乐的启动图标
 
@@ -435,7 +438,7 @@ Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U"
 
 > 参考资料地址：[Ubuntu 18.04 装了网易云音乐，难道只能用 sudo 启动吗？- @Fancy 解答](https://www.zhihu.com/question/277330447/answer/478510195)
 
-### 6. 触摸板手势
+### 4.6 触摸板手势
 
 触摸板手势这里有两个选择： [touchegg](https://github.com/JoseExposito/touchegg) 和 [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
 
@@ -449,15 +452,10 @@ touchegg 从提交记录上看似乎有些年代偏久了，而且 Issues 也有
 sudo gpasswd -a $USER input
 ```
 
-- 安装 `libinput-tools`
-
-```sh
-sudo apt install libinput-tools
-```
-
 - 安装
 
 ```sh
+sudo apt install libinput-tools
 git clone https://github.com/bulletmark/libinput-gestures.git
 cd libinput-gestures
 sudo make install # (or sudo ./libinput-gestures-setup install)
@@ -485,9 +483,13 @@ libinput-gestures-setup autostop
 sudo libinput-gestures-setup uninstall
 ```
 
-### 7. 部分软件安装
+### 4.7 部分软件
 
-#### 7.1 Chrome
+#### 4.7.1 SSR
+
+> 地址：[erguotou520](https://github.com/erguotou520)/**[electron-ssr](https://github.com/erguotou520/electron-ssr)** 。这是一个跨平台（支持Windows MacOS Linux系统）的客户端桌面应用，它功能丰富，支持 windows 版大部分功能，更有更多人性化功能。它是开源的，它来源于开源，回馈以开源。
+
+#### 4.7.2 Chrome
 
 ```sh
 sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
@@ -496,11 +498,7 @@ sudo apt update
 sudo apt install google-chrome-stable
 ```
 
-#### 7.2 SSR
-
-地址：[erguotou520](https://github.com/erguotou520)/**[electron-ssr](https://github.com/erguotou520/electron-ssr)** 。这是一个跨平台（支持Windows MacOS Linux系统）的客户端桌面应用，它功能丰富，支持 windows 版大部分功能，更有更多人性化功能。它是开源的，它来源于开源，回馈以开源。
-
-#### 7.3 Typora
+#### 4.7.3 Typora
 
 ```sh
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
@@ -509,7 +507,7 @@ sudo apt update
 sudo apt install typora
 ```
 
-#### 7.4 Albert
+#### 4.7.4 Albert
 
 很实用的 *启动器* ，官网（[GitHub-Albert](https://albertlauncher.github.io/docs/installing/)），安装步骤如下：
 
@@ -525,7 +523,7 @@ sudo apt update
 sudo apt install albert
 ```
 
-#### 7.5 popup-dict
+#### 4.7.5 popup-dict
 
  Linux 下的划词翻译工具，支持使用有道等多种翻译服务。
 
@@ -562,7 +560,7 @@ sudo pip3 install popupdict
 
 ------
 
-## 五、软件列表
+## 5.软件列表
 
 - 音乐软件：网易云音乐、Spotify
 - 聊天软件：TIM、微信、Telegram
@@ -581,7 +579,7 @@ sudo pip3 install popupdict
 
 ------
 
-## 六、附录
+## 6.附录
 
 **1.软件图标（.desktop）文件位置：**
 
@@ -626,7 +624,7 @@ sudo update-alternatives --config <name>
 
 ------
 
-## 七、截图
+## 7.截图
 
 - **桌面**
 
