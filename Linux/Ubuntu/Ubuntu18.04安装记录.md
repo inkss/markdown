@@ -1,10 +1,10 @@
 ![Ubuntu 18.04 安装、配置和美化](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/001.png)
 
-- 概述：Ubuntu 18.04 LTS X86_64 安装记录 :two_hearts:。
+- 概述：系统性的介绍 Ubuntu 18.04 LTS X86_64 的安装过程 :two_hearts:。
 - 简介：日常使用环境的搭建，内容上包括：系统安装、配置、美化和软件安装说明。
-- 地址：本文章 [原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[-=>离线下载阅读<=-](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/Ubuntu18.04.html)）。
+- 地址：本文章原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[-=>下载离线阅读版<=-](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/Ubuntu18.04.html)）。
 - 定位：新手向，含有一定解释性说明，另一版本见：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
-- 协议：本文章采用 [CC BY-NC-SA 4.0](http://link.zhihu.com/?target=https%3A//creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。
+- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。
 
 ------
 
@@ -107,7 +107,7 @@ fish_config
 
 **Gdebi** ：相比于 GUI ，在终端下安装 deb 包可以获得更多的信息提示，但是使用 `dpkg` 命令又无法自动解决依赖问题，所以这里建议使用 `gdebi` 安装器替代以上两者。
 
-```
+```sh
 sudo apt install gdebi
 ```
 
@@ -168,7 +168,7 @@ GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
 
 最后更新配置文件：
 
-```su
+```sh
 sudo update-grub
 ```
 
@@ -406,7 +406,7 @@ curl https://getcaddy.com | bash -s personal http.filemanager
 
 - 新建配置文件 `Caddyfile` ，文件位置 `/home/ubuntu/caddy/Caddyfile`
 
-```tx
+```sh
 :8080 {
   gzip
   timeouts none
@@ -671,6 +671,6 @@ sudo update-alternatives --config <name>
 
 ![文件管理器](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/7.png)
 
-- 终端 - 鱼
+- **终端 - 鱼**
 
 ![鱼](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/8.png)
