@@ -2,14 +2,9 @@
 
 - 概述：Ubuntu 18.04 LTS X86_64 安装记录 :two_hearts:。
 - 简介：日常使用环境的搭建，内容上包括：系统安装、配置、美化和软件安装说明。
-- 地址：本文章 [原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[PDF 版本下载](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/Ubuntu18.04.pdf)）。
+- 地址：本文章 [原文件](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[-=>离线下载阅读<=-](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/Ubuntu18.04.html)）。
 - 定位：新手向，含有一定解释性说明，另一版本见：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
-
-> **写在前面的话**：
->
-> 最初使用 Ubuntu 系统大约是 Ubuntu 14.04 的时候，当时真是开机就报崩溃，还不知道如何解决，于是便作罢了，第一次初见就结束的很快很快。后来到了 16 版本算是好了些许，或许因知识的积累，倒也不至于不知所措，这一过程中深刻感受到网上充斥着太多良莠不齐、不成体系的文章，后来在整理文件、笔记时，便萌生了何不自己记录一些这一系列的所有过程，方便自查也能帮助他人。
->
-> 这篇文章的定位新手向，不打算记录一些专业性很强的东西，一切只为了配置一个普遍适用的 Ubuntu 系统，为了避免东抄西抄，本文章采用 [CC BY-NC-SA 4.0](http://link.zhihu.com/?target=https%3A//creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议吧。
+- 协议：本文章采用 [CC BY-NC-SA 4.0](http://link.zhihu.com/?target=https%3A//creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。
 
 ------
 
@@ -21,17 +16,17 @@
 
 而这里有两种选择（所有操作均在 Windows 下进行）：
 
-- 刻录到光盘：
+- **刻录到光盘：**
 
-  使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在 Legacy , UEFI 两种引导项，只需通过 UEFI 形式读入光盘。
+  - 使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在 Legacy , UEFI 两种引导项，通过 UEFI 形式读入光盘。
 
-- 刻录到 U 盘：
+- **刻录到 U 盘：**
 
-  - 方案一：解压镜像文件
+  - **方案一：解压镜像文件**
 
     准备一个干净的 **FAT32** 格式的 U 盘（ *NTFS 不行* ），使用压缩工具（ *WinRAR，7z 等* ）对 Ubuntu 的镜像文件进行解压，解压目录为 U 盘根目录。
 
-  - 方案二：使用刻录工具
+  - **方案二：使用刻录工具**
 
     Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是需要注意的是这个工具刻录后的 U 盘只有 Legacy 引导 ，所以只能放弃该软件，这里选用另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)* ，具有 **免安装、绿色版、支持 UEFI** 的特性。
 
@@ -148,7 +143,7 @@ sudo apt install gnome-tweak-tool
 sudo nautilus
 ```
 
-### 3.3 Grub 启动项美化
+### 3.3 Grub 启动项主题
 
 主题包地址：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
 
@@ -177,9 +172,35 @@ GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
 sudo update-grub
 ```
 
-> 谈到 grub 就不得不谈到 `/boot/grub/grub.cfg` ，这个文件才是事实上的配置文件，操纵此文件一个不慎就整个系统凉凉。所谓更新配置文件就是重新生成 *grub.cfg* 的过程。
+> 谈到 grub 就不得不谈到 `/boot/grub/grub.cfg` ，这个文件才是事实上的配置文件，所谓更新就是重新生成 *grub.cfg* 。
 
-### 3.4 搜狗输入法
+### 3.4 GDM 登录背景图
+
+更换登录界面的背景图需要修改文件 `ubuntu.css`，它位于 `/usr/share/gnome-shell/theme` 。
+
+```sh
+sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
+```
+
+在文件中找到关键字 `lockDialogGroup`，如下行：
+
+```sh
+#lockDialogGroup {
+   background: #2c001e url(resource:///org/gnome/shell/theme/noise-texture.png);
+   background-repeat: repeat; }
+```
+
+修改图片路径即可，样例如下：
+
+```sh
+#lockDialogGroup {
+background: #2c001e url(file:////home/inkss/APP/ink_img/img.jpg);
+   background-repeat: no-repeat; 
+   background-size: cover;
+   background-position: center; }
+```
+
+### 3.5 输入法：搜狗输入法
 
 Ubuntu 18.04 没有提供 Fcitx 输入框架，先安装框架：
 
@@ -199,7 +220,7 @@ sudo gdebi xxxxxx.deb
 >
 > 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 。
 
-### 3.5 底栏 Docky
+### 3.6 Dock ：Docky
 
 一个第三方 Dock 软件，颜值上比 Ubuntu 自带 Dock 好了些许。
 
@@ -217,7 +238,7 @@ sudo apt install docky
 
 取消 *ShowDockyItem* 的勾选状态（决定是否显示 第一个 Docky）
 
-### 3.6 本例中的主题配置
+### 3.7 本例中的主题配置
 
 - **系统主题 Sieera** ：[Sierra-light.tar.xz](https://www.opendesktop.org/c/1460761561)，解压文件到：`~/.themes`
 - **鼠标光标 oxy-blue** ：[oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压文件到：`~/.icons`
@@ -400,6 +421,8 @@ curl https://getcaddy.com | bash -s personal http.filemanager
 在 `/home/ubuntu/caddy/` 目录下打开终端，执行命令：`caddy` ，终端提示错误忽略即可。
 
 打开网址：http://localhost:8080 访问，默认的用户名和密码均为：`admin` （可以手写一个脚本自动运行）。
+
+> **更多的内容可以参看这篇实验：**[基于 Caddy 搭建基于网页的文件共享管理系统](http://link.zhihu.com/?target=https%3A//cloud.tencent.com/developer/labs/lab/10453) 。
 
 #### 4.4.5 系统快照备份
 
@@ -647,3 +670,7 @@ sudo update-alternatives --config <name>
 - **文件管理器**
 
 ![文件管理器](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/7.png)
+
+- 终端 - 鱼
+
+![鱼](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/8.png)
