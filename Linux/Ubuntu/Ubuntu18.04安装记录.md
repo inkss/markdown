@@ -147,11 +147,13 @@ sudo nautilus
 
 主题包地址：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
 
-然后是 **通用安装步骤** ：
+**安装步骤** ：
 
-首先下载主题包，多为 压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
+首先下载主题包，多为压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
 
 定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，把解压出的文件拷贝到文件夹中。
+
+- **方案一：手写配置文件**
 
 接着（终端下）使用 gedit 修改 *grub* 文件：
 
@@ -166,7 +168,21 @@ sudo gedit /etc/default/grub
 GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
 ```
 
-最后更新配置文件：
+- **方案二：利用软件 Grub Customizer**
+
+添加 PPA ：
+
+```sh
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+```
+
+安装软件：
+
+```sh
+sudo apt install grub-customizer
+```
+
+- **最后** 更新配置文件：
 
 ```sh
 sudo update-grub
@@ -194,7 +210,7 @@ sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
 
 ```sh
 #lockDialogGroup {
-background: #2c001e url(file:////home/inkss/APP/ink_img/img.jpg);
+background: #2c001e url(file://home/inkss/APP/ink_img/img.jpg);
    background-repeat: no-repeat; 
    background-size: cover;
    background-position: center; }
@@ -416,7 +432,7 @@ curl https://getcaddy.com | bash -s personal http.filemanager
 }
 ```
 
-以上写法的作用是通过 IP 的 `8080` 端口访问网页，这个 IP 既可以是公网 IP 也可以是内网 IP 。而具体的文件路径可以在登录网页后在网站设置内手动修改，数据库的存放目录要灵活自己选择，配置文件的存放目录同样可以自拟。
+以上写法的作用是通过 IP 的 `8080` 端口访问网页，这个 IP 既可以是公网 IP 也可以是内网 IP 。具体的文件路径可以在登录网页后在网站设置内手动修改，数据库的存放目录要灵活自己选择，配置文件的存放目录同样可以自拟。
 
 在 `/home/ubuntu/caddy/` 目录下打开终端，执行命令：`caddy` ，终端提示错误忽略即可。
 
@@ -587,7 +603,7 @@ sudo pip3 install popupdict
 
 - 音乐软件：网易云音乐、Spotify
 - 聊天软件：TIM、微信、Telegram
-- 办公软件：WPS、Foxit Reader
+- 办公软件：WPS、Foxit Reader、 Kile
 - 图形软件：Converseen（图片格式转换）、Krita（有点类似 PS）、polarr （泼辣修图）
 - 下载软件：aMule（电驴）、Deluge（种子）、qBittorrent（种子）、uGet（有点类似 IDM）
 - 截图录屏：深度截图、Shutter、SimpleScreen
@@ -651,26 +667,41 @@ sudo update-alternatives --config <name>
 
 - **桌面**
 
-![桌面1](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/1.png)
-
-![桌面2](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/2.png)
+![桌面](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/01.png)
 
 - **软件列表**
 
-![软件列表1](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/3.png)
+![#办公](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/02.png)
 
-![软件列表2](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/4.png)
+![#编程](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/03.png)
+
+![#工具](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/04.png)
+
+![#图片](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/05.png)
+
+![#系统](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/06.png)
+
+![#音乐](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/07.png)
+
+![#列表](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/08.png)
+
+![#列表](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/09.png)
 
 - **主题配置**
 
-![主题配置1](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/5.png)
+![外观](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/10.png)
 
-![主题配置2](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/6.png)
+![字体](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/11.png)
 
 - **文件管理器**
 
-![文件管理器](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/7.png)
+![文件管理器](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/12.png)
 
-- **终端 - 鱼**
+- Grub Customizer
 
-![鱼](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/8.png)
+![](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/13.png)
+
+- 泼辣修图
+
+![](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/14.png)
+
