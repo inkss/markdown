@@ -1,9 +1,9 @@
-![Ubuntu 18.04 安装、配置和美化](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/001.png)
+![Ubuntu 18.04 安装、配置和美化](assets/Ubuntu18.04安装记录/001-1551354008744.png)
 
 - 概述：系统性的介绍 Ubuntu 18.04 LTS X86_64 的安装过程 :two_hearts:。
 - 简介：日常使用环境的搭建，内容上包括：系统安装、配置、美化和软件安装说明。
-- 地址：本文章原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中（[-=>下载离线阅读版<=-](https://img.inkss.cn/2018/09/ubuntu-1804-installation-record/Ubuntu18.04.html)）。
 - 定位：新手向，含有一定解释性说明，另一版本见：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
+- 地址：本文章原文件存放在 GitHub 的 [markdown](https://github.com/inkss/markdown) 仓库中。
 - 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。
 
 ------
@@ -127,7 +127,7 @@ sudo apt install gnome-tweak-tool
 
 为了自定义 Shell 主题，需要安装、启用插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
 
-附录一个美化资源下载网站：[Gnome-look](https://www.gnome-look.org/) ，主题、图标等均能在其网站中下载到。
+附录一个资源下载网站：[Gnome-look](https://www.gnome-look.org/) ，主题、图标等均能在其网站中下载到。
 
 ### 3.2 主题 图标 字体
 
@@ -294,9 +294,11 @@ Ubuntu 18.04 抛弃了 Unity 桌面转而使用 Gnome ，所以 Gnome 桌面下�
 sudo apt install chrome-gnome-shell
 ```
 
-然后安装浏览器插件（**谷歌浏览器**）：[Chrome 网上应用商店](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
+然后安装浏览器插件（**谷歌浏览器**）：[Chrome 网上应用商店](https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep) 。
 
-浏览器插件安装完成后点击 *插件图标* 就能进入：**[Shell 扩展商店](https://extensions.gnome.org/)**
+无条件的同学可以使用火狐浏览器安装扩展：[GNOME Shell integration](https://addons.mozilla.org/zh-CN/firefox/addon/gnome-shell-integration/?src=search) 。
+
+浏览器插件安装完成后点击 *插件图标* 就能进入：**[Shell 扩展商店](https://extensions.gnome.org/)** 。
 
 **Gnome 扩展推荐**（点击链接进入） :
 
@@ -412,12 +414,12 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 #### 4.4.4 在线文件管理器
 
-基于 **Caddy** 的 **FileManager** 模块，除此之外还可以使用 webdav 模块启用 webdav 功能。
+基于 **Caddy** 的 **FileBrowser** 模块，除此之外还可以使用 webdav 模块启用 webdav 功能。
 
 - 安装 Caddy
 
 ```sh
-curl https://getcaddy.com | bash -s personal http.filemanager
+curl https://getcaddy.com | bash -s personal http.filebrowser
 ```
 
 - 新建配置文件 `Caddyfile` ，文件位置 `/home/ubuntu/caddy/Caddyfile`
@@ -426,8 +428,8 @@ curl https://getcaddy.com | bash -s personal http.filemanager
 :8080 {
   gzip
   timeouts none
-  filemanager / / {
-    database /home/ubuntu/caddy/filemanager.db
+  filebrowser / / {
+    database /home/ubuntu/caddy/filebrowser.db
   }
 }
 ```
@@ -439,6 +441,8 @@ curl https://getcaddy.com | bash -s personal http.filemanager
 打开网址：http://localhost:8080 访问，默认的用户名和密码均为：`admin` （可以手写一个脚本自动运行）。
 
 > **更多的内容可以参看这篇实验：**[基于 Caddy 搭建基于网页的文件共享管理系统](http://link.zhihu.com/?target=https%3A//cloud.tencent.com/developer/labs/lab/10453) 。
+>
+> 相关文档：[FileBrowser # caddy](https://docs.filebrowser.xyz/installation#caddy) 。
 
 #### 4.4.5 系统快照备份
 
@@ -667,41 +671,23 @@ sudo update-alternatives --config <name>
 
 - **桌面**
 
-![桌面](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/01.png)
+![桌面](assets/Ubuntu18.04安装记录/01.png)
 
 - **软件列表**
 
-![#办公](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/02.png)
-
-![#编程](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/03.png)
-
-![#工具](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/04.png)
-
-![#图片](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/05.png)
-
-![#系统](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/06.png)
-
-![#音乐](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/07.png)
-
-![#列表](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/08.png)
-
-![#列表](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/09.png)
-
 - **主题配置**
 
-![外观](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/10.png)
+![外观](assets/Ubuntu18.04安装记录/10.png)
 
-![字体](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/11.png)
+![字体](assets/Ubuntu18.04安装记录/11.png)
 
 - **文件管理器**
 
-![文件管理器](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/12.png)
+![文件管理器](assets/Ubuntu18.04安装记录/12.png)
 
 - Grub Customizer
 
-![](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/13.png)
+![](assets/Ubuntu18.04安装记录/13.png)
 
 - 泼辣修图
-
-![](https://img.inkss.cn//2018/09/ubuntu-1804-installation-record/14.png)
 
