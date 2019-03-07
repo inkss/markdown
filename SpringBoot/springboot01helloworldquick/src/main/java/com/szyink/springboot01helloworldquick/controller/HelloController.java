@@ -1,12 +1,8 @@
 package com.szyink.springboot01helloworldquick.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-//@Controller
-//@Controller
 @RestController
 public class HelloController {
 
@@ -40,7 +36,7 @@ public class HelloController {
     ...
 }
 
-@RestController 注解：可以视为 Controller 和 Controller
+@RestController 注解：可以视为 Controller 和 ResponseBody
 
 >>>> RestController 为组合注解，具体内容有：
 @Target({ElementType.TYPE})
