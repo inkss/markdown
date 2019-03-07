@@ -45,7 +45,14 @@
 
 > Spring Boot 将所有的功能场景抽取出来，做成一个一个 **starters ( 启动器 )** 。只要引入了相应的启动器，就会将相关场景的所有依赖导入进项目中。
 
-## 二、主程序
+### 3.总结
+
+综上，POW 文件控制导入的具体依赖类型和依赖的版本号。
+
+- `spring-boot-starter-parent` 控制依赖组件的版本。
+- `spring-boot-starter-*` 控制需要导入的依赖的组件。
+
+## 二、主程序类
 
 ```java
 // HelloWorldMainApplication.java
@@ -60,6 +67,8 @@ public class HelloWorldMainApplication {
 ```
 
 - `@SpringBootApplication` ：Spring Boot 应用。表示被标注的类是 Spring Boot 的主配置类。
+
+> Spring Boot 应用标注在某个类上说明这个类是 SpringBoot 的主配置类，SpringBoot就应该运行这个类的 main 方法来启动 SpringBoot 应用。
 
 ```java
 // SpringBootApplication.class
@@ -85,3 +94,18 @@ public @interface SpringBootApplication {
 
 > 但是在 spring-boot-autoconfigure-2.1.3-RELEASE.jar/META-INF/spring.factories 同样有配置文件的内容。
 
+引用资料：
+
+> 自动配置幕后英雄：SpringFactoriesLoader 详解：
+>
+> SpringFactoriesLoader 属于 Spring 框架私有的一种扩展方案，其主要功能就是从指定的配置文件META-INF/spring.factories加载配置。
+>
+> ...
+>
+> 所以，@EnableAutoConfiguration自动配置的魔法骑士就变成了：从classpath中搜寻所有的META-INF/spring.factories配置文件，并将其中org.springframework.boot.autoconfigure.EnableutoConfiguration对应的配置项通过反射（Java Refletion）实例化为对应的标注了@Configuration的JavaConfig形式的IoC容器配置类，然后汇总为一个并加载到IoC容器。
+>
+> Enable auto-configuration of the Spring Application Context, attempting to guess and configure beans that you are likely to need. Auto-configuration classes are usually applied based on your classpath and what beans you have defined. For example, if you have tomcat-embedded.jar on your classpath you are likely to want a TomcatServletWebServerFactory (unless you have defined your own ServletWebServerFactory bean).
+
+------
+
+*szyink 2019.3.7*
