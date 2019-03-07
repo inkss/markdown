@@ -300,7 +300,7 @@ sudo apt install docky
 > 然后在所有软件中找到 **优化 (Gnome-tweak-tool)** ，在扩展中打开 *Topicons plus* 。
 >
 
-### 4.2 Gnome 扩展
+### 3.2 Gnome 扩展
 
 获取扩展的方法很多：终端命令，软件中心下载，浏览器下载等，这里主要涉及浏览器下载。
 
@@ -608,7 +608,9 @@ sudo pip3 install popupdict
 
 ------
 
-## 5.软件列表
+## 四、补充内容
+
+### 4.1 软件列表
 
 - 音乐软件：网易云音乐、Spotify
 - 聊天软件：TIM、微信、Telegram
@@ -625,9 +627,7 @@ sudo pip3 install popupdict
 - 虚拟键盘：Florence
 - 密码管理：KeePassXC
 
-------
-
-## 6.附录
+### 4.2 代码篇
 
 **1.软件图标（.desktop）文件位置：**
 
@@ -670,9 +670,7 @@ sudo update-alternatives --remove <name> <path>
 sudo update-alternatives --config <name>
 ```
 
-------
-
-## 7.截图
+### 4.3 截图
 
 - **桌面**
 
