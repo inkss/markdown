@@ -3,13 +3,13 @@
 - 概述：系统性的介绍 Ubuntu 18.04 LTS X86_64 的安装过程 :two_hearts:。
 - 简介：日常使用环境的搭建，内容上包括：系统安装、配置、美化和软件安装说明。
 - 定位：新手向，含有一定解释性说明，线性搭建版本：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
-- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。
+- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。本文地址：[Ubuntu 安装记录](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 。
 
 ------
 
 ## 一、安装操作系统
 
-> 概括下介绍 Ubuntu 操作系统的安装，仅供参考。
+>  Ubuntu 操作系统的安装笔记，仅供参考 :v:。
 
 ### 1.1 引导盘
 
@@ -17,19 +17,19 @@
 
 刻录方式：
 
-- **刻录到光盘：**
+- 刻录到光盘：
 
   - 使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在 Legacy , UEFI 两种引导项，通过 UEFI 形式读入光盘。
 
-- **刻录到 U 盘：**
+- 刻录到 U 盘：
 
   - **方案一：解压镜像文件** 【**推荐**】
 
-    准备一个干净的 **FAT32** 格式的 U 盘，使用压缩工具对 Ubuntu 的镜像文件进行解压，解压目录为 U 盘根目录，之后重启电脑引导进入 U 盘即可。
+    准备一个 **FAT32** 格式的 U 盘，对 Ubuntu 的镜像文件进行解压，解压到 U 盘根目录，重启进入 U 盘安装系统。
 
-  - **方案二：使用刻录工具**
+  - 方案二：使用刻录工具
 
-    Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是需要注意的是这个工具刻录后的 U 盘只有 Legacy 引导 ，所以只能放弃该软件，这里选用另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)* ，具有 **免安装、绿色版、支持 UEFI** 的特性。
+    Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是这个工具刻录后的 U 盘只有 Legacy 引导 。这里选用另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)* ，**免安装、绿色版、支持 UEFI** 。
 
 ### 1.2 分区
 
@@ -45,19 +45,19 @@
 
 ### 1.3 安装系统
 
-正常的安装过程，诸如对 BIOS 进行设置之类，网上教程很多，这里不多赘述。
+正常的安装过程，诸如对 BIOS 进行设置之类，网上教程很多，这里不多赘述。（GPT + UEFI）
 
-在到 *安装类型* 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 **安装 Ubuntu，与 Windows boot manager 共存** 这一选项，将分区相关事宜交由 Ubuntu 处理。
+在进行到 *安装类型* 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 **安装 Ubuntu，与 Windows boot manager 共存** 这一选项，将分区相关事宜交由 Ubuntu 处理。
 
 而如果需要自主划分分区，选择 *其他选项* 。分区只推荐划分出根 `/` 和家目录 `/home` 。
 
-> 注意1：为了系统的稳定，安装过程中请连上网络，勾选 **安装 Ubuntu 时下载更新** 。
+> 备注1：为了系统的稳定，安装过程中请连上网络，勾选 **安装 Ubuntu 时下载更新** 。
 
-> 注意2：安装时选择 **最小安装** ，可以避免安装诸如：雷鸟、LibreOffice  之类的软件。
+> 备注2：安装时选择 **最小安装** ，可以避免安装诸如：雷鸟、LibreOffice  之类的软件。
 
-> 注意3：关于交换分区（Swap 分区），可以使用 swap 文件代替 swap 分区。
+> 备注3：关于交换分区（Swap 分区），可以使用 swap 文件代替 swap 分区。
 
-> 注意4：UEFI 模式，记得准备一个 **EFI** **(ESP)** 分区，否则无法写入 Grub 引导项。
+> 备注4：UEFI 模式，记得准备一个 **EFI** **(ESP)** 分区，否则无法写入 Grub 引导项。
 
 ------
 
@@ -140,7 +140,7 @@ sudo apt install gnome-tweak-tool
 sudo apt install gnome-shell-extensions
 ```
 
-然后，从应用列表中打开一个名为 **优化** 的软件，在外观中修改：应用程序、光标、图标和 Shell 就大功告成了，最后不要忘记换一个赏心悦目的桌面背景。
+然后，从应用列表中打开一个名为 **优化** 的软件，在扩展中启用 “ User Themes ”；在外观中修改：应用程序、光标、图标和 Shell 就大功告成了，最后不要忘记换一个赏心悦目的桌面背景。
 
 ### 2.3 主题自定义
 
@@ -176,13 +176,11 @@ sudo nautilus
 
 主题包地址：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
 
-**安装步骤** ：
-
-首先下载主题包，多为压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
+安装步骤 ：首先下载主题包，多为压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
 
 定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，把解压出的文件拷贝到文件夹中。
 
-(a). 方案一：手写配置文件
+(a). 手写配置文件
 
 接着（终端下）使用 gedit 修改 *grub* 文件：
 
@@ -203,7 +201,7 @@ GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
 sudo update-grub
 ```
 
-(b). 方案二：利用软件 Grub Customizer
+(b). 利用软件 Grub Customizer
 
 添加 PPA ：
 
@@ -318,54 +316,51 @@ sudo apt install chrome-gnome-shell
 
 **Gnome 扩展推荐**（点击链接进入，按需使用） :
 
-| 扩展                                                         | 简要功能描述                         |
-| :----------------------------------------------------------- | :----------------------------------- |
-| [Appfolders Management extension](https://extensions.gnome.org/extension/1217/appfolders-manager/) | 添加文件夹                           |
-| [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) | 在顶部添加一个应用程序入口           |
-| [Autohide Battery](https://extensions.gnome.org/extension/595/autohide-battery/) | 自动隐藏电源（充电状态下已满）       |
-| [Caffeine](https://extensions.gnome.org/extension/517/caffeine/) | 取消自动锁屏（应用前台允许下）       |
-| [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/) | 剪切板管理工具                       |
-| [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/) | Alt Tab 切换应用（更酷炫的界面）     |
-| [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) | Dock （大名鼎鼎）                    |
-| [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) | 对顶栏的操作处理（诸如自动隐藏等）   |
-| [EasyScreenCast](https://extensions.gnome.org/extension/690/easyscreencast/) | 录屏工具（录制质量优秀）             |
-| [Extension update notifier](https://extensions.gnome.org/extension/1166/extension-update-notifier/) | 自动推送所有扩展的更新信息           |
-| [Hide Top Bar](https://extensions.gnome.org/extension/545/hide-top-bar/) | 全屏时自动隐藏顶栏                   |
-| [Internet speed meter](https://extensions.gnome.org/extension/1461/internet-speed-meter/) | 顶栏显示当前网络速度                 |
-| [Keys Indicator](https://extensions.gnome.org/extension/1105/keys-indicator/) | 顶栏显示 shift,alt,ctrl,num,cap 状态 |
-| [Never close calendar event](https://extensions.gnome.org/extension/1439/never-close-calendar-event/) | 从不清除日历事件                     |
-| [No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/) | 清楚左上角的活动热区                 |
-| [OpenWeather](https://extensions.gnome.org/extension/750/openweather/) | 顶栏显示天气情况（支持中文）         |
-| [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) | 提供快捷目录入口（同文件管理器）     |
-| [Popup dict Switcher](https://extensions.gnome.org/extension/1349/popup-dict-switcher/) | 一键开关划词翻译                     |
-| [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) | 移除可移动设备                       |
-| [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/) | 截图工具（挺方便）                   |
-| [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) | 更方便的调整声音、亮度               |
-| [System-monitor](https://extensions.gnome.org/extension/120/system-monitor/) | 在状态栏中显示系统信息（很多类型）   |
-| [TaskBar](https://extensions.gnome.org/extension/584/taskbar/) | 类似于 Windows 任务栏的显示效果      |
-| [Time ++](https://extensions.gnome.org/extension/1238/time/) | 番茄钟（闹钟、秒表、计时器）         |
-| [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 顶栏显示应用图标（托盘显示）         |
-| [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 允许本地安装使用 Shell 主题          |
+| 扩展                                                         | 简要功能描述                               |
+| :----------------------------------------------------------- | :----------------------------------------- |
+| [Appfolders Management extension](https://extensions.gnome.org/extension/1217/appfolders-manager/) | 【荐】添加文件夹                           |
+| [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/) | 在顶部添加一个应用程序入口                 |
+| [Autohide Battery](https://extensions.gnome.org/extension/595/autohide-battery/) | 【荐】自动隐藏电源（充电状态下已满）       |
+| [Caffeine](https://extensions.gnome.org/extension/517/caffeine/) | 取消自动锁屏（应用前台允许下）             |
+| [Clipboard Indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/) | 剪切板管理工具                             |
+| [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/) | 【荐】Alt Tab 切换应用（更酷炫的界面）     |
+| [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) | 【荐】Dock （大名鼎鼎）                    |
+| [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) | 【荐】对顶栏的操作处理（诸如自动隐藏等）   |
+| [EasyScreenCast](https://extensions.gnome.org/extension/690/easyscreencast/) | 录屏工具（录制质量优秀）                   |
+| [Extension update notifier](https://extensions.gnome.org/extension/1166/extension-update-notifier/) | 【荐】自动推送所有扩展的更新信息           |
+| [Keys Indicator](https://extensions.gnome.org/extension/1105/keys-indicator/) | 【荐】顶栏显示 shift,alt,ctrl,num,cap 状态 |
+| [Never close calendar event](https://extensions.gnome.org/extension/1439/never-close-calendar-event/) | 从不清除日历事件                           |
+| [OpenWeather](https://extensions.gnome.org/extension/750/openweather/) | 【荐】顶栏显示天气情况（支持中文）         |
+| [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) | 【荐】提供快捷目录入口（同文件管理器）     |
+| [Popup dict Switcher](https://extensions.gnome.org/extension/1349/popup-dict-switcher/) | 一键开关划词翻译 >>> 参考下文<<<           |
+| [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) | 【荐】移除可移动设备                       |
+| [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/) | 【荐】截图工具（挺方便）                   |
+| [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) | 更方便的调整声音、亮度                     |
+| [System-monitor](https://extensions.gnome.org/extension/120/system-monitor/) | 在状态栏中显示系统信息（需要解决依赖）     |
+| [TaskBar](https://extensions.gnome.org/extension/584/taskbar/) | 类似于 Windows 任务栏的显示效果            |
+| [Time ++](https://extensions.gnome.org/extension/1238/time/) | 番茄钟（闹钟、秒表、计时器）               |
+| [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) | 【荐】顶栏显示应用图标（托盘显示）         |
+| [User Themes](https://extensions.gnome.org/extension/19/user-themes/) | 【荐】允许本地安装使用 Shell 主题          |
 
 > 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，若出现安装失败，请检查 **是否满足相关依赖** 。
 
 ### 3.3 Snap 安装软件
 
-* 登录 Snap Store（这个账户是你的 UBuntu One 账户（https://login.ubuntu.com/+login ）
+登录 Snap Store（这个账户是你的 UBuntu One 账户（https://login.ubuntu.com/+login ）
 
 ```sh
 sudo snap login xxxxx@gmail.com
 ```
 
-- 退出账户
+退出账户
 
 ```sh
 snap logout
 ```
 
-Snap 通常从 Snap Store 安装。您可以在不登录的情况下与 Snap Store 进行交互，但登录可提供许多优势。这些优势包括能够访问您的私人快照和管理快照而无需设备上的 root 。概括来说：**可以不登录，但是大部分命令就需要使用 sudo ，登录账户后则无需使用**。此外登录账户后才可以发布 snap 包。
+**可以不登录，但是大部分命令就需要使用 sudo ，登录账户后则无需使用**。此外登录账户后才可以发布 snap 包。
 
-PS：在应用商店里可以搜索、安装、下载到基于 snap 的软件，所以下列内容仅供参考。
+PS：在应用商店里可以搜索、安装、下载到基于 snap 的软件，下列内容仅供参考。
 
 ```sh
 snap find <query>    # 查找
@@ -376,7 +371,7 @@ snap disable <snap>  # 禁用
 snap enable <snap>   # 启用
 ```
 
-* 更多 snap 的命令用法可在终端下：`man snap` 查看，或者浏览器访问：[snap: command reference](https://docs.snapcraft.io/reference/snap-command)
+更多 snap 的命令用法可在终端下：`man snap` 查看，或者浏览器访问：[snap: command reference](https://docs.snapcraft.io/reference/snap-command)
 
 > 与软件中心安装相比，终端下可以看到下载速度，排解一下等待的烦恼。
 
@@ -384,7 +379,7 @@ snap enable <snap>   # 启用
 
 - **1.本地同步备份**
 
-[**FreeFileSync**](https://freefilesync.org/) 是一款本地同步 **备份** 软件：如将本地硬盘上的文件同步到移动硬盘上。可以做到增量备份、自动识别差异项等。同步方式有：*双向、镜像、更新* 。下载地址：[Download FreeFileSync](https://freefilesync.org/download.php) ，Linux 版本下载文件为一个压缩包，解压后直接点击 *FreeFileSync* 文件就能使用。
+[**FreeFileSync**](https://freefilesync.org/) 是一款本地同步 **备份** 软件：如将本地硬盘上的文件同步到移动硬盘上。可以做到增量备份、自动识别差异项等。同步方式有：*双向、镜像、更新* 。下载地址：[Download FreeFileSync](https://freefilesync.org/download.php) ，解压后直接点击 *FreeFileSync* 文件就能使用。
 
 因为没有图标，这里给出写入图标的方式（有工具就绝对不手写）：
 
@@ -470,19 +465,19 @@ sudo apt install timeshift
 
 安装完毕后，会发现在应用列表中 **点击应用图标无法启动软件** ，解决方案：
 
-- 修改网易云音乐的启动图标
+修改网易云音乐的启动图标
 
 ```sh
 sudo gedit /usr/share/applications/netease-cloud-music.desktop
 ```
 
-- 修改 Exec 这一行内容
+修改 Exec 这一行内容
 
 ```sh
 Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U"
 ```
 
-- 附录：网易云音乐配置及缓存目录
+附录：网易云音乐配置及缓存目录
 
 ```sh
 ~/.config/netease-cloud-music
@@ -495,17 +490,13 @@ Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U"
 
 触摸板手势这里有两个选择： [touchegg](https://github.com/JoseExposito/touchegg) 和 [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
 
-touchegg 从提交记录上看似乎有些年代偏久了，而且 Issues 也有一堆问题，所以这里选用 libinput-gestures 。
-
-**安装步骤：**
-
-- 加入用户组，完成之后重启操作系统
+安装步骤：加入用户组，完成之后重启操作系统
 
 ```sh
 sudo gpasswd -a $USER input
 ```
 
-- 安装
+安装
 
 ```sh
 sudo apt install libinput-tools
@@ -514,21 +505,21 @@ cd libinput-gestures
 sudo make install # (or sudo ./libinput-gestures-setup install)
 ```
 
-- 启动
+启动
 
 ```sh
 libinput-gestures-setup start
 libinput-gestures-setup autostart
 ```
 
-- 停止
+停止
 
 ```sh
 libinput-gestures-setup stop
 libinput-gestures-setup autostop
 ```
 
-- 卸载
+卸载
 
 ```sh
 libinput-gestures-setup stop
@@ -541,6 +532,8 @@ sudo libinput-gestures-setup uninstall
 - **1.SSR**
 
 > 地址：[erguotou520](https://github.com/erguotou520)/**[electron-ssr](https://github.com/erguotou520/electron-ssr)** 。这是一个跨平台（支持Windows MacOS Linux系统）的客户端桌面应用，它功能丰富，支持 windows 版大部分功能，更有更多人性化功能。它是开源的，它来源于开源，回馈以开源。
+
+> 注意1：如果是全新安装的操作系统，终端下输入 `python` 命令无输出时，可以输入 `sudo ln -s /usr/bin/python3 /usr/bin/python` 解决，否则代理多半实效。
 
 - **2.Chrome**
 
@@ -574,31 +567,19 @@ sudo apt-get update
 
  Linux 下的划词翻译工具，支持使用有道等多种翻译服务。
 
-功能特点：
-
-1. 目前只支持英文->中文翻译，支持单词和短语
-2. 主要针对 Gnome 桌面环境，不保证其它环境下的正常使用
-3. 鼠标划词翻译，弹窗显示
-4. 智能处理选中内容（去除两端非英文字符、压缩空白字符、删除换行符等）
-5. 弹窗显示一段时间后自动关闭。若鼠标在弹窗中，延迟关闭
-6. 点击弹窗中链接可打开有道词典网页版
-
-安装过程：
-
-- 安装 pip3 ，如果已有请忽略此步骤
+安装过程：安装 pip3 ，如果已有请忽略此步骤
 
 ```sh
 sudo apt install python3-pip
 ```
 
-- 安装 PyGObject 依赖
+安装 PyGObject 依赖
 
 ```sh
-sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0
-sudo apt install libgirepository1.0-dev gcc libcairo2-dev pkg-config python3-dev gir1.2-gtk-3.0
+sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0
 ```
 
-- 安装 popup-dict
+安装 popup-dict
 
 ```sh
 sudo pip3 install popupdict
@@ -606,19 +587,32 @@ sudo pip3 install popupdict
 
 运行软件：使用 Gnome 扩展  [`Popup dict Switcher`](https://extensions.gnome.org/extension/1349/popup-dict-switcher/)
 
+- **6.Hexo | Node.js**
+  - 安装 NVM ：`wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh`
+  - 安装 Node：`nvm install stable`
+  - 安装 Hexo：`npm install -g hexo-cli`
+
+- **7.Git 配置**
+  - 生成 key ：`ssh-keygen -t rsa -C "youremail@example.com"`
+  - 配置用户名：`git config --global user.name "Your Name"`
+  - 配置邮箱：`git config --global user.email "email@example.com"`
+  - 测试 Github 联通：`ssh -T git@github.com`
+  - 将公钥提取出来命名为：`authorized_keys` 扔到服务器的 `~/.ssh` 目录就可以免密登录
+  - 访问远程主机：`ssh 用户名@域名/IP`
+
 ------
 
 ## 四、补充内容
 
 ### 4.1 软件列表
 
-- 音乐软件：网易云音乐、Spotify
-- 聊天软件：TIM、微信、Telegram
-- 办公软件：WPS、Foxit Reader、 Kile
+- 音乐软件：[网易云音乐](https://music.163.com/#/download)、[Spotify](https://www.spotify.com/int/download/linux/)
+- 聊天软件：[TIM](http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/)、[微信](http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/)、Telegram
+- 办公软件：[WPS](http://www.wps.cn/product/wpslinux)、[Foxit Reader](https://www.foxitsoftware.cn/downloads/)、 Kile、[坚果云](https://www.jianguoyun.com/s/downloads)
 - 图形软件：Converseen（图片格式转换）、Krita（有点类似 PS）、polarr （泼辣修图）
 - 下载软件：aMule（电驴）、Deluge（种子）、qBittorrent（种子）、uGet（有点类似 IDM）
 - 截图录屏：深度截图、Shutter、SimpleScreen
-- 版本管理：GitKraken、Meld
+- 版本管理：[GitKraken](https://www.gitkraken.com/git-client)、Meld
 - 浏览器：Chrome、Firefox
 - 软件启动器：Albert
 - 应用商店：App Grid
@@ -627,17 +621,35 @@ sudo pip3 install popupdict
 - 虚拟键盘：Florence
 - 密码管理：KeePassXC
 
+**> 一句话命令**
+
+```sh
+sudo apt install docky
+sudo apt install neofetch
+sudo apt install deluge
+sudo apt install uget
+sudo apt install vim
+sudo apt install vlc
+sudo apt install meld
+sudo apt install make
+sudo apt install gcc
+sudo apt install openjdk-11-jdk
+sudo apt install simplescreenrecorder
+```
+
 ### 4.2 代码篇
 
-**1.软件图标（.desktop）文件位置：**
+- **1.软件图标（.desktop）文件位置**
 
-* `/usr/share/applications` # 大部分启动图标都在此
-* `~/.local/share/applications` # 一部分本地图标
-* `/var/lib/snapd/desktop/applications` # snap 类软件在此
+`/usr/share/applications` # 大部分启动图标都在此
+
+`~/.local/share/applications` # 一部分本地图标
+
+`/var/lib/snapd/desktop/applications` # snap 类软件在此
 
 对于 **.desktop* 文件，可以使用文本编辑器对图标或名称之类的进行修改。
 
-**2.代码篇：**
+- **2.代码篇：**
 
 ```bash
 # 查看所有 shell 以及如何切换
@@ -668,7 +680,39 @@ FLUSH PRIVILEGES; # 更新
 sudo update-alternatives --install <link> <name> <path> <priority>
 sudo update-alternatives --remove <name> <path>
 sudo update-alternatives --config <name>
+
+# Java 环境变量的写法
+# 假设 JDK 的解压目录为 /usr/lib/jvm/jdk
+# 需要修改文件 /etc/profile
+sudo gedit /etc/profile
+# 打开文本编辑器后，在最下面添加：
+export JAVA_HOME=/usr/lib/jvm/jdk
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:{JRE_HOME}/lib
+export PATH=$PATH:{JAVA_HOME}/bin:
+# 然后保存退出 刷新
+source /etc/profile
+# 添加连接
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk/bin/java 300
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk/bin/javac 300
+sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk/bin/jar 300
+
+# Python Anaconda env 配置
+conda create -n your_env_name python=3.7 # 创键环境
+conda activate your_env_name # 激活环境
 ```
+
+- **3.碎碎念 - 踩坑记录**
+
+(a). VMware : 虚拟机安装的前置依赖为：`make` `gcc` 。
+
+(b). JetBrains toolbox ：使用 toolbox 安装软件比 snap 好太多（速度感人），它也能自动更新 IDE 。但是它会疯狂修改 `.desktop` 文件，强迫症表示必须要修改图标的样式和主题一致，把图标文件权限设置为只读就能解决。
+
+(c). Minecraft 所需要的 JDK 只需要提前安装一个 `openjdk-8-jdk` 。
+
+(d). Life is Strange 奇异人生所需要的 Linux 版汉化：[百度网盘](https://pan.baidu.com/s/1dECSYfJ) 。
+
+(e). 待续...
 
 ### 4.3 截图
 
