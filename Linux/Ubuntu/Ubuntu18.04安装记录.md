@@ -718,11 +718,11 @@ conda activate your_env_name # 激活环境
 
 - **桌面**
 
-![szyink-20190307230855-1920x1080](assets/Ubuntu18.04安装记录/szyink-20190307230855-1920x1080.png)
+![](assets/Ubuntu18.04安装记录/szyink-20190311021611-1920x1080.png)
 
 - **软件列表**
 
-![1551971561799](assets/Ubuntu18.04安装记录/1551971561799.png)
+![](assets/Ubuntu18.04安装记录/szyink-20190311021618-1920x1080.png)
 
 - **主题配置**
 
@@ -730,5 +730,4 @@ conda activate your_env_name # 激活环境
 
 - **文件管理器**
 
-![1551971664258](assets/Ubuntu18.04安装记录/1551971664258.png)
-
+![](assets/Ubuntu18.04安装记录/szyink-20190311021635-1037x637.png)
