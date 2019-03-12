@@ -1,9 +1,9 @@
 ![Ubuntu 18.04 安装、配置和美化](assets/Ubuntu18.04安装记录/001-1551354008744.png)
 
-- 概述：系统性的介绍 Ubuntu 18.04 LTS X86_64 的安装过程 :two_hearts:。
-- 简介：日常使用环境的搭建，内容上包括：系统安装、配置、美化和软件安装说明。
-- 定位：新手向，含有一定解释性说明，线性搭建版本：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
-- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议。本文地址：[Ubuntu 安装记录](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 。
+- 概述：完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散 :two_hearts:。
+- 简介：基础使用环境，【伪】开箱即用环境构建，我们的目标是只需要一篇文章就行。
+- 定位：尽量排除专业性很强的内容，尽量包含解释，简略版见：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
+- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议（转载署名）。本文地址：[Ubuntu 安装记录](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 。
 
 ------
 
@@ -19,19 +19,23 @@
 
 - 刻录到光盘：
 
-  - 使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在 Legacy , UEFI 两种引导项，通过 UEFI 形式读入光盘。
+  - 使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在 Legacy , UEFI 两种引导项，需通过 UEFI 形式读入光盘。
 
 - 刻录到 U 盘：
 
+  > 【【题外话：刻录 Windows PE 系统，如“微 PE”可以选择三分区，也就是引导一个分区，PE 一个分区，U 盘剩余空间一个分区；而如果利用方案一的解压方式，那么，没错，U 盘将被识别出两个引导，Windows & Linux】
+
   - **方案一：解压镜像文件** 【**推荐**】
 
-    准备一个 **FAT32** 格式的 U 盘，对 Ubuntu 的镜像文件进行解压，解压到 U 盘根目录，重启进入 U 盘安装系统。
+    准备一个闲置的 **FAT32** U 盘，对 Ubuntu 的镜像文件进行解压，解压到 U 盘根目录，修改相应 BIOS 设置，重启进入 U 盘安装系统。（ GPT+UEFI ）
 
   - 方案二：使用刻录工具
 
     Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是这个工具刻录后的 U 盘只有 Legacy 引导 。这里选用另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)* ，**免安装、绿色版、支持 UEFI** 。
 
 ### 1.2 分区
+
+> 点评本步骤：“可以做，但非必须”。
 
 基本思路：利用 Windows 系统中的磁盘管理工具压缩出一个新分区给 Ubuntu 使用。
 
@@ -47,9 +51,9 @@
 
 正常的安装过程，诸如对 BIOS 进行设置之类，网上教程很多，这里不多赘述。（GPT + UEFI）
 
-在进行到 *安装类型* 这一步骤时，如果你在上一步压缩完分区后，没有新建简单卷（保持未分配状态），那么就只需选择 **安装 Ubuntu，与 Windows boot manager 共存** 这一选项，将分区相关事宜交由 Ubuntu 处理。
+双系统用户须知：**安装 Ubuntu，与 Windows boot manager 共存** 这一选项无风险。
 
-而如果需要自主划分分区，选择 *其他选项* 。分区只推荐划分出根 `/` 和家目录 `/home` 。
+如果需要自主划分分区，选择 *其他选项* 。分区只推荐划分出根 `/` 和家目录 `/home` 。
 
 > 备注1：为了系统的稳定，安装过程中请连上网络，勾选 **安装 Ubuntu 时下载更新** 。
 
@@ -126,27 +130,52 @@ sudo apt install gdebi
 
 >  此节是为伸手党准备的，详细的内容可参见 `2.3 主题自定义` （新手可以不必去看）。
 
+> 可以通过本节内容快速完成主题方面的修改，注：gnome-shell-extensions 是一些扩展的集合，包含了一些常用的扩展，如 User Themes 等（而它可以在应用商店里搜索安装）。
+
 - **系统主题 Sieera** ：[Sierra-light.tar.xz](https://www.opendesktop.org/c/1460761561)，解压文件到：`~/.themes`
+
 - **鼠标光标 oxy-blue** ：[oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压文件到：`~/.icons`
-- **应用图标 suru-plus** ：`wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | env DESTDIR="$HOME/.icons" sh`
-- **Grub 主题 Fallout** ：`wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash`
-- **文泉驿字体 微米黑/正黑**：`sudo apt install fonts-wqy-microhei fonts-wqy-zenhei`
-- **终端字体 powerline** ：`sudo apt-get install fonts-powerline`
+
+- **应用图标 suru-plus** ：
+
+  ```
+  wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | env DESTDIR="$HOME/.icons" sh
+  ```
+
+- **Grub 主题 Fallout** ：
+
+  ```
+  wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
+  ```
+
+- **文泉驿字体 微米黑/正黑**：
+
+  ```
+  sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
+  ```
+
+- **终端字体 powerline** ：
+
+  ```
+  sudo apt-get install fonts-powerline
+  ```
 
 - **安装优化工具：**
 
-```sh
-sudo apt install gnome-tweak-tool
-sudo apt install gnome-shell-extensions
-```
+  ```sh
+  sudo apt install gnome-tweak-tool
+  sudo apt install gnome-shell-extensions
+  ```
 
 然后，从应用列表中打开一个名为 **优化** 的软件，在扩展中启用 “ User Themes ”；在外观中修改：应用程序、光标、图标和 Shell 就大功告成了，最后不要忘记换一个赏心悦目的桌面背景。
 
 ### 2.3 主题自定义
 
+> 主题自定义中共包含 6 个部分，涉及 2.2 中各项具体的解释。
+
 - **1.Gnome-tweak-tool**
 
-Ubuntu 18.04 抛弃了 Unity ，转而使用 Gnome ，故先安装以下工具：
+Ubuntu 18.04 抛弃了 Unity ，转而投入 Gnome 怀抱，故先安装以下工具：
 
 ```sh
 sudo apt install gnome-tweak-tool
@@ -154,7 +183,7 @@ sudo apt install gnome-tweak-tool
 
 然后移步到 **所有软件**→**Ubuntu 软件**→**附加组件** ，在此处安装相应的 Shell 组件。
 
-为了自定义 Shell 主题，需要安装、启用插件：*User Themes（如此才可以修改 shell 样式，也就是顶栏）*
+为了自定义 Shell 主题（加载本地文件），需要安装、启用插件：*User Themes* 。
 
 附录资源下载网站：[Gnome-look](https://www.gnome-look.org/) ，主题、图标等均能在其网站中下载到。
 
@@ -219,7 +248,7 @@ sudo apt install grub-customizer
 
 - **4.GDM 登录背景图**
 
-更换登录界面的背景图需要修改文件 `ubuntu.css`，它位于 `/usr/share/gnome-shell/theme` 。
+更换登录界面的背景图需要修改 `ubuntu.css`，它位于 `/usr/share/gnome-shell/theme` 。
 
 ```sh
 sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
@@ -259,7 +288,7 @@ sudo gdebi xxxxxx.deb
 
 然后移步到 **设置**→**区域和语言** ，删除一部分输入源，只保留汉语，接着选择 **管理已安装的语言** ，修改 *键盘输入法系统* 为 **fcitx** 。关闭窗口，打开所有程序，选择软件  **Fcitx 配置** ，选择加号添加搜狗输入法。
 
-> 如果没有找到搜狗，就重启系统，再次重复以上步骤即可。
+> 如果没有找到搜狗，就重启系统，再次重复以上步骤即可。（多半找不到，呱）
 >
 > 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 。
 
@@ -300,7 +329,7 @@ sudo apt install docky
 
 ### 3.2 Gnome 扩展
 
-获取扩展的方法很多：终端命令，软件中心下载，浏览器下载等，这里主要涉及浏览器下载。
+获取扩展的方法很多：终端命令，软件中心下载，浏览器下载等，这里主要介绍浏览器下载。
 
 首先安装 Gnome Shell ：
 
@@ -417,7 +446,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[CuteHttpFileServer](http://iscute.cn/chfs) ，使用方案见网站说明。
 
-- **4.在线文件管理器**
+- **4.在线文件管理器** **（3 和 4 之间推荐 4）**
 
 基于 **Caddy** 的 **FileBrowser** 模块，除此之外还可以使用 webdav 模块启用 webdav 功能。
 
@@ -486,7 +515,9 @@ Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U"
 
 > 参考资料地址：[Ubuntu 18.04 装了网易云音乐，难道只能用 sudo 启动吗？- @Fancy 解答](https://www.zhihu.com/question/277330447/answer/478510195)
 
-### 3.6 触摸板手势
+### 3.6 触摸板手势 
+
+> 这个软件在测试能安装使用后就卸载了，不是非常熟悉。
 
 触摸板手势这里有两个选择： [touchegg](https://github.com/JoseExposito/touchegg) 和 [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
 
@@ -533,7 +564,7 @@ sudo libinput-gestures-setup uninstall
 
 > 地址：[erguotou520](https://github.com/erguotou520)/**[electron-ssr](https://github.com/erguotou520/electron-ssr)** 。这是一个跨平台（支持Windows MacOS Linux系统）的客户端桌面应用，它功能丰富，支持 windows 版大部分功能，更有更多人性化功能。它是开源的，它来源于开源，回馈以开源。
 
-> 注意1：如果是全新安装的操作系统，终端下输入 `python` 命令无输出时，可以输入 `sudo ln -s /usr/bin/python3 /usr/bin/python` 解决，否则代理多半实效。
+> 注意1：如果是全新安装的操作系统，终端下输入 `python` 命令无输出时，可以输入 `sudo ln -s /usr/bin/python3 /usr/bin/python` 解决，否则代理多半失效。
 
 - **2.Chrome**
 
@@ -588,6 +619,9 @@ sudo pip3 install popupdict
 运行软件：使用 Gnome 扩展  [`Popup dict Switcher`](https://extensions.gnome.org/extension/1349/popup-dict-switcher/)
 
 - **6.Hexo | Node.js**
+
+  > 三连击预备，Hexo 是一套静态博客系统。如果没有终端代理下载速度可能会绝望的。
+
   - 安装 NVM ：`wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh`
   - 安装 Node：`nvm install stable`
   - 安装 Hexo：`npm install -g hexo-cli`
@@ -712,7 +746,19 @@ conda activate your_env_name # 激活环境
 
 (d). Life is Strange 奇异人生所需要的 Linux 版汉化：[百度网盘](https://pan.baidu.com/s/1dECSYfJ) 。
 
-(e). 待续...
+(c). Minecraft 所需要的 JDK 只需要提前安装一个 openjdk-8-jre 。
+
+(d). Life is Strange 奇异人生所需要的 Linux 版汉化：[百度网盘](https://pan.baidu.com/s/1dECSYfJ) 。
+
+(e). XMind : 无启动图标，需要手动添加应用图标，有一个小麻烦是桌面图标文件所在的目录必须和启动软件同目录。此外 XMind 8 版本存在可用的破解激活方案。
+
+(f). MySQL：关于 MySQL 无 root 密码的一些信息：MySQL 8.0 版本才支持 Ubuntu 18.04，而 MySQL8.0 采用了新的加密方式，似乎和现有操作系统不兼容。相关文章：[Ubuntu18.04安装MySQL8.0解决root用户密码登录不成功问题](https://blog.csdn.net/zyqblog/article/details/80159990) 。
+
+(g). STEAM：Ubuntu 18.04 下我喜欢的几个游戏完美支持，简直开心坏了 。
+
+(h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
+
+(i). 待续...
 
 ### 4.3 截图
 

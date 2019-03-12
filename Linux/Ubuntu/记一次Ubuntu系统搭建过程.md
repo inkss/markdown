@@ -41,7 +41,7 @@
 - 自定义 Shell ：所有软件(Win+A)->Ubuntu 软件->搜索 "User Themes"->安装扩展
 - 下载主题 Sierra ：[Sierra-light.tar.xz](https://www.opendesktop.org/c/1460761561)，解压文件到：`~/.themes`
 - 下载光标 oxy-blue ：[oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压文件到：`~/.icons`
-- 安装图标 suru-plus ：`sudo git clone https://github.com/gusbemacbe/suru-plus.git /usr/share/icons/Suru++`
+- 安装图标 suru-plus ：`wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | env DESTDIR="$HOME/.icons" sh`
 - 安装 Grub 主题 Fallout ：`wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash`
 - 安装字体 文泉驿微米黑/正黑：`sudo apt install fonts-wqy-microhei fonts-wqy-zenhei`
 - 安装终端字体 powerline ：`sudo apt-get install fonts-powerline`
@@ -60,7 +60,12 @@
 ## electron
 
 - 下载 electron-ssr：[releases](https://github.com/erguotou520/electron-ssr/releases)
+
 - 依赖检查：终端下输入 `python` 检查是否有输出，没有就安装 python2 或者链接 python3 到 python
+
+- ```
+  sudo ln -s /usr/bin/python3 /usr/bin/python
+  ```
 
 ## 谷歌浏览器：
 
@@ -87,7 +92,6 @@ sudo apt install google-chrome-stable
   - [No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/)
   - [OpenWeather](https://extensions.gnome.org/extension/750/openweather/)
   - [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/)
-  - [popup-dict switcher](https://extensions.gnome.org/extension/1349/popup-dict-switcher/)
   - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   - [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/)
   - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
@@ -141,21 +145,15 @@ sudo apt install google-chrome-stable
   - 启动工具：[Popup dict Switcher](http://link.zhihu.com/?target=https%3A//extensions.gnome.org/extension/1349/popup-dict-switcher/)
 
 - **软件启动器**
-  - Using package managers：
-
-  ```sh
-  wget -nv -O Release.key \
-    https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-  apt-key add - < Release.key
-  apt-get update
-  ```
 
   - 安装软件：
 
   ```sh
-  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
-  sudo apt update
-  sudo apt install albert
+  sudo apt install curl
+  curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key | sudo apt-key add -
+  wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
+  sudo apt-key add - < Release.key
+  sudo apt-get update
   ```
 
 - **本地同步软件**
@@ -291,24 +289,3 @@ sudo apt install google-chrome-stable
 
 ## 截图
 
-【桌面】
-
-![inkss-Ubuntu_1121_004207-1920x1080](assets/记一次Ubuntu系统搭建过程/inkss-Ubuntu_1121_004207-1920x1080.png)
-
-![1543672163008](assets/记一次Ubuntu系统搭建过程/1543672163008.png)
-
-【软件列表】
-
-![1543672227510](assets/记一次Ubuntu系统搭建过程/1543672227510.png)
-
-![1543672248186](assets/记一次Ubuntu系统搭建过程/1543672248186.png)
-
-【主题字体等】
-
-![1543672291478](assets/记一次Ubuntu系统搭建过程/1543672291478.png)
-
-![1543672317462](assets/记一次Ubuntu系统搭建过程/1543672317462.png)
-
-【文件管理器】
-
-![1543672373572](assets/记一次Ubuntu系统搭建过程/1543672373572.png)
