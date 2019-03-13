@@ -734,6 +734,16 @@ sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk/bin/jar 300
 # Python Anaconda env 配置
 conda create -n your_env_name python=3.7 # 创键环境
 conda activate your_env_name # 激活环境
+
+# MariaDB
+# 使用自定义源 TUNA
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirrors.tuna.tsinghua.edu.cn/mariadb/repo/10.3/ubuntu bionic main'
+sudo apt update
+sudo apt install mariadb-server
+# 配置
+sudo mysql_secure_installation
 ```
 
 - **3.碎碎念 - 踩坑记录**
@@ -742,11 +752,7 @@ conda activate your_env_name # 激活环境
 
 (b). JetBrains toolbox ：使用 toolbox 安装软件比 snap 好太多（速度感人），它也能自动更新 IDE 。但是它会疯狂修改 `.desktop` 文件，强迫症表示必须要修改图标的样式和主题一致，把图标文件权限设置为只读就能解决。
 
-(c). Minecraft 所需要的 JDK 只需要提前安装一个 `openjdk-8-jdk` 。
-
-(d). Life is Strange 奇异人生所需要的 Linux 版汉化：[百度网盘](https://pan.baidu.com/s/1dECSYfJ) 。
-
-(c). Minecraft 所需要的 JDK 只需要提前安装一个 openjdk-8-jre 。
+(c). Minecraft 所需要的 JDK 只需要提前安装一个 `openjdk-8-jre` 。
 
 (d). Life is Strange 奇异人生所需要的 Linux 版汉化：[百度网盘](https://pan.baidu.com/s/1dECSYfJ) 。
 
@@ -758,17 +764,19 @@ conda activate your_env_name # 激活环境
 
 (h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
 
-(i). 待续...
+(i). 显卡驱动：笔记本不是英伟达的，没接触过是真心不知道，要不试试问隔壁深度社区？
+
+(j). 待续...
 
 ### 4.3 截图
 
 - **桌面**
 
-![](assets/Ubuntu18.04安装记录/szyink-20190311021611-1920x1080.png)
+
 
 - **软件列表**
 
-![](assets/Ubuntu18.04安装记录/szyink-20190311021618-1920x1080.png)
+
 
 - **主题配置**
 
@@ -776,4 +784,4 @@ conda activate your_env_name # 激活环境
 
 - **文件管理器**
 
-![](assets/Ubuntu18.04安装记录/szyink-20190311021635-1037x637.png)
+

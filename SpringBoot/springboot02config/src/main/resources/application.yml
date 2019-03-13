@@ -1,16 +1,16 @@
-server:
-  port: 8088
-
-person:
-  lastName: zhangsan
-  age: 18
-  birth: 2019/1/1
-  maps: {k1: a,k2: b}
-  lists:
-    - a1
-    - a2
-    - a3
-  boos: false
-  dog:
-    name: a
-    age: 3
+#server:
+#  port: 8088
+#
+#person:
+#  lastName: zhangsan
+#  age: 18
+#  birth: 2019/1/1
+#  maps: {k1: a,k2: b}
+#  lists:
+#    - a1
+#    - a2
+#    - a3
+#  boos: false
+#  dog:
+#    name: a
+#    age: 3
