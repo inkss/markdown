@@ -589,9 +589,9 @@ sudo apt install typora
 ```sh
 sudo apt install curl
 curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key | sudo apt-key add -
-wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
-sudo apt-key add - < Release.key
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
 sudo apt-get update
+sudo apt-get install albert
 ```
 
 - **5.popup-dict**
@@ -667,7 +667,7 @@ sudo apt install vlc
 sudo apt install meld
 sudo apt install make
 sudo apt install gcc
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-8-jdk
 sudo apt install simplescreenrecorder
 ```
 
@@ -764,7 +764,7 @@ sudo mysql_secure_installation
 
 (h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
 
-(i). 显卡驱动：笔记本不是英伟达的，没接触过是真心不知道，要不试试问隔壁深度社区？
+(i). 显卡驱动：附加驱动里选择好后自动安装的。。。
 
 (j). 待续...
 

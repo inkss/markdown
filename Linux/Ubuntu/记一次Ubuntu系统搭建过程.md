@@ -1,7 +1,8 @@
 # 记一次 Ubuntu 系统搭建过程
 
-- 文章定位：记录、备份、自用
-- 基础环境：Ubuntu 18.04.1
+- 文章定位：记录、备份、自用。
+- 系统版本：Ubuntu 18.04.2 。
+- 更新时间：最后更新于 2019/04/03 ，**合理判断内容过时否**。
 
 ------
 
@@ -10,10 +11,11 @@
 - 下载 Ubuntu 镜像：[Download Ubuntu Desktop](https://www.ubuntu.com/download/desktop)
 - 解压镜像到 U 盘根目录（FAT32）
 - 重启进 U 盘：最小安装、全程联网、下载更新
+- 关于重装：保留 /home 分区重装能大大缩短重新配置的过程。
 
 ## 第一次更新
 
-- 正式启动后终端更新：
+- 正式启动后终端更新 or 等待自动更新：
 
   ```sh
   sudo apt update
@@ -22,7 +24,13 @@
 
 - 更新语言包：设置->区域和语言->管理已安装的语言
 
-## 更换终端
+## 双系统时差问题
+
+```sh
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
+## 替换 Shell
 
 - 换成 oh-my-zsh ：
 
@@ -35,7 +43,7 @@
 
 - 重启或注销激活
 
-## 主题、字体、壁纸等
+## 与美化相关内容
 
 - Gnome-tweak-tool：`sudo apt install gnome-tweak-tool`
 - 自定义 Shell ：所有软件(Win+A)->Ubuntu 软件->搜索 "User Themes"->安装扩展
@@ -47,6 +55,26 @@
 - 安装终端字体 powerline ：`sudo apt-get install fonts-powerline`
 - 激活自定义 shell ：所有软件->优化->扩展-> User Themes
 - 激活主题、字体、图标等：所有软件->优化->外观/字体
+
+- 自定义 Grub 引导内容：
+
+  ```sh
+  sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+  sudo apt install grub-customizer
+  ```
+
+- 自定义 GDM 背景：
+
+  ```sh
+  sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
+  
+  # 替换 lockDialogGroup 内容，模板如下
+  #lockDialogGroup {
+  background: #2c001e url(file:///home/inkss/APP/GDM/img.jpg);
+     background-repeat: no-repeat; 
+     background-size: cover;
+     background-position: center; }
+  ```
 
 ## 中文输入法-搜狗
 
@@ -61,7 +89,7 @@
 
 - 下载 electron-ssr：[releases](https://github.com/erguotou520/electron-ssr/releases)
 
-- 依赖检查：终端下输入 `python` 检查是否有输出，没有就安装 python2 或者链接 python3 到 python
+- 依赖检查：终端下输入 `python` 检查是否有输出，没有就安装 python2 或者链接 python3 到 python 。
 
 - ```
   sudo ln -s /usr/bin/python3 /usr/bin/python
@@ -82,20 +110,19 @@ sudo apt install google-chrome-stable
 - 安装浏览器插件：[Chrome 网上应用商店](http://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep)
 - 自用扩展列表：
   - [Appfolders Management extension](https://extensions.gnome.org/extension/1217/appfolders-manager/)
-  - [Applications Menu](https://extensions.gnome.org/extension/6/applications-menu/)
   - [Autohide Battery](https://extensions.gnome.org/extension/595/autohide-battery/)
-  - [Coverflow Alt-Tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
+  - [Caffeine](https://extensions.gnome.org/extension/517/caffeine/)
   - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/)
   - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/)
+  - [Disconnect Wifi](https://extensions.gnome.org/extension/904/disconnect-wifi/)
+  - [Draw On You Screen](https://extensions.gnome.org/extension/1683/draw-on-you-screen/) 
   - [Extension Update Notifier](https://extensions.gnome.org/extension/1166/extension-update-notifier/)
-  - [Keys Indicator](https://extensions.gnome.org/extension/1105/keys-indicator/)
-  - [No Topleft Hot Corner](https://extensions.gnome.org/extension/118/no-topleft-hot-corner/)
+  - [Media Player Indicator](https://extensions.gnome.org/extension/55/media-player-indicator/)
   - [OpenWeather](https://extensions.gnome.org/extension/750/openweather/)
   - [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/)
   - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   - [Screenshot Tool](https://extensions.gnome.org/extension/1112/screenshot-tool/)
-  - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-  - [system-monitor](https://extensions.gnome.org/extension/120/system-monitor/)
+  - [system-monitor](https://extensions.gnome.org/extension/120/system-monitor/) 【存在前置依赖】
   - [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/)
   - [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
 
@@ -106,19 +133,6 @@ sudo apt install google-chrome-stable
   - 下载环境：`git clone https://github.com/wszqkzqk/deepin-wine-ubuntu.git`
   - 执行安装：`./install.sh`
   - 下载容器包（见描述）：[readme.md](.https://github.com/wszqkzqk/deepin-wine-ubuntu/blob/master/README.md)
-
-- **Spotify 播放器**
-
-  - 安装软件：
-
-  ```sh
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90
-  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-  sudo apt update
-  sudo apt install spotify-client
-  ```
-
-  - snap 打包的安装包不怎么好用
 
 - **网易云音乐**
 
@@ -151,9 +165,9 @@ sudo apt install google-chrome-stable
   ```sh
   sudo apt install curl
   curl https://build.opensuse.org/projects/home:manuelschneid3r/public_key | sudo apt-key add -
-  wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
-  sudo apt-key add - < Release.key
+  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
   sudo apt-get update
+  sudo apt-get install albert
   ```
 
 - **本地同步软件**
@@ -169,7 +183,7 @@ sudo apt install google-chrome-stable
 - **MD 编辑软件 Typora**
 
   ```sh
-  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA300B7755AFCFAE
+  wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
   sudo add-apt-repository 'deb https://typora.io/linux ./'
   sudo apt update
   sudo apt install typora
@@ -193,7 +207,9 @@ sudo apt install google-chrome-stable
   sudo apt install vim
   sudo apt install vlc
   sudo apt install meld
-  sudo apt install openjdk-11-jdk
+  sudo apt install make
+  sudo apt install gcc
+  sudo apt install openjdk-8-jdk
   sudo apt install simplescreenrecorder
   ```
 
@@ -204,12 +220,13 @@ sudo apt install google-chrome-stable
   - 福昕阅读器：https://www.foxitsoftware.cn/downloads/
   - BaiduPCS-Go：https://github.com/iikira/BaiduPCS-Go
   - GitKraken：https://www.gitkraken.com/download/linux-deb
+  - Dbeaver：https://dbeaver.io/download/
 
 ## 环境配置
 
 - **JDK 环境**
 
-  - 下载 JDK 11 ：[jdk-11.0.1_linux-x64_bin.tar.gz](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
+  - 下载 JDK ，如 JDK 11：[jdk-11.0.1_linux-x64_bin.tar.gz](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
   - 解压文件到：`/usr/lib/jvm/jdk11`
   - 配置环境变量：
 
@@ -253,7 +270,7 @@ sudo apt install google-chrome-stable
 
 - **数据库**
 
-  - MaridDB ： `sudo apt install mariadb-server`
+  - MySQL ： `sudo apt install mysql-server`
   - WorkBench : `sudo apt install mysql-workbench`
   - root 密码登录：
 
@@ -270,7 +287,19 @@ sudo apt install google-chrome-stable
   - 安装 Node：`nvm install stable`
   - 安装 Hexo：`npm install -g hexo-cli`
 
+- **数据库 MariaDB**
 
+  - 使用清华源：
+
+  ```sh
+  sudo apt-get install software-properties-common
+  sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+  sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirrors.tuna.tsinghua.edu.cn/mariadb/repo/10.3/ubuntu bionic main'
+  sudo apt update
+  sudo apt install mariadb-server
+  ```
+
+  - 安全配置：`sudo mysql_secure_installation`
 
 ## Git 配置
 
@@ -283,9 +312,17 @@ sudo apt install google-chrome-stable
 
 ## 编程软件
 
-- Jetbrains 系的软件用 snap 安装比较舒服
+- Jetbrains 系的软件用务必使用 JetBrains Toolbox 安装。
 - VS code：https://code.visualstudio.com/
 - VS code 插件备份：Anaconda Extension Pack、Auto Close Tag、Auto Rename Tag、Beautify、Chinese (Simplified)、Code Runner、Date & Time、Debugger for Chrome、Git History、GitLens、HTML CSS Support、HTML Snippets、Kitty Time、Live Server、Markdown All in One、Markdown Preview Enhanced、markdownlint、Material Icon Theme、Material Theme、Python、YAML Support by Red Hat
 
+## 联想 Y7000P 显卡 & 网卡 驱动配置
+
+- 显卡：GTX 1060
+- 网卡：Intel® Wireless-AC 9560
+- 相关链接：[Ubuntu 18.04 下联想 Y7000P 显卡和网卡驱动配置](https://inkss.cn/2019/04/02/lenovo-y7000p-graphics-card-and-nic-driver-configuration-under-ubuntu-1804/)
+
 ## 截图
+
+*暂不追加*
 
