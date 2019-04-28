@@ -1,0 +1,60 @@
+2019-04-28 16:32:43.355  INFO 12971 --- [main] .SpringBoot02ConfigAutoconfigApplication : Starting SpringBoot02ConfigAutoconfigApplication on szyink-ubuntu with PID 12971 (/home/szyink/Git/markdown/SpringBoot/springboot02autoconfig/target/classes started by szyink in /home/szyink/Git/markdown/SpringBoot/springboot02autoconfig)
+2019-04-28 16:32:43.357 DEBUG 12971 --- [main] .SpringBoot02ConfigAutoconfigApplication : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-04-28 16:32:43.357  INFO 12971 --- [main] .SpringBoot02ConfigAutoconfigApplication : No active profile set, falling back to default profiles: default
+2019-04-28 16:32:43.924  INFO 12971 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-28 16:32:43.939  INFO 12971 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-28 16:32:43.939  INFO 12971 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-04-28 16:32:43.979  INFO 12971 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-28 16:32:43.979  INFO 12971 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 603 ms
+2019-04-28 16:32:44.097  INFO 12971 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:32:44.183  INFO 12971 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-28 16:32:44.185  INFO 12971 --- [main] .SpringBoot02ConfigAutoconfigApplication : Started SpringBoot02ConfigAutoconfigApplication in 1.028 seconds (JVM running for 1.363)
+2019-04-28 16:33:23.631  INFO 12971 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:33:25.173  INFO 13098 --- [main] .SpringBoot02ConfigAutoconfigApplication : Starting SpringBoot02ConfigAutoconfigApplication on szyink-ubuntu with PID 13098 (/home/szyink/Git/markdown/SpringBoot/springboot02autoconfig/target/classes started by szyink in /home/szyink/Git/markdown/SpringBoot/springboot02autoconfig)
+2019-04-28 16:33:25.174 DEBUG 13098 --- [main] .SpringBoot02ConfigAutoconfigApplication : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-04-28 16:33:25.175  INFO 13098 --- [main] .SpringBoot02ConfigAutoconfigApplication : No active profile set, falling back to default profiles: default
+2019-04-28 16:33:25.776  INFO 13098 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-28 16:33:25.790  INFO 13098 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-28 16:33:25.791  INFO 13098 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-04-28 16:33:25.832  INFO 13098 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-28 16:33:25.832  INFO 13098 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 633 ms
+2019-04-28 16:33:25.937  INFO 13098 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:33:26.022  INFO 13098 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-28 16:33:26.024  INFO 13098 --- [main] .SpringBoot02ConfigAutoconfigApplication : Started SpringBoot02ConfigAutoconfigApplication in 1.038 seconds (JVM running for 1.434)
+2019-04-28 16:34:59.603  INFO 13098 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:35:01.151  INFO 13246 --- [main] .SpringBoot02ConfigAutoconfigApplication : Starting SpringBoot02ConfigAutoconfigApplication on szyink-ubuntu with PID 13246 (/home/szyink/Git/markdown/SpringBoot/springboot02autoconfig/target/classes started by szyink in /home/szyink/Git/markdown/SpringBoot/springboot02autoconfig)
+2019-04-28 16:35:01.153 DEBUG 13246 --- [main] .SpringBoot02ConfigAutoconfigApplication : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-04-28 16:35:01.153  INFO 13246 --- [main] .SpringBoot02ConfigAutoconfigApplication : No active profile set, falling back to default profiles: default
+2019-04-28 16:35:01.732  INFO 13246 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-28 16:35:01.747  INFO 13246 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-28 16:35:01.748  INFO 13246 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-04-28 16:35:01.786  INFO 13246 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-28 16:35:01.787  INFO 13246 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 613 ms
+2019-04-28 16:35:01.901  INFO 13246 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:35:01.982  INFO 13246 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-28 16:35:01.984  INFO 13246 --- [main] .SpringBoot02ConfigAutoconfigApplication : Started SpringBoot02ConfigAutoconfigApplication in 1.024 seconds (JVM running for 1.406)
+2019-04-28 16:36:09.688  INFO 13246 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:36:11.407  INFO 13377 --- [main] .SpringBoot02ConfigAutoconfigApplication : Starting SpringBoot02ConfigAutoconfigApplication on szyink-ubuntu with PID 13377 (/home/szyink/Git/markdown/SpringBoot/springboot02autoconfig/target/classes started by szyink in /home/szyink/Git/markdown/SpringBoot/springboot02autoconfig)
+2019-04-28 16:36:11.408 DEBUG 13377 --- [main] .SpringBoot02ConfigAutoconfigApplication : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-04-28 16:36:11.408  INFO 13377 --- [main] .SpringBoot02ConfigAutoconfigApplication : No active profile set, falling back to default profiles: default
+2019-04-28 16:36:11.975  INFO 13377 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-28 16:36:11.990  INFO 13377 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-28 16:36:11.990  INFO 13377 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-04-28 16:36:12.029  INFO 13377 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-28 16:36:12.029  INFO 13377 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 601 ms
+2019-04-28 16:36:12.139  INFO 13377 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:36:12.226  INFO 13377 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-28 16:36:12.228  INFO 13377 --- [main] .SpringBoot02ConfigAutoconfigApplication : Started SpringBoot02ConfigAutoconfigApplication in 1.014 seconds (JVM running for 1.351)
+2019-04-28 16:36:23.300  INFO 13377 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:36:24.922  INFO 13481 --- [main] .SpringBoot02ConfigAutoconfigApplication : Starting SpringBoot02ConfigAutoconfigApplication on szyink-ubuntu with PID 13481 (/home/szyink/Git/markdown/SpringBoot/springboot02autoconfig/target/classes started by szyink in /home/szyink/Git/markdown/SpringBoot/springboot02autoconfig)
+2019-04-28 16:36:24.923 DEBUG 13481 --- [main] .SpringBoot02ConfigAutoconfigApplication : Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-04-28 16:36:24.924  INFO 13481 --- [main] .SpringBoot02ConfigAutoconfigApplication : No active profile set, falling back to default profiles: default
+2019-04-28 16:36:25.556  INFO 13481 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-28 16:36:25.571  INFO 13481 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-28 16:36:25.571  INFO 13481 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-04-28 16:36:25.609  INFO 13481 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-28 16:36:25.609  INFO 13481 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 663 ms
+2019-04-28 16:36:25.723  INFO 13481 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-28 16:36:25.822  INFO 13481 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-28 16:36:25.824  INFO 13481 --- [main] .SpringBoot02ConfigAutoconfigApplication : Started SpringBoot02ConfigAutoconfigApplication in 1.091 seconds (JVM running for 1.531)
+2019-04-28 17:37:05.590  INFO 13481 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

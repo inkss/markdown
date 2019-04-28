@@ -1,89 +1,81 @@
 ![Ubuntu 18.04 安装、配置和美化](assets/Ubuntu18.04安装记录/001-1551354008744.png)
 
-- 概述：完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散 :two_hearts:。
-- 简介：基础使用环境，【伪】开箱即用环境构建，我们的目标是只需要一篇文章就行。
-- 定位：尽量排除专业性很强的内容，尽量包含解释，简略版见：[记一次Ubuntu系统搭建过程](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/%E8%AE%B0%E4%B8%80%E6%AC%A1Ubuntu%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B.md) 。
+- 概述：Ubuntu 18.04 的安装配置笔记， :two_hearts:。
+- 简介：基础使用环境，【伪】开箱即用环境构建，目标是一篇文章能够解决大部分问题。
 - 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议（转载署名）。本文地址：[Ubuntu 安装记录](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 。
+
+------
+
+**文章更新日志：**
+
+```
+2019.04.28 
+   - 重构文章，修改并调整内容。
+   - 补充来源链接，方便时效性内容的验证。
+```
 
 ------
 
 ## 一、安装操作系统
 
->  Ubuntu 操作系统的安装笔记，仅供参考 :v:。
-
 ### 1.1 引导盘
-
->  **统一可扩展固件接口**（英语：Unified Extensible Firmware Interface，缩写**UEFI**）。
 
 刻录方式：
 
-- 刻录到光盘：
+- 刻录进光盘：
 
   - 使用 *[UltraISO](https://www.ultraiso.com/download.html)* 对镜像文件进行刻录，同时存在 Legacy , UEFI 两种引导项，需通过 UEFI 形式读入光盘。
 
-- 刻录到 U 盘：
-
-  > 【【题外话：刻录 Windows PE 系统，如“微 PE”可以选择三分区，也就是引导一个分区，PE 一个分区，U 盘剩余空间一个分区；而如果利用方案一的解压方式，那么，没错，U 盘将被识别出两个引导，Windows & Linux】
+- 刻录进 U 盘：
 
   - **方案一：解压镜像文件** 【**推荐**】
 
-    准备一个闲置的 **FAT32** U 盘，对 Ubuntu 的镜像文件进行解压，解压到 U 盘根目录，修改相应 BIOS 设置，重启进入 U 盘安装系统。（ GPT+UEFI ）
+    将 U 盘格式化为 **FAT32** ，然后解压操作系统的镜像文件至 U 盘根目录，完成 “刻录” 。
 
   - 方案二：使用刻录工具
 
-    Ubuntu 官网中推荐的 U 盘刻录工具为 *[Universal-USB-Installer](https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/)* ，但是这个工具刻录后的 U 盘只有 Legacy 引导 。这里选用另一款 U 盘刻录工具：*[Rufus](https://rufus.akeo.ie/?locale=zh_CN)* ，**免安装、绿色版、支持 UEFI** 。
+    利用软件 *[Rufus](https://rufus.akeo.ie/?locale=zh_CN)* 完成镜像刻录。
+
+> 刻录 Windows PE 系统，如“微 PE”可以选择三分区，也就是引导一个分区，PE 一个分区，U 盘剩余空间一个分区；而如果利用方案一的解压方式，那么，没错，U 盘将被识别出两个引导，Windows & Linux 。
 
 ### 1.2 分区
 
-> 点评本步骤：“可以做，但非必须”。
+分区，也就是提前为 Ubuntu 系统划分空间，这一步可以在 Windows 下进行，也可以在安装操作系统时进行。
 
-基本思路：利用 Windows 系统中的磁盘管理工具压缩出一个新分区给 Ubuntu 使用。
+Linux 系统的分区只建议划分根 `/` 和家目录 `/home` ，如此系统文件与个人文件分离，最大程度的保留数据。
 
-打开 Windows 的文件管理器（快捷键 Win + E），展开顶部选择 **计算机**→**管理**。
-
-然后选择 **磁盘管理工具** ，对相应分区进行压缩（所谓压缩分区也可视为切割分区）。
-
-> 备注1：压缩后的新分区 **不要新建简单卷或格式化** 。
-
-> 备注2：单系统需求用户可忽略此步骤。
+交换分区：用 swap 文件代替 swap 分区吧，连现在的 Windows 系统都是 8G 起步了，那点内存帮不到你。
 
 ### 1.3 安装系统
 
-正常的安装过程，诸如对 BIOS 进行设置之类，网上教程很多，这里不多赘述。（GPT + UEFI）
+一些注意事项：
 
-双系统用户须知：**安装 Ubuntu，与 Windows boot manager 共存** 这一选项无风险。
+- 硬盘格式：GPT ；引导类型：UEFI 。
+- 单系统用户，务必准备一个 **EFI (ESP)** 分区，否则无法写入 Grub 。
 
-如果需要自主划分分区，选择 *其他选项* 。分区只推荐划分出根 `/` 和家目录 `/home` 。
-
-> 备注1：为了系统的稳定，安装过程中请连上网络，勾选 **安装 Ubuntu 时下载更新** 。
-
-> 备注2：安装时选择 **最小安装** ，可以避免安装诸如：雷鸟、LibreOffice  之类的软件。
-
-> 备注3：关于交换分区（Swap 分区），可以使用 swap 文件代替 swap 分区。
-
-> 备注4：UEFI 模式，记得准备一个 **EFI** **(ESP)** 分区，否则无法写入 Grub 引导项。
+- 安装过程中建议勾选 **最小安装** 、 **安装 Ubuntu 时下载更新** 和 **为图形或无线硬件安装第三方软件** 。
 
 ------
 
 ## 二、开箱即用的操作系统
 
-> 遗憾的是，Ubuntu 的开箱体验极差，对一个新手来说更适合选用的操作系统是 Deepin 。
+> 遗憾的是，Ubuntu 的开箱体验极差，不过好在配置过程也不算复杂，完成 2.1 和 2.3 便差不多可用了 。
 
-> 本节可以按照线性顺序进行，不过实际安装过程中，限于网速多半会先安装 Chrome 和 SSR （相关内容在第三节）。此外操作系统中自带的火狐浏览器为国际版，而非国内谋智的火狐，两者账户是不互通的。
+> 本节可以按照线性顺序进行，虽然实际安装过程中，限于网速多半会先安装 Chrome 和 SSR （相关内容位于第三节）。此外操作系统中自带的火狐浏览器为国际版，而非国内谋智的火狐，两者账户是不互通的。
 
 ### 2.1 第一次重启前
 
-- **1.完成第一次更新**
+#### 2.1.1 完成第一次更新
 
 先移步到 **所有软件 (Win + A)**→**软件更新器** ，等待系统完成更新。（其实等待一会儿会自动弹出的）
 
 接着移步到 **所有软件**→**设置**→**区域和语言**→**管理已安装的语言** ，完成语言列表的更新。
 
-- **2.转移备份文件**
+#### 2.2.2 转移备份文件
 
 在选择重启操作系统前，拷贝文件到新系统中（如果存在的话）。
 
-- **3.解决双系统时差问题**
+#### 2.2.3 解决双系统时差问题
 
 Windows + Linux 需求用户可以使用以下代码在终端中执行解决此问题。
 
@@ -91,11 +83,11 @@ Windows + Linux 需求用户可以使用以下代码在终端中执行解决此�
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 
-- **4.替换终端**
+#### 2.2.4 替换 Shell
 
 不得不说，有一个智能的补全能力强大的终端还是非常有必要的，二选一。
 
-(a). oh-my-zsh
+(a). [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ```sh
 sudo apt install git
@@ -104,7 +96,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 chsh -s /usr/bin/zsh
 ```
 
-(b). fish
+(b). [fish](https://launchpad.net/~fish-shell/+archive/ubuntu/release-3)
 
 ```sh
 sudo apt-add-repository ppa:fish-shell/release-2
@@ -118,9 +110,9 @@ set fish_greeting
 fish_config
 ```
 
-- **5.终端下的安装器**
+#### 2.2.5 终端下的包安装器
 
-相比于图形界面 ，在终端下安装 deb 包可以获得更多的信息提示，但是使用 `dpkg` 命令又无法自动解决依赖问题，所以这里使用 `gdebi` 安装器替代以上两者。
+相比于图形界面 ，在终端下安装 deb 包可以获得更多的信息提示，但是使用 `dpkg` 命令又无法自动解决依赖问题，所以这里使用 `gdebi` 安装器解决此问题。
 
 ```sh
 sudo apt install gdebi
@@ -132,62 +124,83 @@ sudo apt install gdebi
 
 > 可以通过本节内容快速完成主题方面的修改，注：gnome-shell-extensions 是一些扩展的集合，包含了一些常用的扩展，如 User Themes 等（而它可以在应用商店里搜索安装）。
 
-- **系统主题 Sieera** ：[Sierra-light.tar.xz](https://www.opendesktop.org/c/1460761561)，解压文件到：`~/.themes`
+#### 2.2.1 系统主题 Sieera
 
-- **鼠标光标 oxy-blue** ：[oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压文件到：`~/.icons`
+```sh
+sudo add-apt-repository ppa:dyatlov-igor/sierra-theme
+sudo apt update
+sudo apt install sierra-gtk-theme       # point releases
+sudo apt install sierra-gtk-theme-git   # git master branch
+```
 
-- **应用图标 suru-plus** ：
+- 相关链接：[vinceliuice](https://github.com/vinceliuice)/[Sierra-gtk-theme](https://github.com/vinceliuice/Sierra-gtk-theme) 
 
-  ```
-  wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | env DESTDIR="$HOME/.icons" sh
-  ```
+#### 2.2.2 应用图标 suru-plus 
 
-- **Grub 主题 Fallout** ：
+```
+wget -qO- https://raw.githubusercontent.com/gusbemacbe/suru-plus/master/install.sh | env DESTDIR="$HOME/.icons" sh
+```
 
-  ```
-  wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
-  ```
+- 相关链接：[gusbemacbe](https://github.com/gusbemacbe)/[suru-plus](https://github.com/gusbemacbe/suru-plus)
 
-- **文泉驿字体 微米黑/正黑**：
+#### 2.2.3 Grub 引导主题 Fallout
+
+```
+wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash
+```
+
+- 相关链接：[shvchk](https://github.com/shvchk)/[fallout-grub-theme](https://github.com/shvchk/fallout-grub-theme)
+
+#### 2.2.4 鼠标光标 oxy-blue
+
+- 下载 [oxy-blue.zip](https://www.opendesktop.org/p/1274872/)，解压文件到：`~/.icons` 。
+
+#### 2.2.5 文泉驿字体
+
+- 文泉驿字体 微米黑/正黑：
 
   ```
   sudo apt install fonts-wqy-microhei fonts-wqy-zenhei
   ```
 
-- **终端字体 powerline** ：
+- 终端字体 powerline ：
 
   ```
   sudo apt-get install fonts-powerline
   ```
 
-- **安装优化工具：**
+#### 2.2.6 优化工具
 
-  ```sh
-  sudo apt install gnome-tweak-tool
-  sudo apt install gnome-shell-extensions
-  ```
+```sh
+sudo apt install gnome-tweak-tool
+sudo apt install gnome-shell-extensions
+```
 
-然后，从应用列表中打开一个名为 **优化** 的软件，在扩展中启用 “ User Themes ”；在外观中修改：应用程序、光标、图标和 Shell 就大功告成了，最后不要忘记换一个赏心悦目的桌面背景。
+然后，从应用列表中打开一个名为 **优化** 的软件，在扩展中启用 “ User Themes ”；
+
+在外观中修改：应用程序、光标、图标和 Shell 就大功告成了，最后不要忘记换一个赏心悦目的桌面背景。
+
+![1556460030635](assets/Ubuntu18.04安装记录/1556460030635.png)
+
+#### 2.2.7 输入法和 Dock
+
+- 参阅 2.3 部分的相关内容。
 
 ### 2.3 主题自定义
 
 > 主题自定义中共包含 6 个部分，涉及 2.2 中各项具体的解释。
 
-- **1.Gnome-tweak-tool**
-
-Ubuntu 18.04 抛弃了 Unity ，转而投入 Gnome 怀抱，故先安装以下工具：
+#### 2.3.1 Gnome-tweak-tool
 
 ```sh
 sudo apt install gnome-tweak-tool
 ```
 
-然后移步到 **所有软件**→**Ubuntu 软件**→**附加组件** ，在此处安装相应的 Shell 组件。
+移步到 **所有软件**→**Ubuntu 软件**→**附加组件** ，在此处安装相应的 Shell 组件（或者参考 3.2 节）。
 
-为了自定义 Shell 主题（加载本地文件），需要安装、启用插件：*User Themes* 。
+> 为了自定义 Shell 主题（加载本地文件），需要安装、启用插件：*User Themes* 。
 
-附录资源下载网站：[Gnome-look](https://www.gnome-look.org/) ，主题、图标等均能在其网站中下载到。
-
-- **2.主题 图标 字体**
+#### 2.3.2 主题 图标 字体
 
 安装目录有两种，区别上类似于 Windows 环境变量里的个人和系统。
 
@@ -201,7 +214,7 @@ sudo apt install gnome-tweak-tool
 sudo nautilus
 ```
 
-- **3.Grub 启动项主题**
+#### 2.3.3 Grub 启动项主题
 
 主题包地址：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
 
@@ -209,7 +222,7 @@ sudo nautilus
 
 定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，把解压出的文件拷贝到文件夹中。
 
-(a). 手写配置文件
+**(a)** **手写配置文件**
 
 接着（终端下）使用 gedit 修改 *grub* 文件：
 
@@ -230,23 +243,20 @@ GRUB_THEME="/boot/grub/themes/fallout-grub-theme-master/theme.txt"
 sudo update-grub
 ```
 
-(b). 利用软件 Grub Customizer
-
-添加 PPA ：
+**(b)** **利用软件 Grub Customizer** 【**推荐**】
 
 ```sh
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-```
-
-安装软件：
-
-```sh
 sudo apt install grub-customizer
 ```
 
-使用该软件定制 Grub 。
+使用该软件定制 Grub ，可以修改启动项名称，默认启动改为上一次启动项 。
 
-- **4.GDM 登录背景图**
+- 相关链接：[Launchpad PPA for Grub Customizer](https://launchpad.net/~danielrichter2007/+archive/ubuntu/grub-customizer)
+
+![1556460161149](assets/Ubuntu18.04安装记录/1556460161149.png)
+
+#### 2.3.4 GDM 登录背景图
 
 更换登录界面的背景图需要修改 `ubuntu.css`，它位于 `/usr/share/gnome-shell/theme` 。
 
@@ -266,15 +276,33 @@ sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
 
 ```sh
 #lockDialogGroup {
-background: #2c001e url(file://home/inkss/APP/ink_img/img.jpg);
+background: #2c001e url(file:///home/inkss/APP/ink_img/img.jpg);
    background-repeat: no-repeat; 
    background-size: cover;
    background-position: center; }
 ```
 
-- **5.输入法：搜狗输入法**
+![](assets/Ubuntu18.04安装记录/gnome-shell-screenshot-VU750Z.png)
 
-Ubuntu 18.04 没有提供 Fcitx 输入框架，先安装框架：
+#### 2.3.5 输入法 中州韵和搜狗
+
+> 首先，默认状态下 Ubuntu 的中文输入法属于可用单不完全好用的状态，这里记录两类输入法，二选一。
+
+**(a) 中州韵输入法**
+
+前置提醒：中州韵没有 GUI 界面，通过配置文件进行设置。
+
+基于 IBus 框架的中州韵（默认为此框架）：
+
+```sh
+sudo apt-get install ibus-rime
+```
+
+- 相关链接：[ibus-rime](https://github.com/rime/home/wiki/RimeWithIBus)
+
+**(b) 搜狗输入法**
+
+搜狗基于 Fcitx 输入框架，默认没有安装，需要先安装框架：
 
 ```sh
 sudo apt install fcitx
@@ -292,7 +320,7 @@ sudo gdebi xxxxxx.deb
 >
 > 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 。
 
-- **6.Dock ：Docky**
+#### 2.3.6 Dock - Docky
 
 一个第三方 Dock 软件，颜值上比 Ubuntu 自带 Dock 好了些许。
 
@@ -373,51 +401,20 @@ sudo apt install chrome-gnome-shell
 
 > 以上表格提到的所有扩展都能在 Ubuntu 18.04 中使用，若出现安装失败，请检查 **是否满足相关依赖** 。
 
-### 3.3 Snap 安装软件
+### 3.3 文件备份合集
 
-登录 Snap Store（这个账户是你的 UBuntu One 账户（https://login.ubuntu.com/+login ）
-
-```sh
-sudo snap login xxxxx@gmail.com
-```
-
-退出账户
-
-```sh
-snap logout
-```
-
-**可以不登录，但是大部分命令就需要使用 sudo ，登录账户后则无需使用**。此外登录账户后才可以发布 snap 包。
-
-PS：在应用商店里可以搜索、安装、下载到基于 snap 的软件，下列内容仅供参考。
-
-```sh
-snap find <query>    # 查找
-snap install <snap>  # 安装
-snap remove <snap>   # 删除
-snap revert <snap>   # 还原
-snap disable <snap>  # 禁用
-snap enable <snap>   # 启用
-```
-
-更多 snap 的命令用法可在终端下：`man snap` 查看，或者浏览器访问：[snap: command reference](https://docs.snapcraft.io/reference/snap-command)
-
-> 与软件中心安装相比，终端下可以看到下载速度，排解一下等待的烦恼。
-
-### 3.4 文件备份合集
-
-- **1.本地同步备份**
+#### 3.3.1本地同步备份
 
 [**FreeFileSync**](https://freefilesync.org/) 是一款本地同步 **备份** 软件：如将本地硬盘上的文件同步到移动硬盘上。可以做到增量备份、自动识别差异项等。同步方式有：*双向、镜像、更新* 。下载地址：[Download FreeFileSync](https://freefilesync.org/download.php) ，解压后直接点击 *FreeFileSync* 文件就能使用。
 
-因为没有图标，这里给出写入图标的方式（有工具就绝对不手写）：
+- 因为没有图标，这里给出写入图标的方式（有工具就绝对不手写）：
 
 ```sh
 # –-no-install-recommends 参数避免安装非必须的文件，从而减小体积
 sudo apt install --no-install-recommends gnome-panel
 ```
 
-创建应用程序启动方式
+- 创建应用程序启动方式
 
 ```sh
 sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
@@ -427,7 +424,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 图标：解压包中有一个名为 *Resources.zip* 的压缩包，含有一些图片，从中选取软件图标。
 
-- **2.云端同步备份**
+#### 3.3.2 云端同步备份
 
 [**坚果云**](https://www.jianguoyun.com/) 是一款云端 **同步** 软件，与同类的 *OneDrive* 相比，坚果云做到了全平台兼容。
 
@@ -435,7 +432,7 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[坚果云 Linux 版](https://www.jianguoyun.com/s/downloads/linux) （普通的 deb 安装包）
 
-- **3.局域网文件互传**
+#### 3.3.3 局域网文件互传
 
 **Chfs** 是一个免费的、HTTP 协议的文件共享服务器，使用浏览器可以快速访问。它具有以下特点：
 
@@ -446,17 +443,17 @@ sudo gnome-desktop-item-edit /usr/share/applications/ --create-new
 
 下载地址：[CuteHttpFileServer](http://iscute.cn/chfs) ，使用方案见网站说明。
 
-- **4.在线文件管理器** **（3 和 4 之间推荐 4）**
+#### 3.3.4 在线文件管理器
 
 基于 **Caddy** 的 **FileBrowser** 模块，除此之外还可以使用 webdav 模块启用 webdav 功能。
 
-安装 Caddy
+- 安装 Caddy
 
 ```sh
 curl https://getcaddy.com | bash -s personal http.filebrowser
 ```
 
-新建配置文件 `Caddyfile` ，文件位置 `/home/ubuntu/caddy/Caddyfile`
+- 新建配置文件 `Caddyfile` ，文件位置 `/home/ubuntu/caddy/Caddyfile`
 
 ```sh
 :8080 {
@@ -474,11 +471,11 @@ curl https://getcaddy.com | bash -s personal http.filebrowser
 
 打开网址：http://localhost:8080 访问，默认的用户名和密码均为：`admin` （可以手写一个脚本自动运行）。
 
-**更多的内容可以参看这篇实验：**[基于 Caddy 搭建基于网页的文件共享管理系统](http://link.zhihu.com/?target=https%3A//cloud.tencent.com/developer/labs/lab/10453) 。
+**更多的内容可以参看这篇实验：**[基于 Caddy 搭建基于网页的文件共享管理系统](https://cloud.tencent.com/developer/labs/lab/10453) 。
 
 相关文档：[FileBrowser # caddy](https://docs.filebrowser.xyz/installation#caddy) 。
 
-- **5.系统快照备份**
+#### 3.3.5 系统快照备份
 
 制作快照的软件 **TimeShift** ，可以对整个分区进行备份，以分区为单位进行恢复。这里安装它即可：
 
@@ -486,9 +483,13 @@ curl https://getcaddy.com | bash -s personal http.filebrowser
 sudo apt install timeshift
 ```
 
-### 3.5 网易云音乐
+- 相关链接：[teejee2008](https://github.com/teejee2008)/[timeshift](https://github.com/teejee2008/timeshift)
 
-> 在写这篇文章时，操作系统为：`Ubuntu 18.04.1 LTS x86_64` ；网易云音乐为：`1.1.0`
+![1556463853004](assets/Ubuntu18.04安装记录/1556463853004.png)
+
+### 3.4 网易云音乐
+
+- **以下内容对应网易云音乐 1.1.0 版本。** 
 
 首先去网易云音乐官网 [下载安装包](https://music.163.com/#/download)（Ubuntu 16.04 64 位），然后就是正常的 deb 包安装过程。
 
@@ -515,67 +516,24 @@ Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U"
 
 > 参考资料地址：[Ubuntu 18.04 装了网易云音乐，难道只能用 sudo 启动吗？- @Fancy 解答](https://www.zhihu.com/question/277330447/answer/478510195)
 
-### 3.6 触摸板手势 
-
-> 这个软件在测试能安装使用后就卸载了，不是非常熟悉。
-
-触摸板手势这里有两个选择： [touchegg](https://github.com/JoseExposito/touchegg) 和 [libinput-gestures](https://github.com/bulletmark/libinput-gestures)
-
-安装步骤：加入用户组，完成之后重启操作系统
-
-```sh
-sudo gpasswd -a $USER input
-```
-
-安装
-
-```sh
-sudo apt install libinput-tools
-git clone https://github.com/bulletmark/libinput-gestures.git
-cd libinput-gestures
-sudo make install # (or sudo ./libinput-gestures-setup install)
-```
-
-启动
-
-```sh
-libinput-gestures-setup start
-libinput-gestures-setup autostart
-```
-
-停止
-
-```sh
-libinput-gestures-setup stop
-libinput-gestures-setup autostop
-```
-
-卸载
-
-```sh
-libinput-gestures-setup stop
-libinput-gestures-setup autostop
-sudo libinput-gestures-setup uninstall
-```
-
-### 3.7 部分软件
-
-- **1.SSR**
+### 3.5 SSR
 
 > 地址：[erguotou520](https://github.com/erguotou520)/**[electron-ssr](https://github.com/erguotou520/electron-ssr)** 。这是一个跨平台（支持Windows MacOS Linux系统）的客户端桌面应用，它功能丰富，支持 windows 版大部分功能，更有更多人性化功能。它是开源的，它来源于开源，回馈以开源。
 
 > 注意1：如果是全新安装的操作系统，终端下输入 `python` 命令无输出时，可以输入 `sudo ln -s /usr/bin/python3 /usr/bin/python` 解决，否则代理多半失效。
 
-- **2.Chrome**
+### 3.6 Chrome
 
 ```sh
-sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt update
 sudo apt install google-chrome-stable
 ```
 
-- **3.Typora**
+- 相关链接：[Google Linux Software Repositories](https://www.google.com/linuxrepositories/) , [UbuntuUpdates](https://www.ubuntuupdates.org/ppa/google_chrome) 。
+
+### 3.7 Typora
 
 ```sh
 wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -
@@ -584,7 +542,9 @@ sudo apt update
 sudo apt install typora
 ```
 
-- **4.Albert**
+- 相关链接：[Typora for Linux](https://www.typora.io/#linux)
+
+### 3.8 Albert
 
 ```sh
 sudo apt install curl
@@ -594,7 +554,9 @@ sudo apt-get update
 sudo apt-get install albert
 ```
 
-- **5.popup-dict**
+- 相关链接：[Albert](https://albertlauncher.github.io/docs/installing/) , [OpenSUSE](https://software.opensuse.org/download.html?project=home:manuelschneid3r&package=albert)
+
+### 3.9 popup-dict
 
  Linux 下的划词翻译工具，支持使用有道等多种翻译服务。
 
@@ -618,27 +580,61 @@ sudo pip3 install popupdict
 
 运行软件：使用 Gnome 扩展  [`Popup dict Switcher`](https://extensions.gnome.org/extension/1349/popup-dict-switcher/)
 
-- **6.Hexo | Node.js**
-
-  > 三连击预备，Hexo 是一套静态博客系统。如果没有终端代理下载速度可能会绝望的。
-
-  - 安装 NVM ：`wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh`
-  - 安装 Node：`nvm install stable`
-  - 安装 Hexo：`npm install -g hexo-cli`
-
-- **7.Git 配置**
-  - 生成 key ：`ssh-keygen -t rsa -C "youremail@example.com"`
-  - 配置用户名：`git config --global user.name "Your Name"`
-  - 配置邮箱：`git config --global user.email "email@example.com"`
-  - 测试 Github 联通：`ssh -T git@github.com`
-  - 将公钥提取出来命名为：`authorized_keys` 扔到服务器的 `~/.ssh` 目录就可以免密登录
-  - 访问远程主机：`ssh 用户名@域名/IP`
+- 相关链接：[bianjp](https://github.com/bianjp)/[popup-dict](https://github.com/bianjp/popup-dict)
 
 ------
 
-## 四、补充内容
+## 四、编程程序
 
-### 4.1 软件列表
+### 4.1 Hexo | Node.js
+
+> 三连击预备，Hexo 是一套静态博客系统。如果没有终端代理下载速度可能会绝望的。
+
+- 安装 NVM ：`wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh`
+- 安装 Node：`nvm install stable`
+- 安装 Hexo：`npm install -g hexo-cli`
+
+### 4.2 Git 配置
+
+- 生成 key ：`ssh-keygen -t rsa -C "youremail@example.com"`
+- 配置用户名：`git config --global user.name "Your Name"`
+- 配置邮箱：`git config --global user.email "email@example.com"`
+- 测试 Github 联通：`ssh -T git@github.com`
+- 将公钥提取出来命名为：`authorized_keys` 扔到服务器的 `~/.ssh` 目录就可以免密登录
+- 访问远程主机：`ssh 用户名@域名/IP`
+
+### 4.3 MySQL 8.X
+
+> 在不做处理的情况下，命令行安装 MySQL 版本为 5.7 ，而它只适配到 Ubuntu 17.04 。
+
+先下载 APT 存储库，地址：[MySQL APT Repository](https://dev.mysql.com/downloads/repo/apt/) 。
+
+然后运行它，默认即为 MySQL 8.0 ，移动光标到 OK 确认即可。
+
+接着就可以在终端下正常安装 MySQL 了：
+
+```sh
+sudo apt update
+sudo apt install mysql-server
+```
+
+附录：执行安全脚本
+
+```sh
+sudo mysql_secure_installation
+```
+
+附录：安装 WorkBench
+
+```sh
+sudo apt install mysql-workbench-community
+```
+
+- 相关链接：[如何在Ubuntu 18.04中安装MySQL 8.0](https://www.howtoing.com/install-mysql-8-in-ubuntu)
+
+## 五、补充内容
+
+### 5.1 软件列表
 
 - 音乐软件：[网易云音乐](https://music.163.com/#/download)、[Spotify](https://www.spotify.com/int/download/linux/)
 - 聊天软件：[TIM](http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/)、[微信](http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/)、Telegram
@@ -671,9 +667,9 @@ sudo apt install openjdk-8-jdk
 sudo apt install simplescreenrecorder
 ```
 
-### 4.2 代码篇
+### 5.2 代码篇
 
-- **1.软件图标（.desktop）文件位置**
+#### 5.2.1 软件图标文件位置
 
 `/usr/share/applications` # 大部分启动图标都在此
 
@@ -683,7 +679,7 @@ sudo apt install simplescreenrecorder
 
 对于 **.desktop* 文件，可以使用文本编辑器对图标或名称之类的进行修改。
 
-- **2.代码篇：**
+#### 5.2.2 代码篇
 
 ```bash
 # 查看所有 shell 以及如何切换
@@ -714,7 +710,11 @@ FLUSH PRIVILEGES; # 更新
 sudo update-alternatives --install <link> <name> <path> <priority>
 sudo update-alternatives --remove <name> <path>
 sudo update-alternatives --config <name>
+(g). STEAM：Ubuntu 18.04 下我喜欢的几个游戏完美支持，简直开心坏了 。
 
+(h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
+
+(i). 显卡驱动：附加驱动里选择好后自动安装的。。。
 # Java 环境变量的写法
 # 假设 JDK 的解压目录为 /usr/lib/jvm/jdk
 # 需要修改文件 /etc/profile
@@ -743,10 +743,14 @@ sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirrors.tuna.tsin
 sudo apt update
 sudo apt install mariadb-server
 # 配置
-sudo mysql_secure_installation
+sudo mysql_secure_installation(g). STEAM：Ubuntu 18.04 下我喜欢的几个游戏完美支持，简直开心坏了 。
+
+(h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
+
+(i). 显卡驱动：附加驱动里选择好后自动安装的。。。
 ```
 
-- **3.碎碎念 - 踩坑记录**
+#### 5.2.3 踩坑记录
 
 (a). VMware : 虚拟机安装的前置依赖为：`make` `gcc` 。
 
@@ -758,30 +762,10 @@ sudo mysql_secure_installation
 
 (e). XMind : 无启动图标，需要手动添加应用图标，有一个小麻烦是桌面图标文件所在的目录必须和启动软件同目录。此外 XMind 8 版本存在可用的破解激活方案。
 
-(f). MySQL：关于 MySQL 无 root 密码的一些信息：MySQL 8.0 版本才支持 Ubuntu 18.04，而 MySQL8.0 采用了新的加密方式，似乎和现有操作系统不兼容。相关文章：[Ubuntu18.04安装MySQL8.0解决root用户密码登录不成功问题](https://blog.csdn.net/zyqblog/article/details/80159990) 。
+### 5.3 部分截图
 
-(g). STEAM：Ubuntu 18.04 下我喜欢的几个游戏完美支持，简直开心坏了 。
+![](assets/Ubuntu18.04安装记录/截屏-20190428230648-1920x1080.png)
 
-(h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
+![](assets/Ubuntu18.04安装记录/截屏-20190428230705-1920x1080.png)
 
-(i). 显卡驱动：附加驱动里选择好后自动安装的。。。
-
-(j). 待续...
-
-### 4.3 截图
-
-- **桌面**
-
-
-
-- **软件列表**
-
-
-
-- **主题配置**
-
-![1551971621450](assets/Ubuntu18.04安装记录/1551971621450.png)
-
-- **文件管理器**
-
-
+![](assets/Ubuntu18.04安装记录/截屏-20190428230727-1920x1080.png)
