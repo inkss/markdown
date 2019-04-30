@@ -14,6 +14,8 @@
    - 补充来源链接，方便时效性内容的验证。
 ```
 
+[TOC]
+
 ------
 
 ## 一、安装操作系统
@@ -44,7 +46,7 @@
 
 Linux 系统的分区只建议划分根 `/` 和家目录 `/home` ，如此系统文件与个人文件分离，最大程度的保留数据。
 
-交换分区：用 swap 文件代替 swap 分区吧，连现在的 Windows 系统都是 8G 起步了，那点内存帮不到你。
+交换分区：建议使用 swap 文件代替 swap 分区，削减多余的分区。
 
 ### 1.3 安装系统
 
@@ -220,7 +222,7 @@ sudo nautilus
 
 安装步骤 ：首先下载主题包，多为压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
 
-定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，把解压出的文件拷贝到文件夹中。
+定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，将解压出的文件拷贝到文件夹中。
 
 **(a)** **手写配置文件**
 
@@ -286,7 +288,7 @@ background: #2c001e url(file:///home/inkss/APP/ink_img/img.jpg);
 
 #### 2.3.5 输入法 中州韵和搜狗
 
-> 首先，默认状态下 Ubuntu 的中文输入法属于可用单不完全好用的状态，这里记录两类输入法，二选一。
+> 首先，默认状态下 Ubuntu 的中文输入法属于可用但不完全好用的状态，这里记录两类输入法，二选一。
 
 **(a) 中州韵输入法**
 
@@ -636,36 +638,21 @@ sudo apt install mysql-workbench-community
 
 ### 5.1 软件列表
 
-- 音乐软件：[网易云音乐](https://music.163.com/#/download)、[Spotify](https://www.spotify.com/int/download/linux/)
+- 音乐软件：[网易云音乐](https://music.163.com/#/download)、[Spotify](https://www.spotify.com/int/download/linux/)、*Audacious*
 - 聊天软件：[TIM](http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.qq.office/)、[微信](http://mirrors.aliyun.com/deepin/pool/non-free/d/deepin.com.wechat/)、Telegram
-- 办公软件：[WPS](http://www.wps.cn/product/wpslinux)、[Foxit Reader](https://www.foxitsoftware.cn/downloads/)、 Kile、[坚果云](https://www.jianguoyun.com/s/downloads)
-- 图形软件：Converseen（图片格式转换）、Krita（有点类似 PS）、polarr （泼辣修图）
-- 下载软件：aMule（电驴）、Deluge（种子）、qBittorrent（种子）、uGet（有点类似 IDM）
-- 截图录屏：深度截图、Shutter、SimpleScreen
-- 版本管理：[GitKraken](https://www.gitkraken.com/git-client)、Meld
-- 浏览器：Chrome、Firefox
+- 办公软件：[WPS](http://www.wps.cn/product/wpslinux)、[Foxit Reader](https://www.foxitsoftware.cn/downloads/)、 *Kile*、[坚果云](https://www.jianguoyun.com/s/downloads)、XMind、百度脑图离线版
+- 图形软件：*Converseen*（图片格式转换）、*Krita*（类似 PS）、*polarr* （泼辣修图）
+- 下载软件：*aMule*（电驴）、*Deluge*（种子）、*qBittorrent*（种子）、*uGet*（有点类似 IDM）
+- 截图录屏：*深度截图*、*深度取色器*、*Shutter*、*SimpleScreen*
+- 版本管理：[GitKraken](https://www.gitkraken.com/git-client)、*Meld*
+- 浏览器：Chrome、*Firefox*
 - 软件启动器：Albert
 - 应用商店：App Grid
-- 剪切板管理：Cliplt
+- 剪切板管理：*Cliplt*
 - 网络代理：electron-ssr
-- 虚拟键盘：Florence
-- 密码管理：KeePassXC
-
-**> 一句话命令**
-
-```sh
-sudo apt install docky
-sudo apt install neofetch
-sudo apt install deluge
-sudo apt install uget
-sudo apt install vim
-sudo apt install vlc
-sudo apt install meld
-sudo apt install make
-sudo apt install gcc
-sudo apt install openjdk-8-jdk
-sudo apt install simplescreenrecorder
-```
+- 虚拟键盘：*Florence*
+- 密码管理：*KeePassXC*
+- 音频剪辑：*Audacity*
 
 ### 5.2 代码篇
 
@@ -710,11 +697,7 @@ FLUSH PRIVILEGES; # 更新
 sudo update-alternatives --install <link> <name> <path> <priority>
 sudo update-alternatives --remove <name> <path>
 sudo update-alternatives --config <name>
-(g). STEAM：Ubuntu 18.04 下我喜欢的几个游戏完美支持，简直开心坏了 。
 
-(h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
-
-(i). 显卡驱动：附加驱动里选择好后自动安装的。。。
 # Java 环境变量的写法
 # 假设 JDK 的解压目录为 /usr/lib/jvm/jdk
 # 需要修改文件 /etc/profile
@@ -743,24 +726,21 @@ sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://mirrors.tuna.tsin
 sudo apt update
 sudo apt install mariadb-server
 # 配置
-sudo mysql_secure_installation(g). STEAM：Ubuntu 18.04 下我喜欢的几个游戏完美支持，简直开心坏了 。
-
-(h). 字体：从 Windows 里拷贝字体目录到 Linux 下是一个不错的选择（拯救 WPS）
-
-(i). 显卡驱动：附加驱动里选择好后自动安装的。。。
+sudo mysql_secure_installation
 ```
 
 #### 5.2.3 踩坑记录
 
-(a). VMware : 虚拟机安装的前置依赖为：`make` `gcc` 。
+- VMware : 虚拟机安装的前置依赖为：`make` `gcc` 。
 
-(b). JetBrains toolbox ：使用 toolbox 安装软件比 snap 好太多（速度感人），它也能自动更新 IDE 。但是它会疯狂修改 `.desktop` 文件，强迫症表示必须要修改图标的样式和主题一致，把图标文件权限设置为只读就能解决。
+-  JetBrains toolbox ：使用 toolbox 安装软件比 snap 好太多（速度感人），它也能自动更新 IDE 。但是它会疯狂修改 `.desktop` 文件，强迫症表示必须要修改图标的样式和主题一致，把图标文件权限设置为只读就能解决。
 
-(c). Minecraft 所需要的 JDK 只需要提前安装一个 `openjdk-8-jre` 。
+- Minecraft 所需要的 JDK 只需要提前安装一个 `openjdk-8-jre` 。
 
-(d). Life is Strange 奇异人生所需要的 Linux 版汉化：[百度网盘](https://pan.baidu.com/s/1dECSYfJ) 。
+- Life is Strange 奇异人生所需要的 Linux 版汉化：[百度网盘](https://pan.baidu.com/s/1dECSYfJ) 。
 
-(e). XMind : 无启动图标，需要手动添加应用图标，有一个小麻烦是桌面图标文件所在的目录必须和启动软件同目录。此外 XMind 8 版本存在可用的破解激活方案。
+- XMind : 无启动图标，需要手动添加应用图标，有一个小麻烦是桌面图标文件所在的目录必须和启动软件同目录。此外 XMind 8 版本存在可用的破解激活方案。依赖 JDK8。
+- 善用 TimeShift ，它提供了一个回滚系统的机会。
 
 ### 5.3 部分截图
 
