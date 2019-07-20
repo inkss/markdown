@@ -19,11 +19,9 @@
             [pic]:data:image/png;base64,xxxxxx
     
     方案二：
-        新浪微博相册（没有防盗链）
+        ~~新浪微博相册(没有防盗链)~~
     
     方案三：
         上传到 GitHub。
 
 ---
-
-![这个图来自于新浪微博](assets/README/img.jpg)
