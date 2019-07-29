@@ -1,8 +1,8 @@
 ![Ubuntu 18.04 安装、配置和美化](assets/Ubuntu18.04安装记录/001-1551354008744.png)
 
 - 概述：Ubuntu 18.04 的安装配置笔记， :two_hearts:。
-- 简介：基础使用环境，【伪】开箱即用环境构建，目标是一篇文章能够解决大部分问题。
-- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议（转载署名）。本文地址：[Ubuntu 安装记录](https://github.com/inkss/markdown/blob/master/Linux/Ubuntu/Ubuntu18.04%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.md) 。
+- 简介：基础使用环境的搭建，暂定目标为一篇文章解决大部分疑问。
+- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议（转载署名）。本文地址：[Ubuntu 安装记录](https://inkss.cn/2019/03/15/ubuntu-1804-installation-record/) 。
 
 ------
 
@@ -10,19 +10,19 @@
 
 ```
 2019.04.28 
-   - 重构文章，修改并调整内容。
-   - 补充来源链接，方便时效性内容的验证。
+  - 重构文章，修改并调整内容。
+  - 补充来源链接，方便时效性内容的验证。
+2019.07.29
+  - 更正 Shell 的安装命令。
+  - 解决下载速度慢的小工具。
+  - 删除所有配图。
 ```
-
-[TOC]
 
 ------
 
 ## 一、安装操作系统
 
 ### 1.1 引导盘
-
-刻录方式：
 
 - 刻录进光盘：
 
@@ -38,7 +38,7 @@
 
     利用软件 *[Rufus](https://rufus.akeo.ie/?locale=zh_CN)* 完成镜像刻录。
 
-> 刻录 Windows PE 系统，如“微 PE”可以选择三分区，也就是引导一个分区，PE 一个分区，U 盘剩余空间一个分区；而如果利用方案一的解压方式，那么，没错，U 盘将被识别出两个引导，Windows & Linux 。
+> 刻录 Windows PE 系统，如“微 PE”可以选择三分区，也就是引导一个分区，PE 一个分区，U 盘剩余空间一个分区；而如果利用方案一的解压方式，那么 U 盘将被识别出两个引导，Windows & Linux 。
 
 ### 1.2 分区
 
@@ -53,17 +53,17 @@ Linux 系统的分区只建议划分根 `/` 和家目录 `/home` ，如此系统
 一些注意事项：
 
 - 硬盘格式：GPT ；引导类型：UEFI 。
-- 单系统用户，务必准备一个 **EFI (ESP)** 分区，否则无法写入 Grub 。
-
+- 单系统用户，务必准备一个 **EFI (ESP)** 分区，否则无法写入 Grub 引导。
 - 安装过程中建议勾选 **最小安装** 、 **安装 Ubuntu 时下载更新** 和 **为图形或无线硬件安装第三方软件** 。
+- 关于下载速度的问题：如无合适的解决方案，可安装系统换源后再进行下载操作。
 
 ------
 
 ## 二、开箱即用的操作系统
 
-> 遗憾的是，Ubuntu 的开箱体验极差，不过好在配置过程也不算复杂，完成 2.1 和 2.3 便差不多可用了 。
+> 遗憾的是，Ubuntu 的开箱体验并不优秀，不过好在配置过程也不复杂，完成 2.1 和 2.3 便差不多可用了 。
 
-> 本节可以按照线性顺序进行，虽然实际安装过程中，限于网速多半会先安装 Chrome 和 SSR （相关内容位于第三节）。此外操作系统中自带的火狐浏览器为国际版，而非国内谋智的火狐，两者账户是不互通的。
+> 本节按照线性顺序进行，虽然实际安装过程中，限于网速多半会先安装 Chrome 和 Clash （相关内容位于第三节）。此外操作系统中自带的火狐浏览器为国际版，而非国内谋智代理的火狐，两者账户不互通。
 
 ### 2.1 第一次重启前
 
@@ -94,14 +94,14 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 ```sh
 sudo apt install git
 sudo apt install zsh
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /usr/bin/zsh
 ```
 
 (b). [fish](https://launchpad.net/~fish-shell/+archive/ubuntu/release-3)
 
 ```sh
-sudo apt-add-repository ppa:fish-shell/release-2
+sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt-get update
 sudo apt-get install fish
 chsh -s /usr/bin/fish
@@ -114,7 +114,7 @@ fish_config
 
 #### 2.2.5 终端下的包安装器
 
-相比于图形界面 ，在终端下安装 deb 包可以获得更多的信息提示，但是使用 `dpkg` 命令又无法自动解决依赖问题，所以这里使用 `gdebi` 安装器解决此问题。
+相比于图形界面 ，在终端下安装 deb 包可以获得更多的信息提示，但是使用 `dpkg` 命令又无法自动解决依赖问题，这里可以使用 `gdebi` 安装器解决此问题。
 
 ```sh
 sudo apt install gdebi
@@ -124,7 +124,7 @@ sudo apt install gdebi
 
 >  此节是为伸手党准备的，详细的内容可参见 `2.3 主题自定义` （新手可以不必去看）。
 
-> 可以通过本节内容快速完成主题方面的修改，注：gnome-shell-extensions 是一些扩展的集合，包含了一些常用的扩展，如 User Themes 等（而它可以在应用商店里搜索安装）。
+> 可以通过本节内容快速完成主题方面的修改，注：`gnome-shell-extensions` 是一些常用扩展的集合，如 User Themes 等（事实上它可以在应用商店里搜索安装）。
 
 #### 2.2.1 系统主题 Sieera
 
@@ -178,11 +178,10 @@ sudo apt install gnome-tweak-tool
 sudo apt install gnome-shell-extensions
 ```
 
-然后，从应用列表中打开一个名为 **优化** 的软件，在扩展中启用 “ User Themes ”；
+- 然后，从应用列表中打开一个名为 **优化** 的软件，在扩展中启用 “ User Themes ”；
 
-在外观中修改：应用程序、光标、图标和 Shell 就大功告成了，最后不要忘记换一个赏心悦目的桌面背景。
+>  在外观中修改：应用程序、光标、图标和 Shell 就大功告成了，最后不要忘记换一个赏心悦目的桌面背景。
 
-![1556460030635](assets/Ubuntu18.04安装记录/1556460030635.png)
 
 #### 2.2.7 输入法和 Dock
 
@@ -220,11 +219,11 @@ sudo nautilus
 
 主题包地址：[Gnome Look - GRUB Themes](https://www.gnome-look.org/browse/cat/109/order/latest) （自行挑选喜欢的）
 
+**(a)** **手写配置文件**
+
 安装步骤 ：首先下载主题包，多为压缩包，解压出文件。使用 `sudo nautilus` 打开文件管理器。
 
 定位到目录：`/boot/grub`，在该目录下 **新建文件夹** ：`themes`，将解压出的文件拷贝到文件夹中。
-
-**(a)** **手写配置文件**
 
 接着（终端下）使用 gedit 修改 *grub* 文件：
 
@@ -252,11 +251,9 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt install grub-customizer
 ```
 
-使用该软件定制 Grub ，可以修改启动项名称，默认启动改为上一次启动项 。
+可使用该软件定制 Grub ，如修改启动项名称，**默认启动改为上一次启动项** 。
 
 - 相关链接：[Launchpad PPA for Grub Customizer](https://launchpad.net/~danielrichter2007/+archive/ubuntu/grub-customizer)
-
-![1556460161149](assets/Ubuntu18.04安装记录/1556460161149.png)
 
 #### 2.3.4 GDM 登录背景图
 
@@ -284,15 +281,13 @@ background: #2c001e url(file:///home/inkss/APP/ink_img/img.jpg);
    background-position: center; }
 ```
 
-![](assets/Ubuntu18.04安装记录/gnome-shell-screenshot-VU750Z.png)
-
 #### 2.3.5 输入法 中州韵和搜狗
 
 > 首先，默认状态下 Ubuntu 的中文输入法属于可用但不完全好用的状态，这里记录两类输入法，二选一。
 
 **(a) 中州韵输入法**
 
-前置提醒：中州韵没有 GUI 界面，通过配置文件进行设置。
+前置提醒：中州韵没有 GUI 界面，只能通过配置文件进行定制，需要一定的研究能力。
 
 基于 IBus 框架的中州韵（默认为此框架）：
 
@@ -322,6 +317,8 @@ sudo gdebi xxxxxx.deb
 >
 > 推荐一个搜狗输入法皮肤：[简约-信](https://pinyin.sogou.com/skins/detail/view/info/519557?rf=subject_jjzq&tf=p) 。
 
+> PS：两个输入法可以共存。
+
 #### 2.3.6 Dock - Docky
 
 一个第三方 Dock 软件，颜值上比 Ubuntu 自带 Dock 好了些许。
@@ -330,7 +327,7 @@ sudo gdebi xxxxxx.deb
 sudo apt install docky
 ```
 
-【可选】如何 [*去掉 Docky 第一个图标*](https://my.oschina.net/ic4907/blog/158747)
+- 【可选】如何 [*去掉 Docky 第一个图标*](https://my.oschina.net/ic4907/blog/158747)
 
 在 **Ubuntu SoftWare** 中搜索 *Configuration Editor* ，安装后打开软件，定位到：
 
@@ -342,7 +339,7 @@ sudo apt install docky
 
 ## 三、后续完善
 
-> 此节内容可跳跃观看，仅供参考，合理辨认是否过时。
+> 此节内容可跳跃观看，仅供参考，**合理辨认内容是否过时**。
 
 ###  3.1 DeepinWine Wine QQ 
 
@@ -487,7 +484,6 @@ sudo apt install timeshift
 
 - 相关链接：[teejee2008](https://github.com/teejee2008)/[timeshift](https://github.com/teejee2008/timeshift)
 
-![1556463853004](assets/Ubuntu18.04安装记录/1556463853004.png)
 
 ### 3.4 网易云音乐
 
@@ -518,11 +514,21 @@ Exec=sh -c "unset SESSION_MANAGER && netease-cloud-music %U"
 
 > 参考资料地址：[Ubuntu 18.04 装了网易云音乐，难道只能用 sudo 启动吗？- @Fancy 解答](https://www.zhihu.com/question/277330447/answer/478510195)
 
-### 3.5 SSR
+### 3.5 Clash
 
-> 地址：[erguotou520](https://github.com/erguotou520)/**[electron-ssr](https://github.com/erguotou520/electron-ssr)** 。这是一个跨平台（支持Windows MacOS Linux系统）的客户端桌面应用，它功能丰富，支持 windows 版大部分功能，更有更多人性化功能。它是开源的，它来源于开源，回馈以开源。
+> 地址：[Dreamacro](https://github.com/Dreamacro)/[clash](https://github.com/Dreamacro/clash)  A rule-based tunnel in Go.
 
-> 注意1：如果是全新安装的操作系统，终端下输入 `python` 命令无输出时，可以输入 `sudo ln -s /usr/bin/python3 /usr/bin/python` 解决，否则代理多半失效。
+- HTTP/HTTPS and SOCKS protocol
+- Surge like configuration
+- GeoIP rule support
+- Support Vmess/Shadowsocks/Socks5
+- Support for Netfilter TCP redirect
+
+> 大部分 PC 下载 clash-linux-amd64.tar.gz 即可。
+>
+> 利用 [Clash Dashboard](http://clash.razord.top/) 切换，管理。
+>
+> 写个小脚本解决自启动。
 
 ### 3.6 Chrome
 
@@ -741,11 +747,3 @@ sudo mysql_secure_installation
 
 - XMind : 无启动图标，需要手动添加应用图标，有一个小麻烦是桌面图标文件所在的目录必须和启动软件同目录。此外 XMind 8 版本存在可用的破解激活方案。依赖 JDK8。
 - 善用 TimeShift ，它提供了一个回滚系统的机会。
-
-### 5.3 部分截图
-
-![](assets/Ubuntu18.04安装记录/截屏-20190428230648-1920x1080.png)
-
-![](assets/Ubuntu18.04安装记录/截屏-20190428230705-1920x1080.png)
-
-![](assets/Ubuntu18.04安装记录/截屏-20190428230727-1920x1080.png)
