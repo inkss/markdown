@@ -1,14 +1,18 @@
 ---
 title: Ubuntu 18.04 安装笔记
 toc: true
-date: 2019/03/15
+date: 2019/04/08
 tag:
   - Ubuntu 18.04
 categories: linux
 description: 完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散。
 abbrlink: c6df61d3
 type: linux
+top:
+  icon: fal fa-angle-double-up
 ---
+
+![Ubuntu 18.04 安装配置和美化](../../static/Ubuntu18.04安装记录.assets/image-20200507105832915.png)
 
 
 - 概述：Ubuntu 18.04 的安装配置笔记， :two_hearts:。
@@ -21,12 +25,14 @@ type: linux
 
 ```sh
 2019.04.28
-  - 重构文章，修改并调整内容。
-  - 补充来源链接，方便时效性内容的验证。
+  + 重构文章，修改并调整内容。
+  + 补充来源链接，方便时效性内容的验证。
 2019.07.29
-  - 更正 Shell 的安装命令。
-  - 解决下载速度慢的小工具。
+  + 更正 Shell 的安装命令。
+  + 解决下载速度慢的小工具。
   - 删除所有配图。
+2020.05.07
+  + 添加原来的配图（整理的时候，发现当初的桌面还怪好看的，容我置顶得瑟会儿）
 ```
 
 ------
@@ -136,6 +142,8 @@ sudo apt install gdebi
 > 此节是为伸手党准备的，详细的内容可参见 `2.3 主题自定义` （新手可以不必去看）。
 >
 > 可以通过本节内容快速完成主题方面的修改，注：`gnome-shell-extensions` 是一些常用扩展的集合，如 User Themes 等（事实上它可以在应用商店里搜索安装）。
+
+![外观配置](../../static/Ubuntu18.04安装记录.assets/image-20200507105957944.png)
 
 #### 2.2.1 系统主题 Sieera
 
@@ -265,6 +273,8 @@ sudo apt install grub-customizer
 
 - 相关链接：[Launchpad PPA for Grub Customizer](https://launchpad.net/~danielrichter2007/+archive/ubuntu/grub-customizer)
 
+![Grub Customizer](../../static/Ubuntu18.04安装记录.assets/image-20200507110107616.png)
+
 #### 2.3.4 GDM 登录背景图
 
 更换登录界面的背景图需要修改 `ubuntu.css`，它位于 `/usr/share/gnome-shell/theme` 。
@@ -290,6 +300,8 @@ background: #2c001e url(file:///home/inkss/APP/ink_img/img.jpg);
    background-size: cover;
    background-position: center; }
 ```
+
+![GDM](../../static/Ubuntu18.04安装记录.assets/image-20200507110222935.png)
 
 #### 2.3.5 输入法 中州韵和搜狗
 
@@ -492,6 +504,8 @@ sudo apt install timeshift
 ```
 
 - 相关链接：[teejee2008](https://github.com/teejee2008)/[timeshift](https://github.com/teejee2008/timeshift)
+
+![超级推荐的软件](../../static/Ubuntu18.04安装记录.assets/image-20200507110243274.png)
 
 
 ### 3.4 网易云音乐
@@ -756,3 +770,11 @@ sudo mysql_secure_installation
 
 - XMind : 无启动图标，需要手动添加应用图标，有一个小麻烦是桌面图标文件所在的目录必须和启动软件同目录。此外 XMind 8 版本存在可用的破解激活方案。依赖 JDK8。
 - 善用 TimeShift ，它提供了一个回滚系统的机会。
+
+## 六、截图
+
+![桌面](../../static/Ubuntu18.04安装记录.assets/image-20200507110318847.png)
+
+![软件列表](../../static/Ubuntu18.04安装记录.assets/image-20200507110337914.png)
+
+![系统](../../static/Ubuntu18.04安装记录.assets/image-20200507110355777.png)
