@@ -1,0 +1,18 @@
+on_list:
+  meta: [title, author, date, top]
+  sidebar: [notice, category, tagcloud, showText] 
+  readmore: 阅读全文 <i class="fal fa-angle-double-right"></i>
+
+# 文章页面布局
+on_page:
+  # 文章页面主体元素，你也可以在页面的Front-matter中设置
+  body: [article, help, comments]
+  meta:
+    header: [title, author, category, updated, wordcount]
+    footer: [tags, date, counter]
+  # 文章页面的侧边栏
+  sidebar: [notice, tagcloud, toc]
+
+# 文章布局，参数继承自 on_page
+on_post:
+  article_footer: 

@@ -1,0 +1,8 @@
+# robots.txt https://inkss.cn
+User-agent: *
+Disallow: /tags/
+Disallow: /info/
+Disallow: /page/
+Disallow: /about/
+Disallow: /archives/
+Disallow: /categories/

@@ -1,0 +1,30 @@
+- name: 首页
+  icon: fal fa-home
+  url: /
+- name: 分类
+  icon: fal fa-folder-open
+  url: categories/
+  rel: nofollow
+- name: 标签
+  icon: fal fa-tags
+  url: tags/
+  rel: nofollow
+- name: 归档
+  icon: fal fa-archive
+  url: archives/
+  rel: nofollow
+- name: 更多
+  icon: fal fa-ellipsis-v
+  rows:
+    - name: 关于我
+      icon: fal fa-info-circle
+      url: about/index.html
+    - name: 留言板
+      icon: fal fa-smile
+      url: info/index.html
+    - name: hr  
+    - name: 我的朋友们
+      icon: fal fa-user-friends
+      url: friends/index.html
+    - name: 来首音乐
+      icon: fal fa-compact-disc  

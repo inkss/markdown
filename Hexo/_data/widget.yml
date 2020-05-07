@@ -1,0 +1,17 @@
+notice:
+  class: text
+  display: [desktop]
+  header:
+    icon: fal fa-bullhorn fa-fw
+    title: 公告
+  content:
+    - ' <i class="fal fa-narwhal"></i> Pjax 兼容性测试中...   '
+
+showText:
+  class: text
+  display: [desktop]
+  header:
+    icon: fal fa-feather-alt
+    title: 枋柚梓
+  content:
+    - '繁星永存，记忆亘古不变 <i class="fal fa-paw"></i>'
