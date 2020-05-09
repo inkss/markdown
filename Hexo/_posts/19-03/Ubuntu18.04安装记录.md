@@ -8,8 +8,8 @@ categories: linux
 description: 完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散。
 abbrlink: c6df61d3
 type: linux
-top:
-  icon: fal fa-angle-double-up
+top: 
+  icon: fal fa-angle-double-up 
 ---
 
 ![Ubuntu 18.04 安装配置和美化](../../static/Ubuntu18.04安装记录.assets/image-20200507105832915.png)

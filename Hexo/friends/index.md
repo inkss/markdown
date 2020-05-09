@@ -21,14 +21,14 @@ links:
     icon: fal fa-crown
     items:
       - name: xaoxuu
-        avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+        avatar: https://i.loli.net/2020/05/08/CIWlMdhHFjefsaq.jpg
         url: https://xaoxuu.com
         backgroundColor: '#87977F'
         textColor: '#EFEFEF'
         tags:
           - iOS
       - name: Charlie
-        avatar: https://cdn.jsdelivr.net/gh/charlie-zzy/imgCDN/avatar.png
+        avatar: https://i.loli.net/2020/05/08/lhpIrM9FRudD26a.png
         url: https://charlie-zzy.github.io
         backgroundColor: '#66CCFF'
         textColor: '#EFEFEF'
@@ -36,21 +36,21 @@ links:
           - OIer
           - 版本跟进狂魔
       - name: Zhou 的小站
-        avatar: https://wp.zhoublog.xyz/wp-content/uploads/2020/04/image-1.png
+        avatar: https://i.loli.net/2020/05/08/O6tXixzpC87gITm.png
         url: https://zhoublog.xyz/
         backgroundColor: '#f1d6dd'
         textColor: '#2e2e2e'
         tags:
           - WordPress
       - name: 燃星博客
-        avatar: https://i.niupic.com/images/2020/04/01/7dx3.jpg
+        avatar: https://i.loli.net/2020/05/08/jYioBh1AbwsCkrv.jpg
         url: https://blog.skyings.cn/
         backgroundColor: '#1f1f1f'
         textColor: '#c8fbff'
         tags:
           - ともだち
       - name: LHKSTUDIO
-        avatar: https://cdn.jsdelivr.net/gh/Linhk1606/blog-cdn@master/img/avatar.jpg
+        avatar: https://i.loli.net/2020/05/08/P9xi2TfIa1veZn8.jpg
         url: https://lhkstudio.me
         backgroundColor: '#FFEBD2'
         textColor: '#985B40'
@@ -58,7 +58,7 @@ links:
           - OIer
           - Qt
       - name: MHuiG
-        avatar: https://cdn.jsdelivr.net/gh/MHuiG/imgbed@master/data/p.png
+        avatar: https://i.loli.net/2020/05/08/vcieIFqyaxhVftL.png
         url: https://mhuig.top
         backgroundColor: '#FFEBD2'
         textColor: '#985B40'

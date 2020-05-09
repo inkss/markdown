@@ -15,6 +15,8 @@ music:
   type: song        # song （单曲） album （专辑） playlist （歌单） search （搜索）
   id: 22703777      # 歌曲/专辑/歌单 ID
 mathjax: false
+top: 
+  icon: fal fa-angle-double-up 
 ---
 
 &ensp;&emsp;对博客部署 Pjax 的好处在于局部重载时可以保留一些元素（如音乐播放器）不被刷新去除掉。然后是关于 Pjax 的版本选择，最早一版为 [defunkt](https://github.com/defunk)/[jquery-pjax](https://github.com/defunkt/jquery-pjax)，需要依赖 jQuery 框架，上一次更新已经是三年前了。所以本博客在挑选框架时，使用的是另一个版本： [MoOx](https://github.com/MoOx/)/[pjax](https://github.com/MoOx/pjax)。这版去除了 jQuery 依赖，当然这不是重点，主要是更新的挺勤，我喜新厌旧。
