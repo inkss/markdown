@@ -8,20 +8,20 @@ categories: linux
 description: 完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散。
 abbrlink: c6df61d3
 type: linux
-top: 
-  icon: fal fa-angle-double-up 
+icons: [fal fa-fire]
 ---
 
-![Ubuntu 18.04 安装配置和美化](../../static/Ubuntu18.04安装记录.assets/image-20200507105832915.png)
-
-
-- 概述：Ubuntu 18.04 的安装配置笔记， :two_hearts:。
-- 简介：基础使用环境的搭建，暂定目标为一篇文章解决大部分疑问。
-- 协议：本文章使用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议（转载署名）。本文地址：[Ubuntu 安装记录](https://inkss.cn/2019/03/15/ubuntu-1804-installation-record/) 。
+<!-- ![Ubuntu 18.04 安装配置和美化](../../static/Ubuntu18.04安装记录.assets/image-20200507105832915.png) -->
+<br>
+{% p center logo ultra, '<i class="fab fa-linux"></i>' %}
+{% p center logo large, Ubuntu 18.04  %}
+{% p center logo small gray, 安装配置和美化 %}
+<br>
+<br>
 
 ------
 
-**文章更新日志：**
+{% folding cyan, 文章更新日志 %}
 
 ```sh
 2019.04.28
@@ -34,6 +34,8 @@ top:
 2020.05.07
   + 添加原来的配图（整理的时候，发现当初的桌面还怪好看的，容我置顶得瑟会儿）
 ```
+
+{% endfolding %}
 
 ------
 

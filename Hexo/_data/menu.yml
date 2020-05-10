@@ -1,30 +1,30 @@
 - name: 首页
-  icon: fal fa-home
+  icon: fal fa-helmet-battle
   url: /
-- name: 分类
-  icon: fal fa-folder-open
-  url: categories/
-  rel: nofollow
-- name: 标签
-  icon: fal fa-tags
-  url: tags/
-  rel: nofollow
-- name: 归档
-  icon: fal fa-archive
-  url: archives/
-  rel: nofollow
+- name: 导航
+  icon: fal fa-cube
+  rows:
+    - name: 分类
+      icon: fal fa-folder-open 
+      url: categories/
+    - name: 标签
+      icon: fal fa-tags 
+      url: tags/
+    - name: 归档
+      icon: fal fa-archive 
+      url: archives/
 - name: 更多
-  icon: fal fa-ellipsis-v
+  icon: fal fa-fist-raised
   rows:
     - name: 关于我
-      icon: fal fa-info-circle
+      icon: fal fa-skull
       url: about/index.html
     - name: 留言板
-      icon: fal fa-smile
+      icon: fal fa-bell-on
       url: info/index.html
     - name: hr  
     - name: 我的朋友们
-      icon: fal fa-user-friends
+      icon: fal fa-cookie-bite
       url: friends/index.html
     - name: 来首音乐
       icon: fal fa-compact-disc  

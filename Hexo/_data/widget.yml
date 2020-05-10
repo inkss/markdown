@@ -2,7 +2,7 @@ notice:
   class: text
   display: [desktop]
   header:
-    icon: fal fa-bullhorn fa-fw
+    icon: fal fa-candle-holder
     title: 公告
   content:
     - ' <i class="fal fa-narwhal"></i> Pjax 兼容性测试中...   '
