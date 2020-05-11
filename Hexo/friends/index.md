@@ -45,7 +45,7 @@ links:
       - name: 燃星博客
         avatar: https://i.loli.net/2020/05/08/jYioBh1AbwsCkrv.jpg
         url: https://blog.skyings.cn/
-        backgroundColor: '#1f1f1f'
+        backgroundColor: '#666666'
         textColor: '#c8fbff'
         tags:
           - ともだち
@@ -60,9 +60,23 @@ links:
       - name: MHuiG
         avatar: https://i.loli.net/2020/05/08/vcieIFqyaxhVftL.png
         url: https://mhuig.top
-        backgroundColor: '#FFEBD2'
-        textColor: '#985B40'
+        backgroundColor: '#f5dcca'
+        textColor: '#6d533f'
         desc: 'Be Yourself,Make a Difference.'
+      - name: Mrliux
+        avatar: https://i.loli.net/2020/05/11/Qmy5LvnP7xTzWb2.jpg
+        url: https://www.mrliux.top
+        backgroundColor: '#969696'
+        textColor: '#ffffff'
+        tags:
+          - IOT
+          - 退役ACMer
+      - name: Xu’s Blog
+        avatar: https://i.loli.net/2020/05/11/ObjmMQhktpc2yAW.jpg
+        url: https://hasaik.com
+        backgroundColor: '#fcfcfc'
+        textColor: '#555'
+        desc: '博观而约取，厚积而薄发！'
 valine:
   placeholder: 这里是友链，虽然我一直不曾处理过友链啊什么的 emm...
 ---
