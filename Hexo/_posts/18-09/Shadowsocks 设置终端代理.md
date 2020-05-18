@@ -8,6 +8,7 @@ tag:
 categories: linux
 abbrlink: f44c3b52
 description: Linux Shell 设置 Proxy。
+comments: false
 ---
 
 

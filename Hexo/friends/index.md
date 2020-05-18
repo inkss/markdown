@@ -7,7 +7,7 @@ meta:
   footer: [updated, counter]
 links:
   - group: 个人站点
-    icon: fal fa-crown
+    icon: fal fa-paperclip
     items:
     - name: 猫之三千岁
       avatar: https://img.inkss.cn/inkss_cn/static/img/avatar.jpg
@@ -18,7 +18,7 @@ links:
         - 记事
         - 私人
   - group: 左邻右舍
-    icon: fal fa-crown
+    icon: fal fa-link
     items:
       - name: xaoxuu
         avatar: https://i.loli.net/2020/05/08/CIWlMdhHFjefsaq.jpg
@@ -71,31 +71,51 @@ links:
         tags:
           - IOT
           - 退役ACMer
-      - name: Xu’s Blog
+      - name: Xu&#39;s Blog
         avatar: https://i.loli.net/2020/05/11/ObjmMQhktpc2yAW.jpg
         url: https://hasaik.com
         backgroundColor: '#fcfcfc'
         textColor: '#555'
         desc: '博观而约取，厚积而薄发！'
+      - name: Flexiston
+        avatar: https://i.loli.net/2020/05/13/foqaPIbhSw61nZ7.png
+        url: https://www.flexiston.com
+        backgroundColor: '#ea736a'
+        textColor: '#fff'
+        desc: '长风破浪会有时，直挂云帆济沧海'
+      - name: 残梦
+        avatar: https://i.loli.net/2020/05/15/XDBemGyJwQxPl8C.jpg
+        url: https://sunhang.top
+        backgroundColor: '#fcfcfc'
+        textColor: '#667086'
+        tags:
+          - 前端
+          - JS
 valine:
-  placeholder: 这里是友链，虽然我一直不曾处理过友链啊什么的 emm...
+  placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
 
-<hr>
+------
 
-#### 举个栗子 🌰
+{% tabs tab-id %}
 
-```txt
+<!-- tab <i class="fad fa-galaxy"></i><i style="font-weight: normal;font-style: normal;">&nbsp;举个栗子</i> -->
+
+{% codeblock 友链格式 line_number:false %}
 名称： 枋柚梓
 头像： https://img.inkss.cn/inkss_cn/static/img/avatar.jpg
 网址： https://inkss.cn
 描述： 繁星永存，记忆亘古不变。
-```
+{% endcodeblock %}
 
-#### 前置要求 👹
+<!-- endtab -->
 
-- Https 站点
-- 网站加载速度正常
+<!-- tab <i class="fad fa-greater-than-equal"></i><i style="font-weight: normal;font-style: normal;">&nbsp;前置要求 </i> -->
 
-<br>
-<hr>
+{% checkbox green checked, Https 站点 %}
+{% checkbox green checked, 网站加载速度正常 %}
+
+<!-- endtab -->
+
+{% endtabs %}
+

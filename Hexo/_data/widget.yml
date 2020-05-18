@@ -5,7 +5,7 @@ notice:
     icon: fal fa-candle-holder
     title: 公告
   content:
-    - ' <i class="fal fa-narwhal"></i> Pjax 兼容性测试中...   '
+    - '  <i class="fal fa-narwhal"></i>  本站停更，归期未知~ '
 
 showText:
   class: text
@@ -14,4 +14,5 @@ showText:
     icon: fal fa-feather-alt
     title: 枋柚梓
   content:
-    - '繁星永存，记忆亘古不变 <i class="fal fa-paw"></i>'
+    - '繁星永存，记忆亘古不变 <i class="fal fa-spider-black-widow"></i>'
+    - '最后更新日期：2020年5月17日'

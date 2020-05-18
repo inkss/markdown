@@ -7,7 +7,7 @@ tag:
   - Pjax
   - Material X
 categories: other
-description: 为静态博客 Hexo 添加了 Pjax 支持
+description: 为静态博客 Hexo 添加了 Pjax 支持，顺便还有一些 balabal 的测试呀。
 abbrlink: 80b5f235
 music:
   enable: true      # true（文章内和文章列表都显示）
@@ -20,13 +20,7 @@ icons: [fal fa-fire]
 
 &ensp;&emsp;对博客部署 Pjax 的好处在于局部重载时可以保留一些元素（如音乐播放器）不被刷新去除掉。然后是关于 Pjax 的版本选择，最早一版为 [defunkt](https://github.com/defunk)/[jquery-pjax](https://github.com/defunkt/jquery-pjax)，需要依赖 jQuery 框架，上一次更新已经是三年前了。所以本博客在挑选框架时，使用的是另一个版本： [MoOx](https://github.com/MoOx/)/[pjax](https://github.com/MoOx/pjax)。这版去除了 jQuery 依赖，当然这不是重点，主要是更新的挺勤，我喜新厌旧。
 
-&ensp;&emsp;咳咳，言归正传，我在查阅文档时没有翻到太多的资料，所以这部分我准备认真写下，慢慢更新，不过本主题中涉及到 Pjax 部署的代码可在 [部署 Pjax](https://github.com/inkss/hexo-theme-material-x/commit/f30ca8020ef269f96f2396f53c63e1fc68db85a3) 这次提交记录中查看到，其实不同主题有着不同的处理方法，不能一概而论，这里也算是抛砖引玉吧。大致罗列一下对主题的修改：
-
-- 重新引入音乐插件，修复播放器。
-- 去处原主题中 fancybox 插件，重新单独引入。
-- 去除原主题中导航栏下加的载条动画，引入 nprogress。
-- 删除各个独立模板中的页脚部分，将其提取公共样式文件中。
-- 删除主题中的：封面、除了 algolia|hexo 之外的搜索、代码块复制的代码。
+&ensp;&emsp;本篇定位于理论知识，实际应用详见 [Volantis 主题部署 Pjax](/article/other/76993423.html)，前置知识，SPA 页面。
 
 ## 一、Pjax 简介
 
@@ -76,7 +70,7 @@ _Pjax does not rely on other libraries, like jQuery or similar. It is written en
 ```js
 var pjax = new Pjax({
     elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
-    selectors: ["#pjax-container","title","meta",".nav-sub.container.container--flex"]
+    selectors: ["#pjax-container","title"]
 });
 ```
 {% endfolding %}
@@ -90,6 +84,7 @@ var pjax = new Pjax({
 pjax.loadUrl();
 document.addEventListener('pjax:send', function () {});
 document.addEventListener('pjax:complete', function () {});
+document.addEventListener('pjax:error', function () {});
 ```
 {% endfolding %}
 
@@ -118,27 +113,36 @@ document.addEventListener('pjax:complete', function () {
 ```js
 <script>
 function pjax_fancybox() {
-  $('article img').not('[hidden]').not('.fancybox-fix img').not('.vemojis img').not('.avatar').each(function() {
-    var $image = $(this);
-    var imageCaption = $image.attr('alt');
-    var $imageWrapLink = $image.parent('a');
-    if ($imageWrapLink.length < 1) {
-      var src = this.getAttribute('src');
-      var idx = src.lastIndexOf('?');
-      if (idx != -1) {
-        src = src.substring(0, idx);
-      }
-      $imageWrapLink = $image.wrap('<a href="' + src + '" style="display:block;text-align: center;"></a>').parent('a');
+  $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+    var element = document.createElement("a"); // a 标签
+    $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+    $(element).attr("href", $(this).attr("src"));
+    if ($(this).attr("data-original")) {
+      $(element).attr("href", $(this).attr("data-original"));
     }
-    $imageWrapLink.attr('data-fancybox', 'images');
-    if (imageCaption) {
-      $imageWrapLink.attr('data-caption', imageCaption);
+    $(element).attr("data-fancybox", "images");
+    var caption = "";   // 描述信息
+    if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+      $(element).attr('data-caption', $(this).attr('alt'));
+      caption = $(this).attr('alt');
     }
-  });
-  $().fancybox({
+    var div = document.createElement("div");
+    $(div).addClass("fancybox");
+    $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+    var span = document.createElement("span");
+    $(span).addClass("image-caption");
+    $(span).text(caption); // 加描述
+    $(this).after(span);  // 再套一层描述
+    $(this).wrap(element);  // 最后套 a 标签
+  })
+  $(".article-entry").find("img").fancybox({
     selector: '[data-fancybox="images"]',
     hash: false,
     loop: false,
+    closeClick: true,
+    helpers: {
+      overlay: {closeClick: true}
+    },
     buttons: [
       "zoom",
       "close"
@@ -157,116 +161,29 @@ function pjax_fancybox() {
 
 &ensp;&emsp;比如评论的占位符和地址的自定义，渲染阶段所产生的结果在页面经过 Pjax 局部重载后拿不到。所以这里换个思路，将一些变量藏在文章区域内，在使用时通过元素选择器调用。
 
-## 三、兼容修改
+## 三、后记
 
-&ensp;&emsp;好了，前文铺垫结束，下面记录一些本主题特有的修改啊喵 🎉。
-
-### 3.1 导航栏
-
-&ensp;&emsp; 导航栏不位于重载区域内的，按理也该属于不变的的元素，但是在当前主题中，在文章页面下往下滑动时，有一个功能是导航栏切换成文章标题。问题便出现于此，除此之外，更糟糕的是在手机端的布局下，文章导航栏还同时肩负了目录开关的功能，手机端的兼容还比 PC 端下还要复杂。
-
-&ensp;&emsp; 这里，进一步步分析得知这个上滑、下滑切换过程，是通过监听 `scroll` 事件，来判断滚动趋势进而切换导航栏。所以首要工作便是，**Pjax 重载页面后，完成导航栏的切换，且只能发生在文章页面下**（原主题没有这方面的处理）。
-
-&ensp;&emsp; 所以，现在的需求如下：1.判断当前页面是否为文章页 2.完成切换导航后各个功能的处理。判断文章也有一个比较取巧的处理方式，在网站的配置文件中，有一个对永久链接的配置 `permalink: article/:category/:abbrlink.html  # 文章的 永久链接 格式` 。所以可以巧妙的截取这个值获得到文章部分固定的 url 值，然后再进行判断。
-
-&ensp;&emsp; 现在 ejs 文件中从主配置文件取到值 `var HEXO_PERMALINK = "<%- config.permalink%>";` ，简单的通过字符串分割获得首个变量，利用 `window.location.pathname` 获取当前路径的地址，再比较判断。
-
-{% folding 导航栏的地址判断 %}
-```js
-const pathname = window.location.pathname;
-const parm1 = pathname == "/" ? "index" : pathname.split('/')[1];
-const parm2 = HEXO_PERMALINK.split('/')[0];
-const isArticle = (parm1 == "" || parm1 == parm2) ? true : false;
-
-$(document, window).scroll(() => {
-  $('.l_header').removeClass('z_search-open'); // 移除导航栏搜索菜单的激活
-  $('body').removeClass('z_menu-open');   // 移除导航栏菜单的激活
-  if (isArticle) {
-    const scrollTop = $(window).scrollTop();
-    const del = scrollTop - pos;
-    if (del >= 100 && scrollTop > 150) {
-      $wrapper.addClass('sub');
-      pos = scrollTop;
-    } else if (del <= -100) {
-      $wrapper.removeClass('sub');
-      pos = scrollTop;
-    }
-  }
-});
-```
-{% endfolding %}
-
-{% folding app.js 主要方法的大致分类 %}
-```js
-$(function () {
-  setHeader();
-  setHeaderMenuSelection();
-  setHeaderMenuPhone(); // 手机端下的导航栏菜单按钮
-  setHeaderSearch(); // 手机端下的导航栏搜索按钮
-  setTocToggle(); // 点击TOC中的目录时，实现动画滚动，以及跟随着滚动激活条目
-  setScrollAnchor(); // 全局滚动动画
-  setSearchService();
-
-  // addEventListener是先绑定先执行，此处的绑定后执行
-  document.addEventListener('pjax:complete', function () {
-    try {
-      setHeader();
-      setHeaderMenuSelection();
-      //setHeaderMenuPhone();  // 无需重载，body 未变动
-      //setHeaderSearch();    // 无需重载，body 未变动
-      setTocToggle();
-      setScrollAnchor();
-    } catch (error) {
-      console.log(error);
-    }
-  });
-});
-```
-{% endfolding %}
-
-{% folding 滚动跳转事件 %}
-```js
-function scrolltoElement(elem, e) {
-  e.stopImmediatePropagation();
-  // 停止一个事件继续执行，即使当前的对象上还绑定了其它处理函数
-  // return false 等价于 => event.preventDefault(); && event.stopPropagation();  -> 停止了事件冒泡
-  var correction = scrollCorrection;
-  const $elem = elem.href ? $(elem.getAttribute('href')) : $(elem);
-  $('html, body').animate({
-    'scrollTop': $elem.offset().top - correction
-  }, 400);
-}
-```
-{% endfolding %}
-
-### 3.2 公式
-
-&ensp;&emsp; 当前， Mathjax与 Valine 评论输入框存在兼容性问题，详见：[在存在 Mathjax 页面的评论框中输入文字卡顿](https://github.com/xCss/Valine/issues/305)。但此问题与 Pjax 无关，已经验证公式部分是可以在 Pjax 环境下正常加载的，等待上游修复即可。
-
-
-## 四、后记
-
-### 4.1 参考链接
+### 3.1 参考链接
 
 吃水不忘挖井人，除 Pjax 的官方网站外，另外两个站点也对我的帮助很大，这里予以记录：
 
 - 来自 liuyib 的 [集成 Pjax 实现网站无刷新加载](https://liuyib.github.io/2019/09/24/use-pjax-to-your-site/) 。
 - 相同主题下的另一个 Pjax 部署思路：[YuGao's Blog](https://sxyugao.top/) 。
 
-### 4.2 本页面的独特修改
+### 3.2 本页面的独特修改
 
 &ensp;&emsp; 因为文章的代码不出预料的会很多，所以萌生了使用折叠框的念头，在不改动渲染器的情况下，采取了直接写 html 代码的思路。~~但是未曾想到折叠框在伸缩、展开的过程中，因改变了页面高度的缘故影响到目录导航栏的激活跟随，思索了一阵子后没发现较好的解决办法，特此记录，代办代办（*有想法的小伙伴也可以留言啊，或者有更好的代码块折叠方案什么的*）。~~
 
 &ensp;&emsp; *主题已原生支持。*
 
-### 4.3 功能性测试
+### 3.3 功能性测试
 
 
 {% p center logo large, '<i class="fal fa-narwhal"></i>' %}
 {% p center logo large, Volantis %}
 {% p center small, A Wonderful Theme for Hexo %}
 
-#### 4.3.1 Tab
+#### 3.3.1 Tab
 
 {% tabs tab-id %}
 
@@ -298,7 +215,7 @@ function scrolltoElement(elem, e) {
 
 {% endtabs %}
 
-#### 4.3.2 Folding
+#### 3.3.2 Folding
 
 {% folding 查看图片测试 %}
 
@@ -326,7 +243,7 @@ function scrolltoElement(elem, e) {
 
 {% endfolding %}
 
-#### 4.3.3 Checkbox & Radio
+#### 3.3.3 Checkbox & Radio
 
 {% tabs tab-id %}
 
@@ -355,11 +272,3 @@ function scrolltoElement(elem, e) {
 <!-- endtab -->
 
 {% endtabs %}
-
-#### 4.3.4 Video
-
-{% folding 'PSY - GANGNAM STYLE(강남스타일) M/V' %}
-
-<iframe width="100%" height="430px" src="https://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-{% endfolding %}

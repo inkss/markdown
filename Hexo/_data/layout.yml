@@ -1,12 +1,12 @@
 on_list:
-  meta: [title, author, date, top]
+  meta: [title, author, date, valinecount, top]
   sidebar: [notice, category, tagcloud, showText] 
-  readmore: 阅读全文 <i class="fal fa-angle-double-right"></i>
+  readmore: <i class="fal fa-kiss"></i> <i class="fal fa-kiss-beam"></i> <i class="fal fa-kiss-wink-heart"></i> 
 
 # 文章页面布局
 on_page:
   # 文章页面主体元素，你也可以在页面的Front-matter中设置
-  body: [article, help, comments]
+  body: [article, comments]
   meta:
     header: [title, author, category, updated, wordcount]
     footer: [tags, date, counter]

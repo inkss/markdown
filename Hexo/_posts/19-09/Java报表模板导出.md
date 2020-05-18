@@ -6,7 +6,7 @@ tag:
   - excel
   - 导出
 categories: java
-description: 基于 Java 语言的模板化报表导出。
+description: 基于 Java 语言的模板化报表导出。通过设计 Excel 模板，对一组报表数据进行导出，抽象出各类公共方法，快捷调用。
 abbrlink: 958bc658
 ---
 
