@@ -17,7 +17,7 @@ comments: false
 如果不需要终端下全局代理，仅仅只是代理 Git 相关的命令，则有一个简单的方案：
 
 ```sh
-git config --global http.proxy 'socks5://127.0.0.1:1080' 
+git config --global http.proxy 'socks5://127.0.0.1:1080'
 git config --global https.proxy 'socks5://127.0.0.1:1080'
 ```
 
