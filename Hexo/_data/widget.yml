@@ -1,6 +1,6 @@
 notice:
   class: text
-  display: [desktop]
+  display: [desktop, mobile]
   header:
     icon: fal fa-candle-holder
     title: 公告
@@ -16,4 +16,21 @@ showText:
   content:
     - '繁星永存，记忆亘古不变 <i class="fal fa-spider-black-widow"></i>'
     - '最后更新日期：2020年5月21日'
-    - 'RSS 地址：<a href="https://inkss.cn/atom.xml">订阅链接</a>'
+
+navigation:
+  class: grid
+  display: [desktop]
+  header:
+    icon: fal fa-map-signs fa-fw
+    title: 站内导航
+  fixed: true # 固定宽度
+  rows:
+    - name: 友链
+      icon: fal fa-users fa-fw
+      url: /friends/
+    - name: 订阅
+      icon: fal fa-rss fa-fw
+      url: /atom.xml
+    - name: 地图
+      icon: fal fa-sitemap fa-fw
+      url: /sitemap.xml
