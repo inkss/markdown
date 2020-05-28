@@ -1,7 +1,7 @@
 on_list:
   meta: [title, author, date, valinecount, top]
   sidebar: [notice, category, tagcloud, navigation, showText] 
-  readmore: <i class="fal fa-kiss"></i> <i class="fal fa-kiss-beam"></i> <i class="fal fa-kiss-wink-heart"></i> 
+  readmore: <i title="阅读更多"><i class="fal fa-kiss"></i> <i class="fal fa-kiss-beam"></i> <i class="fal fa-kiss-wink-heart"></i></i> 
 
 # 文章页面布局
 on_page:
