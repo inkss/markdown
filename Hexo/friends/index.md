@@ -91,6 +91,12 @@ links:
         tags:
           - 前端
           - JS
+      - name: 饿龙不是龙哩
+        avatar: https://i.loli.net/2020/05/29/RNsDWtFSQzpgPXI.jpg
+        url: https://liuyifei.club
+        backgroundColor: '#e4f2f5'
+        textColor: '#555'
+        desc: 'INFP|菲迷|颜控|夜猫子|无头怪|热爱一切美好'
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---

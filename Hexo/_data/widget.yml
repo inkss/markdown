@@ -5,7 +5,7 @@ notice:
     icon: fal fa-candle-holder
     title: 公告
   content:
-    - '  <i class="fal fa-narwhal"></i>  本站缓更，归期未知~ '
+    - '  <i class="fal fa-narwhal"></i>  六一快乐~ '
 
 showText:
   class: text
@@ -15,7 +15,7 @@ showText:
     title: 枋柚梓
   content:
     - '繁星永存，记忆亘古不变 <i class="fal fa-spider-black-widow"></i>'
-    - '最后更新日期：2020年5月28日'
+    - '最后更新日期：2020年5月29日'
 
 navigation:
   class: grid
