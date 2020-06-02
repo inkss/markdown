@@ -27,4 +27,4 @@ jobs:
         cd Hexo-Blog
         git add .
         git commit -m 'sync file'
-        git push -f
+        git push
