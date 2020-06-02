@@ -194,9 +194,11 @@ meta:
 
 <!-- tab <i class="fal fa-code-branch"></i><i style="font-weight: normal;font-style: normal;">&nbsp;自动部署</i> -->
 
-&emsp;&emsp;这是一份 Github Actions 配置，作用是当 Push 代码到仓库时，就执行一遍 hexo g -d 的过程，采用的是 SSH 私钥部署的方式，他们说还可以利用 Github 的 Api 进行部署，当时最终还是用 secrets 存值，而且最终效果都是一样的，倒也无所谓了，大同小异、大同小异。
+&emsp;&emsp;这是一份 Github Actions 配置，作用是当 Push 代码到仓库时，就执行一遍 hexo g -d 的过程，采用的是 SSH 私钥部署的方式，据说还可以利用 Github 的 Api 进行部署，但是最终还是用到 secrets 存值，而且最终效果都是一样的，倒也无所谓了，大同小异、大同小异。
 
-&emsp;&emsp;我在这份配置文件里作了一些别的修改，除了部署网站外，还将博客文章（也就是 souce 目录下的内容）同步到了我另外一个仓库，思路倒也简单，就是 cp 而已。这个过程中，记录几个有趣的参数，默认情况下，初始目录位于：*/home/runner/work/Hexo-Blog/Hexo-Blog* ，很奇怪，我也不知道为什么仓库目录会被重复两次，服务器配置方面倒是一个 Ubuntu 系统，Node 12.16.3，以上。
+&emsp;&emsp;我在这份配置文件里作了一些别的修改，除了部署网站外，还将博客文章（也就是 source 目录下的内容）同步到了我另外一个仓库，思路倒也简单，就是 cp 而已。这个过程中，记录几个有趣的参数：默认情况下，初始目录位于：*/home/runner/work/Hexo-Blog/Hexo-Blog* ，很奇怪，我也不知道为什么仓库目录会被重复两次；服务器配置方面：一个 Ubuntu 系统，Node 12.16.3，以上。
+
+&emsp;&emsp;其实利用 Github 的 Webhooks 在服务器上也能实现这样的效果，不过，白嫖更香吧！
 
 ```yml
 name: Hexo Action
@@ -246,6 +248,6 @@ jobs:
 <div style="margin-top: 20px;"></div>
 
 {% span gray small right, 枋柚梓 %}
-{% span gray small right, 2020/06/02 %}
+{% span gray small right, 20/06/02 %}
 
 <div style="margin-top: -50px;"></div>
