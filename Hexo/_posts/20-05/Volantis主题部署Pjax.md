@@ -180,29 +180,24 @@ document.addEventListener('pjax:error', function () {
 
 ### 3.1 搜索
 
-&ensp;&emsp;在前面我就说了，搜索结果是后期渲染上的，所以没有被 Pjax 整成自己的样子（哈哈），所以那些结果标签点过去立马来个刷新跳转，故此部分便只需要对这点处理下就行啦。
+&ensp;&emsp;在前面我就说了，搜索结果是后期渲染上的，所以没有被 Pjax 整成自己的样子（哈哈），所以那些结果标签点过去立马来个刷新跳转，故此部分便只需要对这点处理下就行啦。这里需要利用 Pjax 的 `pjax.refresh([el])` 函数：
 
-&ensp;&emsp;这里需要利用 Pjax 的 `pjax.loadUrl(url)` 函数，手动发送请求，也就是我们得拿到搜索结果的 url 地址。翻翻搜索文件，找到几个关键函数： `self.buildResult` 、 `self.buildResultList` ，一个用来画弹出层，一个用来画结果列。首先把 buildResult 里 a 标签的 href 去掉，不能让他点击后就跳了呀，将 href 改成 value 藏起来，接着是给此标签加 class 用以监听点击事件。在 buildResultList 里，`$.each(data, function (index, post){})` 的下面，也就是循环外继续对 `html` 拼接（这里展示的为格式化后的代码）：
+&ensp;&emsp;Use this method to bind Pjax to children of a DOM element that didn't exist when Pjax was initialised e.g. content inserted dynamically by another library or script. If called with no arguments, Pjax will parse the entire document again to look for newly-inserted elements.
 
-{% codeblock lang:js mark:3,5,10-11 代码处理 line_number:false  %}
-<script> 
-$('.result.search-result-fix').click(function(event) {
-  var url = this.getAttribute('value');
-  try {
-      pjax.loadUrl(url)
-  } catch(e) {
-      $(location).attr('href', url)
-  }
-  setTimeout(function() {
-      $('#u-search').fadeOut(500);
-      $('body').removeClass('modal-active');
-  },
-  300);
-}); 
-<script>
+{% codeblock lang:js refresh([el]) line_number:false  %}
+// Inside a callback or Promise that runs after new DOM content has been inserted
+var newContent = document.querySelector(".new-content");
+
+pjax.refresh(newContent);
 {% endcodeblock %}
 
-&ensp;&emsp;思路大概为先读取 value 值，然后发送跳转，最后再关闭掉搜索弹框，就是这样。
+&ensp;&emsp;也就是重新加载 #u-search 区域，接着监听 send 事件，关闭搜索窗口：
+
+{% codeblock lang:js Pjax 处理 line_number:false  %}
+//...
+html += "<script>try{pjax.refresh(document.querySelector('#u-search'))}catch(e){console.log(e)}</script>";
+html += "<script>document.addEventListener('pjax:send',function(){$('#u-search').fadeOut(500);$('body').removeClass('modal-active')});</script>";
+{% endcodeblock %}
 
 ### 3.2 导航栏
 

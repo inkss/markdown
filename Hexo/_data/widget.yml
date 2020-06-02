@@ -5,7 +5,7 @@ notice:
     icon: fal fa-candle-holder
     title: 公告
   content:
-    - '  <i class="fal fa-narwhal"></i>  六一快乐~ '
+    - '  <i class="fal fa-narwhal"></i>  测试 Github Actions 的部署 '
 
 showText:
   class: text

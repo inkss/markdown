@@ -44,7 +44,7 @@ meta:
 
 <!-- endtab -->
 
-<!-- tab <i class="fal fa-kiwi-bird"></i><i style="font-weight: normal;font-style: normal;">&nbsp;  博客大事记</i> -->
+<!-- tab <i class="fal fa-kiwi-bird"></i><i style="font-weight: normal;font-style: normal;">&nbsp;博客大事记</i> -->
 
 <div>
     <fieldset class="elem-field field-title">
@@ -189,6 +189,43 @@ meta:
         </li>
     </ul>
 </div>
+
+<!-- endtab -->
+
+<!-- tab <i class="fal fa-code-branch"></i><i style="font-weight: normal;font-style: normal;">&nbsp;自动部署</i> -->
+
+```yml
+name: Hexo Action
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: A job to deploy blog.
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: Cache node modules
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+    - name: Deploy
+      id: deploy
+      uses: sma11black/hexo-action@v1.0.1
+      with:
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
+    - name: Get the output
+      run: |
+        echo "${{ steps.deploy.outputs.notify }}"
+```
 
 <!-- endtab -->
 
