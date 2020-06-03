@@ -1,11 +1,11 @@
 notice:
   class: text
-  display: [desktop, mobile]
+  display: [desktop]
   header:
     icon: fal fa-candle-holder
     title: 公告
   content:
-    - '  <i class="fal fa-narwhal"></i>  测试 Github Actions 的部署 '
+    - '  <i class="fal fa-narwhal"></i>  暂无 '
 
 showText:
   class: text
@@ -15,7 +15,7 @@ showText:
     title: 枋柚梓
   content:
     - '繁星永存，记忆亘古不变 <i class="fal fa-spider-black-widow"></i>'
-    - '最后更新日期：2020年5月29日'
+    - '最后更新日期：2020年6月03日'
 
 navigation:
   class: grid
