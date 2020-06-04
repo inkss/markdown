@@ -5,7 +5,7 @@ notice:
     icon: fal fa-candle-holder
     title: 公告
   content:
-    - '  <i class="fal fa-narwhal"></i>  暂无 '
+    - '  <i class="fal fa-narwhal"></i>  Have a nice day '
 
 showText:
   class: text
