@@ -17,6 +17,16 @@ links:
       tags:
         - 记事
         - 私人
+  - group: 是大佬哟
+    icon: fal fa-link
+    items:
+      - name: 忘川三途
+        avatar: https://i.loli.net/2020/06/05/xmuqsQJXk2pKd4S.jpg
+        url: https://raymond-zhao.top/
+        backgroundColor: '#b9b9b9'
+        textColor: '#FFF'
+        tags:
+          - iOS
   - group: 左邻右舍
     icon: fal fa-link
     items:
