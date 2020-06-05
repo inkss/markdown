@@ -22,6 +22,9 @@
     - name: 留言板
       icon: fal fa-bell-on
       url: info/index.html
+    - name: 笔记本
+      icon: fal fa-flower-daffodil
+      url: /notes/index.html
     - name: hr  
     - name: 我的朋友们
       icon: fal fa-cookie-bite

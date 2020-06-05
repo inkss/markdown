@@ -34,3 +34,15 @@ navigation:
     - name: 地图
       icon: fal fa-sitemap fa-fw
       url: /sitemap.xml
+
+wiki-hexo-theme:
+  class: list
+  display: [desktop, mobile]
+  header:
+    icon: fal fa-flower-daffodil
+    title: 笔记本
+    url: /notes/index.html
+  rows:
+    - name: '<i class="fad fa-kerning"></i> 占位符'
+    - name: '<i class="fad fa-kerning"></i> 命令合集'
+      url: /notes/shell/index.html
