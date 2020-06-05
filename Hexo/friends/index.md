@@ -26,7 +26,10 @@ links:
         backgroundColor: '#b9b9b9'
         textColor: '#FFF'
         tags:
-          - iOS
+          - 学识渊博
+          - 经验丰富
+          - 代码风骚
+          - 效率恐怖
   - group: 左邻右舍
     icon: fal fa-link
     items:
