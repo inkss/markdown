@@ -54,7 +54,7 @@ abbrlink: 481358a6
 
 ![国产好软，全平台兼容](../../static/Ubuntu20.assets/img10.png)
 
-## 三、后续
+## 四、后续
 
 &ensp;&emsp; 这里有一个非常有意思的事情，Ubutnu 的默认安装行为将引导信息放到了系统所在盘，而我们高傲的 Windows 自然不会主动扫 Linux 的引导信息的。所以情况就是，两者的引导存到了不同的硬盘里，意味着我只需要在 BIOS 调整引导的加载顺序就能控制是否启用 Ubuntu 了（Ubuntu 可以引导 Win）。
 
