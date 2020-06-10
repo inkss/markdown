@@ -7,7 +7,7 @@ meta:
   footer: [updated, counter]
 ---
 
-{% p center logo large, 命令合集 %}
+{% p center logo large, Shell command %}
 
 ### CentOS 切换 Git
 
