@@ -43,6 +43,8 @@ wiki-hexo-theme:
     title: 笔记本
     url: /notes/index.html
   rows:
+    - name: '<i class="fad fa-kerning"></i> App List'
+      url: /notes/app/index.html
     - name: '<i class="fad fa-kerning"></i> Github Actions'
       url: /notes/actions/index.html
     - name: '<i class="fad fa-kerning"></i> Shell command'
