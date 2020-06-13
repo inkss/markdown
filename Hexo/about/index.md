@@ -18,6 +18,126 @@ meta:
 
 {% tabs tab-id %}
 
+<!-- tab  <i class="fal fa-kiwi-bird"></i><i style="font-weight: normal;font-style: normal;">&nbsp;博客大事记</i> -->
+
+<div>
+    <fieldset class="elem-field field-title">
+        <legend>枋柚梓的猫会发光：博客大事记</legend>
+    </fieldset>
+    <ul class="timeline">
+        <li class="timeline-item">
+            <i class="fal fa-bat timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2020/06/13 替换全站鼠标手型，替换右键菜单。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2020/05/01 大致完成兼容，进入缓更阶段。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2020/04/09 博客重新部署，兼容日期待定。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-siren-on timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2019/12/12 在主题上部署 Pjax 服务，无跳转刷新。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-splotch timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2019/11/11 购买阿里云服务器，从腾讯云迁移数据，重新部署。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2019/10/22 建立 material 分支，切换主题，同时舍弃了大量原有内容。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-gingerbread-man timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2019/09/10 调整永久链接格式，丢失所有文章阅读数、部分文章评论。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2019/09/04 将所有博客文件克隆至本地，解决部分依赖，重新整理。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2019/07/17 使用 Could Studio 进行博客文件的分发，编写，一切依托于服务器。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2019/04/03 将所有模组依赖上传至 Github 仓库，为了以后可以整体克隆不丢失修改。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-socks timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2018/12/15 注册域名，利用腾讯云服务器搭建基于 Typecho 的动态博客。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2018/09/20 更换了 Hexo 的 MarkDown 渲染器，重新划分了文章标签和分类。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2018/09/14 将 Hexo 所属文件部署到 Github 私有仓库，同期使用主题 Pure。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2018/06/04 现存的记录时间最早的一篇文章：《Linux 环境搭建饥荒服务器教程》</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-narwhal timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2018/03/15 再次注册域名，接触并利用 Hexo & Github Page 搭建博客，早期文章丢失。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-skull timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2017/03/31 一年之后，服务器到期未续费，域名到期未续，域名过期被注销，撒花纪念。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-genderless timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2016/03/31 基于 WordPress 的第一个网站，域名 <span class="bb_spoiler" title="可惜已经被注销了">sunziy.cn</span> 。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-fan fa-spin timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">很多年以前 那时候一切都没有开始~</div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- endtab -->
+
 <!-- tab <i class="fal fa-kiss-wink-heart"></i><i style="font-weight: normal;font-style: normal;">&nbsp;关于本站</i> -->
 
 {% span gray h3 center, 一些有趣的回忆 %}
@@ -38,154 +158,6 @@ meta:
 
 &emsp;&emsp;关于我？不可能的，写是不可能写的，无意泄露的不算，主动暴漏那是不存在滴~
 
-</div>
-
-<!-- endtab -->
-
-<!-- tab <i class="fal fa-kiwi-bird"></i><i style="font-weight: normal;font-style: normal;">&nbsp;博客大事记</i> -->
-
-<div>
-    <fieldset class="elem-field field-title">
-        <legend>枋柚梓的猫会发光：博客大事记</legend>
-    </fieldset>
-    <ul class="timeline">
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-bat"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2020/05/01 大致完成兼容。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2020/04/09 博客重新部署，兼容日期待定。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2019/12/12 在主题上部署 Pjax 服务，无跳转刷新。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2019/11/11 购买阿里云服务器，从腾讯云迁移数据，重新部署。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2019/10/22 建立 material 分支，切换主题，同时舍弃了大量原有内容。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2019/09/10 调整永久链接格式，丢失所有文章阅读数、部分文章评论。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2019/09/04 将所有博客文件克隆至本地，解决部分依赖，重新整理。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2019/07/17 使用 Could Studio 进行博客文件的分发，编写，一切依托于服务器。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2019/04/03 将所有模组依赖上传至 Github 仓库，为了以后可以整体克隆不丢失修改。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2018/12/15 注册域名，利用腾讯云服务器搭建基于 Typecho 的动态博客。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2018/09/20 更换了 Hexo 的 MarkDown 渲染器，重新划分了文章标签和分类。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2018/09/14 将 Hexo 所属文件部署到 Github 私有仓库，同期使用主题 Pure。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2018/06/04 现存的记录时间最早的一篇文章：《Linux 环境搭建饥荒服务器教程》</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2018/03/15 再次注册域名，接触并利用 Hexo & Github Page 搭建博客，早期文章丢失。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2017/03/31 一年之后，服务器到期未续费，域名到期未续，域名过期被注销，撒花纪念。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-genderless"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2016/03/31 基于 WordPress 的第一个网站，域名 <span class="bb_spoiler" title="可惜已经被注销了">sunziy.cn</span> 。</div>
-            </div>
-        </li>
-        <li class="timeline-item">
-            <div class="timeline-icon timeline-axis">
-                <i class="fal fa-fan fa-spin"></i>
-            </div>
-            <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">很多年以前 那时候一切都没有开始~</div>
-            </div>
-        </li>
-    </ul>
 </div>
 
 <!-- endtab -->
