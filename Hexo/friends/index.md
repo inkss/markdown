@@ -54,7 +54,7 @@ links:
         backgroundColor: '#f1d6dd'
         textColor: '#2e2e2e'
         tags:
-          - WordPress
+          - Zhou
       - name: 燃星博客
         avatar: https://i.loli.net/2020/05/08/jYioBh1AbwsCkrv.jpg
         url: https://blog.skyings.cn/
@@ -131,8 +131,12 @@ valine:
 
 <!-- tab <i class="fad fa-greater-than-equal"></i><i style="font-weight: normal;font-style: normal;">&nbsp;前置要求 </i> -->
 
-{% checkbox green checked, Https 站点 %}
-{% checkbox green checked, 网站加载速度正常 %}
+{% checkbox green checked, Https 站点（大势所趋） %}
+{% checkbox green checked, 网站加载速度正常（待定...） %}
+{% checkbox minus blue checked, 免费类域名站点请略过（潜在的不可靠性） %}
+{% checkbox minus blue checked, 新创站点请略过（建议拥有一定的原创内容） %}
+{% checkbox times red checked, 不接受一切商业性或强烈侵入类广告之站点 %}
+{% checkbox times red checked, 不接受违反中华人民共和国法律法规之站点 %}
 
 <!-- endtab -->
 
