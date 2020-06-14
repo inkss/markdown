@@ -21,7 +21,7 @@ links:
     icon: fal fa-link
     items:
       - name: 忘川三途
-        avatar: https://i.loli.net/2020/06/05/xmuqsQJXk2pKd4S.jpg
+        avatar: /img/friend/raymond-zhao.jpg
         url: https://raymond-zhao.top/
         backgroundColor: '#b9b9b9'
         textColor: '#FFF'
@@ -34,14 +34,14 @@ links:
     icon: fal fa-link
     items:
       - name: xaoxuu
-        avatar: https://i.loli.net/2020/05/08/CIWlMdhHFjefsaq.jpg
+        avatar: /img/friend/xaoxuu.jpg
         url: https://xaoxuu.com
         backgroundColor: '#87977F'
         textColor: '#EFEFEF'
         tags:
           - iOS
       - name: Charlie
-        avatar: https://i.loli.net/2020/05/08/lhpIrM9FRudD26a.png
+        avatar: /img/friend/charlie-zzy.png
         url: https://charlie-zzy.github.io
         backgroundColor: '#66CCFF'
         textColor: '#EFEFEF'
@@ -49,21 +49,21 @@ links:
           - OIer
           - 版本跟进狂魔
       - name: Zhou 的小站
-        avatar: https://i.loli.net/2020/05/08/O6tXixzpC87gITm.png
+        avatar: /img/friend/zhoublog.webp
         url: https://zhoublog.xyz/
         backgroundColor: '#f1d6dd'
         textColor: '#2e2e2e'
         tags:
           - Zhou
       - name: 燃星博客
-        avatar: https://i.loli.net/2020/05/08/jYioBh1AbwsCkrv.jpg
+        avatar: /img/friend/skyings.jpg
         url: https://blog.skyings.cn/
         backgroundColor: '#666666'
         textColor: '#c8fbff'
         tags:
           - ともだち
       - name: LHKSTUDIO
-        avatar: https://i.loli.net/2020/05/08/P9xi2TfIa1veZn8.jpg
+        avatar: /img/friend/lhkstudio.jpg
         url: https://lhkstudio.me
         backgroundColor: '#FFEBD2'
         textColor: '#985B40'
@@ -71,13 +71,13 @@ links:
           - OIer
           - Qt
       - name: MHuiG
-        avatar: https://i.loli.net/2020/05/08/vcieIFqyaxhVftL.png
+        avatar: /img/friend/mhuig.webp
         url: https://mhuig.top
         backgroundColor: '#f5dcca'
         textColor: '#6d533f'
         desc: 'Be Yourself,Make a Difference.'
       - name: Mrliux
-        avatar: https://i.loli.net/2020/05/11/Qmy5LvnP7xTzWb2.jpg
+        avatar: /img/friend/mrliux.jpg
         url: https://www.mrliux.top
         backgroundColor: '#969696'
         textColor: '#ffffff'
@@ -85,19 +85,19 @@ links:
           - IOT
           - 退役ACMer
       - name: Xu&#39;s Blog
-        avatar: https://i.loli.net/2020/05/11/ObjmMQhktpc2yAW.jpg
+        avatar: /img/friend/hasaik.jpg
         url: https://hasaik.com
         backgroundColor: '#fcfcfc'
         textColor: '#555'
         desc: '博观而约取，厚积而薄发！'
       - name: Flexiston
-        avatar: https://i.loli.net/2020/05/13/foqaPIbhSw61nZ7.png
+        avatar: /img/friend/flexiston.webp
         url: https://www.flexiston.com
         backgroundColor: '#ea736a'
         textColor: '#fff'
         desc: '长风破浪会有时，直挂云帆济沧海'
       - name: 残梦
-        avatar: https://i.loli.net/2020/05/15/XDBemGyJwQxPl8C.jpg
+        avatar: /img/friend/sunhang.jpg
         url: https://sunhang.top
         backgroundColor: '#fcfcfc'
         textColor: '#667086'
@@ -105,11 +105,17 @@ links:
           - 前端
           - JS
       - name: 饿龙不是龙哩
-        avatar: https://i.loli.net/2020/05/29/RNsDWtFSQzpgPXI.jpg
+        avatar: /img/friend/liuyifei.jpg
         url: https://liuyifei.club
         backgroundColor: '#e4f2f5'
         textColor: '#555'
         desc: 'INFP|菲迷|颜控|夜猫子|无头怪|热爱一切美好'
+      - name: nomar
+        avatar: /img/friend/headimg_dl.jfif
+        url: https://www.nomar.cn
+        backgroundColor: '#f4fafe'
+        textColor: '#555'
+        desc: '技术记录分享'
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
