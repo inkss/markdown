@@ -30,4 +30,7 @@
       icon: fal fa-cookie-bite
       url: friends/index.html
     - name: 来首音乐
-      icon: fal fa-compact-disc  
+      icon: fal fa-compact-disc
+- name: 十年
+  icon: fal fa-glass-cheers
+  url: /foreverblog/index.html
