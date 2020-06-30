@@ -116,6 +116,15 @@ links:
         backgroundColor: '#f4fafe'
         textColor: '#555'
         desc: '技术记录分享'
+      - name: Colsrch
+        avatar: /img/friend/colsrch.jpg
+        url: https://colsrch.top
+        backgroundColor: '#d7d1d5'
+        textColor: '#5d5d5d'
+        desc: '愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。'
+        tags:
+          - C/C++
+          - MFC
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
