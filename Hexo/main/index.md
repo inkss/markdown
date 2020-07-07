@@ -1,6 +1,7 @@
 ---
 layout: page
-title: 关于
+pin: true
+title: 欢迎
 body: [article]
 sidebar: []
 meta:
@@ -16,10 +17,6 @@ meta:
 
 
 {% folding cyan, 你来到了世界的边角 %}
-
-{% tabs tab-id %}
-
-<!-- tab  <i class="fal fa-kiwi-bird"></i><i style="font-weight: normal;font-style: normal;">&nbsp;博客大事记</i> -->
 
 <div>
     <fieldset class="elem-field field-title">
@@ -143,29 +140,4 @@ meta:
     </ul>
 </div>
 
-<!-- endtab -->
-
-<!-- tab <i class="fal fa-code-branch"></i><i style="font-weight: normal;font-style: normal;">&nbsp;自动部署</i> -->
-
-{% note poo cyan ,这是一份简单的 Github Action 配置，作用为在提交操作之后自动执行 `hexo g -d` 命令。 %}
-
-<script src="https://gist.github.com/inkss/2e5b8a0034b6fe315f573bd4398b6458.js"></script>
-
-<!-- endtab -->
-
-<!-- tab <i class="fal fa-fingerprint"></i> -->
-
-*本来无一物,何处惹尘埃*
-
-<!-- endtab -->
-
-{% endtabs %}
-
 {% endfolding %}
-
-<div style="margin-top: 20px;"></div>
-
-{% span gray small right, 枋柚梓 %}
-{% span gray small right, 20/06/02 %}
-
-<div style="margin-top: -50px;"></div>
