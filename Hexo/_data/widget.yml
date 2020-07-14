@@ -11,11 +11,11 @@ showText:
   class: text
   display: [desktop]
   header:
-    icon: fal fa-feather-alt
-    title: 枋柚梓
+    icon: fal fa-award
+    title: 站点信息
   content:
-    - '繁星永存，记忆亘古不变 <i class="fal fa-spider-black-widow"></i>'
-    - '最后更新日期：2020年7月7日'
+    - '最后活动：2020/7/14'
+    - '文章数据：29  <i class="fal fa-box-full"></i>'
 
 navigation:
   class: grid

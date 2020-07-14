@@ -71,4 +71,13 @@ scoop bucket add extras
 scoop bucket add versions
 scoop bucket add nonportable
 scoop bucket add java
+
+# 清除已下载缓存
+scoop cache rm *
+
+# 清除旧版本软件
+scoop cleanup *
+
+# 更新软件库
+scoop update *
 {% endcodeblock %}
