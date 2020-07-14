@@ -8,14 +8,11 @@ notice:
     - '  <i class="fal fa-narwhal"></i>  Have a nice day '
 
 showText:
-  class: text
+  class: website
   display: [desktop]
   header:
     icon: fal fa-award
     title: 站点信息
-  content:
-    - '最后活动：2020/7/14'
-    - '文章数据：29  <i class="fal fa-box-full"></i>'
 
 navigation:
   class: grid
