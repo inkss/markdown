@@ -149,7 +149,10 @@ meta:
 
 {% note poo cyan ,这是一份简单的 Github Action 配置，作用为在提交操作之后自动执行 `hexo g -d` 命令。 %}
 
+{% btn center large, 查看代码, https://gist.github.com/inkss/2e5b8a0034b6fe315f573bd4398b6458#file-hexo-deploy-yml, fal fa-shield-check %}
+
 <script src="https://gist.github.com/inkss/2e5b8a0034b6fe315f573bd4398b6458.js"></script>
+
 
 <!-- endtab -->
 
