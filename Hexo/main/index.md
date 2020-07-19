@@ -1,6 +1,6 @@
 ---
 layout: page
-pin: true
+pin: false
 title: 欢迎
 body: [article]
 sidebar: []
