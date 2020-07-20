@@ -125,6 +125,14 @@ links:
         tags:
           - C/C++
           - MFC
+      - name: qinxs
+        avatar: /img/friend/qinxs.png
+        url: https://7bxing.com
+        backgroundColor: '#607D8B'
+        textColor: '#EFEFEF'
+        tags:
+          - 技术总结
+          - 各种折腾
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
