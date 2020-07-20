@@ -14,6 +14,22 @@ showText:
     icon: fal fa-award
     title: 站点信息
 
+showComments:
+  id: showComments
+  class: valineshow
+  display: [desktop]
+  header:
+    icon: fal fa-mug-marshmallows
+    title: 最新评论
+
+showTimes:
+  id: showTimes
+  class: valineshow
+  display: [desktop]
+  header:
+    icon: fal fa-sax-hot
+    title: 热门文章
+
 navigation:
   class: grid
   display: [desktop]

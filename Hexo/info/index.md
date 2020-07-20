@@ -5,14 +5,54 @@ valine:
 meta:
   header: [author, counter]
   footer: []
-sidebar: []  
+sidebar: [notice, showText, showTimes, showComments]  
 ---
 
 {% p center logo ultra, '<i class="fad fa-star-of-david" style="color: #a6d5fa" title="爱我"></i>' %}
 
-<!-- *{% p center logo small gray, 原谅我柔情矫情甚至故作深情，就像我原谅你没有再度认出我的脸。 %}* -->
-<!-- *{% p center logo small gray, 原谅我竟然再次想起普希金的长诗，他讲，有一种蝉，它天生畸形，无法生出翅膀，于是只能在茧里摇啊摇。 %}* -->
-<!-- *{% p center logo small gray, 当其他蝉翼被突然袭来的暴雨拍碎，它依然摇啊摇，不必产子，不必飞翔，同时也不必经历任何痛苦挣扎。 %}* -->
 *{% p center logo small gray, 请遵守相关法律法规，文明灌水，谢谢合作~ <br><span class="bb_spoiler" title="这是真的，不骗你">ヾ(*´▽‘*)ﾉ 无关评论会被删掉的~</span> %}*
+
+
+<div style="margin-top: 10px"></div>
+
+<div id="showTop10"></div>
+
+<script>
+setTimeout(() => {
+  var AV = window.AV;
+  if (AV == undefined) {return;}
+
+  var innerHtmlTimes = "<li>";
+  var queryTimes = new AV.Query('Counter');
+  queryTimes.contains('url', '/article/');
+  queryTimes.descending('time');
+  queryTimes.limit(10);
+  queryTimes.find().then(ret => {
+    ret.forEach((item, index) => {
+      innerHtmlTimes += "<a class='flat-box' title='" + item.attributes.title + "' href='" + item.attributes.url + "'>";
+      innerHtmlTimes += "  <div class='name' style='white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'>" + item.attributes.title + "</div>";
+      innerHtmlTimes += "  <div class='badge'>" + item.attributes.time + "</div>";
+      innerHtmlTimes += "</a>";
+    });
+    innerHtmlTimes += "</li>";
+    document.getElementById("showTimes").innerHTML = innerHtmlTimes;
+  });
+
+  var innerHtmlComments = "<li>";
+  var queryComments = new AV.Query('Comment');
+  queryComments.descending('updatedAt');
+  queryComments.limit(10);
+  queryComments.find().then(ret => {
+    console.log(ret);
+    ret.forEach((item, index) => {
+      innerHtmlComments += "<a class='flat-box' title='" + item.attributes.ip + "' href='" + item.attributes.url + "#" + item.id + "'>";
+      innerHtmlComments += "  <div class='name'><b>" + item.attributes.nick + "：</b>" + item.attributes.comment.replace(/<[^>]+>/g,"") + "</div>";
+      innerHtmlComments += "</a>";
+    });
+    innerHtmlComments += "</li>";
+    document.getElementById("showComments").innerHTML = innerHtmlComments;
+  });
+}, 3000);
+</script>
 
 <div style="margin-top: -10px"></div>
