@@ -36,6 +36,7 @@ setTimeout(() => {
     });
     innerHtmlTimes += "</li>";
     document.getElementById("showTimes").innerHTML = innerHtmlTimes;
+    pjax.refresh(document.querySelector(".valineshow"));
   });
 
   var innerHtmlComments = "<li>";
@@ -51,6 +52,7 @@ setTimeout(() => {
     });
     innerHtmlComments += "</li>";
     document.getElementById("showComments").innerHTML = innerHtmlComments;
+    pjax.refresh(document.querySelector(".valineshow"));
   });
 }, 3000);
 </script>
