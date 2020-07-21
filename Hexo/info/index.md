@@ -44,7 +44,6 @@ setTimeout(() => {
   queryComments.descending('updatedAt');
   queryComments.limit(10);
   queryComments.find().then(ret => {
-    console.log(ret);
     ret.forEach((item, index) => {
       innerHtmlComments += "<a class='flat-box' title='" + item.attributes.ip + "' href='" + item.attributes.url + "#" + item.id + "'>";
       innerHtmlComments += "  <div class='name'><b>" + item.attributes.nick + "：</b>" + item.attributes.comment.replace(/<[^>]+>/g,"") + "</div>";
