@@ -12,15 +12,16 @@ sidebar: [notice, showText, showTimes, showComments]
 
 *{% p center logo small gray, 请遵守相关法律法规，文明灌水，谢谢合作~ <br><span class="bb_spoiler" title="这是真的，不骗你">ヾ(*´▽‘*)ﾉ 无关评论会被删掉的~</span> %}*
 
-
-<div style="margin-top: 10px"></div>
-
-<div id="showTop10"></div>
+<div style="margin-top: -10px"></div>
 
 <script>
 setTimeout(() => {
   var AV = window.AV;
-  if (AV == undefined) {return;}
+  if (AV == undefined) {
+    document.getElementById("showTimes").style.display = 'none';
+    document.getElementById("showComments").style.display = 'none';
+    return;
+  }
 
   var innerHtmlTimes = "<li>";
   var queryTimes = new AV.Query('Counter');
@@ -36,7 +37,9 @@ setTimeout(() => {
     });
     innerHtmlTimes += "</li>";
     document.getElementById("showTimes").innerHTML = innerHtmlTimes;
-    pjax.refresh(document.querySelector(".valineshow"));
+    pjax.refresh(document.querySelector("#showTimes"));
+  }).catch(ex => {
+    document.getElementById("showTimes").style.display = 'none';
   });
 
   var innerHtmlComments = "<li>";
@@ -45,15 +48,15 @@ setTimeout(() => {
   queryComments.limit(10);
   queryComments.find().then(ret => {
     ret.forEach((item, index) => {
-      innerHtmlComments += "<a class='flat-box' title='" + item.attributes.ip + "' href='" + item.attributes.url + "#" + item.id + "'>";
+      innerHtmlComments += "<a class='flat-box' title='" + item.attributes.nick + "' href='" + item.attributes.url + "#" + item.id + "'>";
       innerHtmlComments += "  <div class='name'><b>" + item.attributes.nick + "：</b>" + item.attributes.comment.replace(/<[^>]+>/g,"") + "</div>";
       innerHtmlComments += "</a>";
     });
     innerHtmlComments += "</li>";
     document.getElementById("showComments").innerHTML = innerHtmlComments;
-    pjax.refresh(document.querySelector(".valineshow"));
+    pjax.refresh(document.querySelector("#showComments"));
+  }).catch(ex => {
+    document.getElementById("showComments").style.display = 'none';
   });
 }, 3000);
 </script>
-
-<div style="margin-top: -10px"></div>
