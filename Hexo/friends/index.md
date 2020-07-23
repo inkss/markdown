@@ -133,6 +133,12 @@ links:
         tags:
           - 技术总结
           - 各种折腾
+      - name: modao
+        avatar: /img/friend/modao.png
+        url: https://modao233.gitee.io/
+        backgroundColor: '#514c5c'
+        textColor: '#fef5ed'
+        desc: '凡有所学，必有所得' 
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
