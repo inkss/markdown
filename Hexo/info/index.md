@@ -49,7 +49,7 @@ setTimeout(() => {
   queryComments.find().then(ret => {
     ret.forEach((item, index) => {
       innerHtmlComments += "<a class='flat-box' title='" + item.attributes.nick + "' href='" + item.attributes.url + "#" + item.id + "'>";
-      innerHtmlComments += "  <div class='name'><b>" + item.attributes.nick + "：</b>" + item.attributes.comment.replace(/<[^>]+>/g,"") + "</div>";
+      innerHtmlComments += "  <div class='name' style='word-break: break-all'><b>" + item.attributes.nick + "：</b>" + item.attributes.comment.replace(/<[^>]+>/g,"") + "</div>";
       innerHtmlComments += "</a>";
     });
     innerHtmlComments += "</li>";
