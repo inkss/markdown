@@ -44,7 +44,7 @@ setTimeout(() => {
 
   var innerHtmlComments = "<li>";
   var queryComments = new AV.Query('Comment');
-  queryComments.descending('updatedAt');
+  queryComments.descending('createdAt');
   queryComments.limit(10);
   queryComments.find().then(ret => {
     ret.forEach((item, index) => {
