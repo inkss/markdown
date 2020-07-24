@@ -7,12 +7,39 @@ notice:
   content:
     - '  <i class="fal fa-narwhal"></i>  Have a nice day '
 
-showText:
-  class: website
+showWebsite:
+  class: webinfo
   display: [desktop]
   header:
     icon: fal fa-award
     title: 站点信息
+  type:
+    article: 
+      enable: true
+      text: '文章数目 :'
+      unit: '篇'
+    runtime:
+      enable: true
+      data: '2018/03/15'
+      text: '已运行时间 :'
+      unit: '天'
+    wordcount:
+      enable: true
+      text: '本站总字数 :'
+      unit: ''
+    siteuv:
+      enable: true
+      text: '本站访客数 :'
+      unit: ''
+    sitepv:
+      enable: true
+      text: '本站总访问量 :'
+      unit: ''
+    lastupd:
+      enable: true
+      friendlyShow: true
+      text: '最后活动时间 :'
+      unit: '日'
 
 showComments:
   id: showComments
