@@ -5,7 +5,7 @@ valine:
 meta:
   header: [author, counter]
   footer: []
-sidebar: [notice, showText, showTimes, showComments]  
+sidebar: [notice, showWebsite, showTimes, showComments]  
 ---
 
 {% p center logo ultra, '<i class="fad fa-star-of-david" style="color: #a6d5fa" title="爱我"></i>' %}
