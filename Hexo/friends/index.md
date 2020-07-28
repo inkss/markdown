@@ -138,7 +138,14 @@ links:
         url: https://modao233.gitee.io/
         backgroundColor: '#514c5c'
         textColor: '#fef5ed'
-        desc: '凡有所学，必有所得' 
+        desc: '凡有所学，必有所得'
+      - name: BooLo
+        avatar: /img/friend/boolo.jpg
+        url: https://www.boolo.top
+        backgroundColor: '#76EEC6'
+        tags: [莫得标签]
+        textColor: '#000000'
+        desc: 记录成长，向未来奔跑
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---

@@ -13,24 +13,24 @@
     - name: 归档
       icon: fal fa-archive 
       url: archives/
+- name: 留言
+  icon: fal fa-at
+  url: info/index.html
 - name: 更多
   icon: fal fa-fist-raised
   rows:
     - name: 关于我
       icon: fal fa-skull
       url: about/index.html
-    - name: 留言板
-      icon: fal fa-bell-on
-      url: info/index.html
     - name: 笔记本
       icon: fal fa-flower-daffodil
       url: /notes/index.html
-    - name: hr  
+    - name: hr
+    - name: 十年之约
+      icon: fal fa-glass-cheers
+      url: /foreverblog/index.html
     - name: 我的朋友们
       icon: fal fa-cookie-bite
       url: friends/index.html
     - name: 来首音乐
       icon: fal fa-compact-disc
-- name: 十年
-  icon: fal fa-glass-cheers
-  url: /foreverblog/index.html

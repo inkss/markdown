@@ -7,7 +7,7 @@ tag:
   - Pjax
   - Material X
 categories: other
-description: 为静态博客 Hexo 添加了 Pjax 支持，顺便还有一些 balabal 的测试呀。
+description: 本篇定位于理论知识，概述性简介如何处理 Pjax 与 Hexo 的兼容性。
 abbrlink: 80b5f235
 music:
   enable: true      # true（文章内和文章列表都显示）
@@ -18,7 +18,7 @@ mathjax: false
 icons: [fal fa-fire]  
 ---
 
-&ensp;&emsp;对博客部署 Pjax 的好处在于局部重载时可以保留一些元素（如音乐播放器）不被刷新去除掉。然后是关于 Pjax 的版本选择，最早一版为 [defunkt](https://github.com/defunk)/[jquery-pjax](https://github.com/defunkt/jquery-pjax)，需要依赖 jQuery 框架，上一次更新已经是三年前了。所以本博客在挑选框架时，使用的是另一个版本： [MoOx](https://github.com/MoOx/)/[pjax](https://github.com/MoOx/pjax)。这版去除了 jQuery 依赖，当然这不是重点，主要是更新的挺勤，我喜新厌旧。
+&ensp;&emsp;本文着手重构中~
 
 &ensp;&emsp;本篇定位于理论知识，实际应用详见 [Volantis 主题部署 Pjax](/article/other/76993423.html)，前置知识，SPA 页面。
 

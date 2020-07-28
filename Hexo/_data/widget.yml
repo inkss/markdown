@@ -2,10 +2,10 @@ notice:
   class: text
   display: [desktop]
   header:
-    icon: fal fa-candle-holder
+    icon: fal fa-crow
     title: 公告
   content:
-    - '  <i class="fal fa-narwhal"></i>  本站维修调整中！ '
+    - '  <i class="fal fa-cactus"></i> 我明白你意思了'
 
 showWebsite:
   class: webinfo
