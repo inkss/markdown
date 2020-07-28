@@ -5,7 +5,7 @@ valine:
 meta:
   header: [author, counter]
   footer: []
-sidebar: [notice, showWebsite, showTimes, showComments]  
+sidebar: [notice, showWebsite]
 ---
 
 {% p center logo ultra, '<i class="fad fa-star-of-david" style="color: #a6d5fa" title="爱我"></i>' %}
@@ -14,7 +14,7 @@ sidebar: [notice, showWebsite, showTimes, showComments]
 
 <div style="margin-top: -10px"></div>
 
-<script>
+<!-- <script>
 setTimeout(() => {
   var AV = window.AV;
   if (AV == undefined) {
@@ -59,4 +59,4 @@ setTimeout(() => {
     document.getElementById("showComments").style.display = 'none';
   });
 }, 3000);
-</script>
+</script> -->
