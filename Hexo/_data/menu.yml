@@ -13,9 +13,6 @@
     - name: 归档
       icon: fal fa-archive 
       url: archives/
-- name: 留言
-  icon: fal fa-at
-  url: info/index.html
 - name: 更多
   icon: fal fa-fist-raised
   rows:
@@ -34,3 +31,6 @@
       url: friends/index.html
     - name: 来首音乐
       icon: fal fa-compact-disc
+- name: 留言
+  icon: fal fa-at
+  url: info/index.html
