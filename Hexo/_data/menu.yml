@@ -18,7 +18,7 @@
   rows:
     - name: 关于我
       icon: fal fa-skull
-      url: about/index.html
+      url: about/
     - name: 笔记本
       icon: fal fa-flower-daffodil
       url: /notes/index.html
