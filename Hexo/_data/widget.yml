@@ -28,17 +28,17 @@ showWebsite:
       text: '本站总字数 :'
       unit: ''
     siteuv:
-      enable: true
+      enable: false
       text: '本站访客数 :'
       unit: ''
     sitepv:
-      enable: true
+      enable: false
       text: '本站总访问量 :'
       unit: ''
     lastupd:
       enable: true
       friendlyShow: true
-      text: '最后活动时间 :'
+      text: '最后更新时间 :'
       unit: '日'
 
 showComments:
