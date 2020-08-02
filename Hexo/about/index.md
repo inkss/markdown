@@ -29,25 +29,25 @@ meta:
         <li class="timeline-item">
             <i class="fal fa-bat timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2020/07/07 修补网站中，另今日似乎是高考。</div>
+                <div class="timeline-title">2020/08/02 提供了一个相对比较强大的自定义右键菜单。</div>
             </div>
         </li>
         <li class="timeline-item">
             <i class="fal fa-genderless timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2020/06/13 替换全站鼠标手型，替换右键菜单。</div>
+                <div class="timeline-title">2020/06/13 替换全站鼠标手型，样式提取自 Ubuntu 的主题文件。</div>
             </div>
         </li>
         <li class="timeline-item">
             <i class="fal fa-genderless timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2020/05/01 大致完成兼容，进入缓更阶段。</div>
+                <div class="timeline-title">2020/05/01 重写了 Pjax 逻辑，解决大量 Bug，更改规范化。</div>
             </div>
         </li>
         <li class="timeline-item">
             <i class="fal fa-genderless timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2020/04/09 博客重新部署，兼容日期待定。</div>
+                <div class="timeline-title">2020/04/09 博客重新部署，同步更新主题，追随主题仓库至主分支。</div>
             </div>
         </li>
         <li class="timeline-item">
