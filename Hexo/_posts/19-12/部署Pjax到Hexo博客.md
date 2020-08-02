@@ -15,33 +15,32 @@ music:
   type: song        # song （单曲） album （专辑） playlist （歌单） search （搜索）
   id: 22703777      # 歌曲/专辑/歌单 ID
 mathjax: false
-icons: [fal fa-fire]  
+icons: [fal fa-fire]
 ---
-
-&ensp;&emsp;本文着手重构中~
 
 &ensp;&emsp;本篇定位于理论知识，实际应用详见 [Volantis 主题部署 Pjax](/article/other/76993423.html)，前置知识，SPA 页面。
 
-## 一、Pjax 简介
+&ensp;&emsp;我在做主题 Pjax 兼容时，发现文档资料都很少，零零散散，整个过程几乎是摸索着进行的，所以觉得记录下兼容时的处理对策是个不错的主意，当然文章中的思路不一定是最佳的，姑且算是个抛砖引玉啦~
 
-*不负责任的复制粘贴 呱*  🐸 ~
+>  **本篇文章正在计划重构中，目前进度 50%   2020/08/02**
 
-> Easily enable fast AJAX navigation on any website (using pushState() + XHR)
+## 一、Pjax 加速的原理
 
-Pjax is **a standalone JavaScript module** that uses [AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX) (XmlHttpRequest) and [pushState()](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history) to deliver a fast browsing experience.It allows you to completely transform the user experience of standard websites (server-side generated or static ones) to make users feel like they are browsing an app, especially for those with low bandwidth connections.
+&ensp;&emsp;在进入正文之前，我们先简单的了解一下 SPA 页面：当客户端第一次进入后，点击链接到其它页面时，动态的清除替换当前页面内容（通过 pushState() + XHR 技术），交互路由通过前端处理以达到无感的页面跳转。SPA 页面的外层框架固定，内层内容变动，这样做的好处可以减少资源请求量、加快页面切换速度、用户体验较好。
 
-**No more full page reloads. No more multiple HTTP requests.**
+&ensp;&emsp;而 Hexo 站点本身是个静态页面，无法发出动态请求，所以这里便引出了本文的主角 Pjax 框架了。其思路是通过拦截 `a` 链接，发送 XHR 请求，获取下级页面内容，接着替换指定区域完成整个过程。由于不是动态网站，Pjax 在请求过程中获取的是整个站点的 Html 内容，所以请求本身是无法达到加速的，但是可以减少页面中 JS 文件的重复请求，此外还可以利用一些预加载技术（预读缓存）和磁盘缓存进一步提升访问速度，实际体验效果是极佳的。
 
-_Pjax does not rely on other libraries, like jQuery or similar. It is written entirely in vanilla JS._
+## 二、前期的准备工作
 
-## 二、前期准备
+&ensp;&emsp;正如前文中所说，在一次 Pjax 请求获取完整的 html 过程中，从获取到的结果中找到选中的内容替换到页面里，所以我们需要先划分页面结构，确定被替换的区域。
 
 ### 2.1 分析网站布局
 
-&ensp;&emsp;对于 Hexo 这类静态博客来说，网站内容是根据模板文件生成的，所以其中存在着大量共有的元素。以本主题为例，可以划分成四部分：*导航栏*、*文章部分*、*侧边栏*、*页脚*。很明显，各个页面中相似的元素是 **导航栏** 和 **页脚** ，那么对应到主题布局上，这部分是由 `layout.ejs` 文件控制的。我们找到核心部分，去除掉无用的干扰项后分析一番：
+&ensp;&emsp;一个网站的内容有什么？对于 Hexo 这类静态博客来说，网站内容是根据模板文件生成的，其中存在着大量共有的元素。大概上可以划分成这几部分：*导航栏*、*文章部分*、*侧边栏*、*页脚*。在这些区域中，潜在的重复内容是 **导航栏** 和 **页脚** ，一般来说文章区域和侧边栏区域是不会相同的，那么对应到 Hexo 主题里，这部分是由 `layout.ejs` 文件控制的。我们找到核心部分，去除掉无用的干扰项后分析一番：
 
 {% folding 一个简单的页面分析 %}
-```ejs
+
+{% codeblock lang:html line_number:false 以本主题的样式文件为例  %}
 <!DOCTYPE html>
 <html>
 <%- partial('_partial/head') %>                             // 加载 head 标签
@@ -55,42 +54,44 @@ _Pjax does not rely on other libraries, like jQuery or similar. It is written en
   <%- partial('_partial/scripts') %>                        // 引入 js 文件
 </body>
 </html>
-```
+{% endcodeblock %}
+
 {% endfolding %}
 
-&ensp;&emsp;由此可知，页面中变动的部分都位于 `<%- body %>` 这个标签中了，那么它就是目标了，在 `class='body-wrapper'` 后面添加 `id="pjax-container"` 以备后用。
+&ensp;&emsp;由此可知，页面中变动的部分都位于 `<%- body %>` 这个标签中了，那么它就是目标了，在 `class='body-wrapper'` 后面添加 `id="pjax-container"` 以方便选中元素。
 
 ### 2.2 Pjax 的配置项
 
 &ensp;&emsp;详细的文档可在项目的 readme 中查看，传送链接：[Pjax Document](https://github.com/MoOx/pjax/blob/master/README.md)。
 
-&ensp;&emsp;在正式使用 Pjax 之前，需要先添加它的 js 文件，位置上没那么讲究，但建议放在 `scripts.ejs` 的首行。Pjax 的初始化写法与 jquery-pjax 不完全相同，本博中的初始化函数是这样的：
+&ensp;&emsp;在正式使用 Pjax 之前，需要先添加它的 js 文件，位置上没那么讲究，Mox 的 Pjax 去除了对 Jquery 的依赖，但别放到重载区域内。Pjax 的初始化写法与 jquery-pjax 不完全相同，可以类似这样子写：
 
-{% folding Pjax 初始化函数 %}
-```js
+{% codeblock lang:js line_number:false Pjax 初始化函数 %}
 var pjax = new Pjax({
-    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',
-    selectors: ["#pjax-container","title"]
+    elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"])',   // 拦截正常带链接的 a 标签
+    selectors: ["#pjax-container","title"]                                   // 根据实际需要确认重载区域
 });
-```
-{% endfolding %}
+{% endcodeblock %}
 
 &ensp;&emsp;这里共配置了两部分，**选择器（selectors）** 和 **元素 （elements）** 。默认情况下 pjax 处理的元素为 `a[href], form[action]` ，但是并不是所有的 `<a>` 标签都可追踪，所以使用 `:not` 语法排除一些不需要使用 pjax 跳转的元素；接着是选择器（class 或 id 选择都行），选择器用以选定重载的范围，个人理解为在 **指定标签内的内容**，在跳转页面时均被替换，不在这个范围内的不做处理。
 
-&ensp;&emsp;对于本博客，一些按钮的点击无需处理，所以忽略掉；重载页面时，除了上文中提到的需要重载区域外，还需要重载掉 `head` 中的 `title` `meta` 等标签（其实这个 meta 的范围可以进一步指定），除此之外，还附加了一个重载区域：文章导航栏，这个原因最后说。一般情况下，在初始化之后，Pjax 就已经在工作了，此时点击页面上的链接就可以看到重载页面。但是重载局部页面还带来了另外一些影响，原来绑定的元素因为内容变动的缘故，都会失效，所以这里还有另外三个有用的 Pjax 函数：
+&ensp;&emsp;除此之外，我们还有三个相对重要的 Pjax 事件函数可以使用：
 
-{% folding 比较有用的 Pjax 函数 %}
-```js
-pjax.loadUrl();
+{% codeblock lang:js line_number:false 比较有用的 Pjax 函数 %}
 document.addEventListener('pjax:send', function () {});
 document.addEventListener('pjax:complete', function () {});
 document.addEventListener('pjax:error', function () {});
-```
-{% endfolding %}
+{% endcodeblock %}
 
-&ensp;&emsp;他们的作用分别是：pjax 事件，监听 pjax 请求开始后和请求完成后时的事件、单独发送 pjax 请求。比如加载动画可以在 `send` 事件中开始，在 `complete` 事件中结束，再比如重新绑定的函数都可以放在完成事件里。而单独发送 pjax 请求，这里用在了搜索结果上，搜索结果是后期渲染进去的，并未被 pjax 追踪，所以采用追加点击事件，单独发起 pjax 请求的处理方法。
+### 2.3 一些潜在的问题
 
-### 2.3 局部重载：Javascript
+&ensp;&emsp;至此，我们已经完成了引入 Pjax 文件，划定重载区域，初始化 Pjax 对象，是不是一切就高枕无忧了呢？当然，答案是否定的。这里可以引用一句古老的名言 ”大人，时代变了！”，当下的网站早已不是个孤零零的产物，而是和 Javascript 有着密切联系后的动态页面，存在着大量的事件监听处理。不巧的是在替换内容时，部分事件监听丢失了，异常、错误、功能失效等等，就愉快的上演了。
+
+&ensp;&emsp;Javascript 部分自然是需要重新绑定注册的，但是是不是无脑全部重新绑定就行呢？答案也是否定的，我们会有个大敌：**重复事件监听**，它或许不会立即爆发危害，但是随着浏览页面的增加，事件绑定可能会越来越累加，影响效率，潜在造成错误等等。所以这里就需要利用 `send` 和 `complete` 这对事件了，合理利用，正确解决问题。
+
+## 三、后期的兼容处理
+
+### 3.1 几种兼容思路
 
 &ensp;&emsp;首先，是一些需要每次进入页面，都必须重新加载的 JS 文件，典型的有不蒜子网页计数、各类分析脚本，自然而然他们必须要多次加载，对于这类的操作，简单的处理方案就是在引入相关 js 文件时，加入格外的属性，如 `data-pjax` ，统一处理具有这个属性的 JS 文件，在跳转页面时重新导入（以不蒜子为例子）：
 
@@ -155,35 +156,35 @@ function pjax_fancybox() {
 
 &ensp;&emsp;Fancybox 在每一页重新绑定，同类的代码都可以采用以上的处理方式。需要重新加载的整个 JS 文件的就单独重载，需要重新执行绑定函数的，就在 Pjax 的事件监听函数中重新调用。
 
-### 2.4 文章独有的变量
+### 3.2 文章独有的变量
 
 &ensp;&emsp;这里的变量是指那种写在头部的变量，他们在页面上不存在（发挥在 Hexo 的渲染阶段）。典型例子为本主题的评论部分的配置，这部分基本位于 `scripts.ejs` 文件中，当读取相应的配置属性时，从主题配置文件读取的也还好，毕竟无需在意变动的问题，麻烦就麻烦在从文章页面中读取的属性。
 
 &ensp;&emsp;比如评论的占位符和地址的自定义，渲染阶段所产生的结果在页面经过 Pjax 局部重载后拿不到。所以这里换个思路，将一些变量藏在文章区域内，在使用时通过元素选择器调用。
 
-## 三、后记
+## 四、后记
 
-### 3.1 参考链接
+### 4.1 参考链接
 
 吃水不忘挖井人，除 Pjax 的官方网站外，另外两个站点也对我的帮助很大，这里予以记录：
 
 - 来自 liuyib 的 [集成 Pjax 实现网站无刷新加载](https://liuyib.github.io/2019/09/24/use-pjax-to-your-site/) 。
 - 相同主题下的另一个 Pjax 部署思路：[YuGao's Blog](https://sxyugao.top/) 。
 
-### 3.2 本页面的独特修改
+### 4.2 本页面的独特修改
 
 &ensp;&emsp; 因为文章的代码不出预料的会很多，所以萌生了使用折叠框的念头，在不改动渲染器的情况下，采取了直接写 html 代码的思路。~~但是未曾想到折叠框在伸缩、展开的过程中，因改变了页面高度的缘故影响到目录导航栏的激活跟随，思索了一阵子后没发现较好的解决办法，特此记录，代办代办（*有想法的小伙伴也可以留言啊，或者有更好的代码块折叠方案什么的*）。~~
 
 &ensp;&emsp; *主题已原生支持。*
 
-### 3.3 功能性测试
+### 4.3 功能性测试
 
 
 {% p center logo large, '<i class="fal fa-narwhal"></i>' %}
 {% p center logo large, Volantis %}
 {% p center small, A Wonderful Theme for Hexo %}
 
-#### 3.3.1 Tab
+#### 4.3.1 Tab
 
 {% tabs tab-id %}
 
@@ -215,7 +216,7 @@ function pjax_fancybox() {
 
 {% endtabs %}
 
-#### 3.3.2 Folding
+#### 4.3.2 Folding
 
 {% folding 查看图片测试 %}
 
@@ -243,7 +244,7 @@ function pjax_fancybox() {
 
 {% endfolding %}
 
-#### 3.3.3 Checkbox & Radio
+#### 4.3.3 Checkbox & Radio
 
 {% tabs tab-id %}
 
