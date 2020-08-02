@@ -5,7 +5,7 @@ notice:
     icon: fal fa-crow
     title: 公告
   content:
-    - '  <i class="fal fa-cactus"></i> 我明白你意思了'
+    - '  <i class="fal fa-cactus"></i> 本站默认替换了右键菜单，唤醒原系统菜单： <kbd>Ctrl</kbd> + <kbd>右键</kbd> ~'
 
 showWebsite:
   class: webinfo
