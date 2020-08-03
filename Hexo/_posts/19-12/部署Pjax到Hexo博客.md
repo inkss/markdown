@@ -5,22 +5,21 @@ date: 2019/12/12
 tag:
   - Hexo
   - Pjax
-  - Material X
 categories: other
 description: 本篇定位于理论知识，概述性简介如何处理 Pjax 与 Hexo 的兼容性。
 abbrlink: 80b5f235
 music:
-  enable: true      # true（文章内和文章列表都显示）
-  server: netease   # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
-  type: song        # song （单曲） album （专辑） playlist （歌单） search （搜索）
-  id: 22703777      # 歌曲/专辑/歌单 ID
+  enable: true
+  server: netease
+  type: song
+  id: 22703777
 mathjax: false
 icons: [fal fa-fire]
 ---
 
 &ensp;&emsp;本篇定位于理论知识，实际应用详见 [Volantis 主题部署 Pjax](/article/other/76993423.html)，前置知识，SPA 页面。
 
-&ensp;&emsp;我在做主题 Pjax 兼容时，发现文档资料都很少，零零散散，整个过程几乎是摸索着进行的，所以觉得记录下兼容时的处理对策是个不错的主意，当然文章中的思路不一定是最佳的，姑且算是个抛砖引玉啦~
+&ensp;&emsp;我在对博客做 Pjax 兼容时，发现文档资料都很少，零零散散，整个过程几乎是摸索着进行的，所以觉得记录下整个过程中的处理对策是个不错的主意，当然文章中的思路不一定是最佳的，姑且算是个抛砖引玉啦~ 得益于 Hexo ，说是对博客做 Pjax 兼容，其实也就是对 Hexo 主题的处理过程了，因不同主题间差异还是蛮大的，所以还请辩证的观看咯。
 
 >  **本篇文章正在计划重构中，目前进度 50%   2020/08/02**
 
