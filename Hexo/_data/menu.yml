@@ -32,5 +32,5 @@
     - name: 来首音乐
       icon: fal fa-compact-disc
 - name: 留言
-  icon: fal fa-fighter-jet
+  icon: fal fa-comet
   url: info/index.html
