@@ -1,7 +1,8 @@
 ---
 title: Hexo 博客搭建
 toc: true
-date: 2018/09/15
+date: 2018/09/15 13:48
+updated: 2020/05/12 11:27
 tag:
   - 网站
   - Hexo

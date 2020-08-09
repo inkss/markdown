@@ -1,7 +1,8 @@
 ---
 title: Ubuntu 18.04 安装笔记
 toc: true
-date: 2019/04/08
+date: 2019/04/08 23:10
+updated: 2020/05/10 10:42
 tag:
   - Ubuntu 18.04
 categories: linux

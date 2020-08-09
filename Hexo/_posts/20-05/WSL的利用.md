@@ -1,7 +1,8 @@
 ---
 title: WSL 之宝塔面板的部署
 toc: true
-date: 2020/05/02
+date: 2020/05/02 17:15
+updated: 2020/05/12 11:27
 tag:
   - WSL
   - Linux

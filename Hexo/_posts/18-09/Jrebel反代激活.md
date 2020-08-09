@@ -1,7 +1,8 @@
 ---
 title: Jrebel 反代激活
 toc: true
-date: 2018/09/08
+date: 2018/09/08 13:48
+updated: 2020/04/16 16:03
 tag:
   - Java
   - 破解

@@ -1,7 +1,8 @@
 ---
 title: Ubuntu 下联想 Y7KP 显卡和网卡驱动配置
 toc: true
-date: 2019/04/02
+date: 2019/04/02 11:27
+updated: 2020/05/12 11:27
 tag:
   - 联想Y7000P
   - 网卡驱动

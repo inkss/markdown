@@ -1,7 +1,8 @@
 ---
 title: Hexo 博客部署 Pjax 局部刷新
 toc: true
-date: 2019/12/12
+date: 2019/12/12 23:56
+updated: 2020/08/05 23:56
 tag:
   - Hexo
   - Pjax

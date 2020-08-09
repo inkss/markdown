@@ -1,7 +1,8 @@
 ---
 title: 记一次 Ubuntu 20.04 LTS 安装体验
 toc: true
-date: 2020/06/07
+date: 2020/06/07 22:19
+updated: 2020/06/07 22:19
 tag:
   - Ubuntu
   - Linux

@@ -1,7 +1,8 @@
 ---
 title: Linux 命令概述
 toc: true
-date: 2018/09/10
+date: 2018/09/10 13:48
+updated: 2020/04/16 16:03
 tag:
   - Linux
 categories: linux

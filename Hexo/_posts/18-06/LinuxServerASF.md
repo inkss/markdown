@@ -1,7 +1,8 @@
 ---
 title: Linux 服务器配置 ASF 云挂卡
 toc: true
-date: 2018/06/04
+date: 2018/06/04 17:23
+updated: 2020/04/16 16:03
 tag:
   - Steam
   - Linux

@@ -7,7 +7,8 @@ toc: true
 translate_title: free-office365
 description: 免费申请一年 Office 365 E3 订阅，自定义 Office 域设置。
 abbrlink: 82e6dcea
-date: 2018-09-29 21:26:26
+date: 2018/09/29 21:26
+updated: 2020/03/26 16:30
 ---
 
 > **Office 365 开发人员计划** ：通过这个计划可以免费申请到一年 `Office 365 企业版 E3（开发人员）` 订阅。

@@ -1,7 +1,8 @@
 ---
 title: Linux 环境搭建饥荒服务器教程
 toc: true
-date: 2018/06/04
+date: 2018/06/04 17:23
+updated: 2020/04/16 16:03
 tag:
   - 饥荒
   - Steam

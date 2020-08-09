@@ -1,7 +1,8 @@
 ---
 title: 个性化提交：Git Emoji 指南
 toc: true
-date: 2019/07/19
+date: 2019/07/19 16:30
+updated: 2020/03/26 16:30
 tag:
   - Git
   - emoji

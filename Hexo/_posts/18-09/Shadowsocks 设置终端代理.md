@@ -1,14 +1,16 @@
 ---
 title: Linux Shell 设置 Proxy
 toc: true
-date: 2018/09/10
+date: 2018/09/10 21:26
+updated: 2020/08/09 11:12
 tag:
   - Shell
   - Proxy
 categories: linux
 abbrlink: f44c3b52
 description: Linux Shell 设置 Proxy。
-comments: false
+comment: 
+  enable: false
 ---
 
 
