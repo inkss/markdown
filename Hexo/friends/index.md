@@ -55,13 +55,6 @@ links:
         textColor: '#2e2e2e'
         tags:
           - Zhou
-      - name: 燃星博客
-        avatar: /img/friend/skyings.jpg
-        url: https://blog.skyings.cn/
-        backgroundColor: '#666666'
-        textColor: '#c8fbff'
-        tags:
-          - ともだち
       - name: LHKSTUDIO
         avatar: /img/friend/lhkstudio.jpg
         url: https://lhkstudio.me
@@ -76,14 +69,6 @@ links:
         backgroundColor: '#f5dcca'
         textColor: '#6d533f'
         desc: 'Be Yourself,Make a Difference.'
-      - name: Mrliux
-        avatar: /img/friend/mrliux.jpg
-        url: https://www.mrliux.top
-        backgroundColor: '#969696'
-        textColor: '#ffffff'
-        tags:
-          - IOT
-          - 退役ACMer
       - name: Xu&#39;s Blog
         avatar: /img/friend/hasaik.jpg
         url: https://hasaik.com
@@ -156,7 +141,7 @@ valine:
 
 <!-- tab <i class="fad fa-galaxy"></i><i style="font-weight: normal;font-style: normal;">&nbsp;举个栗子</i> -->
 
-{% codeblock 友链格式 line_number:false %}
+{% codeblock mark:2 友链格式 line_number:false %}
 名称： 枋柚梓
 头像： https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg
 网址： https://inkss.cn
