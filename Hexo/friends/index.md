@@ -158,7 +158,7 @@ valine:
 
 {% codeblock 友链格式 line_number:false %}
 名称： 枋柚梓
-头像： https://img.inkss.cn/inkss_cn/static/img/avatar.jpg
+头像： https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg
 网址： https://inkss.cn
 描述： 繁星永存，记忆亘古不变。
 {% endcodeblock %}
