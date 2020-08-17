@@ -34,6 +34,3 @@
 - name: 留言
   icon: fal fa-comet
   url: info/index.html
-- name: 时光老母鸡
-  icon: fad fa-drumstick
-  url: cross/index.html
