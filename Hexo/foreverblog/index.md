@@ -2,10 +2,13 @@
 layout: page
 title: 十年之约
 sidebar: []
+date: 2020/06/25 18:16
+updated: 2020/06/25 18:16
 meta:
   header: []
-  footer: [author, counter]
-valine:
+  footer: [author, updated]
+comment:
+  enable: false
   placeholder: 一个人的寂寞，一群人的狂欢，十年之约，等着你~
 ---
 

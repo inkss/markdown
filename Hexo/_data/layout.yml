@@ -1,5 +1,5 @@
 on_list:
-  meta: [title, author, date, valinecount, top]
+  meta: [title, author, date, wordcount, valinecount, top]
   sidebar: [notice, category, tagcloud, navigation, showWebsite] 
   readmore: <i title="阅读更多"><i class="fal fa-kiss"></i> <i class="fal fa-kiss-beam"></i> <i class="fal fa-kiss-wink-heart"></i></i> 
 
