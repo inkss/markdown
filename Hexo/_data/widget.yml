@@ -6,7 +6,7 @@ notice:
     title: 公告
   content:
     - '  <i class="fal fa-cactus"></i> 本站默认替换了右键菜单，唤醒原系统菜单： <kbd>Ctrl</kbd> + <kbd>右键</kbd> ~'
-    - '  <i class="fal fa-cactus"></i> 新增站点：开发版分支，拥有最新特征，访问链接：<a href="http://dev.inkss.cn/" target="_blank" rel="nofollow">枋柚梓开发版</a>'
+    - '  <i class="fal fa-cactus"></i> 新增站点：开发版分支，拥有最新特征，访问链接：<a href="http://dev.inkss.cn/" target="_blank" rel="nofollow">枋柚梓开发版</a>' 
 
 showWebsite:
   class: webinfo
