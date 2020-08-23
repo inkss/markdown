@@ -7,8 +7,3 @@ meta:
   header: []
   footer: []
 ---
-
-{% p center logo large, 时光这只老母鸡 %}
-
-<br>
-<br>
