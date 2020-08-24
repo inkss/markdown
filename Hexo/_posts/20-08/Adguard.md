@@ -10,7 +10,10 @@ categories: other
 description: 从 Http 到 Https ，从 DNS 到 SDNS ，人们在追究安全的脚步上从未停歇。
 abbrlink: c949262
 date: 2020-08-23 17:36:15
-updated: 2020-08-23 17:36:15
+updated: 2020-08-24 9:48:15
+references:
+  - title: 个人向的隐私管理
+    url: https://inkss.cn/article/other/501e068e.html
 ---
 
 &ensp;&emsp;这是一篇水文。

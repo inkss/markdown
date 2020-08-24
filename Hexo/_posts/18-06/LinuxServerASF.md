@@ -10,6 +10,25 @@ categories: game
 abbrlink: b46ef429
 type: linux
 description: ASF是由C#编写，能同时挂载多个 Steam 账号的挂卡工具。
+references:
+  - title: Ubuntu 16.0.4 搭建ASF云挂卡环境
+    url: https://www.jianshu.com/p/13beaf40fa0a
+  - title: Linux 下使用 ASF (ArchiSteamFarm) V3实现云挂卡
+    url: https://itdream.me/2017/10/366
+  - title: Get started with .NET in 10 minutes
+    url: https://www.microsoft.com/net/learn/get-started/linux/centos
+  - title: linux screen 命令详解 - David_Tang - 博客园
+    url: https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html
+  - title: zyfworks/AnotherSteamCommunityFix
+    url: https://github.com/zyfworks/AnotherSteamCommunityFix
+  - title: JustArchi/ArchiSteamFarm
+    url: https://github.com/JustArchi/ArchiSteamFarm
+  - title: ASF官方 WIKI 中文版
+    url: https://steamcn.com/t187703-1-1
+  - title: 另一个 SteamCommunityFix
+    url: https://steamcn.com/t339641-1-1
+  - title: ASF 配置文件生成器
+    url: https://justarchi.github.io/ArchiSteamFarm/#/bot
 ---
 
 > ASF是由C#编写，能同时挂载多个 Steam 账号的挂卡工具。其不像 Idle Master 那样：同一时间只能为一个账号挂卡，需要后台运行 Steam 客户端，需启动额外进程模拟‘正在游戏’状态。ASF 不需要后台运行任何 Steam 客户端，不需要启动额外进程，而且能为不限数目的 Steam 账号同时挂卡。不仅如此，该软件还能在服务器和其他非桌面电脑上运行，并拥有完整支持 Mono 的特性，这能让其在 Windows、Linux 以及 OS X 等任何支持 Mon o的操作系统上运行。ASF 存在的基础要归功于 SteamKit2。
@@ -182,24 +201,3 @@ chmod +x ArchiSteamFarm.sh
 
 恢复 screen 请终端输入：`screen -r ASF`
 
----
-
-参考资料：
-
-1. [Ubuntu16.0.4 搭建ASF云挂卡环境](https://www.jianshu.com/p/13beaf40fa0a)
-
-2. [Linux 下使用 ASF (ArchiSteamFarm) V3实现云挂卡](http://itdream.me/2017/10/366)
-
-3. [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/linux/centos)
-
-4. [linux screen 命令详解 - David_Tang - 博客园](https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html)
-
-5. [zyfworks/AnotherSteamCommunityFix](https://github.com/zyfworks/AnotherSteamCommunityFix)
-
-6. [JustArchi/ArchiSteamFarm](https://github.com/JustArchi/ArchiSteamFarm)
-
-7. [ASF官方 WIKI 中文版](https://steamcn.com/t187703-1-1)
-
-8. [另一个 SteamCommunityFix](https://steamcn.com/t339641-1-1)
-
-9. [ASF 配置文件生成器](https://justarchi.github.io/ArchiSteamFarm/#/bot)
