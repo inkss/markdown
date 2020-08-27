@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 笔记
+seo_title: 笔记
 comments: false
 sidebar: [wiki-hexo-theme]
 meta:

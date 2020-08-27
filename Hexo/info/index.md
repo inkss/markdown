@@ -1,5 +1,5 @@
 ---
-title: 留言板
+seo_title: 留言板
 date: 2019/11/20 10:49
 updated: 2020/07/28 16:22
 valine:
