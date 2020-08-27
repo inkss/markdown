@@ -3,8 +3,10 @@ layout: page
 title: 关于
 date: 2019/11/18 18:15
 updated: 2020/08/02 11:24
-body: [article]
+comments: false
 sidebar: []
+top_meta: []
+bottom_meta: []
 meta:
   header: []
   footer: []

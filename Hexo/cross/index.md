@@ -1,7 +1,7 @@
 ---
 layout: artitalk
 title: 时光这只老母鸡
-body: [article]
+comments: false
 sidebar: []
 meta:
   header: []

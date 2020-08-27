@@ -7,9 +7,10 @@ updated: 2020/06/25 18:16
 meta:
   header: []
   footer: [author, updated]
-comment:
-  enable: false
-  placeholder: 一个人的寂寞，一群人的狂欢，十年之约，等着你~
+top_meta: []
+bottom_meta: []
+valine:
+  placeholder: 一个人的寂寞，一群人的狂欢，十年之约，等着你~  
 ---
 
 
