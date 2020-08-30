@@ -19,7 +19,7 @@ links:
       tags:
         - 记事
         - 私人
-  - group: 是大佬哟
+  - group: 是同学哦
     icon: fal fa-link
     items:
       - name: 忘川三途
@@ -32,7 +32,7 @@ links:
           - 经验丰富
           - 代码风骚
           - 效率恐怖
-  - group: 左邻右舍
+  - group: 小可爱们
     icon: fal fa-link
     items:
       - name: xaoxuu
@@ -133,6 +133,13 @@ links:
         tags: [莫得标签]
         textColor: '#000000'
         desc: 记录成长，向未来奔跑
+      - name: Heson
+        avatar: https://cdn.jsdelivr.net/gh/heson525/pic@master/pic/avatar03.png
+        url: https://www.heson10.com
+        backgroundColor: '#c61a26' # 卡片背景颜色
+        textColor: '#fefefe'  # 卡片文字颜色
+        tags: [Hexo, 折腾, 生活]    # 标签
+        desc: 人生在勤，不索何获。
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
