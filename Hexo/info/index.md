@@ -11,7 +11,7 @@ sidebar: []
 top_meta: []
 ---
 
-{% p center logo ultra, '<i class="fad fa-star-of-david" style="color: #a6d5fa" title="爱我"></i>' %}
+{% p center logo ultra, '<i class="fal fa-star-of-david" style="color: #a6d5fa" title="爱我"></i>' %}
 
 *{% p center logo small gray, 请遵守相关法律法规，文明灌水，谢谢合作~ <br><span class="bb_spoiler" title="这是真的，不骗你">ヾ(*´▽‘*)ﾉ 无关评论会被删掉的~</span> %}*
 

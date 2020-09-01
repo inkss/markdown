@@ -148,7 +148,7 @@ valine:
 
 {% tabs tab-id %}
 
-<!-- tab <i class="fad fa-galaxy"></i><i style="font-weight: normal;font-style: normal;">&nbsp;举个栗子</i> -->
+<!-- tab <i class="fal fa-galaxy"></i><i style="font-weight: normal;font-style: normal;">&nbsp;举个栗子</i> -->
 
 {% codeblock mark:2 友链格式 line_number:false %}
 名称： 枋柚梓
@@ -159,7 +159,7 @@ valine:
 
 <!-- endtab -->
 
-<!-- tab <i class="fad fa-greater-than-equal"></i><i style="font-weight: normal;font-style: normal;">&nbsp;前置要求 </i> -->
+<!-- tab <i class="fal fa-greater-than-equal"></i><i style="font-weight: normal;font-style: normal;">&nbsp;前置要求 </i> -->
 
 {% checkbox green checked, Https 站点（大势所趋） %}
 {% checkbox green checked, 网站加载速度正常（待定...） %}
