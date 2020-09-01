@@ -47,7 +47,7 @@ abbrlink: 958bc658
 
 基于以上的分析，我们制作出如下所示的思维导图：
 
-![流程](../../static/Java报表模板导出.assets/report.jpg)
+![流程](https://img.inkss.cn/inkss/static/Java报表模板导出.assets/report.jpg)
 
 ## 二、下期预告
 

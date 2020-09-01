@@ -143,7 +143,7 @@ ln -s /usr/lib/libcurl.so.4 libcurl-gnutls.so.4
 
 在上一步的网页中，点击导航栏的 **游戏** ，再点击 DST 的 **服务器**，进入页面后添加新服务器并记录内容。
 
-![cluster_token](../../static/LinuxDTSServerBuilders.assets/szyink-20190407190643-1182x776.png)
+![cluster_token](https://img.inkss.cn/inkss/static/LinuxDTSServerBuilders.assets/szyink-20190407190643-1182x776.png)
 
 - **新建饥荒配置文件目录**
 
