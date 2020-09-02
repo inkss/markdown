@@ -1,3 +1,11 @@
-# robots.txt https://dev.inkss.cn
-User-agent: *
-Disallow: /
+# robots.txt https://inkss.cn 
+User-agent: * 
+Allow: /sitemap.xml 
+Allow: /article 
+Disallow: /page 
+Disallow: /info 
+Disallow: /about 
+Disallow: /friends 
+Disallow: /tags/ 
+Disallow: /archives/ 
+Disallow: /categories/ 
