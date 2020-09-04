@@ -1,7 +1,7 @@
 # robots.txt https://inkss.cn 
 User-agent: * 
 Allow: /sitemap.xml 
-Allow: /article 
+Allow: /blog/ 
 Disallow: /page 
 Disallow: /info 
 Disallow: /about 

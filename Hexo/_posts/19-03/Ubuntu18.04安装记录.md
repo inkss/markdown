@@ -5,7 +5,7 @@ date: 2019/04/08 23:10
 updated: 2020/05/10 10:42
 tag:
   - Ubuntu 18.04
-categories: linux
+categories: 教程
 description: 完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散。
 abbrlink: c6df61d3
 type: linux

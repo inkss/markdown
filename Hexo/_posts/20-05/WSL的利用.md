@@ -6,7 +6,7 @@ updated: 2020/05/12 11:27
 tag:
   - WSL
   - Linux
-categories: linux
+categories: 资料
 description: Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables (in ELF format) natively on Windows 10 and Windows Server 2019.
 abbrlink: b2b02edd
 icons: [fal fa-fire]

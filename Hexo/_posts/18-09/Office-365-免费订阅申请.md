@@ -2,7 +2,7 @@
 title: Office 365 免费订阅申请
 tags:
   - Office
-categories: info
+categories: 教程
 toc: true
 translate_title: free-office365
 description: 免费申请一年 Office 365 E3 订阅，自定义 Office 域设置。

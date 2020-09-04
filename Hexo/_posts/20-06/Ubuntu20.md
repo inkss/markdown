@@ -6,7 +6,7 @@ updated: 2020/06/07 22:19
 tag:
   - Ubuntu
   - Linux
-categories: linux
+categories: 随笔
 description: 总的来说，整个的过程是非常优秀的，可以明显的感受到的进步，一些非常实用的功能也被整合进系统了，比如默认安装的英伟达显卡驱动。当然或许是因为刚发布的缘故，一些软件源还没有适配，需要稍作等待~
 abbrlink: 481358a6
 ---

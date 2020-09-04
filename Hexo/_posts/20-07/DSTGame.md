@@ -5,7 +5,7 @@ date: 2020/07/17 13:58
 updated: 2020/07/18 16:45
 tag:
   - Steam
-categories: game
+categories: 游戏
 description: Don't Starve Together Server !!!
 abbrlink: 8fafff0e
 ---

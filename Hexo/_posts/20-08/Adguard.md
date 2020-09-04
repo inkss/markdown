@@ -6,7 +6,7 @@ tag:
   - Adguard
   - DNS
   - DOH
-categories: other
+categories: 随笔
 description: 从 Http 到 Https ，从 DNS 到 SDNS ，人们在追究安全的脚步上从未停歇。
 abbrlink: c949262
 date: 2020-08-23 17:36:15

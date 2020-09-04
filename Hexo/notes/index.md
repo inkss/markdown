@@ -2,10 +2,7 @@
 layout: page
 seo_title: 笔记
 comments: false
-sidebar: [wiki-hexo-theme]
-meta:
-  header: [author, updated]
-  footer: []
+sidebar: [wiki-hexo-theme,]
 top_meta: []
 bottom_meta: []
 date: 2020/06/05 15:12

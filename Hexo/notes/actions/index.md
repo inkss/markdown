@@ -2,9 +2,7 @@
 layout: page
 title: Github Actions
 sidebar: [wiki-hexo-theme, toc]
-meta:
-  header: []
-  footer: [updated, counter]
+top_meta: []
 date: 2020/06/05 15:12
 updated: 2020/06/12 09:34
 ---
