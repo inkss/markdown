@@ -14,8 +14,8 @@ references:
   - title: This 指向详细解析（箭头函数）
     url: 'https://www.cnblogs.com/dongcanliang/p/7054176.html'
 abbrlink: ff35080b
-date: 2020-09-06 12:10:00
-updated: 2020-09-06 12:10:00
+date: 2020-09-06 12:10
+updated: 2020-09-06 12:10
 ---
 
 **Const 与 Var 的区别**
