@@ -14,7 +14,7 @@ valine:
 ---
 
 
-{% p center logo h1, <img no-lazy class="inline" title="一个人的寂寞，一群人的狂欢" src="https://img.inkss.cn/inkss/img/page/foreverblog/logo_en_default.png" style="width:auto;height:50px;"> %}
+{% p center logo h1, <img no-lazy class="inline" title="一个人的寂寞，一群人的狂欢" src="https://img.foreverblog.cn/logo_en_default.png" style="width:auto;height:50px;"> %}
 
 
 *{% p center logo , 十年之约，即从加入这个活动起，我们的博客十年不关闭，保持更新和活力 %}*

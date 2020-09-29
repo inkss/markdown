@@ -6,7 +6,7 @@ updated: 2020/08/05 23:56
 tag:
   - Hexo
   - Pjax
-categories: 博客
+categories: other
 description: 本篇定位于理论知识，概述性简介如何处理 Pjax 与 Hexo 的兼容过程。
 abbrlink: 80b5f235
 music:
@@ -18,7 +18,7 @@ mathjax: false
 icons: [fal fa-fire]
 ---
 
-&ensp;&emsp;本篇定位于 **理论知识** ，实际应用见 [Volantis 主题部署 Pjax](/blog/76993423/)，前置知识，SPA 页面。
+&ensp;&emsp;本篇定位于 **理论知识** ，实际应用见 [Volantis 主题部署 Pjax](/article/other/76993423.html)，前置知识，SPA 页面。
 
 &ensp;&emsp;我在对博客做 Pjax 兼容时，发现文档资料都很少，零零散散，整个过程几乎是摸索着进行的，百思不得其解，所以此处留下记录以备后用，文章中的思路不一定是最佳的，姑且算是个抛砖引玉。
 

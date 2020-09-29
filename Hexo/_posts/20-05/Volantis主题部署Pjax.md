@@ -7,7 +7,7 @@ tag:
   - Hexo
   - Pjax
   - Volantis
-categories: 博客
+categories: other
 description: 本篇文章记录了我对 Volantis 主题做 Pjax 兼容的种种，大抵算是种记录吧~
 icons:
   - fal fa-fire
@@ -19,7 +19,7 @@ abbrlink: '76993423'
 {% p center small, A Wonderful Theme for Hexo %}
 <br>
 
-{% p center, 前言：本篇定位于主题的各类处理上，理论篇见 <a href="/blog/80b5f235/">Hexo 博客部署 Pjax 局部刷新</a>。 %}
+{% p center, 前言：本篇定位于主题的各类处理上，理论篇见 <a href="/article/other/80b5f235.html">Hexo 博客部署 Pjax 局部刷新</a>。 %}
 {% p center, 不多废话，那么，让我们开始吧！ %}
 
 ## 一、主题分析

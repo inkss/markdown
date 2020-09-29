@@ -6,7 +6,7 @@ tag:
   - Git
   - 打包
   - Powershell
-categories: 资料
+categories: git
 description: 一些 Git 打包命令，比如打包某次提交之后的所有文件，适合 Powershell 下使用。
 abbrlink: 59d81549
 ---

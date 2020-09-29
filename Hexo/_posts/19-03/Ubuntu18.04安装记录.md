@@ -5,14 +5,14 @@ date: 2019/04/08 23:10
 updated: 2020/05/10 10:42
 tag:
   - Ubuntu 18.04
-categories: 教程
+categories: linux
 description: 完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散。
 abbrlink: c6df61d3
 type: linux
 icons: [fal fa-fire]
 ---
 
-<!-- ![Ubuntu 18.04 安装配置和美化](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507105832915.png) -->
+<!-- ![Ubuntu 18.04 安装配置和美化](../../static/Ubuntu18.04安装记录.assets/image-20200507105832915.png) -->
 <br>
 {% p center logo ultra, '<i class="fab fa-linux"></i>' %}
 {% p center logo large, Ubuntu 18.04  %}
@@ -146,7 +146,7 @@ sudo apt install gdebi
 >
 > 可以通过本节内容快速完成主题方面的修改，注：`gnome-shell-extensions` 是一些常用扩展的集合，如 User Themes 等（事实上它可以在应用商店里搜索安装）。
 
-![外观配置](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507105957944.png)
+![外观配置](../../static/Ubuntu18.04安装记录.assets/image-20200507105957944.png)
 
 #### 2.2.1 系统主题 Sieera
 
@@ -276,7 +276,7 @@ sudo apt install grub-customizer
 
 - 相关链接：[Launchpad PPA for Grub Customizer](https://launchpad.net/~danielrichter2007/+archive/ubuntu/grub-customizer)
 
-![Grub Customizer](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110107616.png)
+![Grub Customizer](../../static/Ubuntu18.04安装记录.assets/image-20200507110107616.png)
 
 #### 2.3.4 GDM 登录背景图
 
@@ -304,7 +304,7 @@ background: #2c001e url(file:///home/inkss/APP/ink_img/img.jpg);
    background-position: center; }
 ```
 
-![GDM](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110222935.png)
+![GDM](../../static/Ubuntu18.04安装记录.assets/image-20200507110222935.png)
 
 #### 2.3.5 输入法 中州韵和搜狗
 
@@ -508,7 +508,7 @@ sudo apt install timeshift
 
 - 相关链接：[teejee2008](https://github.com/teejee2008)/[timeshift](https://github.com/teejee2008/timeshift)
 
-![超级推荐的软件](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110243274.png)
+![超级推荐的软件](../../static/Ubuntu18.04安装记录.assets/image-20200507110243274.png)
 
 
 ### 3.4 网易云音乐
@@ -776,8 +776,8 @@ sudo mysql_secure_installation
 
 ## 六、截图
 
-![桌面](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110318847.png)
+![桌面](../../static/Ubuntu18.04安装记录.assets/image-20200507110318847.png)
 
-![软件列表](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110337914.png)
+![软件列表](../../static/Ubuntu18.04安装记录.assets/image-20200507110337914.png)
 
-![系统](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110355777.png)
+![系统](../../static/Ubuntu18.04安装记录.assets/image-20200507110355777.png)

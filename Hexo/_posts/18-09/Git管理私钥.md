@@ -5,7 +5,7 @@ date: 2018/09/08 13:48
 updated: 2020/04/16 16:03
 tag:
   - Git
-categories: 资料
+categories: git
 abbrlink: d71b1012
 description: 保留私钥到各个平台，替换使用。
 ---

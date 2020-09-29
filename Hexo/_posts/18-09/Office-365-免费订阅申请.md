@@ -2,7 +2,7 @@
 title: Office 365 免费订阅申请
 tags:
   - Office
-categories: 教程
+categories: info
 toc: true
 translate_title: free-office365
 description: 免费申请一年 Office 365 E3 订阅，自定义 Office 域设置。
@@ -15,17 +15,17 @@ updated: 2020/03/26 16:30
 
 ## 1.Office 365 开发人员计划
 
-![Office 365](https://img.inkss.cn/inkss/static/Office-365-免费订阅申请.assets/01.png)
+![Office 365](../../static/Office-365-免费订阅申请.assets/01.png)
 
  :arrow_right: **相关链接**：[Office 365 开发者计划](https://developer.microsoft.com/zh-cn/office/dev-program)
 
 申请过程这里不多阐述了，登录微软账户后按照提示操作即可，最终能够获得：
 
-![订阅信息](https://img.inkss.cn/inkss/static/Office-365-免费订阅申请.assets/02.png)
+![订阅信息](../../static/Office-365-免费订阅申请.assets/02.png)
 
 总共有 25 个账户，24 个可分配用户，每一个用户等同一个 Office 365 家庭版订阅。
 
-![安装状态](https://img.inkss.cn/inkss/static/Office-365-免费订阅申请.assets/03.png)
+![安装状态](../../static/Office-365-免费订阅申请.assets/03.png)
 
 ## 2.设置 Office 域
 
@@ -37,17 +37,17 @@ updated: 2020/03/26 16:30
 
  :arrow_right: **相关链接**：[Freenom](https://www.freenom.com/zh/index.html)
 
-![Freenom](https://img.inkss.cn/inkss/static/Office-365-免费订阅申请.assets/04.png)
+![Freenom](../../static/Office-365-免费订阅申请.assets/04.png)
 
 可以在这个网站上 **以免费的价格申请到最长一年** 的域名（在域名到期前会发邮件通知）。
 
 拿到域名后，回到 Office 设置，添加域信息即可（其中一步需要更改域名的 DNS 解析）。
 
-![DNS 设置](https://img.inkss.cn/inkss/static/Office-365-免费订阅申请.assets/05.png)
+![DNS 设置](../../static/Office-365-免费订阅申请.assets/05.png)
 
 在 Office 域中显示如下：
 
-![Office 域](https://img.inkss.cn/inkss/static/Office-365-免费订阅申请.assets/06.png)
+![Office 域](../../static/Office-365-免费订阅申请.assets/06.png)
 
 ## 3.免费域名
 

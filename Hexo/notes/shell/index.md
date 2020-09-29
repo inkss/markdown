@@ -2,7 +2,9 @@
 layout: page
 title: 命令合集
 sidebar: [wiki-hexo-theme, toc]
-top_meta: []
+meta:
+  header: []
+  footer: [updated, counter]
 date: 2020/06/05 15:12
 updated: 2020/07/14 18:19
 ---
