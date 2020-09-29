@@ -6,7 +6,7 @@ updated: 2020/04/16 16:03
 tag:
   - Java
   - 破解
-categories: info
+categories: 资料
 abbrlink: 89be439
 description: JRebel 的社区激活取消了，搜索了一番本地激活方法，于此记录。
 ---

@@ -6,7 +6,7 @@ updated: 2020/05/12 11:27
 tag:
   - 网站
   - Hexo
-categories: info
+categories: 博客
 abbrlink: 196d2ba7
 description: 本文偏向于记录备份，非新手向教程，仅供参考。先说搭建这个博客的原因：在搭建博客之前我的所有的文章都是存储在 Github 仓库中，直到某天在投简历的时候发现有的要求填写博客链接 ，掐指一算在玩腻饥荒后似乎还闲置着一个腾讯云的学生主机，索性自己折腾一个博客出来。
 ---
@@ -451,7 +451,7 @@ Hexo 生成的网页是全静态的，为了提高 CDN 命中率，可以把全�
 
 Github **本身是支持** 设置 Https 链接的，证书由 Github 自动颁发、续期。不过需要用户手动开启：`Enforce HTTPS`
 
-![Github 开启 Https 链接](../../static/Hexo博客搭建.assets/01.png)
+![Github 开启 Https 链接](https://img.inkss.cn/inkss/static/Hexo博客搭建.assets/01.png)
 
 此外，如果使用了和本博客类似的手段：DNS 根据 IP 指向不同域名的话，**在访问者位于国内时，仍需要配置一个证书**。原因是国内的 IP 被 DNS 指向了 CDN 域名了，没有指向 Github ，那么 Github 给的证书便是无效不起作用，这里有两种选择：
 

@@ -6,7 +6,7 @@ updated: 2020/04/03 15:34
 tag:
   - 微信小程序
   - 组件
-categories: wechat
+categories: 前端
 description: 调用接口返回的数据前端显示时不能换行，颇为波折的处理一番。
 abbrlink: d24a2bc6
 ---
@@ -36,8 +36,8 @@ onLoad: function(options) {
 
 - 换行符
 
-![换行符](../../static/小程序text组件内容换行.assets/image-20200403153035661.png)
+![换行符](https://img.inkss.cn/inkss/static/小程序text组件内容换行.assets/image-20200403153035661.png)
 
 - 效果
 
-![效果](../../static/小程序text组件内容换行.assets/image-20200403152910344.png)
+![效果](https://img.inkss.cn/inkss/static/小程序text组件内容换行.assets/image-20200403152910344.png)

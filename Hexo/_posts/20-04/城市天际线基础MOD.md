@@ -7,7 +7,7 @@ tag:
   - Steam
   - 'Cities: Skylines'
   - 创意工坊
-categories: game
+categories: 游戏
 abbrlink: 728c42d9
 description: 城市天际线是我最喜欢的一款游戏，也有可能是我唯一一个连续不断购买 DLC 的游戏了，哈哈，万恶的 P 社。有那么一个说法，“枪毙P社玩家，没有一个是冤枉的？”，此外还有另外一句后续，千万别漏掉天际线玩家。
 ---
@@ -20,7 +20,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 
 &ensp;&emsp;言归正传，最近天际线也更新了一个主要的 DLC ：《Cities: Skylines - Sunset Harbor》，所以忽然发现路陆陆续续的也出了不少了，很想来一次原版体验，所以移除了大部分 MOD ，只保留了一下个人认为相较基础的订阅，不过特此记录了一些基础性的打底 MOD。
 
-![全 DLC 了解一下](../../static/城市天际线基础MOD.assets/image-20200406123027826.png)
+![全 DLC 了解一下](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/image-20200406123027826.png)
 
 ## 二、基础性 MOD
 
@@ -37,7 +37,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/572888650_preview_2015-12-10_00002.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/572888650_preview_2015-12-10_00002.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -51,7 +51,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/576997275_preview_2015-12-16_00001.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/576997275_preview_2015-12-16_00001.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -85,7 +85,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/steamworkshop_webupload_previewfile_406723376_preview.png)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/steamworkshop_webupload_previewfile_406723376_preview.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -109,7 +109,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/458519223_preview_Cities_2017-10-21_19-33-17.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/458519223_preview_Cities_2017-10-21_19-33-17.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -123,7 +123,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/1637663252_preview_slideshow.png)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1637663252_preview_slideshow.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -137,7 +137,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/837734529_preview_tuto.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/837734529_preview_tuto.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -161,7 +161,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/1844440354_preview_1.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1844440354_preview_1.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -175,7 +175,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/steamworkshop_webupload_previewfile_409776678_preview.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/steamworkshop_webupload_previewfile_409776678_preview.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -189,7 +189,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/667342976_preview_1.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/667342976_preview_1.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -203,7 +203,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/1619685021_preview_Workshop-screenshot-deeheks.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1619685021_preview_Workshop-screenshot-deeheks.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -217,7 +217,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/445589127_preview_branching.png)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/445589127_preview_branching.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -231,7 +231,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/previewfile_523824395.png)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/previewfile_523824395.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -255,7 +255,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](../../static/城市天际线基础MOD.assets/1369729955_preview_Screenshot_2.jpg)
+![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1369729955_preview_Screenshot_2.jpg)
 <!-- endtab -->
 
 {% endtabs %}

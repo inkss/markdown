@@ -5,7 +5,7 @@ date: 2020/07/17 13:58
 updated: 2020/07/18 16:45
 tag:
   - Steam
-categories: game
+categories: 游戏
 description: Don't Starve Together Server !!!
 abbrlink: 8fafff0e
 ---
@@ -20,7 +20,7 @@ abbrlink: 8fafff0e
 
 &ensp;&emsp;大致的流程是这样的：
 
-<div class="fancybox"><a pjax-fancybox="" href="../../static/DSTGame.assets/image-20200718154336813.png" data-fancybox="images"><img src="../../static/DSTGame.assets/image-20200718154336813.png" data-original="../../static/DSTGame.assets/image-20200718154336813.png" alt=""></a><span class="image-caption"></span></div>
+![](https://img.inkss.cn/inkss/static/DSTGame.assets/image-20200718154336813.png)
 
 {% tabs Steam %}
 
@@ -204,6 +204,6 @@ chmod u+x ./startDST.sh
 
 {% folding cyan, 额外添加了三个人物 %}
 
-![饥荒](../../static/DSTGame.assets/image-20200718164133476.png)
+![饥荒](https://img.inkss.cn/inkss/static/DSTGame.assets/image-20200718164133476.png)
 
 {% endfolding %}
