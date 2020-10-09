@@ -140,6 +140,12 @@ links:
         textColor: '#fefefe'  # 卡片文字颜色
         tags: [Hexo, 折腾, 生活]    # 标签
         desc: 人生在勤，不索何获。
+      - name: hewith
+        avatar: https://hs-jxm.oss-cn-beijing.aliyuncs.com/img/avatar.jpg
+        url: https://heshun.run/
+        backgroundColor: '#5b4c77' # 卡片背景颜色
+        textColor: '#fefefe'  # 卡片文字颜色
+        desc: 曾梦想仗剑走天涯，无奈贫穷挡住了步伐。
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
