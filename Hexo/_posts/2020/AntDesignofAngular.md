@@ -1,5 +1,5 @@
 ---
-title: Angular 快速上手系列（一）
+title: Angular 快速上手系列
 toc: true
 tag:
   - Angular
