@@ -18,8 +18,6 @@ references:
     url: https://blog.cloudflare.com/zh/dns-encryption-explained-zh/
   - title: 超越DoH（DNS over HTTPS）：看DNS隐私不可信任的问题
     url: https://cloud.tencent.com/developer/news/670618
-icons:
-  - fal fa-shield-check
 ---
 
 &ensp;&emsp;这是一篇水文。
