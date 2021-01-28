@@ -1,0 +1,138 @@
+- group: <i class="fal fa-paperclip">&nbsp;个人站点
+  icon: fal fa-paperclip
+  items:
+  - title: 猫之三千岁
+    avatar: https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg
+    url: https://szyink.com
+    backgroundColor: '#101115'
+    textColor: '#e3e3e3'
+    keywords:
+      - 记事
+      - 私人
+- group: <i class="fal fa-link">&nbsp;<span class="fontWeigth w500">是同学哦</span>
+  icon: fal fa-link
+  items:
+    - title: 忘川三途
+      avatar: /img/friend/raymond-zhao.jpg
+      url: https://raymond-zhao.top/
+      backgroundColor: '#b9b9b9'
+      textColor: '#FFF'
+      keywords:
+        - 学识渊博
+        - 经验丰富
+        - 代码风骚
+        - 效率恐怖
+- group: <i class="fal fa-link">&nbsp;小可爱们
+  icon: fal fa-link
+  items:
+    - title: xaoxuu
+      avatar: /img/friend/xaoxuu.jpg
+      url: https://xaoxuu.com
+      backgroundColor: '#87977F'
+      textColor: '#EFEFEF'
+      keywords:
+        - iOS
+    - title: Charlie
+      avatar: /img/friend/charlie-zzy.png
+      url: https://charlie-zzy.github.io
+      backgroundColor: '#66CCFF'
+      textColor: '#EFEFEF'
+      keywords:
+        - OIer
+        - 版本跟进狂魔
+    - title: Zhou 的小站
+      avatar: /img/friend/zhoublog.webp
+      url: https://zhoublog.xyz/
+      backgroundColor: '#f1d6dd'
+      textColor: '#2e2e2e'
+      keywords:
+        - Zhou
+    - title: LHKSTUDIO
+      avatar: /img/friend/lhkstudio.jpg
+      url: https://lhkstudio.me
+      backgroundColor: '#FFEBD2'
+      textColor: '#985B40'
+      keywords:
+        - OIer
+        - Qt
+    - title: MHuiG
+      avatar: /img/friend/mhuig.webp
+      url: https://mhuig.top
+      backgroundColor: '#f5dcca'
+      textColor: '#6d533f'
+      description: 'Be Yourself,Make a Difference.'
+    - title: Xu&#39;s Blog
+      avatar: /img/friend/hasaik.jpg
+      url: https://hasaik.com
+      backgroundColor: '#fcfcfc'
+      textColor: '#555'
+      description: '博观而约取，厚积而薄发！'
+    - title: Flexiston
+      avatar: /img/friend/flexiston.webp
+      url: https://www.flexiston.com
+      backgroundColor: '#ea736a'
+      textColor: '#fff'
+      description: '长风破浪会有时，直挂云帆济沧海'
+    - title: 残梦
+      avatar: /img/friend/sunhang.jpg
+      url: https://sunhang.top
+      backgroundColor: '#fcfcfc'
+      textColor: '#667086'
+      keywords:
+        - 前端
+        - JS
+    - title: 饿龙不是龙哩
+      avatar: /img/friend/liuyifei.jpg
+      url: https://liuyifei.club
+      backgroundColor: '#e4f2f5'
+      textColor: '#555'
+      description: 'INFP|菲迷|颜控|夜猫子|无头怪|热爱一切美好'
+    - title: nomar
+      avatar: /img/friend/headimg_dl.jfif
+      url: https://www.nomar.cn
+      backgroundColor: '#f4fafe'
+      textColor: '#555'
+      description: '技术记录分享'
+    - title: Colsrch
+      avatar: /img/friend/colsrch.jpg
+      url: https://colsrch.top
+      backgroundColor: '#d7d1d5'
+      textColor: '#5d5d5d'
+      description: '愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。'
+      keywords:
+        - C/C++
+        - MFC
+    - title: qinxs
+      avatar: /img/friend/qinxs.png
+      url: https://7bxing.com
+      backgroundColor: '#607D8B'
+      textColor: '#EFEFEF'
+      keywords:
+        - 技术总结
+        - 各种折腾
+    - title: modao
+      avatar: /img/friend/modao.png
+      url: https://modao233.gitee.io/
+      backgroundColor: '#514c5c'
+      textColor: '#fef5ed'
+      description: '凡有所学，必有所得'
+    - title: BooLo
+      avatar: /img/friend/boolo.jpg
+      url: https://www.boolo.top
+      backgroundColor: '#76EEC6'
+      keywords: [莫得标签]
+      textColor: '#000000'
+      description: 记录成长，向未来奔跑
+    - title: Heson
+      avatar: https://cdn.jsdelivr.net/gh/heson525/pic@master/pic/avatar03.png
+      url: https://www.heson10.com
+      backgroundColor: '#c61a26' # 卡片背景颜色
+      textColor: '#fefefe'  # 卡片文字颜色
+      keywords: [Hexo, 折腾, 生活]    # 标签
+      description: 人生在勤，不索何获。
+    - title: hewith
+      avatar: https://hs-jxm.oss-cn-beijing.aliyuncs.com/img/avatar.jpg
+      url: https://heshun.run/
+      backgroundColor: '#5b4c77' # 卡片背景颜色
+      textColor: '#fefefe'  # 卡片文字颜色
+      description: 曾梦想仗剑走天涯，无奈贫穷挡住了步伐。
