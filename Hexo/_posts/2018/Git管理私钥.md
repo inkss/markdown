@@ -2,13 +2,15 @@
 title: Git 管理私钥
 toc: true
 date: 2018/09/08 13:48
-updated: 2020/04/16 16:03
+updated: 2021/02/01 11:40
 tag:
   - Git
 categories: 资料
 abbrlink: d71b1012
 description: 保留私钥到各个平台，替换使用。
 ---
+
+> 保留私钥到各个平台，替换使用。
 
 ## 一、添加私钥
 
@@ -22,10 +24,22 @@ ssh-add id_rsa
 
 # 如果提示：Could not open a connection to your authentication agent
 # 执行下列语句
-ssh-agent bash
+ssh-agent bash  # or zsh
 ```
 
-## 二、新建 `config` 文件
+## 二、测试链接
+
+```shell
+ssh -T git@github.com
+
+# 设置 name 与 email
+git config --global user.name "name"
+git config --global user.email "email"
+```
+
+## 三、新建 `config` 文件
+
+> 一般情况下无需执行本流程，此步骤适用于主动指定的情况。
 
 文件内容如下：
 
@@ -46,32 +60,26 @@ User yourname
 
 2.Windows 平台：`/c/Users/yourname/.ssh/`
 
-## 三、测试链接
-
-```shell
-ssh -T git@github.com
-
-# 设置 name 与 email
-git config --global user.name "name"
-git config --global user.email "email"
-```
-
-## 附录
+## 四、附录
 
 对于 Linux 系统，如果是直接复制 config 和 id_rsa 文件多半会收到下列提示：
 
-```sh
+```shell
 Bad owner or permissions on ...
 permissions are too open error
 
-
-很明显，是权限的问题使得私钥未被接收，所以修改这两个文件的权限即可：
-
-```sh
-chmod 400 ~/.ssh/config
-chmod 400 ~/.ssh/id_rsa
+# 很明显，是权限的问题使得私钥未被接收，所以修改这两个文件的权限即可：
+chmod 600 ~/.ssh/config
+chmod 600 ~/.ssh/id_rsa
 ```
 
-------
+相关权限列表：
 
-[回到顶部](#top) © Inkss
+| 目录 |      文件       | 权限 |
+| :--: | :-------------: | :--: |
+| .ssh |                 | 700  |
+|      | authorized_keys | 600  |
+|      |     id_rsa      | 600  |
+|      |   id_rsa.pub    | 644  |
+
+
