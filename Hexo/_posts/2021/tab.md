@@ -8,7 +8,7 @@ categories: 前端
 description: >-
  标签页是与路由绑定的，在处理子页面时是否要打开新的标签页？子页面的返回行为又该如何处理？
 date: '2021-02-04 17:46'
-updated: '2021-02-05 17:46'
+updated: '2021-02-05 18:10'
 abbrlink: dfbd179
 ---
 
@@ -59,7 +59,7 @@ private getRouteUrl(route: ActivatedRouteSnapshot) {
 
 &ensp;&emsp;对于标签组件，需要实现的核心功能便是：增删没有改。通过对 Router 的事件进行过滤我们可以拿到定义在 RouterModule 里的路由信息。
 
-{% codeblock lang:ts tab.component.ts line_number:false  %}
+{% codeblock lang:ts router.events line_number:false  %}
 this.router.events.pipe(
   filter(event => event instanceof NavigationEnd),
   map(() => this.activatedRoute),
@@ -75,7 +75,6 @@ this.router.events.pipe(
     const menu = {...event};    // 这里的 menu 就是我们需要的信息
   }
 );
-
 {% endcodeblock %}
 
 &ensp;&emsp;将所有的 `menu` 记录到 `this.menuList` 中，也就得到当前打开了多少标签页，以及他们的标题、地址信息等等。
@@ -96,4 +95,232 @@ this.router.events.pipe(
 
 &ensp;&emsp;在最初的设想中是不限制子页面打开的数量，可以通过父页面的跳转到不同内容下的相同子页面（组件），程序实现上也没什么问题，但是业务上存在个问题：有些子页面是拥有回到父页面的功能，例如子页面新增后提交等等。如果按照返回来说，返回自然是回到进入子页面前的父页面状态，但是因为子页面不限制，所以**可能出现子页面还未关闭，父页面修改了页面内容并打开了另一个子页面**，这两个子页面拥有不同的查询条件，而快照只能记录/返回最后一次的父页面信息，所以在业务上不限制子页面数量这是个问题，解释不通。
 
-*未完待续*
+&ensp;&emsp;所以**同一个父页面下的子页面只能存在一个**，前文已知标签是直接与地址对应的，而子页面的地址一定会带有参数，对标签来说它们就是不同的。所以判断时需要把参数部分剔除，值判断路径，顶替之前也要删除相关快照（如果使用全地址当作快照的 Key ，由于地址专业的问题可能会出现某些错误，所以 **子页面快照所存储的 Key 也得是剔除参数后的路径**）。
+
+&ensp;&emsp;最后就是父子页面的删除关系，还是因为子页面返回是返回进入子页面前的父页面状态，有些绕口。举个栗子：父页面是一个查询页，通过一些条件筛选出了结果，然后进入到某个结果的详情页，后来是希望是回到这个筛选下的父页面状态。而如果父页面删除了，子页面还在，此时子页面的返回就相当于父页面新开，一个初始状态，所以为了避免业务上出现问题，最简单的处理还是**父页面关闭时，父页面下所有子页面都关闭**。
+
+## 三、业务实现
+
+&ensp;&emsp;理论分析后就是代码上的实现了，这里考虑了子页面的子页面跳转情况，在对他们的路径设置时额外添加了三个参数：`isChild`, `parComponent` ,`commonComponent` ，他们的关系如下：
+
+![组件关系](../../static/tab.assets/pic2.png)
+
+&ensp;&emsp;父页面不关心也不需要知道自己有多少个子页面，所有子页面需要通过 `isChild` 标记自己是子页面；同时子页面需要通过 `parComponent` 记录自己上一个页面的组件名；除了父页面的直系子页面外，其它层级的子页面需要通过 `commonComponent` 记录最顶层父页面的组件名（或者叫祖先，嚯嚯嚯大笑）。
+
+&ensp;&emsp;在创建首层子页面时，只要发现当前标签页中 **存在记录了的祖先是当前页面的子页面** 或者 **父页面是当前页面的子页面** ，就提示是否关闭并已经打开的子页面并打开新子页面（此处不关心他们的层级，也就是可能当前存在第三级的子页面，但是只要父页面打开第一级子页面时就关闭第三级子页面标签和第三级页面的快照）。
+
+&ensp;&emsp;在关闭父页面时，**寻找可能的子页面和子孙页面**，然后发出提示弹窗需要连带一起关闭。当标签页只存在一个时不允许关闭，当标签页只存在父页面和它的子（孙）页面时，不允许关闭父页面。
+
+### 1. 标签页的处理
+
+{% tabs code %}
+
+<!-- tab 1. 标签页的路由 -->
+&ensp;&emsp;在上面的设计中父页面是一个唯一的值，带领着它的子页面，所以 **父页面的路径存储一定不能携带参数** ，但是 **子页面的路径存储必须得存储参数**。我们在 `TabComponent` 监听了路由切换事件，并通过它记录路由信息，这部分处理就在事件监听之中：
+
+{% codeblock lang:ts 路由事件的处理（部分） line_number:false  %}
+let menuUrl = menu.url, sameTabChild = false, childComponent = null;
+this.menuList.forEach(item => {
+  // 如果是子页面标签
+  if (item.isChild && !sameTabChild) {
+    //  相同的子页面组件名                                 不同的地址
+    if (item.componentName === menu.componentName && item.url !== menuUrl) {
+      sameTabChild = true;
+      childComponent = item;
+    }
+    //  当前页是子页面                子页面的子页面
+    if (menu.isChild && item.parComponent === menu.componentName ) {
+      sameTabChild = true;
+      childComponent = item;
+    }
+  }
+});
+
+// 即将打开的页面为相同的子页面
+if (sameTabChild) {
+  const indexOfChild = this.menuList.findIndex(p => p.componentName === childComponent.componentName);
+  this.menuList.splice(indexOfChild, 1); // 删除原【子页面】记录值
+} else if (menu.isChild === undefined) {
+  // 为了确保唯一性，剔除可能存在的参数
+  const indexParam = menu.url.indexOf('?');
+  menuUrl = menu.url.substring(0, indexParam === -1 ? menu.url.length : indexParam);
+}
+{% endcodeblock %}
+<!-- endtab -->
+
+<!-- tab 2. 标签页的切换 -->
+&ensp;&emsp;前文已经说了切换本质是路由跳转，而拿到的地址是网页 Url ，所以得先提取出参数部分转换为对象才能跳转。
+
+{% codeblock lang:ts 标签页的切换 line_number:false  %}
+nzSelectChange(event) {
+  this.currentIndex = event.index;
+  const menu = this.menuList[this.currentIndex], temp = menu.url.indexOf('?');
+  const params = temp === -1 ? null : this.getUrlParams(menu.url.substring(temp + 1, menu.url.length));
+  const url = temp === -1 ? menu.url : menu.url.substring(0, temp === -1 ? menu.url.length : temp);
+
+  this.router.navigate([url], {
+    queryParams: params,  // 存放可能的参数
+    skipLocationChange: true
+  })
+}
+
+// Url 参数转 对象
+getUrlParams(url) {
+  if (url === '') return null;
+  let hash, myJson = {}, hashes = url.slice(url.indexOf('?') + 1).split('&');
+  for (let i = 0; i < hashes.length; i++) {
+    hash = hashes[i].split('=');
+    myJson[hash[0]] = decodeURIComponent(hash[1]);
+  }
+  return myJson;
+}
+{% endcodeblock %}
+<!-- endtab -->
+
+<!-- tab 3. 标签页的删除 -->
+&ensp;&emsp;大致的删除逻辑上文已经描述了，代码部分：
+
+{% codeblock lang:ts 标签页的删除 line_number:false  %}
+// 关闭选项标签
+closeUrl(menu) {
+  // 如果只有一个不可以关闭
+  if (this.menuList.length === 1) return;
+
+  // 如果当前只剩下父页面和对应子页面，则不可以关闭父页面
+  if (this.menuList.length === 2) {
+    if (this.menuList.some(item => item.isChild
+      && (item.parComponent === menu.componentName || item.commonComponent === menu.componentName))) {
+      return;
+    }
+  }
+
+  // 当前关闭的是第几个路由
+  const index = this.menuList.findIndex(p => p.url === menu.url);
+  if (index === -1) {  // 子页面的子页面返回子页面时造成的  （坏笑
+    return;
+  }
+
+  // 寻找可能存在的子页面
+  const childComponent = this.menuList.filter(item => this.menuList[index].isChild === undefined
+    && item.parComponent === this.menuList[index].componentName) || [];
+
+  // 寻找可能存在的子页面的剩下子页面
+  this.menuList.filter(item => this.menuList[index].isChild === undefined    // 本身必须是父页面
+    && item.commonComponent === this.menuList[index].componentName // 祖先
+    && item.parComponent !== this.menuList[index].componentName  // 不是第一个子页面
+  ).forEach(item => {
+    childComponent.push(item);
+  });
+
+  // 删除
+  if (childComponent.length === 0) {
+    this.deleteTabs(menu);
+  } else {
+    this.modal.confirm({
+      nzContent: '【' + childComponent[0].title + '】页将一并关闭，是否继续？',
+      nzCancelText: '否',
+      nzOkText: '是',
+      nzOkType: 'danger',
+      nzOnOk: () => {
+        childComponent.forEach(item => {
+          this.deleteTabs(menu, item);
+        })
+      }
+    });
+  }
+}
+
+// 执行 Tab 删除
+deleteTabs(menu, childComponent = null) {
+  const index = this.menuList.findIndex(p => p.url === menu.url);
+  const indexMenuParam = menu.url.indexOf('?');
+  const path = menu.url.substring(0, indexMenuParam === -1 ? menu.url.length : indexMenuParam) + '_' + menu.componentName;
+  this.menuList.splice(index, 1); // 删除父
+  SimpleReuseStrategy.deleteRouteSnapshot(path); // 删除复用
+
+  // 删除子
+  if (childComponent) {
+    const indexOfChild = this.menuList.findIndex(p => p.componentName === childComponent.componentName);
+    const indexChildParam = childComponent.url.indexOf('?');
+    const childPath = childComponent.url.substring(0, indexChildParam === -1 ? childComponent.url.length : indexChildParam)
+      + '_' + childComponent.componentName;
+    this.menuList.splice(indexOfChild, 1); // 删除子页面
+    SimpleReuseStrategy.deleteRouteSnapshot(childPath);  // 删除子页面复用
+  }
+
+  this.settingsService.setMenuList(this.menuList);  // 记录
+
+  // 如果当前删除的对象是当前选中的，那么需要跳转
+  if (this.currentUrl === menu.url) {
+    // 显示上一个选中
+    let menu = this.menuList[index - 1];
+    if (!menu) {// 如果上一个没有下一个选中
+      menu = this.menuList[index];
+    }
+    // 跳转路由
+    this.router.navigate([menu.url]);
+  }
+}
+{% endcodeblock %}
+
+<!-- endtab -->
+
+{% endtabs %}
+
+### 2. 路由守卫
+
+&ensp;&emsp;我们需要在即将替换关闭子页面时，发出提示，这个行为交给 `CanActivate` 比较方便。
+
+{% folding cyan, Angular 路由守卫 %}
+{% codeblock lang:ts can-overwrite-tab.guard.ts line_number:false %}
+canActivate(
+  next: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree>  {
+  return new Promise((resolve) => {
+    const url = state.url;
+    const nextData = next.data;
+    const menuList = this.settingsService.getMenuList() || [];
+    let flag = false, childComponent = null, msg = null, indexParam = 0;
+    menuList.forEach(item => {
+      if (!flag) {
+        // 判断 1
+        if (item.isChild && item.parComponent === nextData.parComponent && url !== item.url) {
+          flag = true;
+          childComponent = item;
+          indexParam = url.indexOf('?');
+          msg = '已打开【' + nextData.title + '】页，是否继续？';
+        }
+        // 判断 2
+        if (item.isChild && item.parComponent === nextData.componentName && url !== item.url) {
+          flag = true;
+          childComponent = item;
+          indexParam = item.url.indexOf('?');
+          msg = '已打开【' + item.title + '】页，是否继续？';
+        }
+      }
+    });
+
+    if (flag) {
+      this.modal.confirm({
+        nzContent: msg,
+        nzCancelText: '否',
+        nzOkText: '是',
+        nzOkType: 'danger',
+        nzOnOk: () => {
+          const childLength = childComponent.url.length;
+          const childPath = childComponent.url.substring(0, indexParam === -1 ? childLength : indexParam)
+            + '_' + childComponent.componentName;
+          SimpleReuseStrategy.deleteRouteSnapshot(childPath);  // 先一步删除快照
+          resolve(true);
+        },
+        nzOnCancel: () => {
+          resolve(false);
+        }
+      })
+    } else {
+      resolve(true);
+    }
+  });
+}
+{% endcodeblock %}
+{% endfolding %}
