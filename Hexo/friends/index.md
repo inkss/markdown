@@ -1,12 +1,12 @@
 ---
 layout: friends     # 必须
 seo_title: 友链   # 可选，这是友链页的标题
-date: 2019/12/30 15:37
-updated: 2020/08/10 10:35
+date: 2099/12/31 23:59
+updated: 2021/02/08 11:17
 sidebar: []
 meta:
   header: []
-  footer: [updated, counter]
+  footer: []
 valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
