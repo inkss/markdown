@@ -20,7 +20,7 @@ valine:
 *{% p center logo , 十年之约，即从加入这个活动起，我们的博客十年不关闭，保持更新和活力 %}*
 
 
-{% btn center large, 申请加入, https://www.foreverblog.cn/treaty.html, fal fa-blog %}
+{% btn center large, 申请加入, https://www.foreverblog.cn/treaty.html, fad fa-blog %}
 
 
 <br>
@@ -32,19 +32,19 @@ valine:
     </fieldset>
     <ul class="timeline">
         <li class="timeline-item">
-            <i class="fal fa-glass-cheers timeline-axis"></i>
+            <i class="fad fa-glass-cheers timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
                 <div class="timeline-title">2020/06/25 博客内添加十年之约链接~ </div>
             </div>
         </li>
         <li class="timeline-item">
-            <i class="fal fa-bow-arrow timeline-axis"></i>
+            <i class="fad fa-bow-arrow timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
                 <div class="timeline-title">2020/01/06 加入十年之约。</div>
             </div>
         </li>
         <li class="timeline-item">
-            <i class="fal fa-narwhal timeline-axis"></i>
+            <i class="fad fa-narwhal timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
                 <div class="timeline-title">2018/03/15 博客创立。</div>
             </div>

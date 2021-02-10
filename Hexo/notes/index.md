@@ -15,4 +15,4 @@ updated: 2020/06/05 15:12
 <br>
 <br>
 
-{% p center logo ultra, '<i class="fal fa-kerning" style="color: #a6d5fa"></i>' %}
+{% p center logo ultra, '<i class="fad fa-kerning" style="color: #a6d5fa"></i>' %}

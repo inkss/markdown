@@ -9,7 +9,7 @@ categories: 教程
 description: 完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零散散。
 abbrlink: c6df61d3
 type: linux
-icons: [fal fa-fire]
+icons: [fad fa-fire]
 ---
 
 <!-- ![Ubuntu 18.04 安装配置和美化](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507105832915.png) -->

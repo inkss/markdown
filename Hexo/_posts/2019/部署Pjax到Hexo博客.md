@@ -15,7 +15,7 @@ music:
   type: song
   id: 22703777
 mathjax: false
-icons: [fal fa-fire]
+icons: [fad fa-fire]
 ---
 
 &ensp;&emsp;本篇定位于 **理论知识** ，实际应用见 [Volantis 主题部署 Pjax](/blog/76993423/)，前置知识，SPA 页面。
@@ -178,7 +178,7 @@ function pjax_fancybox() {
 ### 4.3 功能性测试
 
 
-{% p center logo large, '<i class="fal fa-narwhal"></i>' %}
+{% p center logo large, '<i class="fad fa-narwhal"></i>' %}
 {% p center logo large, Volantis %}
 {% p center small, A Wonderful Theme for Hexo %}
 
