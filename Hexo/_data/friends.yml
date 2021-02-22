@@ -136,3 +136,9 @@
       backgroundColor: '#5b4c77' # 卡片背景颜色
       textColor: '#fefefe'  # 卡片文字颜色
       description: 曾梦想仗剑走天涯，无奈贫穷挡住了步伐。
+    - title: 淋竹
+      avatar: https://cdn.jsdelivr.net/gh/Zhi-Tu/My-Album/photos/20200422121222.JPG
+      url: https://www.llscme.top
+      backgroundColor: '#5b4c77' # 卡片背景颜色
+      textColor: '#fefefe'  # 卡片文字颜色
+      description: 冥然兀坐，万籁有声。
