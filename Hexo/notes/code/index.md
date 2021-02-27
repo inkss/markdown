@@ -24,7 +24,7 @@ constys_all_prices = moneyList.YS.reduce((p,e) => p+e.money,0);
 {% codeblock 求对象数组中某个值的去重结果 line_number:false %}
 currencyArr = data.rows.map(item => {
     return item.currencyType;
-}).filter(item => {
+}).filter((item, index, arr) => {
     return arr.indexOf(item, 0) === index;
 })
 {% endcodeblock %}
