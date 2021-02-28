@@ -33,17 +33,29 @@ meta:
         <li class="timeline-item">
             <i class="fal fa-bat timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
-                <div class="timeline-title">2020/08/17 主题更新至 3.0 版本，总算稳定啦。</div>
+                <div class="timeline-title">2021/03/01 调整了夜间模式的配色。</div>
             </div>
         </li>
         <li class="timeline-item">
             <i class="fal fa-genderless timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2021/02/05 重写了右键实现，丰富自定义右键菜单中的功能。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-telescope timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
+                <div class="timeline-title">2020/08/17 主题更新至 3.0 版本，总算稳定啦。</div>
+            </div>
+        </li>
+        <li class="timeline-item">
+            <i class="fal fa-gift timeline-axis"></i>
+            <div class="timeline-content timeline-content-text">
                 <div class="timeline-title">2020/08/02 提供了一个相对比较强大的自定义右键菜单。</div>
             </div>
         </li>
         <li class="timeline-item">
-            <i class="fal fa-genderless timeline-axis"></i>
+            <i class="fal fa-hand-point-right timeline-axis"></i>
             <div class="timeline-content timeline-content-text">
                 <div class="timeline-title">2020/06/13 替换全站鼠标手型，样式提取自 Ubuntu 的主题文件。</div>
             </div>
