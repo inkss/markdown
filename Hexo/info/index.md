@@ -9,6 +9,7 @@ meta:
   footer: []
 sidebar: []
 top_meta: []
+bottom_meta: []
 ---
 
 {% p center logo ultra, '<i class="fad fa-star-of-david" style="color: #a6d5fa" title="爱我"></i>' %}

@@ -2,8 +2,8 @@
 title: Docker 的简要使用
 toc: true
 tag:
-  - portaine
-  - code-server
+  - Portaine
+  - Code-server
   - Docker
 categories: 资料
 description: Docker 的简要使用与 code-service 的安装。
