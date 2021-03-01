@@ -124,20 +124,20 @@
       textColor: '#000000'
       description: 记录成长，向未来奔跑
     - title: Heson
-      avatar: https://cdn.jsdelivr.net/gh/heson525/pic@master/pic/avatar03.png
+      avatar: /img/friend/heson525.png
       url: https://www.heson10.com
       backgroundColor: '#c61a26' # 卡片背景颜色
       textColor: '#fefefe'  # 卡片文字颜色
       keywords: [Hexo, 折腾, 生活]    # 标签
       description: 人生在勤，不索何获。
     - title: hewith
-      avatar: https://hs-jxm.oss-cn-beijing.aliyuncs.com/img/avatar.jpg
+      avatar: /img/friend/hewith.jpg
       url: https://heshun.run/
       backgroundColor: '#5b4c77' # 卡片背景颜色
       textColor: '#fefefe'  # 卡片文字颜色
       description: 曾梦想仗剑走天涯，无奈贫穷挡住了步伐。
     - title: 淋竹
-      avatar: https://cdn.jsdelivr.net/gh/Zhi-Tu/My-Album/photos/20200422121222.JPG
+      avatar: /img/friend/llscme.jfif
       url: https://www.llscme.top
       backgroundColor: '#5b4c77' # 卡片背景颜色
       textColor: '#fefefe'  # 卡片文字颜色
