@@ -36,8 +36,12 @@ onLoad: function(options) {
 
 - 换行符
 
+{% gallery %}
 ![换行符](https://img.inkss.cn/inkss/static/小程序text组件内容换行.assets/image-20200403153035661.png)
+{% endgallery %}
 
 - 效果
 
+{% gallery %}
 ![效果](https://img.inkss.cn/inkss/static/小程序text组件内容换行.assets/image-20200403152910344.png)
+{% endgallery %}

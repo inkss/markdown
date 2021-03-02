@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Github Actions
+seo_title: Github Actions
 sidebar: [wiki-hexo-theme, toc]
 meta:
   header: []

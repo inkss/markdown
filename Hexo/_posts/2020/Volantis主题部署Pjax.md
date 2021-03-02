@@ -208,7 +208,6 @@ html += "<script>document.addEventListener('pjax:send',function(){$('#u-search')
 
 &ensp;&emsp;是这样的，原主题对封面的处理是通过读取页面配置来控制渲染，大概三种不同渲染场景，而在 Pjax 处理时简化为两种场景，全局不开启封面和开启封面，别的就通过代码来控制样式啦。样式处理无非是控制显示、隐藏，但是呢，还需要控制导航栏出现时机，这部分在上一小节讲。
 
-
 {% codeblock lang:js 封面控制 line_number:false  %}
 <script>
   if("<%=frontMatterCover%>" == "none") {  // 移除封面

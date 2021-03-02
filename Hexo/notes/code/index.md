@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Code Language
+seo_title: Code Language
 sidebar: [wiki-hexo-theme, toc]
 meta:
   header: []

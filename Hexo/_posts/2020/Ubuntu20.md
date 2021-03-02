@@ -25,15 +25,21 @@ abbrlink: 481358a6
 
 &ensp;&emsp;直观上的体验：开机时，首先多出了个 Ubuntu 的 Logo ，其次登录界面大改，锁屏背景似乎被砍掉了。桌面壁纸这边，哈，猫猫镭射眼终于等到你。菜单栏，一些实用的功能被引入了系统里：允许自定义文件夹和重命名了（18 的时候还需要插件才能实现）
 
+{% gallery %}
 ![自定义应用分组](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img01.png)
+{% endgallery %}
 
 &ensp;&emsp;接着是通知栏，通知面板支持了设置请勿打扰，此外在系统设置里，具体到了每一个软件的通知设置，非常的详尽（从设置的角度似乎这一点被提到了很高的优先级）。默认的主题方面，大同小异吧，谈不上多好也谈不上多差，不过倒是一个全新的主题，不一样的体验，此外声音通知上也有很大的改变，听起来非常的舒服，这个很赞 {% bb 但是我没找到这种包,似乎还支持自定义设置提示声音 %}。
 
+{% gallery %}
 ![Do Not Disturb](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img03.png)
+{% endgallery %}
 
 &ensp;&emsp;关于显卡，老黄家的显卡毕竟闭源，确实不能打包进系统里，对新手来说，英伟达显卡的安装真的是有点麻烦（毕竟终端下操作不是谁都喜欢的），此处我在安装操作系统时除了选择最小安装外，还勾选了下载第三方驱动，与 18 相比，在开机后的应用列表里，惊喜的看到了 NVIDIA X Server ，竟然自动安装了。附加驱动了直接安装到了 440 版本，最新的版本号不太清楚，但感觉还是挺新的样子，当然这不重要，重要的是自动安装呀，省事儿~
 
+{% gallery %}
 ![附加驱动](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img04.png)
+{% endgallery %}
 
 &ensp;&emsp;在上图中，除了显卡驱动外，还有一个 9560 的网卡驱动，虽然不清楚这里为什么显示的是未工作，可是我这边一直用的是 Wifi 连接的网络呀，233 真奇怪（{% bb '我对 CMAKE 是真的不熟悉，难为我了...',18 时这个驱动得手动安装，还是编译安装你敢信 %}）。
 
@@ -41,19 +47,29 @@ abbrlink: 481358a6
 
 &ensp;&emsp;新的操作系统在最开始总归是阵痛的，一些软件如 PPA 这类源，没有 20 的发行版，无法导入，Typecho 我都没装上。此外一些样式类的改动很大，Gnome Shell 在样式上出了不兼容的现象（Ubuntu 的桌面样式全是用 CSS 写的） ，很奇怪没有向下兼容。此外，桌面上右键打开终端我点着一直没反应，我设置的快捷键也没有起作用。而且不知道是不是我主题改动的问题，总觉得白的背景页太亮，黑色背景页太暗，简言之就是觉得费眼，当然大部分都是小问题，系统本身还好。
 
+{% gallery %}
 ![点着是没有反应的](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img05.png)
+{% endgallery %}
 
 &ensp;&emsp;默认浏览器是火狐，75 版本，我在下载一些东西后，嗯，世界太大，网速太慢，不部署 Clash 真能把你给墨迹死。所以，愉快的就下载 Chrome 啦，本来想下载 Edge 的，但是发现还没 Linux 版本，不过都已经放出消息了，总归会有的。
 
+{% gallery %}
 ![火狐](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img06.png)
+{% endgallery %}
 
+{% gallery %}
 ![Chrome, Yes!](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img07.png)
+{% endgallery %}
 
 &ensp;&emsp; 软件生态呢？据我所知，国内软件上，输入法有搜狗和百度，文档有 WPS ，听歌有~~网易云~~（但是我讨厌它，各种原因导致的），网盘有百度云、坚果云。诸如此类吧，不赘述了，更多的去深度那边看应该更详细吧，哈哈。其实除了这些，还有 snap 呀，有更广泛的选择，比如我就在应用商店里看到了这个，前几天我就用它从 I tell u 下载 2004 的 Win10 镜像：
 
+{% gallery %}
 ![Motrix](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img08.png)
+{% endgallery %}
 
+{% gallery %}
 ![国产好软，全平台兼容](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img10.png)
+{% endgallery %}
 
 ## 四、后续
 
@@ -61,7 +77,10 @@ abbrlink: 481358a6
 
 &ensp;&emsp;最后，确实调整了加载顺序，目前来说，软件的缺失对我影响还是蛮大的，等待一段时间吧，补两张图：
 
+{% gallery %}
 ![主题配置信息](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img09.png)
+{% endgallery %}
 
+{% gallery %}
 ![操作系统信息](https://img.inkss.cn/inkss/static/Ubuntu20.assets/img11.png)
-
+{% endgallery %}

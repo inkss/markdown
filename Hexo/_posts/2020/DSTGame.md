@@ -206,6 +206,8 @@ chmod u+x ./startDST.sh
 
 {% folding cyan, 额外添加了三个人物 %}
 
+{% gallery %}
 ![饥荒](https://img.inkss.cn/inkss/static/DSTGame.assets/image-20200718164133476.png)
+{% endgallery %}
 
 {% endfolding %}

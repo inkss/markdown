@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 命令合集
+seo_title: 命令合集
 sidebar: [wiki-hexo-theme, toc]
 meta:
   header: []

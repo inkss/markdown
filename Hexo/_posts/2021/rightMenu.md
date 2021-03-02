@@ -18,9 +18,11 @@ abbrlink: '63296e49'
 
 &ensp;&emsp;前端页面的自定义右键通过 `oncontextmenu` 实现，相关兼容性如下：
 
-![兼容性](../../static/rightMenu.assets/image-20210228145517668.png)
+{% gallery %}
+![oncontextmenu 兼容性](../../static/rightMenu.assets/image-20210228145517668.png)
+{% endgallery %}
 
-&ensp;&emsp;基本不用担心兼容性问题，对全局右键的修改如下，需要注意的是得返回 `false` 用以阻止默认菜单。
+&ensp;&emsp;所有浏览器都支持 oncontextmenu 事件，对全局右键的修改如下，在事件中放出自己的菜单，需要注意的是需要返回 `false` 用以阻止默认菜单弹出。
 
 {% codeblock lang:js 全局修改右键替换 line_number:false  %}
 window.oncontextmenu = function (event) {
@@ -31,7 +33,19 @@ window.oncontextmenu = function (event) {
 
 ### 1. 右键菜单的绘制
 
-&ensp;&emsp;这里，在参数 `event` 我们可以拿到所需要的变量。
+&ensp;&emsp;这里，在参数 `event` 我们可以拿到所需要的变量，下面是一些可能用得到的属性/方法。
+
+| 属性值/方法                      | 用途                     | 备注            |
+| -------------------------------- | ------------------------ | --------------- |
+| event.target                     | 右键下的元素 DOM         |                 |
+| event.target.href                | 当前元素是否具有链接地址 |                 |
+| event.target.currentSrc          | 当前元素是否具有图片链接 | 用以判断图片    |
+| event.target.parentElement       | 当前元素的父元素 DOM     |                 |
+| event.target.selectionStart      | 当前元素选中内容起       |                 |
+| event.target.selectionEnd        | 当前元素选中内容止       |                 |
+| $(event.target.href).is('input') | 判断当前选择是否为输入框 | .is('textarea') |
+| window.getSelection().toString() | 当前选中的文本           |                 |
+
 
 ## 二、剪切板操作
 

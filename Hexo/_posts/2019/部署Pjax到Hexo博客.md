@@ -208,7 +208,9 @@ function pjax_fancybox() {
 
 <!-- tab 相关图片 -->
 
+{% gallery %}
 {% image https://img.inkss.cn/szyink_com/typecho/2019/10/04/1570189514.jpg, 失落的宇宙 %}
+{% endgallery %}
 
 <!-- endtab -->
 

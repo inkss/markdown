@@ -776,8 +776,14 @@ sudo mysql_secure_installation
 
 ## 六、截图
 
+{% gallery %}
 ![桌面](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110318847.png)
+{% endgallery %}
 
+{% gallery %}
 ![软件列表](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110337914.png)
+{% endgallery %}
 
+{% gallery %}
 ![系统](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110355777.png)
+{% endgallery %}
