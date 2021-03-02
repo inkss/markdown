@@ -18,7 +18,7 @@ updated: '2020-12-30 10:40'
 
 &emsp;&ensp;Ant Design of Angular ，也就是 *ng-zorro-antd* ，是遵循 Ant Design 设计规范的 Angular UI 组件库，全部代码开源并遵循 MIT 协议，任何企业、组织及个人均可免费使用。它的特定：提炼自企业级中后台产品的交互语言和视觉风格。开箱即用的高质量 Angular 组件，与 Angular 保持同步升级。使用 TypeScript 构建，提供完整的类型定义文件。支持 OnPush 模式，性能卓越等等。
 
-当然，以上内容均是摘自官网，我觉得它好用的原因是：<span class="bb_spoiler">我不会写前端样式，而它拥有现成的组件库。</span>（坏笑 😏
+&emsp;&ensp;当然，以上内容均是摘自官网，我觉得它好用的原因是：{% bb 臣妾做不到哇,我不会写前端样式，而它拥有现成的组件库。 %}（坏笑 😏
 
 ## 一、公共配置
 

@@ -198,7 +198,9 @@ chmod u+x ./startDST.sh
 
 {% p center logo large, Don't Starve Together %}
 
-**{% p center small, 服务器名称：inkss  服务器密码：<span class="bb_spoiler">inkss.cn</span> %}**
+<div style='text-align: center;font-size: 90%;font-weight: bold;margin: 10px;'>
+  服务器名称：inkss  服务器密码：{% psw inkss.cn %}
+</div>
 
 <br>
 
