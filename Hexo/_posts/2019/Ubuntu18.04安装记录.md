@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 18.04 安装笔记
 toc: true
+indent: false
 date: 2019/04/08 23:10
 updated: 2020/05/10 10:42
 tag:
@@ -10,10 +11,9 @@ description: 完整介绍 Ubuntu 18.04 LTS X86_64 的安装过程，拒绝零零
 abbrlink: c6df61d3
 type: linux
 icons: [fad fa-fire]
+headimg: https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507105832915.png
 ---
 
-<!-- ![Ubuntu 18.04 安装配置和美化](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507105832915.png) -->
-<br>
 {% p center logo ultra, '<i class="fab fa-linux"></i>' %}
 {% p center logo large, Ubuntu 18.04  %}
 {% p center logo small gray, 安装配置和美化 %}
@@ -24,17 +24,30 @@ icons: [fad fa-fire]
 
 {% folding cyan, 文章更新日志 %}
 
-```sh
-2019.04.28
+{% timeline %}
+
+{% timenode 2019.04.28 %}
+
   + 重构文章，修改并调整内容。
   + 补充来源链接，方便时效性内容的验证。
-2019.07.29
+
+{% endtimenode %}
+
+{% timenode 2019.07.29 %}
+
   + 更正 Shell 的安装命令。
   + 解决下载速度慢的小工具。
-  - 删除所有配图。
-2020.05.07
+  + 删除所有配图。
+
+{% endtimenode %}
+
+{% timenode 2020.05.07 %}
+
   + 添加原来的配图（整理的时候，发现当初的桌面还怪好看的，容我置顶得瑟会儿）
-```
+
+{% endtimenode %}
+
+{% endtimeline %}
 
 {% endfolding %}
 
@@ -776,14 +789,8 @@ sudo mysql_secure_installation
 
 ## 六、截图
 
-{% gallery %}
+{% gallery 3 %}
 ![桌面](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110318847.png)
-{% endgallery %}
-
-{% gallery %}
 ![软件列表](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110337914.png)
-{% endgallery %}
-
-{% gallery %}
 ![系统](https://img.inkss.cn/inkss/static/Ubuntu18.04安装记录.assets/image-20200507110355777.png)
 {% endgallery %}

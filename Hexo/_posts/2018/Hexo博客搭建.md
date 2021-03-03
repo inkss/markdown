@@ -1,6 +1,7 @@
 ---
 title: Hexo 博客搭建
 toc: true
+indent: true
 date: 2018/09/15 13:48
 updated: 2020/05/12 11:27
 tag:
@@ -15,17 +16,13 @@ description: 本文偏向于记录备份，非新手向教程，仅供参考。�
 
 先说搭建这个博客的原因：在搭建博客之前我的所有的文章都是存储在 [inkss/markdown](https://github.com/inkss/markdown) 仓库中，直到某天 **在投简历的时候发现有的要求填写博客链接** ，掐指一算在玩腻饥荒后似乎还闲置着一个腾讯云的学生主机，索性自己折腾一个博客出来。而以简单快速为目的话，还是主推： `Hexo` 。
 
-Hexo 可以帮忙生成全静态的网页，所以在存储位置上可以有：`Github Page、OSS 对象存储、云主机` 等多种选择。
-
-那么接下来就是研究一下如何使用这个框架，以及找一个好看顺心的主题（~~然后连续几天沉迷调试主题不可自拔...~~)。
+Hexo 可以帮忙生成全静态的网页，所以在存储位置上可以有：`Github Page、OSS 对象存储、云主机` 等多种选择。那么接下来就是研究一下如何使用这个框架，以及找一个好看顺心的主题（~~然后连续几天沉迷调试主题不可自拔...~~)。
 
 ## 1.基础环境
 
-**基础环境**：`Git、Node、Hexo`；**OS** ：`Ubuntu 18.04 LTS` ；**服务器**：`CentOS 7.4` 。
+**基础环境**：`Git、Node、Hexo`；**OS** ：`Ubuntu 18.04 LTS` ；**服务器**：`CentOS 7.4` 。Git 和 Github 作为前置环境，本文不做重点阐述。Git 的安装命令：`sudo apt install git` 。
 
-Git 和 Github 作为前置环境，本文不做重点阐述。Git 的安装命令：`sudo apt install git` 。
-
-那么进入正文部分，这里的顺序是这样的：`NVM` → `Node.js` → `Hexo` 。
+进入正文部分，这里的顺序是这样的：`NVM` → `Node.js` → `Hexo` 。
 
 ### 1.1 安装 NVM
 
@@ -88,7 +85,7 @@ npm install -g hexo-cli
 * 将主题目录加入到忽略文件中
 * 删除主题目录里的 `.git` 文件夹
 
-> **关于恢复：**克隆仓库后，需要执行 `npm install --save` ，重新安装插件到 node_modules 目录中。
+> **关于恢复**：克隆仓库后，需要执行 `npm install --save` ，重新安装插件到 node_modules 目录中。
 
 ### 2.2 网站配置
 
@@ -416,7 +413,7 @@ markdown_it_plus:
 ## 4.网站优化
 
 > 这部分内容将会涉及：自定义域名解析、CDN 分发、OSS 对象存储、Https 加密链接等。
-
+>
 > 本博客所使用的所有服务均来自于腾讯云。:kissing_heart:
 
 ### 4.1 自定义域名解析
@@ -449,9 +446,11 @@ Hexo 生成的网页是全静态的，为了提高 CDN 命中率，可以把全�
 
 ### 4.3 Https 链接
 
-Github **本身是支持** 设置 Https 链接的，证书由 Github 自动颁发、续期。不过需要用户手动开启：`Enforce HTTPS`
+Github **本身是支持** 设置 Https 链接的，证书由 Github 自动颁发、续期。不过需要手动开启：`Enforce HTTPS`
 
+{% gallery %}
 ![Github 开启 Https 链接](https://img.inkss.cn/inkss/static/Hexo博客搭建.assets/01.png)
+{% endgallery %}
 
 此外，如果使用了和本博客类似的手段：DNS 根据 IP 指向不同域名的话，**在访问者位于国内时，仍需要配置一个证书**。原因是国内的 IP 被 DNS 指向了 CDN 域名了，没有指向 Github ，那么 Github 给的证书便是无效不起作用，这里有两种选择：
 
@@ -484,7 +483,7 @@ Github **本身是支持** 设置 Https 链接的，证书由 Github 自动颁�
 
 ### 5.2 CDN 热备
 
-CDN 的自有源支持热备，++也就是主源宕机，热备源回源++。那么重点也就是这儿了：设置热备源：`xxxx.github.io` 。
+CDN 的自有源支持热备，++也就是主源宕机，热备回源++。那么重点也就是这儿了：设置热备源：`xxxx.github.io` 。
 
 > 此处开支：免费 10GB 0元/月、付费 100GB 20元/6月。
 
@@ -507,7 +506,3 @@ npm install hexo-deployer-cos-enhanced --save
 | 流量     | 腾讯云 CDN 回源流量 | 10 GB        |
 | 请求     | 读请求              | 100 万次     |
 | 请求     | 写请求              | 100 万次     |
-
-------
-
-[回到顶部](#top) © Inkss

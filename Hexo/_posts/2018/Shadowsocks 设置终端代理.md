@@ -1,6 +1,8 @@
 ---
 title: Linux Shell 设置 Proxy
 toc: true
+indent: true
+comments: false
 date: 2018/09/10 21:26
 updated: 2020/08/09 11:12
 tag:
@@ -9,9 +11,12 @@ tag:
 categories: 教程
 abbrlink: f44c3b52
 description: Linux Shell 设置 Proxy。
-comments: false
+references:
+  - title: 终端加速 git clone
+    url: 'https://blog.fazero.me/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/'
+  - title: Linux bash终端设置代理（proxy）访问
+    url: 'https://aiezu.com/article/linux_bash_set_proxy.html'
 ---
-
 
 ## 一、Git Proxy
 
@@ -49,10 +54,3 @@ git config --global user.email "xxxx@xxx.com"
 ssh-keygen -t rsa -C "xxxx@xxx.com"
 ssh git@github.com
 ```
-
-------
-
-参考资料：
-
-* [终端加速 git clone](https://blog.fazero.me/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/)
-* [Linux bash终端设置代理（proxy）访问](https://aiezu.com/article/linux_bash_set_proxy.html)

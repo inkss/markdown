@@ -16,17 +16,21 @@ valine:
 
 <!-- more -->
 
-------
-
 {% tabs tab-id %}
 
 <!-- tab <i class="fad fa-galaxy"></i><i style="font-weight: normal;font-style: normal;">&nbsp;举个栗子</i> -->
 
-{% codeblock mark:2 友链格式 line_number:false %}
-名称： 枋柚梓
-头像： https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg
-网址： https://inkss.cn
-描述： 繁星永存，记忆亘古不变。(可选)
+{% codeblock lang:yml mark:1-3 友链格式，除高亮行，其余均可选~ line_number:false %}
+- title: # 网站名称
+  url: # 访问地址
+  avatar: # 头像地址
+  description: # 描述/一句话概述/格言
+  screenshot: # 网站截图/展示图
+  backgroundColor: # 头像背景颜色
+  textColor: # 文本颜色
+  keywords:
+    - 标签一
+    - 标签二
 {% endcodeblock %}
 
 <!-- endtab -->
@@ -43,4 +47,3 @@ valine:
 <!-- endtab -->
 
 {% endtabs %}
-

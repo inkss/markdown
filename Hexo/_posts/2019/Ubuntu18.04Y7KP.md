@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 下联想 Y7KP 显卡和网卡驱动配置
 toc: true
+indent: true
 date: 2019/04/02 11:27
 updated: 2020/05/12 11:27
 tag:
@@ -51,12 +52,7 @@ blacklist ideapad_laptop
 
 然后重启电脑就好了，最后说一下我在查阅资料时大部分人似乎一开始就有 wifi 适配器，只需要修改文件就行，我这儿连 wifi 模块都没有，这里需要合理判断咯。
 
-------
-
-{% gallery %}
+{% gallery 2 %}
 ![Wifi](https://img.inkss.cn/inkss/static/Ubuntu18.04Y7KP.assets/szyink-20190402144556-980x708.png)
-{% endgallery %}
-
-{% gallery %}
 ![PC](https://img.inkss.cn/inkss/static/Ubuntu18.04Y7KP.assets/szyink-20190402144606-980x708.png)
 {% endgallery %}

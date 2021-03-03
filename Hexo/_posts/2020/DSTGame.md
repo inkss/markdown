@@ -1,6 +1,7 @@
 ---
 title: Don't Starve Together
 toc: true
+indent: true
 date: 2020/07/17 13:58
 updated: 2020/07/18 16:45
 tag:
@@ -18,7 +19,7 @@ abbrlink: 8fafff0e
 
 ## 一、饥荒联机版搭建
 
-&ensp;&emsp;大致的流程是这样的：
+大致的流程是这样的：
 
 ![](https://img.inkss.cn/inkss/static/DSTGame.assets/image-20200718154336813.png)
 

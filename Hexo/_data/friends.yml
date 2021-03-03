@@ -1,17 +1,14 @@
-- group: <i class="fal fa-paperclip">&nbsp;个人站点
-  icon: fal fa-paperclip
-  items:
-  - title: 猫之三千岁
-    avatar: https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg
-    url: https://szyink.com
-    backgroundColor: '#101115'
-    textColor: '#e3e3e3'
-    keywords:
-      - 记事
-      - 私人
-- group: <i class="fal fa-link">&nbsp;<span class="fontWeigth w500">是同学哦</span>
+- group: <i class="fal fa-link">&nbsp;<span class="fontWeigth w500">巴拉巴拉</span>
   icon: fal fa-link
   items:
+    - title: 猫之三千岁
+      avatar: https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg
+      url: https://szyink.com
+      backgroundColor: '#101115'
+      textColor: '#e3e3e3'
+      keywords:
+        - 记事
+        - 私人
     - title: 忘川三途
       avatar: /img/friend/raymond-zhao.jpg
       url: https://raymond-zhao.top/
@@ -22,6 +19,12 @@
         - 经验丰富
         - 代码风骚
         - 效率恐怖
+    - title: Doreou's Blog
+      url: https://www.doreou.cn/
+      avatar: /img/friend/doreou.jpg
+    - title: coolxingge
+      url: http://www.coolxingge.cn/
+      avatar: /img/friend/coolxingge.jpg
 - group: <i class="fal fa-link">&nbsp;小可爱们
   icon: fal fa-link
   items:

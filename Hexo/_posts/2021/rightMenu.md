@@ -1,6 +1,7 @@
 ---
 title: JS 前端的自定义右键与剪切板操作实现
 toc: true
+indent: true
 tag:
   - Clipboard
   - Permissions-API
@@ -12,17 +13,11 @@ updated: '2021-03-01 00:00'
 abbrlink: '63296e49'
 ---
 
-&ensp;&emsp;本文分为两部分：自定义右键和剪切板的事件处理。主要目标是在自定义网页右键的基础上，实现诸如复制、粘贴的剪切板操作，文本选中的复制、图片的复制和输入框下的粘贴。
+本文分为两部分：自定义右键和剪切板的事件处理。主要目标是在自定义网页右键的基础上，实现诸如复制、粘贴的剪切板操作，文本选中的复制、图片的复制和输入框下的粘贴。
 
 ## 一、自定义右键
 
-&ensp;&emsp;前端页面的自定义右键通过 `oncontextmenu` 实现，相关兼容性如下：
-
-{% gallery %}
-![oncontextmenu 兼容性](../../static/rightMenu.assets/image-20210228145517668.png)
-{% endgallery %}
-
-&ensp;&emsp;所有浏览器都支持 oncontextmenu 事件，对全局右键的修改如下，在事件中放出自己的菜单，需要注意的是需要返回 `false` 用以阻止默认菜单弹出。
+前端页面的自定义右键通过 `oncontextmenu` 实现，几乎所有浏览器都支持 oncontextmenu 事件。对全局右键的修改如下，可以在事件中放出自己的菜单，需要注意返回 `false` 用以阻止默认菜单弹出。
 
 {% codeblock lang:js 全局修改右键替换 line_number:false  %}
 window.oncontextmenu = function (event) {
@@ -33,24 +28,189 @@ window.oncontextmenu = function (event) {
 
 ### 1. 右键菜单的绘制
 
-&ensp;&emsp;这里，在参数 `event` 我们可以拿到所需要的变量，下面是一些可能用得到的属性/方法。
+需要获取鼠标右键时所处的位置，并且控制自定义菜单不要超过屏幕的显示范围，判断菜单的长宽和屏幕。而元素在隐藏时是没有宽、高的，这里可以取巧通过控制层级先把菜单绘制出来，获取到 `offsetWidth` 和 `offsetHeight` 后再显示菜单（恢复正常的层级）。
+
+### 2. 可能用到的方法
+
+前文中，在 `oncontextmenu` 取到  `event` ，可以获取到所需要的内容。在 `event` 中，可以通过 `event.target` 得到右键下的元素信息。需要区分右键下是否为图片/链接，可以通过 `href` 和 `currentSrc` 判断等。
+
+下面是一些可能用得到的属性/方法。
 
 | 属性值/方法                      | 用途                     | 备注            |
 | -------------------------------- | ------------------------ | --------------- |
-| event.target                     | 右键下的元素 DOM         |                 |
-| event.target.href                | 当前元素是否具有链接地址 |                 |
-| event.target.currentSrc          | 当前元素是否具有图片链接 | 用以判断图片    |
-| event.target.parentElement       | 当前元素的父元素 DOM     |                 |
-| event.target.selectionStart      | 当前元素选中内容起       |                 |
-| event.target.selectionEnd        | 当前元素选中内容止       |                 |
-| $(event.target.href).is('input') | 判断当前选择是否为输入框 | .is('textarea') |
-| window.getSelection().toString() | 当前选中的文本           |                 |
-
+| `event.target`                  | 右键下的元素 DOM         |                  |
+| `event.target.href`              | 当前元素是否具有链接地址 | 用以判断链接     |
+| `event.target.currentSrc`        | 当前元素是否具有图片链接 | 用以判断图片    |
+| `event.target.parentElement`     | 当前元素的父元素 DOM     |                 |
+| `event.target.selectionStart`    | 当前元素选中内容起       |                 |
+| `event.target.selectionEnd`      | 当前元素选中内容止       |                 |
+| `$(event.target.href).is('input')` | 判断当前选择是否为输入框 | `.is('textarea')` |
+| `window.getSelection().toString()` | 当前选中的文本           |                 |
 
 ## 二、剪切板操作
 
 {% note quote, Clipboard 接口实现了 Clipboard API，如果用户授予了相应的权限，就能提供系统剪贴板的读写访问。在 Web 应用程序中，Clipboard API 可用于实现剪切、复制和粘贴功能。 %}
 
-## 三、未完待续
+{% gallery %}
+![Clipboard 兼容性](../../static/rightMenu.assets/image-20210228145517668.png)
+{% endgallery %}
 
-码字中...
+概括来说，浏览器对 Clipboard 接口的支持并不齐全。以读取剪切板来说：火狐来完全不支持 `read()` ，只有浏览器插件才允许使用，网页是无法调用的。而写入到剪切板 `write()` 和 `writeText()` ，火狐和谷歌均支持写入文本到剪切板，但是火狐不支持写入图片，谷歌虽然支持写入图片到剪切板，但是只能是 `image/png` 类型的图片。
+
+Clipboard 接口实现了 Clipboard API，如果用户授予了相应的权限，就能提供系统剪贴板的读写访问。在 Web 应用程序中，Clipboard API 可用于实现剪切、复制和粘贴功能。如果用户没有适时使用 Permissions API 授予相应权限和"clipboard-read" 或 "clipboard-write" 权限，调用 Clipboard 对象的方法不会成功。
+
+### 2.1 写入剪切板
+
+由于 `document.execCommand('copy')` 还健在，所以我们在使用 Clipboard 外写一个兼容版本的复制，Clipboard 接口出错时通过传统方式写入剪切板。
+
+首先是写入文本到剪切板，传统方式是生成一个不可见的 `<input>` 输入框，将待写入的内容放到输入框内，全选后复制最后再移除输入框。而利用 Clipboard 接口则不用那么麻烦了，原则上我们需要被授予 `clipboard-write` 权限，不过好在浏览器默认授权，故只需要直接读取即可，`navigator.clipboard.writeText(str)`。与右键搭配的话便是通过 `window.getSelection().toString()` 获取选中文本，接着将文本传递过去。
+
+然后是写入图片到剪切板，相比较写入文本，写入图片则麻烦些，传统方式的写入是通过选中图片来实现的，也就是再 `<img>` 标签外需要有一个包裹它的父标签。而在 Clipboard 接口中，使用 `write()` 写入内容，我们需要传入 ClipboardItem 对象，指定 MIME 类型和 Blob 文件对象。然后是与右键的结合，我们可以获取右键下的图片链接，然后通过 `fetch()` 拿到这些信息。
+
+### 2.2 读取剪切板
+
+早期通过 `document.execCommand('paste')` 读取剪切板内容，不过由于安全性问题它已经被废弃。
+
+因为博客没有什么支持富文本的地方，这里只使用 `readText()` 方法。我们通过 `navigator.clipboard.readText()` 获取文本内容，但在这之前为了用户体验，先查询当前网页是否被授予读取权限：通过 `Notifications API` 执行查询，它允许显示的查询或申请权限（Https 或本地测试环境），如果未被授权可以适当的给与提示等等。
+
+### 2.3 写入到文本框
+
+这是一个体外话，在实现粘贴、剪切等功能时，我们需要只操作选中的部分，也就是获得 `selectionStart` 和 `selectionEnd` ，在指定的光标处放置文本内容。
+
+## 三、代码
+
+综上，剪切板复制、读取的代码如下所示：
+
+{% tabs clipboard  %}
+
+<!-- tab 读取剪切板 -->
+{% codeblock lang:js 读取剪切板 line_number:false %}
+fn.readClipboard = async () => {
+  const result = await navigator.permissions.query({ name: 'clipboard-read' });
+  if (result.state === 'granted' || result.state === 'prompt') {
+    // 修改为 .read()  可以获取剪切板中的文字/图片
+    // 返回的是 ClipboardItem
+    return navigator.clipboard
+      .readText()
+      .then(text => text)
+      .catch(err => Promise.reject(err));
+  }
+  return Promise.reject(result);
+}
+{% endcodeblock %}
+<!-- endtab -->
+
+<!-- tab 复制文本到剪切板 -->
+{% codeblock lang:js 复制文本到剪切板 line_number:false  %}
+fn.writeClipText = (str) => {
+  try {
+    return navigator.clipboard
+      .writeText(str)
+      .then(() => {
+        return Promise.resolve()
+      })
+      .catch(err => {
+        return Promise.reject(err)
+      })
+  } catch (e) {
+    const input = document.createElement('input');
+    input.setAttribute('readonly', 'readonly');
+    document.body.appendChild(input);
+    input.setAttribute('value', str);
+    input.select();
+    try {
+      let result = document.execCommand('copy')
+      document.body.removeChild(input);
+      if (!result || result === 'unsuccessful') {
+        return Promise.reject('复制文本失败!')
+      } else {
+        return Promise.resolve()
+      }
+    } catch (e) {
+      document.body.removeChild(input);
+      return Promise.reject(
+        '当前浏览器不支持复制功能，请检查更新或更换其他浏览器操作!'
+      )
+    }
+  }
+}
+{% endcodeblock %}
+<!-- endtab -->
+
+<!-- tab 复制图片到剪切板 -->
+{% codeblock lang:js 复制图片到剪切板 line_number:false %}
+fn.writeClipImg = async function(event, success, error) {
+  const eventSrc = event.target.currentSrc;
+  const parentElement = event.target.parentElement;
+  try {
+    const data = await fetch(eventSrc);
+    const blob = await data.blob();
+    await navigator.clipboard
+      .write([
+        new ClipboardItem({
+          [blob.type]: blob
+        })
+      ]).then(() => {
+        // console.info('图片复制成功', new Date().getTime());
+        success();
+      }, (e) => {
+        console.error('图片复制失败：', e);
+        error(e);
+      });
+  } catch (e) {
+    // console.info('使用兼容方法复制图片，问题：', e);
+    const dom = document;
+    try {
+      if (dom.body.createTextRange) {
+        const textRange = document.body.createTextRange();
+        textRange.moveToElementText(parentElement);
+        textRange.select();
+      } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(parentElement);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      success();
+    } catch (e) {
+      console.error(e);
+      error('不支持复制当前图片！');
+    }
+  }
+}
+{% endcodeblock %}
+
+<!-- endtab -->
+
+<!-- tab 粘贴文本 -->
+{% codeblock lang:js 粘贴文本 line_number:false %}
+fn.insertAtCaret = ($elemt, value) => {
+  const elemt = $elemt[0];
+  const startPos = elemt.selectionStart,
+        endPos = elemt.selectionEnd;
+  if (document.selection) {
+      $elemt.focus();
+      var sel = document.selection.createRange();
+      sel.text = value;
+      $elemt.focus();
+  } else {
+    if (startPos || startPos == '0') {
+      var scrollTop = elemt.scrollTop;
+      elemt.value = elemt.value.substring(0, startPos) + value + elemt.value.substring(endPos, elemt.value.length); 
+      $elemt.focus();
+      elemt.selectionStart = startPos + value.length;
+      elemt.selectionEnd = startPos + value.length;
+      elemt.scrollTop = scrollTop;
+    } else {
+      $elemt.value += value;
+      $elemt.focus();
+    }
+  }
+}
+{% endcodeblock %}
+<!-- endtab -->
+
+{% endtabs %}

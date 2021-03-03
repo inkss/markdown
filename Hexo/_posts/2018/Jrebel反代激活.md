@@ -1,6 +1,7 @@
 ---
 title: Jrebel 反代激活
 toc: true
+indent: true
 date: 2018/09/08 13:48
 updated: 2020/04/16 16:03
 tag:
@@ -9,9 +10,14 @@ tag:
 categories: 资料
 abbrlink: 89be439
 description: JRebel 的社区激活取消了，搜索了一番本地激活方法，于此记录。
+references:
+  - title: ReverseProxy
+    url: 'https://github.com/ilanyu/ReverseProxy'
+  - title: Online GUID / UUID Generator
+    url: 'https://www.guidgenerator.com/online-guid-generator.aspx'  
 ---
 
-JRebel 的社区激活取消了，不能用分享到脸书的方式激活插件了，有点桑心。搜索了一番本地激活方法，于此记录。
+JRebel 的社区激活取消了，不能用分享到脸书的方式激活插件了，有点桑心。搜索了一番激活方法，于此记录。
 
 ## 1 准备工具
 
@@ -37,11 +43,3 @@ JRebel 的社区激活取消了，不能用分享到脸书的方式激活插件�
 ## 3 以上
 
 哦，记得将激活类型改为 work offline，离线 180 天，不然每次开还是有些麻烦的。
-
----
-
-参考资料：
-
-1. https://github.com/ilanyu/ReverseProxy
-
-1. https://www.guidgenerator.com/online-guid-generator.aspx

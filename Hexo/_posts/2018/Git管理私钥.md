@@ -37,13 +37,11 @@ git config --global user.name "name"
 git config --global user.email "email"
 ```
 
-## 三、新建 `config` 文件
+## 三、新建 config 文件
 
 > 一般情况下无需执行本流程，此步骤适用于主动指定的情况。
 
-文件内容如下：
-
-需要注意的是：`IdentityFile` 指向 id_rsa 文件,不一定非要放在 .ssh 目录
+文件内容如下，需要注意的是：`IdentityFile` 指向 id_rsa 文件,不一定非要放在 .ssh 目录
 
 ```shell
 # github
@@ -81,5 +79,3 @@ chmod 600 ~/.ssh/id_rsa
 |      | authorized_keys | 600  |
 |      |     id_rsa      | 600  |
 |      |   id_rsa.pub    | 644  |
-
-
