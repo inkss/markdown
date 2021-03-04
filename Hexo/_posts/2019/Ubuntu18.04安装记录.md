@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 18.04 安装笔记
+seo_title: Ubuntu 18.04 安装笔记
 toc: true
 indent: false
 date: 2019/04/08 23:10
