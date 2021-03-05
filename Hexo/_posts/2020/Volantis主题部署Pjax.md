@@ -1,5 +1,6 @@
 ---
 title: Volantis 主题部署 Pjax
+seo_title: Volantis 主题部署 Pjax
 toc: true
 indent: true
 date: 2020/05/17 01:27
@@ -15,9 +16,8 @@ icons:
 abbrlink: '76993423'
 ---
 
-{% p center logo large, '<i class="fad fa-narwhal"></i>' %}
-{% p center logo large, Volantis %}
-{% p center small, A Wonderful Theme for Hexo %}
+<p class="p center logo large"><em>Volantis 主题部署 Pjax <sup>应用篇</sup></em></p>
+<br>
 <br>
 
 {% p center, 前言：本篇定位于主题的各类处理上，理论篇见 <a href="/blog/80b5f235/">Hexo 博客部署 Pjax 局部刷新</a>。 %}

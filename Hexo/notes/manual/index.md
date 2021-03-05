@@ -1,5 +1,6 @@
 ---
 layout: docs
+title: Volantis 主题用户手册
 seo_title: Volantis 主题用户手册
 sidebar: [toc]
 top_meta: false
@@ -16,7 +17,7 @@ updated: 2021/03/04 00:00
 | :---------- | :------------ | :---------: | :-----------------------: | :----------------------------- |
 | layout      | 页面布局模版  |   String    |      post,page,docs       | 独立页面,文章页面,文档页面     |
 | title       | 页面标题      |   String    |             -             |                                |
-| seo_title   | 网页标题      |   String    |        page.title         | 可替代页面标题                 |
+| seo_title   | 网页标题      |   String    |        page.title         | **与 title 共同存在时，不显示标题**|
 | date        | 创建时间      |    Date     |       文件创建时间        |                                |
 | updated     | 更新日期      |    Date     |       文件修改时间        |                                |
 | link        | 外部文章网址  |   String    |             -             | 去源站阅读                     |

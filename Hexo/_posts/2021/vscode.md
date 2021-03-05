@@ -1,5 +1,6 @@
 ---
 title: Docker 的简要使用
+seo_title: Docker 的简要使用
 toc: true
 tag:
   - Portaine
@@ -12,7 +13,9 @@ updated: '2021-02-01 12:00'
 abbrlink: e9bd7c2d
 ---
 
-&emsp;&emsp;2021 年，新年的第一篇文章~
+<p class="p center logo large"><em>Docker 的简要使用</em></p>
+<br>
+{% p center, 2021 年，新年的第一篇文章~ %}
 
 ## 一、常用命令
 
