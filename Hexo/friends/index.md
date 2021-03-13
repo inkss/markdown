@@ -46,4 +46,12 @@ valine:
 
 <!-- endtab -->
 
+<!-- tab <i class="fad fa-cannabis logoColor"></i><i style="font-weight: normal;font-style: normal;">&nbsp;本站信息 </i>  -->
+
+访问地址：`https://inkss.cn`
+站点名称：`枋柚梓的猫会发光`
+头像地址：`https://cdn.jsdelivr.net/gh/inkss/common@master/static/web/avatar.jpg`
+
+<!-- endtab -->
+
 {% endtabs %}

@@ -145,3 +145,7 @@
       backgroundColor: '#5b4c77' # 卡片背景颜色
       textColor: '#fefefe'  # 卡片文字颜色
       description: 冥然兀坐，万籁有声。
+    - title: W4J1e’s blog
+      avatar: /img/friend/hinCool.png
+      url: https://www.hin.cool
+      description: 总是偏爱不务正业
