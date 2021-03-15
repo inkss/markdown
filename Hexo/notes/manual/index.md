@@ -37,4 +37,181 @@ updated: 2021/03/04 00:00
 
 ## 二、标签插件
 
-待补充
+### 1. 行内标签
+
+{% folding blue, text %}
+
+{% tabs text %}
+<!-- tab 效果 -->
+
+带 {% u 下划线 %} 的文本；带 {% emp 着重号 %} 的文本；带 {% wavy 波浪线 %} 的文本；带 {% del 删除线 %} 的文本
+
+键盘样式的文本：{% kbd ⌘ %} + {% kbd D %}
+
+密码样式的文本：{% psw 这里没有验证码 %}
+
+密文样式的文本：{% bb 真的没有啊喵, 这里没有验证码 %}
+
+<!-- endtab -->
+<!-- tab 源码 -->
+{% codeblock lang:markdown line_number:false  %}
+带 {% u 下划线 %} 的文本；带 {% emp 着重号 %} 的文本；带 {% wavy 波浪线 %} 的文本；带 {% del 删除线 %} 的文本
+
+键盘样式的文本：{% kbd ⌘ %} + {% kbd D %}
+
+密码样式的文本：{% psw 这里没有验证码 %}
+
+密文样式的文本：{% bb 真的没有啊喵, 这里没有验证码 %}
+{% endcodeblock %}
+<!-- endtab -->
+{% endtabs %}
+
+{% endfolding %}
+
+{% folding yellow, span %}
+
+{% tabs span %}
+<!-- tab 效果 -->
+各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。
+
+超大号文字：
+
+{% span center logo large, Volantis %}
+
+{% span center small, A Wonderful Theme for Hexo %}
+
+<!-- endtab -->
+
+<!-- tab 源码 -->
+{% codeblock lang:markdown line_number:false  %}
+各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。
+
+超大号文字：
+
+{% span center logo large, Volantis %}
+
+{% span center small, A Wonderful Theme for Hexo %}
+
+{% endcodeblock %}
+<!-- endtab -->
+
+<!-- tab 参数 -->
+
+|   属性   | 可选值                                                    |
+| :------: | --------------------------------------------------------- |
+|   字体   | `logo`, `code`                                            |
+|   颜色   | `red`, `yellow`, `green`, `cyan`, `blue`, `gray`          |
+|   大小   | `small`, `h4`, `h3`, `h2`, `h1`, `large`, `huge`, `ultra` |
+| 对齐方向 | `left`, `center`, `right`                                 |
+
+<!-- endtab -->
+<!-- tab 额外 -->
+
+<p class="p center logo large"><em>Volantis 主题用户手册 <sup>自用</sup></em></p>
+
+{% codeblock lang:markdown 上文所对应源码 line_number:false  %}
+<p class="p center logo large"><em>Volantis 主题用户手册 <sup>自用</sup></em></p>
+{% endcodeblock %}
+<!-- endtab -->
+{% endtabs %}
+
+{% endfolding %}
+
+{% folding red, p %}
+
+{% tabs p %}
+<!-- tab 效果 -->
+{% p center logo large, Volantis %}
+{% p center small, A Wonderful Theme for Hexo %}
+<!-- endtab -->
+<!-- tab 源码 -->
+{% codeblock lang:markdown line_number:false  %}
+{% p center logo large, Volantis %}
+{% p center small, A Wonderful Theme for Hexo %}
+{% endcodeblock %}
+<!-- endtab -->
+<!-- tab 参数 -->
+{% p center code blue large, “与 span 参数相同”  %}
+<!-- endtab -->
+{% endtabs %}
+
+{% endfolding %}
+
+### 2. 增强标签
+
+{% folding red, timeline %}
+
+{% tabs timeline %}
+<!-- tab 效果1 -->
+
+<p style="margin-bottom: -4em;"></p>
+
+{% timeline 时间线标题（可选） %}
+
+{% timenode 时间节点（标题） %}
+
+正文内容
+
+{% endtimenode %}
+
+{% timenode 时间节点（标题） %}
+
+正文内容
+
+{% endtimenode %}
+
+{% endtimeline %}
+
+<!-- endtab -->
+<!-- tab 源码1 -->
+```md 最后更新于 <u>3.0</u> 版本
+{% timeline 时间线标题（可选） %}
+
+{% timenode 时间节点（标题） %}
+
+正文内容
+
+{% endtimenode %}
+
+{% timenode 时间节点（标题） %}
+
+正文内容
+
+{% endtimenode %}
+
+{% endtimeline %}
+```
+<!-- endtab -->
+<!-- tab 效果2 -->
+
+{% timelines '一个自制时间线' %}
+
+{% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
+{% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
+{% timenodes fal fa-narwhal %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
+{% timenodes fal fa-fan fa-spin %}这里是时间线的起点~{% endtimenodes %}
+
+{% endtimelines %}
+
+<!-- endtab -->
+<!-- tab 源码2 -->
+```md 自制标签
+{% timelines '一个自制时间线' %}
+
+{% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
+{% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
+{% timenodes fal fa-narwhal %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
+{% timenodes fal fa-fan fa-spin %}这里是时间线的起点~{% endtimenodes %}
+
+{% endtimelines %}
+```
+<!-- endtab -->
+{% endtabs %}
+
+{% endfolding %}
