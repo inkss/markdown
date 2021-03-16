@@ -54,7 +54,7 @@ updated: 2021/03/04 00:00
 
 <!-- endtab -->
 <!-- tab 源码 -->
-{% codeblock lang:markdown line_number:false  %}
+```md
 带 {% u 下划线 %} 的文本；带 {% emp 着重号 %} 的文本；带 {% wavy 波浪线 %} 的文本；带 {% del 删除线 %} 的文本
 
 键盘样式的文本：{% kbd ⌘ %} + {% kbd D %}
@@ -62,7 +62,7 @@ updated: 2021/03/04 00:00
 密码样式的文本：{% psw 这里没有验证码 %}
 
 密文样式的文本：{% bb 真的没有啊喵, 这里没有验证码 %}
-{% endcodeblock %}
+```
 <!-- endtab -->
 {% endtabs %}
 
@@ -83,7 +83,7 @@ updated: 2021/03/04 00:00
 <!-- endtab -->
 
 <!-- tab 源码 -->
-{% codeblock lang:markdown line_number:false  %}
+```md
 各种颜色的标签，包括：{% span red, 红色 %}、{% span yellow, 黄色 %}、{% span green, 绿色 %}、{% span cyan, 青色 %}、{% span blue, 蓝色 %}、{% span gray, 灰色 %}。
 
 超大号文字：
@@ -92,7 +92,7 @@ updated: 2021/03/04 00:00
 
 {% span center small, A Wonderful Theme for Hexo %}
 
-{% endcodeblock %}
+```
 <!-- endtab -->
 
 <!-- tab 参数 -->
@@ -104,14 +104,6 @@ updated: 2021/03/04 00:00
 |   大小   | `small`, `h4`, `h3`, `h2`, `h1`, `large`, `huge`, `ultra` |
 | 对齐方向 | `left`, `center`, `right`                                 |
 
-<!-- endtab -->
-<!-- tab 额外 -->
-
-<p class="p center logo large"><em>Volantis 主题用户手册 <sup>自用</sup></em></p>
-
-{% codeblock lang:markdown 上文所对应源码 line_number:false  %}
-<p class="p center logo large"><em>Volantis 主题用户手册 <sup>自用</sup></em></p>
-{% endcodeblock %}
 <!-- endtab -->
 {% endtabs %}
 
@@ -125,13 +117,21 @@ updated: 2021/03/04 00:00
 {% p center small, A Wonderful Theme for Hexo %}
 <!-- endtab -->
 <!-- tab 源码 -->
-{% codeblock lang:markdown line_number:false  %}
+```md
 {% p center logo large, Volantis %}
 {% p center small, A Wonderful Theme for Hexo %}
-{% endcodeblock %}
+```
 <!-- endtab -->
 <!-- tab 参数 -->
 {% p center code blue large, “与 span 参数相同”  %}
+<!-- endtab -->
+<!-- tab 额外 -->
+
+<p class="p center logo large"><em>Volantis 主题用户手册 <sup>自用</sup></em></p>
+
+{% codeblock lang:markdown 上文所对应源码 line_number:false  %}
+<p class="p center logo large"><em>Volantis 主题用户手册 <sup>自用</sup></em></p>
+{% endcodeblock %}
 <!-- endtab -->
 {% endtabs %}
 
@@ -142,7 +142,7 @@ updated: 2021/03/04 00:00
 {% folding red, timeline %}
 
 {% tabs timeline %}
-<!-- tab 效果1 -->
+<!-- tab 效果 -->
 
 <p style="margin-bottom: -4em;"></p>
 
@@ -163,7 +163,7 @@ updated: 2021/03/04 00:00
 {% endtimeline %}
 
 <!-- endtab -->
-<!-- tab 源码1 -->
+<!-- tab 源码 -->
 ```md 最后更新于 <u>3.0</u> 版本
 {% timeline 时间线标题（可选） %}
 
@@ -182,9 +182,9 @@ updated: 2021/03/04 00:00
 {% endtimeline %}
 ```
 <!-- endtab -->
-<!-- tab 效果2 -->
+<!-- tab 额外 -->
 
-{% timelines '一个自制时间线' %}
+{% timelines '一个自制时间线（标题可选）' %}
 
 {% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
 {% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
@@ -196,10 +196,8 @@ updated: 2021/03/04 00:00
 
 {% endtimelines %}
 
-<!-- endtab -->
-<!-- tab 源码2 -->
 ```md 自制标签
-{% timelines '一个自制时间线' %}
+{% timelines '一个自制时间线（标题可选）' %}
 
 {% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
 {% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
@@ -211,6 +209,21 @@ updated: 2021/03/04 00:00
 
 {% endtimelines %}
 ```
+<!-- endtab -->
+{% endtabs %}
+
+{% endfolding %}
+
+{% folding yellow, note/noteblock %}
+
+{% tabs note %}
+<!-- tab 语法 -->
+
+| 名称      | 语法                            |
+| --------- | ------------------------------- |
+| Note      | `{% note 样式参数, 文本内容 %}` |
+| NoteBlock | `{% noteblock 样式参数（可选）, 标题（可选） %} 内容 {% endnoteblock %} ` |
+
 <!-- endtab -->
 {% endtabs %}
 
