@@ -11,7 +11,7 @@ valine:
   placeholder: 这里是友链，虽然我一直不怎么处理友链的啊喂...
 ---
 
-*{% p center logo small gray, 今夕复何夕，共此灯烛光。 %}*
+*{% p center logo gray, 今夕复何夕，共此灯烛光。 %}*
 <p style="margin-bottom: -20px;"></p>
 
 <!-- more -->
