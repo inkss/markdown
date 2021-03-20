@@ -14,6 +14,7 @@ date: '2020-11-21 17:10'
 abbrlink: 8ab78feb
 description: '一句话概括那就是：这是一份后端开发所写的前端学习内容~，面向于快速上手这种哒。'
 updated: '2020-12-30 10:40'
+headimg: ../../static/AntDesignofAngular.assets/image-20210320124951090.png
 ---
 
 <p class="p center logo large"><em>Angular 快速上手系列</em></p><br><br>

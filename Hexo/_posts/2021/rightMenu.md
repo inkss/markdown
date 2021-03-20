@@ -7,13 +7,16 @@ tag:
   - Permissions-API
   - JS
 categories: 前端
-description: JS 前端实现自定义右键 | JS 前端复制文字/图片到剪切板 | JS 前端从剪切板获取文本
 date: '2021-03-01 00:00'
 updated: '2021-03-03 00:00'
 abbrlink: '63296e49'
 ---
 
+{% image ../../static/rightMenu.assets/image-20210320134451661.png, bg=#ffffff, heigth=96px  %}
+
 本文分为两部分：自定义右键和剪切板的事件处理。主要目标是在自定义网页右键的基础上，实现诸如复制、粘贴的剪切板操作，文本选中的复制、图片的复制和输入框下的粘贴。
+
+<!-- more -->
 
 ## 一、自定义右键
 

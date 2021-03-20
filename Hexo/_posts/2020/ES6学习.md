@@ -18,7 +18,7 @@ date: 2020-09-06 12:10
 updated: 2020-09-06 12:10
 ---
 
-**Const 与 Var 的区别**
+## 一、Const 与 Var 的区别
 
 - 只允许声明事赋值
 
@@ -28,7 +28,7 @@ updated: 2020-09-06 12:10
 
 - 不支持变量提升
 
-  ```js
+  ```js 不支持变量提升
   console.log(a);  //undefined
   console.log(b);  //Uncaught ReferenceError: b is not defined
   var a = 123; 
@@ -40,7 +40,7 @@ updated: 2020-09-06 12:10
 
 - 暂时性死区 （区块中的 let/const 所声明变量，形成封闭作用域，覆盖作用域之外的同名变量，也就是需要遵循先定义后使用原则）
 
-  ```js
+  ```js 暂时性死区
   var URL = 'https://xxx.com';
   if(true) {
       URL = 'xxx'; // 此处报错
@@ -52,9 +52,9 @@ updated: 2020-09-06 12:10
 
 - 块级作用域特性
 
-**Const 变量的可变性**
+## 二、Const 变量的可变性
 
-{% image '../../static/ES6学习.assets/image-20200906164049377.png', width='500px', alt='Const 变量的可变性' %}
+{% image '../../static/ES6学习.assets/image-20200906164049377.png', width=400px, bg=#ffffff, alt='Const 变量的可变性' %}
 
 - const 定义的引用类型变量，其内容可以更改，可以利用 freeze 冻结保证内容不被改变。
 - Object.freeze(obj) : 只能冻结一层，例如 const 定义对象中的某个属性为数组，数组中内容依旧可改。
@@ -71,26 +71,12 @@ updated: 2020-09-06 12:10
   }
   ```
 
-## 箭头函数
-
-```js
-const sum = (x, y) => {
-    return x + y;
-}
-
-const sum1 = (x, y) => x + y;
-
-const res = sum(1, 3);
-
-const fn = () => {
-    //bala
-}
-```
+## 三、箭头函数
 
 - 箭头函数的 this ：它会捕获其所在上下文的 this 值， 作为自己的 this 值。
 - 参考链接：[This 指向详细解析（箭头函数）](https://www.cnblogs.com/dongcanliang/p/7054176.html)
 
-**箭头函数需要注意的场景**
+**箭头函数需要注意的场景：**
 
 - 箭头函数作为事件回调函数时。
 - 对象中方法的箭头函数时（建议不用）。
@@ -98,9 +84,9 @@ const fn = () => {
 - 箭头函数中 arguments 失效。
 - 函数原型下的方法。
 
-## 解构赋值
+## 四、解构赋值
 
-- 等号左右两边完全匹配
+{% folding yellow, 等号左右两边完全匹配 %}
 
 ```js
 const people = {
@@ -132,7 +118,9 @@ const {
 console.log(name, age, motherName) // xiaoming 18 xiaohong
 ```
 
-- 如何正确的使用解构赋值
+{% endfolding %}
+
+{% folding green, 如何正确的使用解构赋值 %}
 
 ```js
 const sum = ([a, b, c]) => {
@@ -173,3 +161,4 @@ axios.get('./data.json').then(({data: {name, age}}) => {
 });
 ```
 
+{% endfolding %}

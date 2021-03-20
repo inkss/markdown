@@ -7,7 +7,7 @@ tag:
   - Code-server
   - Docker
 categories: 资料
-description: Docker 的简要使用与 code-service 的安装。
+description: Docker 的简要使用与 code-service 的安装 🎉。
 date: '2021-01-29 16:00'
 updated: '2021-02-01 12:00'
 abbrlink: e9bd7c2d
@@ -28,24 +28,23 @@ sudo systemctl restart docker
 {% endcodeblock %}
 
 {% codeblock lang:shell 常用命令 line_number:false  %}
-docker images	        #查看所有本地主机上的镜像
-docker pull mysql	    #下载镜像
-docker rmi -f ID/name	#删除镜像
+docker images                      #查看所有本地主机上的镜像
+docker pull mysql                  #下载镜像
+docker rmi -f ID/name              #删除镜像
 
 docker ps 命令
-      -a	  #列出当前正在运行的容器 + 带出历史运行中的容器
-      -n=?    #显示最近创建的容器
-      -q	  #只显示容器的编号
+      -a                           #列出当前正在运行的容器 + 带出历史运行中的容器
+      -n=?                         #显示最近创建的容器
+      -q                           #只显示容器的编号
 
+docker rm id                       #删除指定的容器，不能删除在运行的容器，如果要强制删除 rm -f
+docker rm -f $(docker ps -aq)      #删除所有的容器
+docker ps -a -q|xargs docker rm    #删除所有的容器
 
-docker rm 容器id	                #删除指定的容器，不能删除在运行的容器，如果要强制删除 rm -f
-docker rm -f $(docker ps -aq)	    #删除所有的容器
-docker ps -a -q|xargs docker rm 	#删除所有的容器
-
-docker start 容器id	      #启动容器
-docker restart 容器id     #重启容器
-docker stop 容器id	      #停止当前正在运行的容器
-docker kill 容器id	      #停止当前容器
+docker start 容器id                #启动容器
+docker restart 容器id              #重启容器
+docker stop 容器id                 #停止当前正在运行的容器
+docker kill 容器id                 #停止当前容器
 {% endcodeblock %}
 
 ## 二、部署容器

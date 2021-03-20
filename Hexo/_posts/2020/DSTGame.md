@@ -7,7 +7,7 @@ updated: 2020/07/18 16:45
 tag:
   - Steam
 categories: 游戏
-description: Don't Starve Together Server !!!
+descriptions: Don't Starve Together Server !!!
 abbrlink: 8fafff0e
 ---
 
@@ -16,6 +16,8 @@ abbrlink: 8fafff0e
 {% note bell red , 本文章分为两部分，一部分备份记录 DST 的搭建，另一部分记录游戏订阅信息~ %}
 
 {% note poo gray , 服务器订阅至 2022/11 月，可放心食用且性能尚可，不用像当初那样抠抠搜搜的使用啦~ %}
+
+<!-- more -->
 
 ## 一、饥荒联机版搭建
 
