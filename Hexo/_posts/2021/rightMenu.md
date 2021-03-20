@@ -12,7 +12,7 @@ updated: '2021-03-03 00:00'
 abbrlink: '63296e49'
 ---
 
-{% image ../../static/rightMenu.assets/image-20210320134451661.png, bg=#fff, height=300px  %}
+{% image ../../static/rightMenu.assets/image-20210320134451661.png, bg=var(--color-card), height=300px  %}
 
 本文分为两部分：自定义右键和剪切板的事件处理。主要目标是在自定义网页右键的基础上，实现诸如复制、粘贴的剪切板操作，文本选中的复制、图片的复制和输入框下的粘贴。
 
