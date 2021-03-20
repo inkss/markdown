@@ -1,5 +1,5 @@
 ---
-title: JS 前端的自定义右键与剪切板操作实现
+title: 前端页面的自定义右键与剪切板操作实现
 toc: true
 indent: true
 tag:

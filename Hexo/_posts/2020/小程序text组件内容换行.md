@@ -6,8 +6,7 @@ date: 2020/04/03 15:34
 updated: 2020/04/03 15:34
 tag:
   - 微信小程序
-  - 组件
-categories: 前端
+categories: 小程序
 description: 调用接口返回的数据前端显示时不能换行，颇为波折的处理一番。
 abbrlink: d24a2bc6
 ---

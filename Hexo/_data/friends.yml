@@ -149,3 +149,15 @@
       avatar: /img/friend/hinCool.png
       url: https://www.hin.cool
       description: 总是偏爱不务正业
+    - title: Akilarの糖果屋
+      avatar: /img/friend/akilar.png
+      url: https://akilar.top/
+      screenshot: https://cdn.jsdelivr.net/gh/Akilarlxh/ScreenShot@gh-pages/akilar.top.jpg
+      description: 期待您的光临！
+      keywords:
+        - 糖果屋
+    - title: Heo
+      avatar: /img/friend/zhheo.png
+      url: https://blog.zhheo.com/
+      screenshot: https://7.dusays.com/2020/10/27/ff9603f42ee09.png
+      description: 爱折腾的设计师

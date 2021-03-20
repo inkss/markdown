@@ -1,5 +1,5 @@
 ---
-title: Angular 快速上手系列
+title: Ant Design of Angular 快速上手系列
 seo_title: Angular 快速上手系列
 toc: true
 indent: true
