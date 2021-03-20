@@ -35,7 +35,7 @@ headimg: https://img.inkss.cn/inkss/static/Ubuntu20.assets/main.png
 
 关于显卡，老黄家的显卡毕竟闭源，确实不能打包进系统里，对新手来说，英伟达显卡的安装真的是有点麻烦（毕竟终端下操作不是谁都喜欢的），此处我在安装操作系统时除了选择最小安装外，还勾选了下载第三方驱动，与 18 相比，在开机后的应用列表里，惊喜的看到了 NVIDIA X Server ，竟然自动安装了。附加驱动了直接安装到了 440 版本，最新的版本号不太清楚，但感觉还是挺新的样子，当然这不重要，重要的是自动安装呀，省事儿~
 
-{% image https://img.inkss.cn/inkss/static/Ubuntu20.assets/img04.png, alt=附加驱动, bg=#ffffff, height=400px %}
+{% image https://img.inkss.cn/inkss/static/Ubuntu20.assets/img04.png, alt=附加驱动, bg=var(--color-card), height=400px %}
 
 在上图中，除了显卡驱动外，还有一个 9560 的网卡驱动，虽然不清楚这里为什么显示的是未工作，可是我这边一直用的是 Wifi 连接的网络呀，233 真奇怪（{% bb '我对 CMAKE 是真的不熟悉，难为我了...',18 时这个驱动得手动安装，还是编译安装你敢信 %}）。
 

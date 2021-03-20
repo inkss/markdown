@@ -21,7 +21,7 @@ abbrlink: dfbd179
 
 作为一个 Angular 后台管理项目，布局结构是传统的 **顶部-侧边布局-通栏** （见下图），拥有顶部导航及侧边栏，而由于是 SPA 单页应用的缘故，页面地址是记录在地址后的 `#` 后面。Tab 栏作为已打开页面的切换入口，与路由进行了关联。
 
-{% image ../../static/tab.assets/image-20210205141833759.png, bg=#ffffff, height=260px, alt='页面结构' %}
+{% image ../../static/tab.assets/image-20210205141833759.png, bg=var(--color-card), height=260px, alt='页面结构' %}
 
 ### 1. 标签页与路由复用
 
@@ -104,7 +104,7 @@ this.router.events.pipe(
 
 理论分析后就是代码上的实现了，这里考虑了子页面的子页面跳转情况，在对他们的路径设置时额外添加了三个参数：`isChild`, `parComponent` ,`commonComponent` ，他们的关系如下：
 
-{%image ../../static/tab.assets/pic2.png, bg=#ffffff %}
+{%image ../../static/tab.assets/pic2.png, bg=var(--color-card) %}
 
 父页面不关心也不需要知道自己有多少个子页面，所有子页面需要通过 `isChild` 标记自己是子页面；同时子页面需要通过 `parComponent` 记录自己上一个页面的组件名；除了父页面的直系子页面外，其它层级的子页面需要通过 `commonComponent` 记录最顶层父页面的组件名（或者叫祖先，嚯嚯嚯大笑）。
 

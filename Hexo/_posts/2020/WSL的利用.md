@@ -25,11 +25,11 @@ icons: [fad fa-fire]
 
 部署成功后，在终端的结果处收到地址、账户、密码，登录处理一些就行了。地址默认位 `127.0.0.1` ，是的没错即使是子系统，其实也是和本地主机的 IP 相同的，接下来就先改改端口、安全入口什么的即可。
 
-{% image https://img.inkss.cn/inkss/static/WSL的利用.assets/image-20200502160453899.png, alt=宝塔面板, bg=#ffffff, height=400px %}
+{% image https://img.inkss.cn/inkss/static/WSL的利用.assets/image-20200502160453899.png, alt=宝塔面板, bg=var(--color-card), height=400px %}
 
 配置信息一目了然，甚至原本的 Windows 下磁盘也被显示出来的，接下来也就是到软件商店里安装环境了，为了测试此处使用的环境与服务器端用的是一致的：Nginx 1.16.1，Mysql 5.7.29，PHP 7.2，当然还有 Pure-Ftpd 以作备用。
 
-{% image https://img.inkss.cn/inkss/static/WSL的利用.assets/image-20200502161012050.png, alt=PHP是世界上最好的编程语言, bg=#ffffff, height=400px %}
+{% image https://img.inkss.cn/inkss/static/WSL的利用.assets/image-20200502161012050.png, alt=PHP是世界上最好的编程语言, bg=var(--color-card), height=400px %}
 
 为什么要选择在子系统上安装，那就不得不说一个资源占用的问题了，以上环境倘若开启了自启又略显浪费，而不开启的话，在 Windows 下启动还要跑到服务里，找到相关服务才能开启，而个人认为最理想的莫过于即用即启，本身不需要长时间运行服务器，而最重要的就是面板的存在减少了大量配置文件的修改，更别说服务器这类环境天然适合 Linux 系统呀。
 
