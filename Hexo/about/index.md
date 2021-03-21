@@ -12,7 +12,8 @@ meta:
   footer: []
 ---
 
-{% p center logo ultra, '<i class="fal fa-dagger" style="color: #a6d5fa" title="爱我"></i>' %}
+<p class="p center logo ultra">{% iconfont shu-1 %}</p>
+
 *{% p center logo small gray, 繁星永存 记忆亘古不变 %}*
 
 <br>

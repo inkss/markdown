@@ -12,7 +12,7 @@ top_meta: []
 bottom_meta: []
 ---
 
-{% p center logo ultra, '<i class="fad fa-star-of-david" style="color: #a6d5fa" title="爱我"></i>' %}
+<p class="p center logo ultra">{% iconfont huli- %}</p>
 
 *{% p center logo small gray, 请遵守相关法律法规，文明灌水，谢谢合作~ %}*
 
