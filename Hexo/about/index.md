@@ -28,7 +28,8 @@ meta:
 
 {% timelines 枋柚梓的猫会发光：博客大事记 %}
 
-{% timenodes fal fa-bat %}2021/03/01 调整了夜间模式的配色。{% endtimenodes %}
+{% timenodes fal fa-bat %}2021/03/21 重生设置了下网站字体， {% b 方正FW筑紫A圆 %} 和 {% b 方正苏新诗柳楷简体 %} 。{% endtimenodes %}
+{% timenodes fal fa-genderless %}2021/03/01 调整了夜间模式的配色，参考了 One Dark Pro。{% endtimenodes %}
 {% timenodes fal fa-genderless %}2021/02/05 重写了右键实现，丰富自定义右键菜单中的功能。{% endtimenodes %}
 {% timenodes fal fa-genderless %}2021/01/12 搭建 code-server ，在自己的服务器上部署。{% endtimenodes %}
 {% timenodes fal fa-telescope %}2020/08/17 主题更新至 3.0 版本，总算稳定啦。{% endtimenodes %}
