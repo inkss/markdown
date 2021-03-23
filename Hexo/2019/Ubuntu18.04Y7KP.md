@@ -1,0 +1,58 @@
+---
+title: Ubuntu 下联想 Y7KP 显卡和网卡驱动配置
+toc: true
+indent: true
+date: 2019/04/02 11:27
+updated: 2020/05/12 11:27
+tag:
+  - 联想Y7000P
+  - 网卡驱动
+  - 显卡驱动
+categories: 教程
+description: Ubuntu 18.04 下联想 Y7000P 的网卡和显卡驱动安装配置。最近换了个笔记本：联想 Y7000P i5-8300H GTX1060 。驱动上出了些问题，故录此文章，仅供参考。
+abbrlink: 9a96536e
+type: linux
+---
+
+> 前言：最近换了个笔记本：联想 Y7000P i5-8300H GTX1060 。驱动上出了些问题，故录此文章，仅供参考。
+
+## 一、显卡驱动
+
+在换这个笔记本之前，上一个笔记本的显卡为 AMD ，倒也没使用过英伟达显卡，曾经看着过很多人吐槽显卡驱动，给我一种它很难装的感觉。但是在本次的使用中，显卡驱动只需要轻轻切换成私有显卡就好了，或许是新版 Ubuntu 做好了适配，这倒是个好事。
+
+{% gallery %}
+![软件和更新](../../img/article/Ubuntu18.04Y7KP/szyink-20190402142329-522x452.png)
+{% endgallery %}
+
+如上图，在 **软件和更新** 的 **附加驱动** 中勾选使用专用驱动就 OK 了。
+
+## 二、网卡驱动
+
+相比于显卡驱动，网卡驱动倒是头疼了很久。在安装 Ubuntu 系统时使用的是有线连接，完全没注意到无线连接会出现问题，后来发现这个问题时一度担心操作系统没有该网卡驱动，幸好是有的，可以解决。
+
+在最开始，操作系统甚至 **无法识别出无线模块，提示没有适配器** ，这里的操作是从官网下载驱动进行安装。
+
+- Y7000P 的网卡型号是：`Intel® Wireless-AC 9560`
+
+- 在官网下载 Linux 版本的驱动：[Linux * Support for Intel](https://www.intel.com/content/www/us/en/support/articles/000005511/network-and-i-o/wireless-networking.html) 。
+
+下载驱动解压后，按照要求将驱动文件复制到 `lib/firmware` 目录，然后重启电脑，就能出现适配器了。但此时还无法使用，大致的解释是笔记本带的驱动和 Ubuntu 系统中的驱动冲突，我们需要禁用一个。
+
+修改文件：
+
+```sh
+sudo gedit /etc/modprobe.d/blacklist-firewire.conf
+```
+
+在最后追加一行：
+
+```conf
+blacklist ideapad_laptop
+```
+
+然后重启电脑就好了，最后说一下我在查阅资料时大部分人似乎一开始就有 wifi 适配器，只需要修改文件就行，我这儿连 wifi 模块都没有，这里需要合理判断咯。
+
+{% gallery 2 %}
+![Wifi](../../img/article/Ubuntu18.04Y7KP/szyink-20190402144556-980x708.png)
+![PC](../../img/article/Ubuntu18.04Y7KP/szyink-20190402144606-980x708.png)
+{% endgallery %}

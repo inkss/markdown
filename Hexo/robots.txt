@@ -1,6 +1,0 @@
-# robots.txt https://inkss.cn 
-User-agent: * 
-Allow: /sitemap.xml
-Allow: /blog/
-Disallow: /page
-Disallow: /navigation
