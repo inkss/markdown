@@ -37,7 +37,7 @@ onLoad: function(options) {
 
 {% gallery 2 %}
 
-![换行符](https://img.inkss.cn/inkss/static/小程序text组件内容换行.assets/image-20200403153035661.png)
-![效果](https://img.inkss.cn/inkss/static/小程序text组件内容换行.assets/image-20200403152910344.png)
+![换行符](../../img/article/微信小程序 text 组件文本换行/image-20200403153035661.png)
+![效果](../../img/article/微信小程序 text 组件文本换行/image-20200403152910344.png)
 
 {% endgallery %}

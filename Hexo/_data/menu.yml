@@ -1,0 +1,37 @@
+- name: 首页
+  icon: fad fa-helmet-battle
+  url: /
+- name: 导航
+  icon: fad fa-cube
+  rows:
+    - name: 分类
+      icon: fad fa-folder-open 
+      url: categories/
+    - name: 标签
+      icon: fad fa-tags 
+      url: tags/
+    - name: 归档
+      icon: fad fa-archive 
+      url: archives/
+    - name: hr
+    - name: 笔记
+      icon: fad fa-books
+      url: notes/  
+    - name: 友链
+      icon: fad fa-stamp
+      url: friends/   
+- name: 更多
+  icon: fad fa-megaphone
+  rows:
+    - name: 关于我
+      icon: fad fa-drafting-compass
+      url: about/
+    - name: 十年之约
+      icon: fad fa-leaf-heart
+      url: foreverblog/
+    - name: 留言
+      icon: fad fa-comment-alt-smile
+      url: info/
+- name: 深色
+  icon: fad fa-eclipse
+  toggle: darkmode  

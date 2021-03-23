@@ -21,7 +21,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 
 言归正传，最近天际线也更新了一个主要的 DLC ：《Cities: Skylines - Sunset Harbor》，所以忽然发现路陆陆续续的也出了不少了，很想来一次原版体验，所以移除了大部分 MOD ，只保留了一下个人认为相较基础的订阅，不过特此记录了一些基础性的打底 MOD。
 
-{% image 'https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/image-20200406123027826.png', alt='全 DLC 了解一下', width='500px' %}
+{% image '../../img/article/城市天际线基础MOD/image-20200406123027826.png', alt='全 DLC 了解一下', width='500px' %}
 
 ## 二、基础性 MOD
 
@@ -38,7 +38,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/572888650_preview_2015-12-10_00002.jpg)
+![](../../img/article/城市天际线基础MOD/572888650_preview_2015-12-10_00002.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -52,7 +52,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/576997275_preview_2015-12-16_00001.jpg)
+![](../../img/article/城市天际线基础MOD/576997275_preview_2015-12-16_00001.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -86,7 +86,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/steamworkshop_webupload_previewfile_406723376_preview.png)
+![](../../img/article/城市天际线基础MOD/steamworkshop_webupload_previewfile_406723376_preview.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -110,7 +110,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/458519223_preview_Cities_2017-10-21_19-33-17.jpg)
+![](../../img/article/城市天际线基础MOD/458519223_preview_Cities_2017-10-21_19-33-17.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -124,7 +124,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1637663252_preview_slideshow.png)
+![](../../img/article/城市天际线基础MOD/1637663252_preview_slideshow.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -138,7 +138,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/837734529_preview_tuto.jpg)
+![](../../img/article/城市天际线基础MOD/837734529_preview_tuto.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -162,7 +162,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1844440354_preview_1.jpg)
+![](../../img/article/城市天际线基础MOD/1844440354_preview_1.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -176,7 +176,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/steamworkshop_webupload_previewfile_409776678_preview.jpg)
+![](../../img/article/城市天际线基础MOD/steamworkshop_webupload_previewfile_409776678_preview.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -190,7 +190,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/667342976_preview_1.jpg)
+![](../../img/article/城市天际线基础MOD/667342976_preview_1.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -204,7 +204,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1619685021_preview_Workshop-screenshot-deeheks.jpg)
+![](../../img/article/城市天际线基础MOD/1619685021_preview_Workshop-screenshot-deeheks.jpg)
 <!-- endtab -->
 
 {% endtabs %}
@@ -218,7 +218,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/445589127_preview_branching.png)
+![](../../img/article/城市天际线基础MOD/445589127_preview_branching.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -232,7 +232,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/previewfile_523824395.png)
+![](../../img/article/城市天际线基础MOD/previewfile_523824395.png)
 <!-- endtab -->
 
 {% endtabs %}
@@ -256,7 +256,7 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 <!-- endtab -->
 
 <!-- tab 截图 -->
-![](https://img.inkss.cn/inkss/static/城市天际线基础MOD.assets/1369729955_preview_Screenshot_2.jpg)
+![](../../img/article/城市天际线基础MOD/1369729955_preview_Screenshot_2.jpg)
 <!-- endtab -->
 
 {% endtabs %}

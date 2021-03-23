@@ -214,7 +214,7 @@ Fancybox 在每一页重新绑定，同类的代码都可以采用以上的处�
 <!-- tab 相关图片 -->
 
 {% gallery %}
-{% image https://img.inkss.cn/szyink_com/typecho/2019/10/04/1570189514.jpg, 失落的宇宙 %}
+{% image ../../img/article/部署Pjax到Hexo博客/1570189514.jpg, 失落的宇宙 %}
 {% endgallery %}
 
 <!-- endtab -->
@@ -225,7 +225,7 @@ Fancybox 在每一页重新绑定，同类的代码都可以采用以上的处�
 
 {% folding 查看图片测试 %}
 
-![](https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
+![](../../img/article/部署Pjax到Hexo博客/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
 
 {% endfolding %}
 

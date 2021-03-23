@@ -3,10 +3,4 @@ User-agent: *
 Allow: /sitemap.xml
 Allow: /blog/
 Disallow: /page
-Disallow: /info
-Disallow: /about
-Disallow: /notes
-Disallow: /friends
-Disallow: /tags/
-Disallow: /archives/
-Disallow: /categories/
+Disallow: /navigation
