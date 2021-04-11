@@ -35,7 +35,7 @@ onLoad: function(options) {
 
 ## 二、示例
 
-{% gallery 2 %}
+{% gallery stretch, 2 %}
 
 ![换行符](../../img/article/微信小程序text组件文本换行/image-20200403153035661.png)
 ![效果](../../img/article/微信小程序text组件文本换行/image-20200403152910344.png)

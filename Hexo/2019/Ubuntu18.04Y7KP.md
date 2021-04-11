@@ -52,7 +52,7 @@ blacklist ideapad_laptop
 
 然后重启电脑就好了，最后说一下我在查阅资料时大部分人似乎一开始就有 wifi 适配器，只需要修改文件就行，我这儿连 wifi 模块都没有，这里需要合理判断咯。
 
-{% gallery 2 %}
+{% gallery stretch, 2 %}
 ![Wifi](../../img/article/Ubuntu18.04Y7KP/szyink-20190402144556-980x708.png)
 ![PC](../../img/article/Ubuntu18.04Y7KP/szyink-20190402144606-980x708.png)
 {% endgallery %}
