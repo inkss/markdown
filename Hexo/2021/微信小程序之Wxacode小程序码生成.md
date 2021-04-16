@@ -7,7 +7,7 @@ tag:
   - 小程序码
 categories: 小程序
 date: '2021-03-21 00:00'
-updated: '2021-03-21 01:14'
+updated: '2021-04-16 09:14'
 abbrlink: 41af8542
 references:
   - title: auth.getAccessToken
@@ -16,11 +16,9 @@ references:
     url: 'https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.getUnlimited.html'
 ---
 
-最近接手了一个 Sass 项目的子功能写一个微信小程序，其中有这么一个需求：为不同的租户生成不同的小程序码，通过扫码自动带入租户的基本信息，之后再进行用户登录，与微信账户绑定云云。
+本文着重点：小程序码的获取与使用，另由于小程序后端能力统统由原项目提供，是无法使用腾讯的本身的云开发的，此处采用服务端 API 的方式调用。
 
 <!-- more -->
-
-本文着重点：小程序码的获取与使用，另由于小程序后端能力统统由原项目提供，是无法使用腾讯的本身的云开发的，我们使用的是服务端 API 的调用方式。
 
 ## 一、小程序码
 
