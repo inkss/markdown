@@ -13,7 +13,7 @@ updated: '2021-02-01 12:00'
 abbrlink: e9bd7c2d
 ---
 
-<p class="p center logo large"><em>Docker 的简要使用</em></p>
+<p class="p center logo large"><em>Docker 的简要使用 {% emoji jr-chunjie %}</em></p>
 <br>
 {% p center, 2021 年，新年的第一篇文章~ %}
 
