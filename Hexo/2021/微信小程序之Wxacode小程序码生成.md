@@ -16,7 +16,7 @@ references:
     url: 'https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.getUnlimited.html'
 ---
 
-本文着重点：小程序码的获取与使用，另由于小程序后端能力统统由原项目提供，是无法使用腾讯的本身的云开发的，此处采用服务端 API 的方式调用。{% emoji keshui %}
+本文着重点：小程序码的获取与使用，另由于小程序后端能力统统由原项目提供，是无法使用腾讯的本身的云开发的，此处采用服务端 API 的方式调用 {% emoji feiwen %}。
 
 <!-- more -->
 
