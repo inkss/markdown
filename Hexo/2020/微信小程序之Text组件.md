@@ -1,5 +1,5 @@
 ---
-title: 微信小程序 text 组件文本换行
+title: 微信小程序之 Text 组件
 toc: false
 indent: true
 date: 2020/04/03 15:34
@@ -7,6 +7,8 @@ updated: 2020/04/03 15:34
 tag:
   - 微信小程序
 categories: 小程序
+icons:
+  - fab fa-weixin green
 description: 调用接口返回的数据前端显示时不能换行，颇为波折的处理一番。
 abbrlink: d24a2bc6
 ---

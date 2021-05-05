@@ -11,6 +11,7 @@ description: Docker 的简要使用与 code-service 的安装 🎉。
 date: '2021-01-29 16:00'
 updated: '2021-02-01 12:00'
 abbrlink: e9bd7c2d
+icons: [fab fa-docker blue]
 ---
 
 <p class="p center logo large"><em>Docker 的简要使用 {% emoji jr-chunjie %}</em></p>

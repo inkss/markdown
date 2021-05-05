@@ -16,6 +16,8 @@ references:
     url: 'https://blog.fazero.me/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/'
   - title: Linux bash终端设置代理（proxy）访问
     url: 'https://aiezu.com/article/linux_bash_set_proxy.html'
+icons:
+  - fab fa-ubuntu red
 ---
 
 ## 一、Git Proxy
