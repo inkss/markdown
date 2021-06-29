@@ -215,7 +215,7 @@ Fancybox 在每一页重新绑定，同类的代码都可以采用以上的处�
 
 {% gallery %}
 
-![失落的宇宙](../../img/article/部署Pjax到Hexo博客/1570189514.jpg)
+![失落的宇宙](/img/article/部署Pjax到Hexo博客/1570189514.jpg)
 
 {% endgallery %}
 
@@ -227,7 +227,7 @@ Fancybox 在每一页重新绑定，同类的代码都可以采用以上的处�
 
 {% folding 查看图片测试 %}
 
-![](../../img/article/部署Pjax到Hexo博客/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
+![](/img/article/部署Pjax到Hexo博客/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
 
 {% endfolding %}
 
