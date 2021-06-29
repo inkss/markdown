@@ -23,7 +23,7 @@ icons:
 在换这个笔记本之前，上一个笔记本的显卡为 AMD ，倒也没使用过英伟达显卡，曾经看着过很多人吐槽显卡驱动，给我一种它很难装的感觉。但是在本次的使用中，显卡驱动只需要轻轻切换成私有显卡就好了，或许是新版 Ubuntu 做好了适配，这倒是个好事。
 
 {% gallery %}
-![软件和更新](/img/article/Ubuntu18.04Y7KP/szyink-20190402142329-522x452.png)
+![软件和更新](../../img/article/Ubuntu18.04Y7KP/szyink-20190402142329-522x452.png)
 {% endgallery %}
 
 如上图，在 **软件和更新** 的 **附加驱动** 中勾选使用专用驱动就 OK 了。
@@ -55,6 +55,6 @@ blacklist ideapad_laptop
 然后重启电脑就好了，最后说一下我在查阅资料时大部分人似乎一开始就有 wifi 适配器，只需要修改文件就行，我这儿连 wifi 模块都没有，这里需要合理判断咯。
 
 {% gallery stretch, 2 %}
-![Wifi](/img/article/Ubuntu18.04Y7KP/szyink-20190402144556-980x708.png)
-![PC](/img/article/Ubuntu18.04Y7KP/szyink-20190402144606-980x708.png)
+![Wifi](../../img/article/Ubuntu18.04Y7KP/szyink-20190402144556-980x708.png)
+![PC](../../img/article/Ubuntu18.04Y7KP/szyink-20190402144606-980x708.png)
 {% endgallery %}

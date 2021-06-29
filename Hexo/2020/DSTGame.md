@@ -24,7 +24,7 @@ icons: [fas fa-gamepad-alt blue]
 
 大致的流程是这样的：
 
-![](/img/article/DSTGame/image-20200718154336813.png)
+![](../../img/article/DSTGame/image-20200718154336813.png)
 
 {% tabs Steam %}
 
@@ -211,7 +211,7 @@ chmod u+x ./startDST.sh
 {% folding cyan, 额外添加了三个人物 %}
 
 {% gallery %}
-![饥荒](/img/article/DSTGame/image-20200718164133476.png)
+![饥荒](../../img/article/DSTGame/image-20200718164133476.png)
 {% endgallery %}
 
 {% endfolding %}

@@ -54,7 +54,7 @@ updated: 2020-09-06 12:10
 
 ## 二、Const 变量的可变性
 
-{% image '/img/article/ES6快速入坑/image-20200906164049377.png', width=400px, bg=var(--color-card), alt='Const 变量的可变性' %}
+{% image '../../img/article/ES6快速入坑/image-20200906164049377.png', width=400px, bg=var(--color-card), alt='Const 变量的可变性' %}
 
 - const 定义的引用类型变量，其内容可以更改，可以利用 freeze 冻结保证内容不被改变。
 - Object.freeze(obj) : 只能冻结一层，例如 const 定义对象中的某个属性为数组，数组中内容依旧可改。

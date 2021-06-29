@@ -13,7 +13,7 @@ abbrlink: c6df61d3
 type: linux
 icons:
   - fab fa-ubuntu red
-headimg: /img/article/Ubuntu18.04安装记录/image-20200507105832915.png
+headimg: ../../img/article/Ubuntu18.04安装记录/image-20200507105832915.png
 ---
 
 {% p center logo ultra, '<i class="fab fa-linux"></i>' %}
@@ -161,7 +161,7 @@ sudo apt install gdebi
 >
 > 可以通过本节内容快速完成主题方面的修改，注：`gnome-shell-extensions` 是一些常用扩展的集合，如 User Themes 等（事实上它可以在应用商店里搜索安装）。
 
-![外观配置](/img/article/Ubuntu18.04安装记录/image-20200507105957944.png)
+![外观配置](../../img/article/Ubuntu18.04安装记录/image-20200507105957944.png)
 
 #### 2.2.1 系统主题 Sieera
 
@@ -291,7 +291,7 @@ sudo apt install grub-customizer
 
 - 相关链接：[Launchpad PPA for Grub Customizer](https://launchpad.net/~danielrichter2007/+archive/ubuntu/grub-customizer)
 
-![Grub Customizer](/img/article/Ubuntu18.04安装记录/image-20200507110107616.png)
+![Grub Customizer](../../img/article/Ubuntu18.04安装记录/image-20200507110107616.png)
 
 #### 2.3.4 GDM 登录背景图
 
@@ -319,7 +319,7 @@ background: #2c001e url(file:///home/inkss/APP/ink_img/img.jpg);
    background-position: center; }
 ```
 
-![GDM](/img/article/Ubuntu18.04安装记录/image-20200507110222935.png)
+![GDM](../../img/article/Ubuntu18.04安装记录/image-20200507110222935.png)
 
 #### 2.3.5 输入法 中州韵和搜狗
 
@@ -523,7 +523,7 @@ sudo apt install timeshift
 
 - 相关链接：[teejee2008](https://github.com/teejee2008)/[timeshift](https://github.com/teejee2008/timeshift)
 
-![超级推荐的软件](/img/article/Ubuntu18.04安装记录/image-20200507110243274.png)
+![超级推荐的软件](../../img/article/Ubuntu18.04安装记录/image-20200507110243274.png)
 
 
 ### 3.4 网易云音乐
@@ -792,7 +792,7 @@ sudo mysql_secure_installation
 ## 六、截图
 
 {% gallery 3 %}
-![桌面](/img/article/Ubuntu18.04安装记录/image-20200507110318847.png)
-![软件列表](/img/article/Ubuntu18.04安装记录/image-20200507110337914.png)
-![系统](/img/article/Ubuntu18.04安装记录/image-20200507110355777.png)
+![桌面](../../img/article/Ubuntu18.04安装记录/image-20200507110318847.png)
+![软件列表](../../img/article/Ubuntu18.04安装记录/image-20200507110337914.png)
+![系统](../../img/article/Ubuntu18.04安装记录/image-20200507110355777.png)
 {% endgallery %}
