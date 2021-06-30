@@ -9,8 +9,11 @@ tag:
   - 宝塔
 categories: 教程
 date: '2021-06-29 18:53'
-updated: '2021-06-29 18:53'
+updated: '2021-06-30 12:56'
 abbrlink: e7617c8b
+description: 本文共包含以下内容：Nginx 泛域名解析、根据 subdomain 匹配反代地址、防止恶意泛域名解析、BasicAuth 的认证校验、宝塔面板的反代访问、泛域名 SSL 证书申请和泛域名 CDN 分发。
+headimg: ../../img/article/Nginx泛域名解析配置/main.png
+hideTitle: true
 ---
 
 首先，七一快乐哇~ 热烈庆祝建党一百周年的说~ <span class="rem2">{% iconfont jr-qiyijiandangjie %}</span>
