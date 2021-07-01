@@ -10,6 +10,8 @@ categories: 游戏
 descriptions: Don't Starve Together Server !!!
 abbrlink: 8fafff0e
 icons: [fas fa-gamepad-alt blue]
+headimg: ../../img/article/DSTGame/main.jpg
+hideTitle: true
 ---
 
 {% note alien-monster cyan , 预告：饥荒联机版即将上线啦，欢迎各位围观，吼吼吼~ %}

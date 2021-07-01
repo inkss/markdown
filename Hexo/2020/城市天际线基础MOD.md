@@ -12,6 +12,7 @@ categories: 游戏
 abbrlink: 728c42d9
 description: 城市天际线是我最喜欢的一款游戏，也有可能是我唯一一个连续不断购买 DLC 的游戏了，哈哈，万恶的 P 社。有那么一个说法，“枪毙P社玩家，没有一个是冤枉的？”，此外还有另外一句后续，千万别漏掉天际线玩家。
 icons: [fas fa-gamepad-alt blue]
+headimg: ../../img/article/城市天际线基础MOD/main.jpg
 ---
 
 ## 一、前言

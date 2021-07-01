@@ -10,6 +10,8 @@ tag:
 categories: 资料
 descriptions: Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables (in ELF format) natively on Windows 10 and Windows Server 2019.
 abbrlink: b2b02edd
+headimg: ../../img/article/WSL的利用/main.png
+hideTitle: true
 ---
 
 在很早之前，我就有一个需求，需要一个小型灵活的本地服务器，因为目的在于轻便、快捷，所以倘若搭建 Nginx 到本机又有些浪费性能，过于臃肿，毕竟不是服务器。而小型服务器的话如 Tomcat 启动起来还是有些麻烦。我查过使用 PhpStudy 的这类软件，感觉用起来又不是那么顺心如意。此之前，一直使用的是 VS Code 里的插件：`Live Server` 完成轻量网页的启动，也算是集编辑、运行、查看于一身了。

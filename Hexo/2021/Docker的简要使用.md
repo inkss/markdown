@@ -12,6 +12,8 @@ date: '2021-01-29 16:00'
 updated: '2021-02-01 12:00'
 abbrlink: e9bd7c2d
 icons: [fab fa-docker blue]
+headimg: ../../img/article/Docker的简要使用/main.png
+hideTitle: true
 ---
 
 <p class="p center logo large"><em>Docker 的简要使用 {% emoji jr-chunjie %}</em></p>
