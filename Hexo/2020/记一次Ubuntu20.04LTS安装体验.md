@@ -16,10 +16,6 @@ headimg: ../../img/article/记一次Ubuntu20.04LTS安装体验/main.png
 hideTitle: true
 ---
 
-{% image ../../img/article/记一次Ubuntu20.04LTS安装体验/main.png, bg=#292929, height=400px %}
-
-*{% span center small gray, 老规矩，操作系统信息走一遍，PS 经过些许定制，图中显示不代表原版效果 %}*
-
 ## 一、序言
 
 我也算是用了很久的 Ubuntu 系统（这个很久大概是一两年左右），初接触在 Ubuntu 14 ，正式入坑为 16，18 退坑。对于 Ubuntu 来说，以日常使用的角度来说，自然首选 LTS 版本，中间的迭代版本是肯定不做考虑的。此次对 Ubuntu 20.04 的安装纯粹是巧合，恰巧的下载了其镜像，再加上比较好奇 “猫猫镭射眼” ，所以就刻录 U 盘尝试了下啦。
