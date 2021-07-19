@@ -13,8 +13,6 @@ abbrlink: c949262
 date: 2020-08-23 17:36
 updated: 2020-08-24 12:01
 references:
-  - title: 个人向的隐私管理 - 枋柚梓
-    url: https://inkss.cn/article/other/501e068e.html
   - title: DNS加密说明 - Gloudflare
     url: https://blog.cloudflare.com/zh/dns-encryption-explained-zh/
   - title: 超越DoH（DNS over HTTPS）：看DNS隐私不可信任的问题
