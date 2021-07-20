@@ -9,7 +9,7 @@ tag:
   - 宝塔
 categories: 教程
 date: '2021-06-29 18:53'
-updated: '2021-07-07 22:17'
+updated: '2021-07-20 22:28'
 abbrlink: e7617c8b
 description: 本文共包含以下内容：Nginx 泛域名解析、根据 subdomain 匹配反代地址、防止恶意泛域名解析、BasicAuth 的认证校验、宝塔面板的反代访问、泛域名 SSL 证书申请、泛域名 CDN 分发和泛域名证书的自部署。
 headimg: ../../img/article/Nginx泛域名解析配置/main.png
@@ -51,6 +51,8 @@ hideTitle: true
 ```conf 网站配置
 server_name  ~^(?<subdomain>.+)\.domain\.com$;
 ```
+
+![泛域名监听](../../img/article/Nginx泛域名解析配置/image-20210720224409500.png)
 
 ### 根据二级域匹配地址
 
@@ -184,6 +186,8 @@ SSL 是必须的，泛域名解析自然需要泛域名证书，我们移步 `ww
 
 宝塔的泛域名证书可以手动设置定时任务，一般还剩 30 天时就会自动进行申请，这点无需担心。
 
+![泛域名证书申请](../../img/article/Nginx泛域名解析配置/image-20210720224604524.png)
+
 ## 二、CDN 侧配置
 
 此处基于腾讯云 CDN 操作，为什么要使用 CDN 呢，除了分发外还有一个好处就是可以隐藏服务器的真实地址，毕竟万一真有小贱人扫服务器也是无奈呀 {% emoji liuhan %}。在腾讯云 CDN 处直接新建泛域名地址即可，按照提示进行域名验证云云。
@@ -198,7 +202,7 @@ SSL 是必须的，泛域名解析自然需要泛域名证书，我们移步 `ww
 
 由于 `Let's Encrypt` 的证书只有三个月的有效期，所以势必需要每隔一段时间就要对证书进行一次更新。服务器这边可以通过宝塔的定时任务自动更新部署，但是 CDN 侧腾讯云并没有提供类似的功能。不过由它的云 API 得知，所有的控制台操作行为的背后都是基于 Api 进行的。
 
-通过查询文档我们可以得知 `UpdateDomainConfig` 接口，就可以完成对证书的设定。
+通过查询文档我们可以得知 [UpdateDomainConfig](https://cloud.tencent.com/document/product/228/41116) 接口，就可以完成对证书的设定。
 
 > UpdateDomainConfig 用于修改内容分发网络加速域名配置信息。
 >
@@ -235,6 +239,61 @@ client.UpdateDomainConfig(params).then(
 /root/.nvm/versions/node/v14.17.3/bin/node /root/tencentcdn/index.js
 ```
 
-## 三、末尾
+## 三、配置的附录内容
+
+### 获取真实 IP
+
+当所有指向到服务器的域名都套上一层 CDN 后，理所应当的，在 Nginx 的日志处记录不到真实的客户端 IP 地址，对于宝塔用户来说，只需要修改 Nginx 的主配置文件即可：
+
+{% codeblock lang:conf mark:4-5 在配置文件中添加高亮行，然后重启 Nginx 即可~ line_number:false %}
+http
+{
+  include mime.types;
+  set_real_ip_from 0.0.0.0/0;
+  real_ip_header X-Forwarded-For;
+  #include luawaf.conf;
+
+  include proxy.conf;
+  //...
+}
+{% endcodeblock %}
+
+如果你对宝塔做了反代，那么不建议通过宝塔进行 Nginx 的重启/停止操作，在终端中执行最好。
+
+### 屏蔽垃圾 UA
+
+互联网上无时无刻存在着一些扫描器，这些大都是无人值守的程序，甚至没有刻意伪装 User-Agent ，下面是我收集的一些 UA 列表，可以在腾讯云 CDN 的访问控制中 **UA 黑白名单配置** 添加。
+
+| **规则类型** | **规则内容**                                      | **生效类型** | **生效规则** | **备注**             |
+| ------------ | ------------------------------------------------- | :----------: | :----------: | -------------------- |
+| 黑名单       | ` *spider*|*bot*|*Spider*|*Bot*`                  |   全部内容   |      *       | 屏蔽蜘蛛（按需添加） |
+| 黑名单       | `*nmap*|*NMAP*|*HTTrack*|*sqlmap*|*Java*|*zgrab*` |   全部内容   |      *       | 常见扫描器           |
+| 黑名单       | `*Python*|*python*|*cur*l*Curl*|*wget|*Wget*`     |   全部内容   |      *       | 常见扫描器           |
+| 黑名单       | `*MJ12bot*|*a Palo Alto*`                         |   全部内容   |      *       | 安全机器人           |
+| 黑名单       | `*Go-http-client*`                                |   全部内容   |      *       | 安全机器人           |
+
+### 屏蔽恶意 IP
+
+UA 是可以伪装的，我通过分析日志抓取了一些恶意访问 IP，由于都是国外的地址，所以直接狠一点，如果所处于的 IP 段是机房类型的，就直接按照大的 IP 段封禁。这个部分是依靠宝塔插件 **系统防火墙** 实现的，下面是导出的规则信息，可以直接复制后导入：
+
+```json 辣鸡国外 IP 段
+[{"id": 32, "types": "drop", "address": "20.0.0.0/8", "brief": "美国慧与科技 & 微软数据中心", "addtime": "2021-07-20 13:07:01"}, {"id": 31, "types": "drop", "address": "167.248.133.0/24", "brief": "Censys 扫描", "addtime": "2021-07-20 09:42:39"}, {"id": 30, "types": "drop", "address": "74.120.14.0/24", "brief": "Censys 扫描", "addtime": "2021-07-20 09:42:38"}, {"id": 29, "types": "drop", "address": "162.142.125.0/24", "brief": "Censys 扫描", "addtime": "2021-07-20 09:42:38"}, {"id": 28, "types": "drop", "address": "192.35.168.0/23", "brief": "Censys 扫描", "addtime": "2021-07-20 09:42:38"}, {"id": 27, "types": "drop", "address": "192.241.128.0/17", "brief": "美国DigitalOcean数据中心", "addtime": "2021-07-20 09:40:45"}, {"id": 25, "types": "drop", "address": "18.224.0.0/14", "brief": "Amazon数据中心 224-227", "addtime": "2021-07-17 11:35:11"}, {"id": 24, "types": "drop", "address": "18.192.0.0/11", "brief": "Amazon数据中心 192-223", "addtime": "2021-07-17 11:35:18"}, {"id": 23, "types": "drop", "address": "18.160.0.0/11", "brief": "Amazon数据中心 160-191", "addtime": "2021-07-17 11:32:23"}, {"id": 20, "types": "drop", "address": "4.122.0.0/16", "brief": "美国德梅因Microsoft数据中心", "addtime": "2021-07-16 10:14:08"}, {"id": 17, "types": "drop", "address": "52.221.0.0/16", "brief": "新加坡Amazon数据中心", "addtime": "2021-07-16 10:08:16"}, {"id": 16, "types": "drop", "address": "128.14.0.0/16", "brief": "美国洛杉矶Zenlayer数据中心", "addtime": "2021-07-16 10:08:25"}]
+```
+
+如你所见，这个封禁是激进的，甚至对 20/8 整个上千万个 IP 段进行了大规模屏蔽，不过由于他们位于 IDC 段中，而且还是国外 IP，所以影响也不大。（此处真的感叹由于互联网的发源地是美国，谁能想到一个拥有近千万个地址段就给了两家公司来用，甚至于他们除了这个范围外在其它范围内还有地址，再想想国内家用公网 IP 的稀缺，真的是，得展望 IPV6 呀）
+
+### 拦截恶意请求
+
+Hexo 是个静态站，即使它放进了服务器中，你能想到一堆机器人按照 Wordpress 的方式请求 Hexo 站吗？看到日志的时候简直是无语死了，内心 OS：扫你妹呀！
+
+```conf 在 Hexo 站的配置文件中添加如下内容，可以选择跳转到首页或者返回 444
+#静态网站天天扫，简直神经病，扫你妹啊
+location ~ .*\.(php)$
+{
+  rewrite ^/ https://domain.com permanent;  # or return 444;
+}
+```
+
+### 最后的最后
 
 最最终，我们完成了泛域名相关的各类处理，证书的部署上也做到了自动完成~ {% emoji xiaodiaodaya %}
