@@ -141,6 +141,8 @@ location ^~ / {
 
 如此，需要加密的二级域，只需要添加 `set $client_verify "Authorization";` 即可。
 
+{% image ../../img/article/Nginx泛域名解析配置/image-20210721005003928.png, alt='验证不通过将返回 401 Authorization Required', height=250px, bg=var(--color-card) %}
+
 ### 宝塔面板的反代访问
 
 都进行到这一步了，我们为什么不把宝塔也给反代了，虽然为了安全使用自定义端口更好，但是在访问地址后面追加端口号真的很影响心情（更何况我服务器还开启了安全入口、BasicAuth认证以及动态口令认证）。给宝塔面板进行反代的思路略微有点清奇，因为是限于内部规则，设置完安全域名后宝塔必须得通过这个域名进行访问（而且是带端口），所以我们在反代的时候得修改对应 `$host` 。
@@ -210,32 +212,40 @@ SSL 是必须的，泛域名解析自然需要泛域名证书，我们移步 `ww
 
 然而事实上，更新/修改时，可以传递证书和密钥字段，此时证书不是以腾讯云托管证书的形式存在，而是自有证书。（本来我最初的思路是通过 SSL 接口将证书上传到托管证书里，CDN 这边通过 `CertId` 进行设置，但若是可以直接指定证书内容的话反而更简单。）
 
-```js node 版本：核心内容
+可以通过腾讯云的在线 Api 自动生成对应语言的代码，由于我对 Python 不熟，这里使用了 Node 版本。
+
+```js 主要是参数的定义部分，证书可以用 fs.readFileSync() 通过路径读取获得
 const client = new CdnClient(clientConfig);
 const params = {
-    "Domain": '*.domian.com*',
-    "Https": {
-        "Switch": "on",
-        "CertInfo": {
-            "Certificate": "证书(PEM格式)",
-            "PrivateKey": "密钥(KEY)",
-            "Message": "泛域名证书"
-        }
+  "Domain": "szyink.com",
+  "Https": {
+    "Switch": "on",
+    "Http2": "on",
+    "OcspStapling": "on",
+    "Hsts": {
+      "Switch": "on",
+      "MaxAge": 31536000
+    },
+    "CertInfo": {
+      "Certificate": pem.cert1,
+      "PrivateKey": pem.key1,
+      "Message": "更新日期：" + date.format(new Date(), 'YYYY-MM-DD HH:mm')
     }
+  }
 };
 client.UpdateDomainConfig(params).then(
-    data => {
-        console.log(data);
-    },
-    err => {
-        console.error(err);
-    }
+  data => {
+    console.log(data);
+  },
+  err => {
+    console.error(err);
+  }
 )
 ```
 
-所以思路很简单，我们只需要按照证书路径读取文件内容，设置个定时任务，每隔一个月执行一遍更新即可。需要注意的是，定时任务的命令需要写到绝对命令，类似如下：
+剩下的思路就很简单了，我们只需要按照证书路径读取文件内容，设置个定时任务，每隔一个月执行一遍更新即可。需要注意的是，定时任务的命令需要写到绝对命令，类似如下：
 
-```sh 命令语句
+```sh 命令语句，本机的 Node 环境是通过 nvm 安装
 /root/.nvm/versions/node/v14.17.3/bin/node /root/tencentcdn/index.js
 ```
 
@@ -294,6 +304,6 @@ location ~ .*\.(php)$
 }
 ```
 
-### 最后的最后
+## 四、最后的最后
 
 最最终，我们完成了泛域名相关的各类处理，证书的部署上也做到了自动完成~ {% emoji xiaodiaodaya %}
