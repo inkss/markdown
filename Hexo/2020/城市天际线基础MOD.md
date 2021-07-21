@@ -2,8 +2,8 @@
 title: 城市天际线基础 MOD
 toc: true
 indent: true
-date: 2021/07/13 13:53
-updated: 2021/07/13 13:53
+date: 2020/04/06 17:53
+updated: 2021/07/21 20:17
 tag:
   - Steam
   - 'Cities: Skylines'
@@ -42,7 +42,7 @@ background: /img/article/城市天际线基础MOD/C4C5D29A4D48DB5E6B432ED1408933
 
 本文定位：记录一下基础的打底性质的 MOD，主要以功能性 MOD 为主，资产类的按照个人喜欢因人而异了，我会在列表中放入各个订阅的介绍、地址、展示等。另：同等功能下会尽可能的寻找汉化 MOD 。
 
-## 二、MOD 列表
+## 二、MOD 列表 (1)
 
 ### Remove Need For Power Lines
 
@@ -64,6 +64,7 @@ This mod removes the need for power lines.This mod works simply by storing the e
 <!-- endtab -->
 
 <!-- tab 展示 -->
+
 ![](../../img/article/城市天际线基础MOD/572888650_preview_2015-12-10_00002.jpg)
 <!-- endtab -->
 
@@ -345,6 +346,8 @@ This mod allows to purchase any of the 25 tiles anytime.
 
 {% endtabs %}
 
+## 三、MOD 列表 (2)
+
 ### Roundabout Builder
 
 {% tabs 1625704117 %}
@@ -521,3 +524,108 @@ Improve lane and parking usage. and customise junctions, roads, and rails!⠀⠀
 
 {% endtabs %}
 
+### FPS Booster
+
+{% tabs 2105755179 %}
+
+<!-- tab 简介 -->
+
+Increases in-game frame rate, but... results may vary because there are many factors like CPU/GPU speed, RAM usage, current in-game scene complexity etc.
+
+------
+
+非常强大的插件，有效的提升了 FPS ，个人体验大约从三四十提升到六七十的样子，看他的介绍是在不需要的时候停滞视野外的 UI 组件更新，减少 CPU 的压力，总之效果明显。
+<!-- endtab -->
+
+<!-- tab 订阅 -->
+原版：[订阅地址](https://steamcommunity.com/sharedfiles/filedetails/?id=2105755179)
+<!-- endtab -->
+
+{% endtabs %}
+
+### More Effective Transfer Manager
+
+{% tabs 1680840913 %}
+
+<!-- tab 简介 -->
+
+Optimize transfer manager in vanilla game. match the shortest transfer bettween offers
+
+------
+
+让货物或者服务运输更有效率。举例:1.买家会找最近的卖家买东西，卖家会找最近的买家卖东西(绕口令:) 2.城市服务会找最近的楼(如果能服务过来的话)
+<!-- endtab -->
+
+<!-- tab 订阅 -->
+原版：[订阅地址](https://steamcommunity.com/sharedfiles/filedetails/?id=1680840913)
+<!-- endtab -->
+
+{% endtabs %}
+
+### Movable Bridge Mod
+
+{% tabs 2496034669 %}
+
+<!-- tab 简介 -->
+
+这个mod增加了对火车、汽车和行人的各种功能移动桥的支持（吊桥、基本桥、升降桥、折叠桥等）。当船（客船、货船、渡轮或渔船）靠近桥梁时，桥梁就会打开，并带有逼真的动画。在道路无政府状态下，桥梁也可以建在运河上。
+
+<!-- endtab -->
+
+<!-- tab 订阅 -->
+原版：[订阅地址](https://steamcommunity.com/sharedfiles/filedetails/?id=2496034669)
+<!-- endtab -->
+
+<!-- tab 展示 -->
+
+![](../../img/article/城市天际线基础MOD/asdfasfdaew.png)
+
+<!-- endtab -->
+
+{% endtabs %}
+
+### Node Controller Renewal 3.1
+
+{% tabs 2472062376 %}
+
+<!-- tab 简介 -->
+
+This is renewal version of original Node Controller by kian.zarrin with improved UI/UX.The new UI allows you to make the perfect intersection with just a few clicks.
+
+------
+
+一句话概括就是可以修建处连接完美的交叉路口（支持中文）。
+
+<!-- endtab -->
+
+<!-- tab 订阅 -->
+原版：[订阅地址](https://steamcommunity.com/sharedfiles/filedetails/?id=2472062376)
+<!-- endtab -->
+
+<!-- tab 展示 -->
+
+![](../../img/article/城市天际线基础MOD/image-20210721200347942.png)
+
+<!-- endtab -->
+
+{% endtabs %}
+
+### Commuter Destination
+
+{% tabs 2475986859 %}
+
+<!-- tab 简介 -->
+
+See the destination of all passengers waiting at a public transport stop. Useful for fixing overcrowded stops.
+
+------
+
+对公交节点查看这个站所有乘客的目的地，可以用来缓解人流。
+
+<!-- endtab -->
+
+<!-- tab 订阅 -->
+原版：[订阅地址](https://steamcommunity.com/sharedfiles/filedetails/?id=2475986859)
+<!-- endtab -->
+
+{% endtabs %}
