@@ -11,7 +11,7 @@ categories: 随笔
 description: 从 Http 到 Https ，从 DNS 到 SDNS ，人们在追究安全的脚步上从未停歇。
 abbrlink: c949262
 date: 2020-08-23 17:36
-updated: 2020-08-24 12:01
+updated: 2021-07-22 00:28
 references:
   - title: DNS加密说明 - Gloudflare
     url: https://blog.cloudflare.com/zh/dns-encryption-explained-zh/
@@ -63,7 +63,7 @@ SNDS 多加了一层鉴权使得通信过程得以保证。但是 DOT 的口碑�
 
 {% note quote, 该机制的合理性在于，用户无需防护未知中间者，只需防护恶意的网络管理员。如果网络管理员可以选择网络中通信的DNS服务器，那么用户就会在毫不知情的情况下被路由到某个恶意服务器。实话讲，根本无法相信咖啡店的 Wi-Fi 会有什么安全的 DNS 服务器。如果要加密的服务器并不符合你的利益，那么加密本身也起不了什么作用。 %}
 
-{% note quote, note quote 网络运营商可以强制人们始终使用他们所选择的服务器发出 DNS 请求，方法是针对其它服务器的请求实施中间人攻击（MITM），并自己回复它们，或者仅阻止 DNS 端口上与其他服务器之间的通信即可。DNS over TLS 可避免前者，并且由于 DNS over TLS 具有自己的服务端口，因此可以识别并阻止 DNS over TLS 流量。DNS over HTTPS 通过将 DNS 流量与所有其他 HTTPS 的流量混合在一起，完全避免产生上述问题。通常，管理者是无法禁止流向某个服务器的所有 HTTPS 流量。 %}
+{% note quote, 网络运营商可以强制人们始终使用他们所选择的服务器发出 DNS 请求，方法是针对其它服务器的请求实施中间人攻击（MITM），并自己回复它们，或者仅阻止 DNS 端口上与其他服务器之间的通信即可。DNS over TLS 可避免前者，并且由于 DNS over TLS 具有自己的服务端口，因此可以识别并阻止 DNS over TLS 流量。DNS over HTTPS 通过将 DNS 流量与所有其他 HTTPS 的流量混合在一起，完全避免产生上述问题。通常，管理者是无法禁止流向某个服务器的所有 HTTPS 流量。 %}
 
 {% note quote, DNS over TLS 和 DNS over HTTPS 之间的差异在于，某些人认为他们有权限制其所提供公用事业服务的用户，而一些用户则想直接让这些管控者“滚得远远的”。 %}
 
