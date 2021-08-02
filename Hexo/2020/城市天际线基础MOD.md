@@ -3,7 +3,7 @@ title: 城市天际线基础 MOD
 toc: true
 indent: true
 date: 2020/04/06 17:53
-updated: 2021/07/21 20:17
+updated: 2021/08/02 15:40
 tag:
   - Steam
   - 'Cities: Skylines'
@@ -46,7 +46,7 @@ background: /img/article/城市天际线基础MOD/C4C5D29A4D48DB5E6B432ED1408933
 
 ### Remove Need For Power Lines
 
-{% tabs 572888650 %}
+{% tabs cxtjx-572888650 %}
 
 <!-- tab 简介 -->
 
@@ -72,7 +72,7 @@ This mod removes the need for power lines.This mod works simply by storing the e
 
 ### Remove Need For Pipes
 
-{% tabs 576997275 %}
+{% tabs cxtjx-576997275 %}
 
 <!-- tab 简介 -->
 This mod removes the need to place pipes all over your city.This mod works simply by storing the water, sewage and heating produced in small, separate (of course), buffers and then distributing it to buildings that consume each of those resources.
@@ -96,7 +96,7 @@ This mod removes the need to place pipes all over your city.This mod works simpl
 
 ### Mod Achievement Enabler
 
-{% tabs 407055819 %}
+{% tabs cxtjx-407055819 %}
 
 <!-- tab 简介 -->
 This mod enables achievements when other mods are running! The little trophy icon that shows you whether achievements are enabled when you load the save will still be crossed out, but when the game loads, this mod simply changes a boolean value that turns achievements back on.
@@ -114,7 +114,7 @@ This mod enables achievements when other mods are running! The little trophy ico
 
 ### Unlock All + Wonders & Landmarks
 
-{% tabs 458519223 %}
+{% tabs cxtjx-458519223 %}
 
 <!-- tab 简介 -->
 This mod unlocks all from beginning, including all Wonders (a.k.a. Monuments ), Unique Buildings Levels I-VI, European biome Landmarks, (if you have Deluxe Edition) Deluxe Edition Landmarks + DLC specific unique buildings and monuments. It also unlocks all Progression Milestones.
@@ -136,7 +136,7 @@ This mod unlocks all from beginning, including all Wonders (a.k.a. Monuments ), 
 
 ### First Person Camera
 
-{% tabs 650805785 %}
+{% tabs cxtjx-650805785 %}
 
 <!-- tab 简介 -->
 An update of nlight's First-person camera! See your city from a different perspective. Explore the game in first-person mode or look through the eyes of any citizen or vehicle.
@@ -156,7 +156,7 @@ An update of nlight's First-person camera! See your city from a different perspe
 
 ### Resize It!
 
-{% tabs 1577882296 %}
+{% tabs cxtjx-1577882296 %}
 
 <!-- tab 简介 -->
 This mod allows to resize the scrollable panels in-game to match your style of play.
@@ -180,7 +180,7 @@ This mod allows to resize the scrollable panels in-game to match your style of p
 
 ### Bulldoze It!
 
-{% tabs 1627986403 %}
+{% tabs cxtjx-1627986403 %}
 
 <!-- tab 简介 -->
 This mod allows to automate the bulldozing of buildings. In this mod it can be configured whether abandoned, burned down, collapsed or flooded buildings should be automatically bulldozed and also in which interval and even how many buildings per interval. It is also possible to preserve historical buildings and to ignore search for survivors by a disaster response unit before bulldozing.
@@ -200,7 +200,7 @@ This mod allows to automate the bulldozing of buildings. In this mod it can be c
 
 ### Move It
 
-{% tabs 1619685021 %}
+{% tabs cxtjx-1619685021 %}
 
 <!-- tab 简介 -->
 This mod allows you to select, move and align various things.
@@ -222,7 +222,7 @@ This mod allows you to select, move and align various things.
 
 ### Watch It!
 
-{% tabs 1643902284 %}
+{% tabs cxtjx-1643902284 %}
 
 <!-- tab 简介 -->
 
@@ -247,7 +247,7 @@ This mod allows to watch status of the important capacities in the game.
 
 ### Find It!
 
-{% tabs 2133885971 %}
+{% tabs cxtjx-2133885971 %}
 
 <!-- tab 简介 -->
 This mod allows you to search, select, and place assets. It also provides some extra info.
@@ -269,7 +269,7 @@ This mod allows you to search, select, and place assets. It also provides some e
 
 ### Hide It!
 
-{% tabs 1591417160 %}
+{% tabs cxtjx-1591417160 %}
 
 <!-- tab 简介 -->
 
@@ -296,7 +296,7 @@ This mod allows to hide unwanted things in the game.
 
 ### Monitor It!
 
-{% tabs 1804882663 %}
+{% tabs cxtjx-1804882663 %}
 
 <!-- tab 简介 -->
 
@@ -323,7 +323,7 @@ This mod allows to monitor system resources and performance.
 
 ### Purchase It!
 
-{% tabs 1612287735 %}
+{% tabs cxtjx-1612287735 %}
 
 <!-- tab 简介 -->
 
@@ -350,7 +350,7 @@ This mod allows to purchase any of the 25 tiles anytime.
 
 ### Roundabout Builder
 
-{% tabs 1625704117 %}
+{% tabs cxtjx-1625704117 %}
 
 <!-- tab 简介 -->
 
@@ -377,7 +377,7 @@ This mod automatically builds roundabouts for you. It clears the area of the roa
 
 ### Fine Road Tool
 
-{% tabs 1844442251 %}
+{% tabs cxtjx-1844442251 %}
 
 <!-- tab 简介 -->
 
@@ -404,7 +404,7 @@ This mod allow you to set finer road elevation steps and also provides different
 
 ### Fine Road Anarchy
 
-{% tabs 1844440354 %}
+{% tabs cxtjx-1844440354 %}
 
 <!-- tab 简介 -->
 
@@ -431,7 +431,7 @@ This mod adds additional options when building road.Basically Sharp Junction Ang
 
 ### Precision Engineering
 
-{% tabs 445589127 %}
+{% tabs cxtjx-445589127 %}
 
 <!-- tab 简介 -->
 
@@ -454,7 +454,7 @@ Precision Engineering augments Cities: Skylines by adding angle snapping, guidel
 
 ### Customize It!
 
-{% tabs 1369729955 %}
+{% tabs cxtjx-1369729955 %}
 
 <!-- tab 简介 -->
 This mod lets you change those inside the game, while also exposing some that are not even available to edit in the asset editor.
@@ -480,7 +480,7 @@ This mod lets you change those inside the game, while also exposing some that ar
 
 ### TM:PE V11 STABLE
 
-{% tabs 1637663252 %}
+{% tabs cxtjx-1637663252 %}
 
 <!-- tab 简介 -->
 
@@ -503,7 +503,7 @@ Improve lane and parking usage. and customise junctions, roads, and rails!⠀⠀
 
 ### Loading Screen Mod
 
-{% tabs 667342976 %}
+{% tabs cxtjx-667342976 %}
 
 <!-- tab 简介 -->
 
@@ -526,7 +526,7 @@ Improve lane and parking usage. and customise junctions, roads, and rails!⠀⠀
 
 ### FPS Booster
 
-{% tabs 2105755179 %}
+{% tabs cxtjx-2105755179 %}
 
 <!-- tab 简介 -->
 
@@ -545,7 +545,7 @@ Increases in-game frame rate, but... results may vary because there are many fac
 
 ### More Effective Transfer Manager
 
-{% tabs 1680840913 %}
+{% tabs cxtjx-1680840913 %}
 
 <!-- tab 简介 -->
 
@@ -564,7 +564,7 @@ Optimize transfer manager in vanilla game. match the shortest transfer bettween 
 
 ### Movable Bridge Mod
 
-{% tabs 2496034669 %}
+{% tabs cxtjx-2496034669 %}
 
 <!-- tab 简介 -->
 
@@ -586,7 +586,7 @@ Optimize transfer manager in vanilla game. match the shortest transfer bettween 
 
 ### Node Controller Renewal 3.1
 
-{% tabs 2472062376 %}
+{% tabs cxtjx-2472062376 %}
 
 <!-- tab 简介 -->
 
@@ -612,7 +612,7 @@ This is renewal version of original Node Controller by kian.zarrin with improved
 
 ### Commuter Destination
 
-{% tabs 2475986859 %}
+{% tabs cxtjx-2475986859 %}
 
 <!-- tab 简介 -->
 
