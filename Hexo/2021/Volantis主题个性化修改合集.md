@@ -11,15 +11,13 @@ updated: '2021-08-05 09:20'
 hideTitle: true
 headimg: ../../img/article/Volantis主题个性化修改合集/main.gif
 background: ../../img/article/Volantis主题个性化修改合集/wallhaven-5wl3v7.png
-description: >-
-  说是自动化博客部署，其实是记录了下枋柚梓的猫会发光的部署过程，基本概括来说就是通过 Github Action 处理代码的提交，部署博客到
-  Github、Gitea、OSS 中，此外还包含一些 GPG 的签名提交、自托管主机遇到的一些坑和一些其它功能的使用过程。
-abbrlink: 610620a9
+description: 'Volantis 主题个性化修改合集。'
 music:
   enable: true
   server: tencent
   type: song
   id: 001RK9x72Cws4Q
+abbrlink: 610620a9
 ---
 
 本文记录了对 Volantis 的修改过程，在正式开始前，请确认你的主题是通过 Git 克隆方式安装（也就是拥有独立的主题仓库），而非 NPM 安装^[指通过 `npm i hexo-theme-volantis` 命令安装的主题。]。
