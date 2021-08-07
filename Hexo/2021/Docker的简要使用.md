@@ -13,7 +13,6 @@ updated: '2021-02-01 12:00'
 abbrlink: e9bd7c2d
 icons: [fab fa-docker blue]
 headimg: ../../img/article/Docker的简要使用/main.png
-background: ../../img/article/AntDesignOfAngular快读上手/bkg.jpg
 hideTitle: true
 ---
 

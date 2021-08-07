@@ -18,7 +18,6 @@ music:
   id: 22703777
 mathjax: false
 icons: [fad fa-fire]
-background: ../../img/bkg/wallhaven-rdyyr1.png
 ---
 
 <p class="p center logo large"><em>Hexo 博客部署 Pjax 局部刷新 <sup>理论篇</sup></em></p>

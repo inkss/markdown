@@ -11,7 +11,6 @@ descriptions: Don't Starve Together Server !!!
 abbrlink: 8fafff0e
 icons: [fas fa-gamepad-alt blue]
 headimg: ../../img/article/DSTGame/main.jpg
-background: ../../img/bkg/wallhaven-rdyyr1.png
 hideTitle: true
 ---
 

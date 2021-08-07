@@ -11,7 +11,6 @@ tag:
   - Volantis
 categories: 博客
 description: 本篇文章记录了我对 Volantis 主题做 Pjax 兼容的种种，大抵算是种记录吧~
-background: ../../img/bkg/wallhaven-rdyyr1.png
 abbrlink: '76993423'
 ---
 

@@ -11,7 +11,6 @@ tag:
 categories: 教程
 abbrlink: f44c3b52
 description: Linux Shell 设置 Proxy。
-background: ../../img/bkg/wallhaven-rdyyr1.png
 references:
   - title: 终端加速 git clone
     url: 'https://blog.fazero.me/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/'

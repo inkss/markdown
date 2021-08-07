@@ -11,7 +11,6 @@ categories: 博客
 abbrlink: 196d2ba7
 description: 本文偏向于记录备份，非新手向教程，仅供参考。先说搭建这个博客的原因：在搭建博客之前我的所有的文章都是存储在 Github 仓库中，直到某天在投简历的时候发现有的要求填写博客链接 ，掐指一算在玩腻饥荒后似乎还闲置着一个腾讯云的学生主机，索性自己折腾一个博客出来。
 headimg: ../../img/article/Hexo博客搭建/main.png
-background: ../../img/bkg/wallhaven-rdyyr1.png
 ---
 
 > 本文偏向于记录备份，非新手向教程，仅供参考。 :cat:

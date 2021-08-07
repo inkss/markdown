@@ -12,7 +12,6 @@ categories: 教程
 description: Ubuntu 18.04 下联想 Y7000P 的网卡和显卡驱动安装配置。最近换了个笔记本：联想 Y7000P i5-8300H GTX1060 。驱动上出了些问题，故录此文章，仅供参考。
 abbrlink: 9a96536e
 type: linux
-background: ../../img/bkg/wallhaven-rdyyr1.png
 icons:
   - fab fa-ubuntu red
 ---
