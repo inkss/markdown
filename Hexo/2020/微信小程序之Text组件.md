@@ -12,6 +12,7 @@ icons:
 description: 调用接口返回的数据前端显示时不能换行，颇为波折的处理一番。
 abbrlink: d24a2bc6
 headimg: ../../img/article/微信小程序text组件文本换行/main.png
+background: ../../img/bkg/wallhaven-rdyyr1.png
 hideTitle: true
 ---
 

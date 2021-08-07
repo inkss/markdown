@@ -14,6 +14,7 @@ type: linux
 icons:
   - fab fa-ubuntu red
 headimg: ../../img/article/Ubuntu18.04安装记录/main.png
+background: ../../img/bkg/wallhaven-rdyyr1.png
 hideTitle: true
 ---
 

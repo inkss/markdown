@@ -8,6 +8,7 @@ tag:
 categories: 资料
 abbrlink: d71b1012
 description: 保留私钥到各个平台，替换使用。
+background: ../../img/bkg/wallhaven-rdyyr1.png
 ---
 
 > 保留私钥到各个平台，替换使用。

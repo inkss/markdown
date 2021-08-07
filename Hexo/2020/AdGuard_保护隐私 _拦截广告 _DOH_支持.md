@@ -18,6 +18,7 @@ references:
   - title: 超越DoH（DNS over HTTPS）：看DNS隐私不可信任的问题
     url: https://cloud.tencent.com/developer/news/670618
 headimg: ../../img/article/AdGuard_保护隐私 _拦截广告 _DOH_支持/main.png
+background: ../../img/bkg/wallhaven-rdyyr1.png
 hideTitle: true
 ---
 

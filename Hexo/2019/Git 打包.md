@@ -11,6 +11,7 @@ toc: false
 sidebar: []
 description: 一些 Git 打包命令，比如打包某次提交之后的所有文件，适合 Powershell 下使用。
 abbrlink: 59d81549
+background: ../../img/bkg/wallhaven-rdyyr1.png
 ---
 
 {% note radiation yellow, Windows 下 powershell 测试通过 %}

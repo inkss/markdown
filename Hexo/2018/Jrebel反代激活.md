@@ -10,6 +10,7 @@ tag:
 categories: 资料
 abbrlink: 89be439
 description: JRebel 的社区激活取消了，搜索了一番本地激活方法，于此记录。
+background: ../../img/bkg/wallhaven-rdyyr1.png
 references:
   - title: ReverseProxy
     url: 'https://github.com/ilanyu/ReverseProxy'

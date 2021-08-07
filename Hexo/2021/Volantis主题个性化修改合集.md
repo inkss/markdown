@@ -10,7 +10,7 @@ date: '2021-08-05 09:20'
 updated: '2021-08-05 09:20'
 hideTitle: true
 headimg: ../../img/article/Volantis主题个性化修改合集/main.gif
-background: ../../img/article/Volantis主题个性化修改合集/wallhaven-5wl3v7.png
+background: ../../img/bkg/wallhaven-rdyyr1.png
 description: 'Volantis 主题个性化修改合集。'
 music:
   enable: true
