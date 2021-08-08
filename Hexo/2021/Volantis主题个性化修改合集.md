@@ -7,10 +7,10 @@ tag:
   - Volantis
 categories: 教程
 date: '2021-08-05 09:20'
-updated: '2021-08-05 09:20'
+updated: '2021-08-09 00:00'
 hideTitle: true
 headimg: ../../img/article/Volantis主题个性化修改合集/main.gif
-description: 'Volantis 主题个性化修改合集。'
+description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
 music:
   enable: true
   server: tencent
@@ -227,68 +227,131 @@ article#post
 
 在主题基础上新增的样式文件，实现更多的效果。
 
-#### 2.2.1 图标颜色
+#### 2.2.1 自定义 Note 图标
 
-默认情况下，引入的图标是只有一种颜色可是使用，过于单调，这里从 *flatuicolors* 引用了一些颜色，使用时只需要在原先图标代码的基础上添加颜色即可。
+此处特指主题的 `note` 和 `noteblock` 标签，如果需要更多类型的图片就需要自己添加了。新建 `note.styl` 文件，个人新增的图标都存在此处。
 
-效果：<i class="fas fa-home NEPHRITIS fa-fw"></i><i class="fad fa-home TURQUOISE fa-fw"></i><i class="fal fa-home PETERRIVE fa-fw"></i>
+然后是找图标，我们需要图标的代码而不是名称，进入 [fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2),打开 **开发人员工具**，使用 {% kbd Ctrl %} + {% kbd Shift %} + {% kbd C %} 选取需要新增的图标，在 **元素** 选项卡右侧的 **样式** 栏，找到对应内容：
 
-{% folding cyan, color.styl Icon 颜色 %}
-```styl
-.fa,
-.fas,
-.far,
-.fad,
-.fal
-  &.TURQUOISE
-    color: #1abc9c
-  &.EMERALD
-    color: #2ecc71
-  &.PETERRIVE
-    color: #3498db
-  &.AMETHYST
-    color: #9b59b6
-  &.WETASPHALT
-    color: #34495e
-
-  &.GREENSEA
-    color: #16a085
-  &.NEPHRITIS
-    color: #27ae60
-  &.BELIZEHOLE
-    color: #2980b9
-  &.WISTERIA
-    color: #8e44ad
-  &.MIDNIGHTBLUE
-    color: #2c3e50
-
-  &.SUNFLOWER
-    color: #f1c40f
-  &.CARROT
-    color: #e67e22
-  &.ALIZARIN
-    color: #e74c3c
-  &.CLOUDS
-    color: #ecf0f1
-  &.CONCRETE
-    color: #95a5a6
-
-  &.ORANGE
-    color: #f39c12
-  &.PUMPKIN
-    color: #d35400
-  &.POMEGRANATE
-    color: #c0392b
-  &.SILVER
-    color: #bdc3c7
-  &.ASBESTOS
-    color: #7f8c8d
+```css “\f368” 就是我们需要的代码
+.fa-accessible-icon:before {
+  content: "\f368";
+}
 ```
+
+接着在 note.styl 一个个添加就好了：
+
+```styl
+// 自定义 Note
+div.note
+  &.alien-monster::before
+    content: '\f8f6'
+```
+
+{% note alien-monster blue, 效果见本条内容：note alien-monster blue  %}
+
+#### 2.2.2 页脚响应式处理
+
+所谓响应式处理主要是利用 CSS 的媒体查询，利用 `max-width` 和 `display`，可以达到当小于一定可视范围时主动隐藏某些元素，这样在使用时只需要添加对应的类名即可，具体的尺寸根据实际情况实际对待。注：主题在 500px 以下便会显示移动端样式。
+
+```styl
+.footerMax560
+  @media screen and (max-width: 560px)
+    display: none
+```
+
+效果参考以下内容：
+
+<div class="footer clearfix" style="display: block;text-align: center;font-size: 0.8rem;margin: 1rem 0;padding: 0;line-height: 1rem;border: 1px solid;border-radius: 6px;">
+    <div><div class="footerMax560">博客内容遵循 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" data-pjax-state="">「署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)」</a></div></div>
+    <div><div class="footerMax490">本站使用 <a href="https://github.com/volantis-x/hexo-theme-volantis" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Volantis</a> 作为主题 | 通过 <a href="https://hexo.io/zh-cn/" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Hexo</a> 渲染生成 | <span>由腾讯云 <a href="https://cloud.tencent.com/product/cdn" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">CDN</a> 分发</span></div> </div>
+    <div><div class="footerMax490">辽 ICP 备 <a href="https://beian.miit.gov.cn/" target="_blank" rel="external nofollow noopener noreferrer" style="cursor:wait;" data-pjax-state="">16006560</a> 号 | 辽公网安备 <a href="https://www.beian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank" style="cursor:wait;" data-pjax-state="">21021702000331</a> 号</div> </div>
+    <div><div class="footerMax490">Copyright 2018 - 2021 szyink. All Rights Reserved</div></div>
+    <div><a href="/" data-pjax-state="">枋柚梓的猫会发光</a></div>
+    <div><i class="fad fa-spider-black-widow POMEGRANATE"></i></div>
+</div>
+
+#### 2.2.3 杂项修改
+
+本小节记录一些不成体系的独立更改 {% emoji hanyan %} 。
+
+{% folding cyan, 杂项修改合集 %}
+
+{% emoji a %} ： {% bb 我可真是个小机灵鬼,  分栏只是为了缩短代码块的长度 %}
+
+{% tabs otherCss  %}
+
+<!-- tab 样式一 -->
+```styl
+// 设置code样式
+code
+  &:not([class])
+    font-size: .8125rem
+    padding: 4px
+    font-weight: 600
+    background: var(--color-codeblock)
+
+// 代码块标题颜色
+.highlight figcaption
+  background: #ffeed2
+
+// <kbd></kbd>
+kbd
+  background-color: #f2f2f2
+  color: var(--color-p)
+  padding: 3px 5px
+  border-radius: 0.25em
+  box-shadow: inset 0 -2px 0 hsl(240deg 1% 83%), 0 1px 1px rgba(0,0,0,.05)
+  font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace
+```
+<!-- endtab -->
+
+<!-- tab 样式二 -->
+```styl
+// 标题样式
+h1.title
+  margin: 10px
+  text-align: center
+  font-size: 2rem !important
+  font-weight: 600
+  font-family: $fontfamily-logo
+h1.title.common_read_h1
+  text-align: center !important
+  font-size: 2.5rem !important
+
+// noteblock 标题字号增大
+.note strong
+  font-size: 1.5rem
+  font-family: 'sxls'
+```
+<!-- endtab -->
+
+<!-- tab 样式三 -->
+```styl
+// 右键样式修改
+ul.list-v.rightmenu
+  box-shadow: 0 -2px 4px 0 rgba(0,0,0,.08), 0 4px 8px 0 rgba(0,0,0,.08), 0 8px 16px 0 rgba(0,0,0,.08)
+  border-radius: 8px
+  li
+    a
+      cursor: $pointer,pointer !important
+
+// 标题大小
+details summary
+  font-size 1rem !important
+
+// 缩短 Tab 内时间线标题高度
+.tab-pane > .timeline > .h2
+  padding-top: 0
+
+// 强制评论按钮字体粗细
+#s-comment
+  font-weight: 300 !important
+```
+<!-- endtab -->
+
+{% endtabs %}
 {% endfolding %}
-
-#### 2.2.2 自定义 Note 图标
-
-#### 2.2.3 页脚响应式处理
 
 ## 三、功能类
 
