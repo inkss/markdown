@@ -355,9 +355,317 @@ details summary
 
 ## 三、功能类
 
-### 添加阅读模式
+### 3.1 添加阅读模式
 
-### 阅读更多样式更改
+阅读模式目前挂靠在右键模块内，只能通过自定义右键控制，配色参考了 **Handsome** 主题，实现思路则是参考了 **简悦** 的聚焦模式，利用切换样式类、控制层级实现阅读模式。
+
+<p class="article">效果参考：
+<span class="btn" id="initRight" style="text-indent: 0"><a class="button" href="javascript:;">阅读模式</a></span>
+</p>
+
+<script type="text/javascript">
+  document.getElementById('initRight').addEventListener("click", () => {
+    RightMenu.readingModel();
+  });
+</script>
+
+#### 3.1.1 添加样式文件
+
+在 `/source/css/_szyink/` 下新建 `reading.styl` 文件，写入以下内容：
+
+{% folding cyan, reading.styl %}
+```styl 阅读模式
+.common_read
+  z-index: auto !important
+  opacity: 1 !important
+  overflow: visible !important
+  transform: none !important
+  animation: none !important
+  position: relative !important
+
+.body-wrapper.common_read
+  display: block
+
+#safearea.common_read
+  padding-bottom: 16px
+  @media screen and (max-width: 900px)
+    padding: 0
+    margin: 0
+
+#l_body.common_read
+  z-index: 2147483646 !important;
+
+.read_cover
+  min-height: 10px !important
+  @media screen and (max-width: 900px)
+    min-height: 0 !important
+
+.common_read_bkg
+  background-color: #e0d8c8 !important
+  opacity: 1 !important
+  display: block !important
+  position: fixed !important
+  top: 0 !important
+  left: 0 !important
+  right: 0 !important
+  bottom: 0 !important
+  z-index: 2147483645 !important
+  transition: opacity 1s cubic-bezier(.23,1,.32,1) 0ms !important
+
+.common_read_hide
+  opacity: 0 !important  
+  z-index: -2147483645 !important  
+
+.common_read_main
+  width: 840px !important;
+  padding: 0 !important;
+  margin: 0 auto;
+  float: initial !important;
+  @media screen and (max-width: 900px)
+    width: auto !important;
+
+.post_read
+  background-color: #f8f1e2 !important
+  z-index: 2147483646 !important
+  overflow: visible !important
+  font-size: 1.15rem !important
+  border-radius: 0 !important;
+  box-shadow: 0 6px 12px 3px #00000033
+```
+{% endfolding %}
+
+阅读模式有部分配色，需要在暗黑模式下修改，在 `source/css/_plugins/dark.styl` 文件内添加：
+
+```styl 暗色系配色
+#read_bkg
+  background: #21252b !important
+.post_read
+  background-color: #282c34 !important
+```
+
+#### 3.1.2 添加元素代码
+
+在 `layout/_partial/rightmenu.ejs` 文件中的 `<% } else if (item == 'print') { %>` 下新加一个判断：
+
+```ejs 新建一个对 reading 的判断
+<% } else if (item == 'reading') { %>
+  <li class='option menuOption-Content'>
+    <span class='vlts-menu opt fix-cursor-default' id='readingModel'>
+      <i class='<%= theme.rightmenu.reading.icon %> fa-fw '></i> <%- trim(theme.rightmenu.reading.name) %>
+    </span>
+  </li> 
+```
+
+#### 3.1.3 添加事件代码
+
+在 `source/js/rightMenu.js` 处添它的逻辑处理部分，注意：目前开发版的右键已经移除了对 Jquery 的依赖，但是目前使用的右键依旧需要 Jquery 的支持，此处需要留意。
+
+{% tabs rightMenu  %}
+<!-- tab 选取阅读模式 -->
+```js 在前面的选择器部分新增阅读模式
+const _readingModel = document.getElementById('readingModel'),
+  _readBkg = document.getElementById('read_bkg');
+```
+<!-- endtab -->
+
+<!-- tab 初始化加载阅读模式 -->
+```js 在 fn.init() 函数中添加阅读模式的底层背景
+fn.init = () => {
+  fn.visible(_menuMusic, false);
+  fn.visible(_menuOption, false);
+  // 右键支持注销和新建，以防万一
+  if (_readBkg) _readBkg.parentNode.removeChild(_readBkg);  
+
+  const readBkg = document.createElement("div");
+  readBkg.className = "common_read_bkg common_read_hide";
+  readBkg.id = "read_bkg";
+  window.document.body.appendChild(readBkg);
+}
+```
+<!-- endtab -->
+
+<!-- tab 逻辑处理 -->
+```js 阅读模式与打印逻辑相似，只在文章页下展示，修改如下
+if (!!_printArticle) {
+  fn.visible(_printHtml);
+  fn.visible(_readingModel);
+
+  _printHtml.onclick = () => {
+    if (window.location.pathname === pathName) {
+      volantis.question('', '是否打印当前页面？<br><em style="font-size: 80%">建议打印时勾选背景图形</em><br>', () => {
+        fn.printHtml();
+      })
+    } else {
+      fn.hideMenu();
+    }
+  }
+
+  _readingModel.onclick = () => {
+    if (window.location.pathname === pathName) {
+      fn.readingModel();
+    } else {
+      fn.readingModel();
+    }
+  }
+} else {
+  fn.visible(_printHtml, false);
+  fn.visible(_readingModel, false);
+}
+```
+<!-- endtab -->
+
+<!-- tab 调用函数 -->
+```js 阅读模式
+fn.readingModel = () => {
+  if (typeof ScrollReveal === 'function') ScrollReveal().clean('#comments');
+  $('#l_header').fadeToggle();
+  $('footer').fadeToggle();
+  $('#s-top').fadeToggle();
+  $('.article-meta#bottom').fadeToggle();
+  $('.prev-next').fadeToggle();
+  $('.widget').fadeToggle();
+  $('#comments').fadeToggle();
+  $('#l_main').toggleClass('common_read common_read_main');
+  $('#l_body').toggleClass('common_read');
+  $('#safearea').toggleClass('common_read');
+  $('#pjax-container').toggleClass('common_read');
+  $('#read_bkg').toggleClass('common_read_hide');
+  $('h1').toggleClass('common_read_h1');
+  $('#post').toggleClass('post_read');
+  $('#l_cover').toggleClass('read_cover');
+  $('.widget.toc-wrapper').toggleClass('post_read');
+  if ($('.cus-article-bkg')) {
+    $('.cus-article-bkg').toggle();
+  } else {
+    $('#BKG').toggle();
+  }
+  volantis.isReadModel = volantis.isReadModel === undefined ? true : !volantis.isReadModel;
+  if (volantis.isReadModel) {
+    volantis.message('系统提示', '阅读模式已开启，您可以点击屏幕空白处退出。', 'fal fa-book-reader light-blue', 5000);
+    $('#l_body').off('click.rightMenu').on('click.rightMenu', (event) => {
+      if ($(event.target).hasClass('common_read')) {
+        fn.readingModel();
+      }
+    })
+  } else {
+    $('#l_body').off('click.rightMenu');
+    $('#post').off('click.rightMenu');
+  }
+}
+```
+<!-- endtab -->
+{% endtabs %}
+
+### 3.2 阅读更多样式更改
+
+为列表页的阅读更多添加一个动画，不过按照 @xaoxuu 的意见，`v5.0` 未来会去掉「阅读全文」「去原站阅读」等废话，整个卡片是一整个按钮，分类、标签等不可点击，看情况选择啦。
+
+#### 3.2.1 添加样式文件
+
+{% folding cyan, 阅读更多的样式 %}
+```styl
+//===========================
+// link-effects
+// 阅读更多的样式
+//===========================
+.link-fx-1 {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: auto; // !important - set fixed height
+  right: 10px;
+  padding: 0 6px;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+
+  .icon {
+    width: 1.5rem;
+    position: absolute;
+    right: 0;
+    bottom: 1.5px;
+    -webkit-transform: translateX(100%) rotate(90deg);
+    transform: translateX(100%) rotate(90deg);
+
+    circle {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      transition: stroke-dashoffset .2s;
+    }
+
+    line {
+      transition: -webkit-transform .4s;
+      transition: transform .4s;
+      transition: transform .4s,-webkit-transform .4s;
+      -webkit-transform-origin: 13px 15px;
+      transform-origin: 13px 15px
+    }
+
+    line:last-child {
+      -webkit-transform-origin: 19px 15px;
+      transform-origin: 19px 15px
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+    transition: -webkit-transform .2s .1s;
+    transition: transform .2s .1s;
+    transition: transform .2s .1s,-webkit-transform .2s .1s
+  }
+
+  &:hover {
+    .icon {
+      circle {
+        stroke-dashoffset: 200;
+        transition: stroke-dashoffset .2s .1s;
+      }
+
+      line {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg)
+      }
+
+      line:last-child {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg)
+      }
+    }
+
+    &::before {
+      -webkit-transform: translateX(17px) scaleX(0);
+      transform: translateX(17px) scaleX(0);
+      transition: -webkit-transform .2s;
+      transition: transform .2s;
+      transition: transform .2s,-webkit-transform .2s
+    }
+  }
+}
+```
+{% endfolding %}
+
+#### 3.2.2 添加元素代码
+
+这部分需要修改 `layout/_partial/post.ejs` 部分：
+
+{% folding cyan, 更换 if (showReadmore) 内的代码 %}
+```ejs
+<a class="link-fx-1 color-contrast-higher" href="<%- url_for(post.link || post.path) %>">
+  <span><%- post.link ? __('post.readoriginal') : __('post.readmore') %></span>
+  <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"/><line x1="10" y1="18" x2="16" y2="12"/><line x1="16" y1="12" x2="22" y2="18" /></g></svg>
+</a>
+```
+{% endfolding %}
+
+文字部分修改 `languages/zh-CN.yml` 的 `post.readmore` 的内容。
 
 ### 添加一种时间线样式
 
