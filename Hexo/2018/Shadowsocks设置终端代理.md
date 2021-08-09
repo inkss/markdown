@@ -1,10 +1,10 @@
 ---
 title: Linux Shell 设置 Proxy
 toc: true
-indent: true
+indent: false
 comments: false
 date: 2018/09/10 21:26
-updated: 2020/08/09 11:12
+updated: 2021/08/09 09:28
 tag:
   - Shell
   - Proxy
@@ -28,6 +28,14 @@ icons:
 git config --global http.proxy 'socks5://127.0.0.1:1080'
 git config --global https.proxy 'socks5://127.0.0.1:1080'
 ```
+
+更新：Windwos 下使用 Clash 代理 Github：
+
+```sh 只全局代理 Github 链接
+git config --global http.https://github.com.proxy socks5://127.0.0.1:7890
+```
+
+使用 hosts 解析方式反而影响了正常的访问，[GitHub520](https://github.com/521xueweihan/GitHub520) 这个项目实际体验上带来了负面影响，按照 [#53](https://github.com/521xueweihan/GitHub520/issues/53) 的说明，运营商采用了随机丢包方式，也就是温水煮🐸，这样子如果只是使用修改 hosts 文件可能会更容易出现链接失败。
 
 ## 二、Terminal Proxy
 
