@@ -560,6 +560,11 @@ fn.readingModel = () => {
 
 为列表页的阅读更多添加一个动画，不过按照 @xaoxuu 的意见，`v5.0` 未来会去掉「阅读全文」「去原站阅读」等废话，整个卡片是一整个按钮，分类、标签等不可点击，看情况选择啦。
 
+效果参考：<a style="text-indent: 0;margin: 0 10px;" class="link-fx-1 color-contrast-higher" href="#3-1-%E6%B7%BB%E5%8A%A0%E9%98%85%E8%AF%BB%E6%A8%A1%E5%BC%8F">
+  <span><i class="fal fa-books fa-fw" aria-hidden="true" title="Read Me"></i>阅读更多</span>
+  <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
+</a>
+
 #### 3.2.1 添加样式文件
 
 {% folding cyan, 阅读更多的样式 %}
@@ -667,9 +672,49 @@ fn.readingModel = () => {
 
 文字部分修改 `languages/zh-CN.yml` 的 `post.readmore` 的内容。
 
-### 添加一种时间线样式
+### 3.3 添加一种时间线样式
 
-### 添加 Github 暗黑模式动画
+样式参考了 Layui 的时间线，移植到主题里，效果如下：
+
+{% timelines '一个自制时间线（标题可选）' %}
+
+{% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
+{% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
+{% timenodes fal fa-narwhal %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
+{% timenodes fal fa-fan fa-spin %}这里是时间线的起点~{% endtimenodes %}
+
+{% endtimelines %}
+
+#### 3.3.1 添加样式文件
+
+参考 [timeline.styl](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/source/css/_szyink/timeline.styl) 中的内容，引入到主题中即可。
+
+#### 3.3.1 添加渲染器
+
+为了方便使用，将其做成了一个标签。新建 `imelines.js` 文件到 `/scripts/tags/` 目录中，将 [timelines.js](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/scripts/tags/timelines.js) 的内容复制到文件中，使用方式：
+
+{% folding cyan, 一个自制时间线 %}
+```md
+{% timelines '一个自制时间线（标题可选）' %}
+
+{% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
+{% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
+{% timenodes fal fa-narwhal %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
+{% timenodes fal fa-genderless %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
+{% timenodes fal fa-fan fa-spin %}这里是时间线的起点~{% endtimenodes %}
+
+{% endtimelines %}
+```
+{% endfolding %}
+
+### 3.4 添加 Github 暗黑模式动画
+
+从 Github 扒了一个小猫猫的动画，放在了导航栏，在暗黑模式切换时触发，你可以右键点击 **「暗黑模式」** 查看。
 
 ### 文章页自定义背景
 
