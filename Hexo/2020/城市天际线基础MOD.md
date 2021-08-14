@@ -64,8 +64,9 @@ This mod removes the need for power lines.This mod works simply by storing the e
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/572888650_preview_2015-12-10_00002.jpg)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -89,7 +90,9 @@ This mod removes the need to place pipes all over your city.This mod works simpl
 <!-- endtab -->
 
 <!-- tab 展示 -->
-![](../../img/article/城市天际线基础MOD/576997275_preview_2015-12-16_00001.jpg)
+{% gallery stretch, 1 %}
+![](../../img/article/城市天际线基础MOD/572888650_preview_2015-12-10_00002.jpg)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -129,7 +132,9 @@ This mod unlocks all from beginning, including all Wonders (a.k.a. Monuments ), 
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/458519223_preview_Cities_2017-10-21_19-33-17.jpg)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -173,7 +178,9 @@ This mod allows to resize the scrollable panels in-game to match your style of p
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/B27B8ADBE834E45455147AFC32921D14F21608C6.png)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -215,7 +222,9 @@ This mod allows you to select, move and align various things.
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/1619685021_preview_Workshop-screenshot-deeheks.jpg)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -240,7 +249,9 @@ This mod allows to watch status of the important capacities in the game.
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/8F6F5874FDB3BF5045FA0CE792206572C4DECADF.png)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -262,7 +273,9 @@ This mod allows you to search, select, and place assets. It also provides some e
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/837734529_preview_tuto.jpg)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -287,9 +300,9 @@ This mod allows to hide unwanted things in the game.
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/0EFEE2390CE67AEFF2D32724CD37F0204AA0A53B.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -314,9 +327,9 @@ This mod allows to monitor system resources and performance.
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/15DD0379C44141AEB3C8AF351278D1E86683571E.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -339,9 +352,9 @@ This mod allows to purchase any of the 25 tiles anytime.
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/EFCFAD232B29C0DDA67E5128B7B1A9935F3A7BC5.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -368,9 +381,9 @@ This mod automatically builds roundabouts for you. It clears the area of the roa
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/0EC373DCFA0A18BCE48515C64051893196390093.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -395,9 +408,9 @@ This mod allow you to set finer road elevation steps and also provides different
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/60200946D4AEE4FE0E910E89E2881E24B3237E52.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -422,9 +435,9 @@ This mod adds additional options when building road.Basically Sharp Junction Ang
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/B92D6D13B851A06B24662BDE02E0154AE2830509.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -447,7 +460,9 @@ Precision Engineering augments Cities: Skylines by adding angle snapping, guidel
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/445589127_preview_branching.png)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -471,9 +486,9 @@ This mod lets you change those inside the game, while also exposing some that ar
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/image-20210713133348405-1626154431811.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -496,7 +511,9 @@ Improve lane and parking usage. and customise junctions, roads, and rails!⠀⠀
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/1637663252_preview_slideshow.png)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -519,7 +536,9 @@ Improve lane and parking usage. and customise junctions, roads, and rails!⠀⠀
 <!-- endtab -->
 
 <!-- tab 展示 -->
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/667342976_preview_1.jpg)
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -577,9 +596,9 @@ Optimize transfer manager in vanilla game. match the shortest transfer bettween 
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/asdfasfdaew.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
@@ -603,9 +622,9 @@ This is renewal version of original Node Controller by kian.zarrin with improved
 <!-- endtab -->
 
 <!-- tab 展示 -->
-
+{% gallery stretch, 1 %}
 ![](../../img/article/城市天际线基础MOD/image-20210721200347942.png)
-
+{% endgallery %}
 <!-- endtab -->
 
 {% endtabs %}
