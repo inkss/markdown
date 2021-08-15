@@ -7,7 +7,7 @@ tag:
   - Volantis
 categories: 教程
 date: '2021-08-05 09:20'
-updated: '2021-08-09 00:00'
+updated: '2021-08-15 00:00'
 hideTitle: true
 headimg: ../../img/article/Volantis主题个性化修改合集/main.gif
 description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
@@ -23,7 +23,7 @@ abbrlink: 610620a9
 
 {% note quote, 基础环境：基于 Volantis v5.0 β %}
 {% note warning, 本篇内容仅供参考，一切以实际呈现为准。 %}
-{% note bug red, 正在完善中，尽请期待... %}
+{% note bug red, 已大致完善。 %}
 
 ## 一、引言
 
@@ -231,22 +231,25 @@ article#post
 
 此处特指主题的 `note` 和 `noteblock` 标签，如果需要更多类型的图片就需要自己添加了。新建 `note.styl` 文件，个人新增的图标都存在此处。
 
-然后是找图标，我们需要图标的代码而不是名称，进入 [fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2),打开 **开发人员工具**，使用 {% kbd Ctrl %} + {% kbd Shift %} + {% kbd C %} 选取需要新增的图标，在 **元素** 选项卡右侧的 **样式** 栏，找到对应内容：
+然后是找图标，我们需要图标的代码而不是名称，进入 [fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2)，打开 **开发人员工具**，使用 {% kbd Ctrl %} + {% kbd Shift %} + {% kbd C %} 选取需要新增的图标，在 **元素** 选项卡右侧的 **样式** 栏，找到对应内容：
 
-```css “\f368” 就是我们需要的代码
+{% folding cyan, “\f368” 就是我们需要的代码 %}
+```css
 .fa-accessible-icon:before {
   content: "\f368";
 }
 ```
+{% endfolding %}
 
 接着在 note.styl 一个个添加就好了：
 
+{% folding cyan, 自定义 Note %}
 ```styl
-// 自定义 Note
 div.note
   &.alien-monster::before
     content: '\f8f6'
 ```
+{% endfolding %}
 
 {% note alien-monster blue, 效果见本条内容：note alien-monster blue  %}
 
@@ -254,11 +257,13 @@ div.note
 
 所谓响应式处理主要是利用 CSS 的媒体查询，利用 `max-width` 和 `display`，可以达到当小于一定可视范围时主动隐藏某些元素，这样在使用时只需要添加对应的类名即可，具体的尺寸根据实际情况实际对待。注：主题在 500px 以下便会显示移动端样式。
 
+{% folding cyan, .footerMax560 %}
 ```styl
 .footerMax560
   @media screen and (max-width: 560px)
     display: none
 ```
+{% endfolding %}
 
 效果参考以下内容：
 
@@ -355,6 +360,8 @@ details summary
 
 ## 三、功能类
 
+本小结记录对主题的新增能力，在主题基础上的增强能力。
+
 ### 3.1 添加阅读模式
 
 阅读模式目前挂靠在右键模块内，只能通过自定义右键控制，配色参考了 **Handsome** 主题，实现思路则是参考了 **简悦** 的聚焦模式，利用切换样式类、控制层级实现阅读模式。
@@ -436,18 +443,21 @@ details summary
 
 阅读模式有部分配色，需要在暗黑模式下修改，在 `source/css/_plugins/dark.styl` 文件内添加：
 
-```styl 暗色系配色
+{% folding cyan, 暗色系配色 %}
+```styl
 #read_bkg
   background: #21252b !important
 .post_read
   background-color: #282c34 !important
 ```
+{% endfolding %}
 
 #### 3.1.2 添加元素代码
 
 在 `layout/_partial/rightmenu.ejs` 文件中的 `<% } else if (item == 'print') { %>` 下新加一个判断：
 
-```ejs 新建一个对 reading 的判断
+{% folding cyan, 新建一个对 reading 的判断 %}
+```ejs
 <% } else if (item == 'reading') { %>
   <li class='option menuOption-Content'>
     <span class='vlts-menu opt fix-cursor-default' id='readingModel'>
@@ -455,11 +465,13 @@ details summary
     </span>
   </li> 
 ```
+{% endfolding %}
 
 #### 3.1.3 添加事件代码
 
 在 `source/js/rightMenu.js` 处添它的逻辑处理部分，注意：目前开发版的右键已经移除了对 Jquery 的依赖，但是目前使用的右键依旧需要 Jquery 的支持，此处需要留意。
 
+{% folding cyan, 添加事件代码 %}
 {% tabs rightMenu  %}
 <!-- tab 选取阅读模式 -->
 ```js 在前面的选择器部分新增阅读模式
@@ -555,6 +567,7 @@ fn.readingModel = () => {
 ```
 <!-- endtab -->
 {% endtabs %}
+{% endfolding %}
 
 ### 3.2 阅读更多样式更改
 
@@ -671,8 +684,165 @@ fn.readingModel = () => {
 {% endfolding %}
 
 文字部分修改 `languages/zh-CN.yml` 的 `post.readmore` 的内容。
+### 3.3 文章页自定义背景
 
-### 3.3 添加一种时间线样式
+允许为文章添加背景图片，通过 `page.background` 使用，效果参见：[自动化博客部署](/blog/42987b6b/)。
+
+修改比较简单，不分类说了，需要修改 `article.ejs` 文件，并添加对应样式：
+
+{% folding cyan, /layout/_partial/article.ejs %}
+```ejs  在最后添加如下内容
+<% if(page.background) { %>
+  <div class="cus-article-bkg" style="background-image: url(<%- page.background %>)"></div>
+<% } %>
+```
+
+```styl 在样式文件中添加
+.cus-article-bkg 
+  background-size: cover 
+  background-position: center 
+  position: fixed 
+  top: 0 
+  bottom: 0 
+  right: 0 
+  left: 0 
+  z-index: -10 
+```
+{% endfolding %}
+
+### 3.4 文章页首行缩进开关
+
+文字类的文章最好还是开启首行缩进，但也不是所有文章都适合首行缩进，此处是做了一个开关，通过 `page.indent` 控制是否首行缩进。例如本篇文章是首行缩进的，而 [Linux Shell 设置 Proxy](/blog/f44c3b52/) 这篇文章是没有首行缩进。
+
+修改起来也是非常简单，同样是修改 `article.ejs`，在最前面 article 的 `class` 中添加对应样式：
+
+{% folding cyan, 添加 自定义样式 cus-indent %}
+```ejs 
+<article class="<%- page.indent == true ? 'cus-indent' : '' %> article post white-box reveal md <%- theme.custom_css.body.effect.join(' ') %> article-type-<%= post.layout %>" id="<%= post.layout %>" itemscope itemprop="blogPost">
+```
+{% endfolding %}
+
+接着就只需要添加这个样式的实现：
+
+{% folding cyan, 在样式文件中添加 %}
+```ejs 
+#l_main > article.cus-indent > p
+  text-indent: 2em
+  &.center
+    text-indent: initial
+  i
+    text-indent: initial
+```
+{% endfolding %}
+
+### 3.5 列表页文章标题开关
+
+如你所见，列表页的头图在已经包含了文章标题的情况下，再显示文章标题有些多余了，此处通过 `page.hideTitle` 控制是否显示文章标题，此处的修改也是非常简单，更改 `post.ejs` 的判断即可：
+
+{% folding cyan, /layout/_partial/post.ejs %}
+```ejs 在判断区域中新增一个判断即可
+if (post.hideTitle && post.hideTitle === true) {
+  showTitle = false;
+}
+```
+{% endfolding %}
+
+### 3.6 自定义右键开关
+
+在写右键的时候，其实是提供了右键的注册和注销函数，所以可以实现用户侧在使用过程中主动关闭对右键事件的监听。使用起来就很灵活了，可以用变量记录开关状态，也可以将状态写入到 `LocalStorage` 中持久化。
+
+|               函数                |      参数      | 备注                     |
+| :-------------------------------  | :------------: | ------------------------ |
+| `RightMenu.destroy(notic: boolean)` | notic: boolean | 参数为 `true` 时弹出提示 |
+|  `RightMenu.init(notic: boolean)`   | notic: boolean | 参数为 `true` 时弹出提示 |
+
+效果：
+
+<div style="min-height: 30px;font-family: 'sxls';font-size: 1.5rem;font-weight: 600;">
+  <div id="destroyRightContent" style="display: none">
+    <p class="article center" style="text-align: center;">关闭自定义右键：<span id="destroyRightMenu" class="btn">
+        <a class="button" href="javascript:;" title="注销右键">注销右键</a></span>
+    </p>
+  </div>
+  <p id="initRightContent" class="article center" style="text-align: center;display: none">激活自定义右键：<span
+      id="initRightMenu" class="btn"><a class="button" href="javascript:;" title="激活右键">激活右键</a></span></p>
+</div>
+
+### 3.7 整合文章归档模板
+
+也就是把归档和标签整合在一起，没必要整那么多分类。也就是以归档也为主，将标签页内容输出到归档也前面，效果：[文章归档](/navigation/archives/)。
+
+{% folding cyan, /layout/archive.ejs %}
+```ejs 在 article id 上方添加如下内容
+<div class='post-wrapper'>
+  <article id="tag" class="post article white-box reveal <%- theme.custom_css.body.effect.join(' ') %>">
+    <h2>所有标签</h2>
+    <div class="all-tags">
+    <% let tc = theme.sidebar.widget_library.tagcloud; %>
+    <%- list_tags({}) %>
+    </div>
+    <br>
+    <%- page.content %>
+  </article>
+</div>
+```
+{% endfolding %}
+
+## 四、通用类
+
+此部分与主题关联不大，属于新增的可以通用性值的新增功能。
+
+### 4.1 引入 Iconfont 图标
+
+也就是引用阿里巴巴矢量图标库的图标，按照它的说明，推荐的是 symbol 引用^[这种用法其实是做了一个 svg 的集合，支持多色图标了，不再受单色限制。]。
+
+#### 4.1.1 引用资源文件和样式
+
+将你下载的 JS 文件拷贝到 `/source/js/` 目录中，接着修改 `cdnCtrl.ejs` 引用文件。
+
+{% folding cyan, /layout/_partial/scripts/_ctrl/cdnCtrl.ejs %}
+```ejs 在最下面引用文件，iconfontInkss 为你的 JS 文件名称
+theme.cdn.addJS("iconfont")
+```
+{% endfolding %}
+
+接着添加它的公共样式文件：
+
+{% folding cyan, 此样式文件建议导入到 first.styl 中 %}
+```styl
+.iconfont
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor
+  overflow: hidden
+  &.emoji
+    width: 1.5em
+    height: 1.5em
+    vertical-align: -0.3em
+```
+{% endfolding %}
+
+#### 4.1.2 制作自定义标签
+
+为了方便使用引用的图标，将其制作成自定义标签，新建 `icon.js` 文件写入如下内容，这样在使用时只需要 `{% emoji aixin %}`，后跟对应类名成即可。
+
+{% folding cyan, /scripts/tags/icon.js %}
+```js
+'use strict';
+
+function emoji(args) {
+  args = args.join(' ').split(',');
+  return `<svg class="iconfont emoji" aria-hidden="true"><use xlink:href="#icon-${args}"></use></svg>`;
+}
+
+hexo.extend.tag.register('emoji', emoji)
+```
+{% endfolding %}
+
+效果：{% emoji aixin %} {% emoji daxiao %} {% emoji fankun %} {% emoji xieyan %} {% emoji shengqi %} {% emoji huaixiao %} {% emoji biti %}
+
+### 4.2 添加一种时间线样式
 
 样式参考了 Layui 的时间线，移植到主题里，效果如下：
 
@@ -688,11 +858,11 @@ fn.readingModel = () => {
 
 {% endtimelines %}
 
-#### 3.3.1 添加样式文件
+#### 4.2.1 添加样式文件
 
 参考 [timeline.styl](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/source/css/_szyink/timeline.styl) 中的内容，引入到主题中即可。
 
-#### 3.3.1 添加渲染器
+#### 4.2.2 添加渲染器
 
 为了方便使用，将其做成了一个标签。新建 `imelines.js` 文件到 `/scripts/tags/` 目录中，将 [timelines.js](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/scripts/tags/timelines.js) 的内容复制到文件中，使用方式：
 
@@ -712,34 +882,200 @@ fn.readingModel = () => {
 ```
 {% endfolding %}
 
-### 3.4 添加 Github 暗黑模式动画
+### 4.3 添加 Github 暗黑模式动画
 
 从 Github 扒了一个小猫猫的动画，放在了导航栏，在暗黑模式切换时触发，你可以右键点击 **「暗黑模式」** 查看。
 
-### 文章页自定义背景
+#### 4.3.1 添加样式文件
 
-### 文章页首行缩进开关
+参考 [timeline.styl](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/source/css/_szyink/profile.styl) 中的内容，引入到主题中即可。
 
-### 列表页文章标题开关
+#### 4.3.2 主题文件修改
 
-### TwiKoo 与 Beaudar 的评论共用
+接着修改主题的导航栏，找到 `/layout/_partial/header.ejs` 文件，在 `<a class="title flat-box">...</a>` 的后面添加小猫猫的图标，另外为这个标签添加一个 ID 选择器。
 
-### 自定义右键和评论
+{% folding cyan, /layout/_partial/header.ejs %}
+```ejs 添加选择器和 SVG 图标
+<a id="desktopNavTitle" class="title flat-box" target="_self" href='<%- url_for("/") %>'>
+//....
+</a>
 
-### 引入 Iconfont 图标
+<a id="githubEmoji" class="title flat-box" style="display: none;" target="_self" href='<%- url_for("/") %>'>
+  <svg class="profile-color-modes" height="45" viewBox="0 0 106 60" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><g class="profile-color-modes-illu-group profile-color-modes-illu-red"><path d="M37.5 58.5V57.5C37.5 49.768 43.768 43.5 51.5 43.5V43.5C59.232 43.5 65.5 49.768 65.5 57.5V58.5"></path></g><g class="profile-color-modes-illu-group profile-color-modes-illu-orange"><path d="M104.07 58.5C103.401 55.092 97.7635 54.3869 95.5375 57.489C97.4039 54.6411 99.7685 48.8845 94.6889 46.6592C89.4817 44.378 86.1428 50.1604 85.3786 54.1158C85.9519 50.4768 83.7226 43.294 78.219 44.6737C72.7154 46.0534 72.7793 51.3754 74.4992 55.489C74.169 54.7601 72.4917 53.3567 70.5 52.8196"></path></g><g class="profile-color-modes-illu-group profile-color-modes-illu-purple"><path d="M5.51109 58.5V52.5C5.51109 41.4543 14.4654 32.5 25.5111 32.5C31.4845 32.5 36.8464 35.1188 40.5111 39.2709C40.7212 39.5089 40.9258 39.7521 41.1245 40"></path><path d="M27.511 49.5C29.6777 49.5 28.911 49.5 32.511 49.5"></path><path d="M27.511 56.5C29.6776 56.5 26.911 56.5 30.511 56.5"></path></g><g class="profile-color-modes-illu-group profile-color-modes-illu-green"><circle cx="5.5" cy="12.5" r="4"></circle><circle cx="18.5" cy="5.5" r="4"></circle><path d="M18.5 9.5L18.5 27.5"></path><path d="M18.5 23.5C6 23.5 5.5 23.6064 5.5 16.5"></path></g><g class="profile-color-modes-illu-group profile-color-modes-illu-blue"><g class="profile-color-modes-illu-frame"><path d="M40.6983 31.5C40.5387 29.6246 40.6456 28.0199 41.1762 27.2317C42.9939 24.5312 49.7417 26.6027 52.5428 30.2409C54.2551 29.8552 56.0796 29.6619 57.9731 29.6619C59.8169 29.6619 61.5953 29.8452 63.2682 30.211C66.0833 26.5913 72.799 24.5386 74.6117 27.2317C75.6839 28.8246 75.0259 33.7525 73.9345 37.5094C74.2013 37.9848 74.4422 38.4817 74.6555 39"></path></g><g class="profile-color-modes-illu-frame"><path d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39"></path><path d="M49.4996 33V35.6757"></path><path d="M67.3375 33V35.6757"></path></g><g class="profile-color-modes-illu-frame"><path d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39"></path></g><g class="profile-color-modes-illu-frame"><path d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39"></path><path d="M49.4996 33V35.6757"></path><path d="M67.3375 33V35.6757"></path></g><g class="profile-color-modes-illu-frame"><path d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39"></path></g><g class="profile-color-modes-illu-frame"><path d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39"></path><path d="M49.4996 33V35.6757"></path><path d="M67.3375 33V35.6757"></path></g><g class="profile-color-modes-illu-frame"><path d="M73.4999 40.2236C74.9709 38.2049 75.8108 35.5791 75.8108 32.2283C75.8108 29.2229 75.1351 26.6488 73.9344 24.5094C75.0258 20.7525 75.6838 15.8246 74.6116 14.2317C72.7989 11.5386 66.0832 13.5913 63.2681 17.211C61.5952 16.8452 59.8167 16.6619 57.973 16.6619C56.0795 16.6619 54.2549 16.8552 52.5427 17.2409C49.7416 13.6027 42.9938 11.5312 41.176 14.2317C40.0859 15.8512 40.7843 20.9182 41.9084 24.6968C41.003 26.3716 40.4146 28.3065 40.2129 30.5"></path><path d="M82.9458 30.5471L76.8413 31.657"></path><path d="M76.2867 34.4319L81.8362 37.7616"></path><path d="M49.4995 27.8242V30.4999"></path><path d="M67.3374 27.8242V30.4998"></path></g><g class="profile-color-modes-illu-frame"><path d="M45.3697 34.2658C41.8877 32.1376 39.7113 28.6222 39.7113 23.2283C39.7113 20.3101 40.3483 17.7986 41.4845 15.6968C40.3605 11.9182 39.662 6.85125 40.7522 5.23168C42.5699 2.53117 49.3177 4.6027 52.1188 8.24095C53.831 7.85521 55.6556 7.66186 57.5491 7.66186C59.3929 7.66186 61.1713 7.84519 62.8442 8.21095C65.6593 4.59134 72.375 2.5386 74.1877 5.23168C75.2599 6.82461 74.6019 11.7525 73.5105 15.5094C74.7112 17.6488 75.3869 20.2229 75.3869 23.2283C75.3869 28.6222 73.2105 32.1376 69.7285 34.2658C70.8603 35.5363 72.6057 38.3556 73.3076 40"></path><path d="M49.0747 19.8242V22.4999"></path><path d="M54.0991 28C54.6651 29.0893 55.7863 30.0812 57.9929 30.0812C59.0642 30.0812 59.8797 29.8461 60.5 29.4788"></path><path d="M66.9126 19.8242V22.4999"></path><path d="M33.2533 20.0237L39.0723 22.1767"></path><path d="M39.1369 25.0058L33.0935 27.3212"></path><path d="M81.8442 19.022L76.0252 21.1751"></path><path d="M75.961 24.0041L82.0045 26.3196"></path></g><g class="profile-color-modes-illu-frame"><path d="M73.4999 40.2236C74.9709 38.2049 75.8108 35.5791 75.8108 32.2283C75.8108 29.2229 75.1351 26.6488 73.9344 24.5094C75.0258 20.7525 75.6838 15.8246 74.6116 14.2317C72.7989 11.5386 66.0832 13.5913 63.2681 17.211C61.5952 16.8452 59.8167 16.6619 57.973 16.6619C56.0795 16.6619 54.2549 16.8552 52.5427 17.2409C49.7416 13.6027 42.9938 11.5312 41.176 14.2317C40.0859 15.8512 40.7843 20.9182 41.9084 24.6968C41.003 26.3716 40.4146 28.3065 40.2129 30.5"></path><path d="M82.9458 30.5471L76.8413 31.657"></path><path d="M76.2867 34.4319L81.8362 37.7616"></path><path d="M49.4995 27.8242V30.4999"></path><path d="M67.3374 27.8242V30.4998"></path></g><g class="profile-color-modes-illu-frame"><path d="M40.6983 31.5C40.5387 29.6246 40.6456 28.0199 41.1762 27.2317C42.9939 24.5312 49.7417 26.6027 52.5428 30.2409C54.2551 29.8552 56.0796 29.6619 57.9731 29.6619C59.8169 29.6619 61.5953 29.8452 63.2682 30.211C66.0833 26.5913 72.799 24.5386 74.6117 27.2317C75.6839 28.8246 75.0259 33.7525 73.9345 37.5094C74.2013 37.9848 74.4422 38.4817 74.6555 39"></path></g></g></svg>
+</a>
+```
+{% endfolding %}
 
-### 全局 Img 加载失败的默认提示
+接下来修改样式，在暗黑模式下显示出图标：
 
-### 恶意反代防御
+{% folding cyan, /source/css/_plugins/dark.styl %}
+```styl 夜间模式标题样式修改
+#desktopNavTitle
+  display: none !important
+#githubEmoji
+  display: block !important
+```
+{% endfolding %}
 
-### 整合文章归档模板
+### 4.4 全局 Img 加载失败的默认提示
 
-## 四、小技巧
+也就是为图片加载失败时听过一个默认的错误显示，实现思路参考了：[图片加载失败后CSS样式处理最佳实践](https://www.zhangxinxu.com/wordpress/2020/10/css-style-image-load-fail/) 一文，效果如下：
+
+<p class="center"><img no-lazy src=" " alt="一个图片加载失败的示例"></p>
+
+#### 4.4.1 添加样式文件
+
+首先是为其添加对应的样式，上图默认显示的图片是转成 Base64 记录的。
+
+{% folding cyan, 图片加载失败的样式 %}
+{% tabs img-error %}
+
+<!-- tab 公共样式 -->
+```styl 默认样式
+img.error
+  opacity: unset !important
+  filter: unset !important
+  min-height: 200px
+  min-width: 200px
+  display: inline-block
+  transform: scale(1)
+  content: ''
+  color: transparent
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: #f5f5f5 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/PjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+PHN2ZyBjbGFzcz0iaWNvbiIgd2lkdGg9IjIwMHB4IiBoZWlnaHQ9IjIwMC4wMHB4IiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0iI2RjZGVlMCIgZD0iTTE5Ny4zMzMzMzMgMjgxLjY1MzMzM2E0OC40OCA0OC40OCAwIDEgMCA0OC40OCA0OC40OEE0OC40OCA0OC40OCAwIDAgMCAxOTcuMzMzMzMzIDI4MS42NTMzMzN6IiAgLz48cGF0aCBmaWxsPSIjZGNkZWUwIiBkPSJNOTcwLjY2NjY2NyAxNzAuNjY2NjY3SDUxOC42MTMzMzNhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDAtNC41ODY2NjYgMi42NjY2NjZsLTY0IDExMS42OGE1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMCAwIDUuMzMzMzM0bDUzLjgxMzMzMyA5Ny40NGE1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMSAwIDUuNjUzMzMzTDQwOC4yNjY2NjcgNTMwLjU2YTEuMDY2NjY3IDEuMDY2NjY3IDAgMCAxLTEuOTczMzM0LTAuNzQ2NjY3TDQyNi42NjY2NjcgMzg5LjMzMzMzM2E0LjkwNjY2NyA0LjkwNjY2NyAwIDAgMC0wLjQyNjY2Ny0yLjg4bC00My4yLTk3LjM4NjY2NmE1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMSAwLTMuOTQ2NjY3TDQyMS4zMzMzMzMgMTc3LjgxMzMzM2E1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMC00LjkwNjY2Ni03LjE0NjY2Nkg0Mi42NjY2NjdhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDAtNS4zMzMzMzQgNS4zMzMzMzN2NjcyYTUuMzMzMzMzIDUuMzMzMzMzIDAgMCAwIDUuMzMzMzM0IDUuMzMzMzMzaDkyOGE1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMCA1LjMzMzMzMy01LjMzMzMzM1YxNzZhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDAtNS4zMzMzMzMtNS4zMzMzMzN6IG0tNjkuMzMzMzM0IDQ1Ni4wNTMzMzNhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDEtOS4yOCAzLjQ2NjY2N2wtMjE1LjQxMzMzMy0yNDQuMzJhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDAtOCAwbC0yOTEuODQgMzMxLjA5MzMzM2E1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMS03LjQ2NjY2NyAwLjQ4bC0xNjcuNzMzMzMzLTE0Mi45MzMzMzNhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDAtNi44OCAwbC03My45NzMzMzMgNjMuMDRhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDEtOC43NDY2NjctNC4wNTMzMzRWMjUwLjY2NjY2N2E1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMSA1LjMzMzMzMy01LjMzMzMzNGgyMDcuNTJsLTEzLjQ5MzMzMyA1MC43NzMzMzRhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDAgMC43NDY2NjcgNC4zNzMzMzNsNzAuNzczMzMzIDEwMi45MzMzMzNhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDEgMC45NiAzLjQxMzMzNGwtMTQuMjQgMTk1LjA5MzMzM2ExLjEyIDEuMTIgMCAwIDAgMS45MiAwLjhsMTgwLjE2LTIwMC44NTMzMzNhNS4zMzMzMzMgNS4zMzMzMzMgMCAwIDAgMS4xMi01LjMzMzMzNGwtMzItMTAxLjA2NjY2NmE1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMSAwLjY0LTQuNTg2NjY3bDMxLjItNDUuNTQ2NjY3SDg5NmE1LjMzMzMzMyA1LjMzMzMzMyAwIDAgMSA1LjMzMzMzMyA1LjMzMzMzNHoiICAvPjwvc3ZnPg==") no-repeat center / 80% 80%
+  &:after
+    @media screen and (max-width: 300px)
+      display: none
+    content: attr(alt)
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    line-height: 2
+    background-color: rgba(0,0,0,.5)
+    color: white
+    font-size: 12px
+    text-align: center
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+```
+<!-- endtab -->
+
+<!-- tab 额外样式 -->
+```styl 这里是做了一些兼容
+// 为评论框的图片加载失败文本
+#comments
+  img.error
+    &:after
+      content: 'img error'
+
+// 重写图片大小：评论框头像
+.fix-avatar-imgError > div > img.error
+  min-height: 100%
+  min-width: 100%
+  &:after
+    display: none
+
+// 重写图片大小：作者头像，友链头像组
+.fix-author-imgError > a > img.error,
+.simpleuser-group > a > img.error
+  min-height: unset
+  min-width: unset
+
+// 隐藏 Fancybox 弹窗
+.hideFancybox
+  margin: 0 2px
+  span
+    display: none !important
+```
+<!-- endtab -->
+
+{% endtabs %}
+{% endfolding %}
+
+#### 4.4.2 添加事件代码
+
+核心思路是监听图片的 `error` 事件，然后添加对应的样式类，此部分代码放到 `head.ejs` 中：
+
+{% folding cyan, /layout/_partial/head.ejs %}
+```js 记得放进 script 标签中
+document.addEventListener("error", function(e) {
+  const elem = e.target;
+  const parentElem = e.target.parentElement;
+  const parentElemClass = parentElem.classList.toString();
+  const pParentElemClass = parentElem.parentElement.classList.toString();
+  if (elem.tagName.toLowerCase() !== 'img') {
+      return;
+  }
+  elem.classList.add('fix-cursor-default', 'error');
+  if(parentElemClass === 'fancybox' && pParentElemClass === 'fancybox') {
+    parentElem.parentElement.classList.add('hideFancybox');
+    parentElem.parentElement.classList.remove('fancybox');
+    parentElem.classList.remove('fancybox');
+  } else if(parentElemClass === 'img-bg' && pParentElemClass === 'img-wrap') {
+    parentElem.parentElement.classList.add('hideFancybox');
+  } else if(parentElemClass === 'author') {
+    parentElem.parentElement.classList.add('fix-author-imgError');
+  } else if(parentElemClass.indexOf('tk-avatar') != -1 ) {
+    parentElem.parentElement.classList.add('fix-avatar-imgError');
+  }
+}, true);
+```
+{% endfolding %}
+
+### 4.5 恶意反代防御
+
+静态文件似乎没有抵御反代的能力，简单的实现一下：
+
+{% folding cyan, 反代防御 %}
+```html 相关域名更改成自己的即可
+<div style="display: none;">
+  <img no-lazy style="display:none" src=" " onerror="this.onerror=null;var str1='ink'+'ss'+'.cn',str2='document.location.host',str3=eval(str2);if(str1!=str3&&str3!='localhost:4000'&&str3!='localhost:5050'&&str3!='live.szyink.com'){do_action='location.href=location.href.replace(document.location.host,'+'\'ink'+'ss'+'.cn\''+')';alert(decodeURI('%E6%82%A8%E7%8E%B0%E5%9C%A8%E5%A4%84%E4%BA%8E%E6%81%B6%E6%84%8F%E9%95%9C%E5%83%8F%E7%AB%99%E4%B8%AD%EF%BC%8C%E5%8D%B3%E5%B0%86%E8%B7%B3%E8%BD%AC%E5%9B%9E%E6%BA%90%E7%AB%99!'));eval(do_action)}" />
+</div>
+```
+{% endfolding %}
+
+## 五、小技巧
 
 ### 透明图片的背景色设定
 
+透明图可以利用 `image` 标签 的 `bg` 参数，设定不同的背景色，在暗黑模式中下图有不同的表现。
+
+{% gallery center::2::png %}
+{% image ../../img/article/Volantis主题个性化修改合集/people.png, bg=var(--color-card), height=260px, alt='var(--color-card)' %}
+{% image ../../img/article/Volantis主题个性化修改合集/people.png, bg=var(--color-white-png), height=260px, alt='var(--color-white-png)' %}
+{% endgallery %}
+
 ### 替代标题 Meta 的显示
 
-### 引用更多类型的自定义字体
+如果文章设置了 `seo_title` 则不会显示默认的顶部 Meta 块儿，此处可以整个更花哨的标题：
+
+<p class="p center logo large"><em>Volantis 主题个性化修改<sup>V1.0</sup></em></p>
 
 ### 动态修改网页标题
+
+没有做过多的侵入，只是在离开标签时去除网站的二级标题。
+
+{% folding cyan, /source/js/app.js %}
+```js 动态修改标题
+const changeTitle = () => {
+  sessionStorage.setItem("domTitle", document.title);
+  document.addEventListener('visibilitychange', function () {
+    const title = sessionStorage.getItem("domTitle") || document.title;
+    const titleArr = title.split(' - ') || [];
+    if (document.visibilityState == 'hidden') {
+      document.title = titleArr.length === 2 ? titleArr[1] : titleArr[0];
+    } else {
+      document.title = title;
+    }
+  });
+}
+```
+{% endfolding %}
