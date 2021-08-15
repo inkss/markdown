@@ -770,7 +770,7 @@ if (post.hideTitle && post.hideTitle === true) {
 
 ### 3.7 整合文章归档模板
 
-也就是把归档和标签整合在一起，没必要整那么多分类。也就是以归档也为主，将标签页内容输出到归档也前面，效果：[文章归档](/navigation/archives/)。
+把归档和标签整合在一起，没必要整那么多分类，以归档也为主，将标签页内容输出到归档也前面，效果：[文章归档](/navigation/archives/)。
 
 {% folding cyan, /layout/archive.ejs %}
 ```ejs 在 article id 上方添加如下内容
@@ -790,7 +790,7 @@ if (post.hideTitle && post.hideTitle === true) {
 
 ## 四、通用类
 
-此部分与主题关联不大，属于新增的可以通用性值的新增功能。
+此部分与主题关联不大，属于可以作为通用使用的新增功能。
 
 ### 4.1 引入 Iconfont 图标
 
@@ -919,7 +919,7 @@ hexo.extend.tag.register('emoji', emoji)
 
 ### 4.4 全局 Img 加载失败的默认提示
 
-也就是为图片加载失败时听过一个默认的错误显示，实现思路参考了：[图片加载失败后CSS样式处理最佳实践](https://www.zhangxinxu.com/wordpress/2020/10/css-style-image-load-fail/) 一文，效果如下：
+为图片加载失败时添加一个默认的错误显示，实现思路参考了：[图片加载失败后CSS样式处理最佳实践](https://www.zhangxinxu.com/wordpress/2020/10/css-style-image-load-fail/) 一文，效果如下：
 
 <p class="center"><img no-lazy src=" " alt="一个图片加载失败的示例"></p>
 
@@ -1061,7 +1061,7 @@ document.addEventListener("error", function(e) {
 
 ### 动态修改网页标题
 
-没有做过多的侵入，只是在离开标签时去除网站的二级标题。
+没有做过多的侵入，只是在离开标签时去除文章标题。
 
 {% folding cyan, /source/js/app.js %}
 ```js 动态修改标题
