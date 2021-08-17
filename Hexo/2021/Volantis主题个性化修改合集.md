@@ -868,6 +868,93 @@ if (post.hideTitle && post.hideTitle === true) {
 ```
 {% endfolding %}
 
+### 3.8 添加瀑布流布局
+
+为 `traditional` 布局的友链添加瀑布流显示，通过 `Macy.js` 实现。效果：[小伙伴们](/page/friends/)。
+
+#### 3.8.1 修改样式文件
+
+定位到 `/source/css/_layout/friends.styl` ，添加一处样式代码：
+
+{% folding cyan, 为 .friend-content 增加宽度设定 %}
+{% codeblock 添加高亮行内容 lang:styl mark:4 %}
+.article.l_friends
+  .friends-group
+    .friend-content
+      width: 100%
+      display: flex
+{% endcodeblock %}
+{% endfolding %}
+
+定位到 `/layout/friends.ejs`，添加 ID 选择器，便于 Macy 选取。
+
+{% folding cyan, 为 friend-content 增加 ID 选择器 %}
+{% codeblock 添加高亮行内容 lang:ejs mark:2 %}
+<% if (theme.pages.friends.layout_scheme == 'traditional') { %>
+  <div class='friend-content' id="friend-content-<%- i %>">
+    <% (group.items||[]).forEach(function(item){ %>
+{% endcodeblock %}
+{% endfolding %}
+
+#### 3.8.2 添加事件代码
+
+新建 `script.ejs` 至 `/layout/_third-party/friends/` 目录中，接着复制以下内容到文件中：
+
+{% folding cyan, 调用 Macy %}
+```js
+<script>
+  function pjax_macy() {
+    const nodeList = document.querySelectorAll('.friend-content');
+    if(nodeList.length === 0) return;
+    nodeList.forEach((element,i) => {
+      let container = '#friend-content-' + i;
+        load_macy(() => {
+        let macy = Macy({
+          container: container.toString(),
+          margin: {x: 10,y: 55},
+          columns: 6,
+          breakAt: {
+            1000: {columns: 5},
+            800: {olumns: 4},
+            600: {columns: 3}
+          }
+        })
+        setTimeout(() => {
+          macy.reInit();
+          if (typeof ScrollReveal === 'function') ScrollReveal().clean('#comments');
+        }, 500)
+      })
+    });
+  }
+
+  function load_macy(done = null) {
+    if(typeof Macy === "undefined") {
+      volantis.js("https://cdn.jsdelivr.net/npm/macy@2").then(() => {
+        if(done) done();
+      })
+    } else {
+      if(done) done();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    pjax_macy();
+  })
+  volantis.pjax.push(pjax_macy);
+</script>
+```
+{% endfolding %}
+
+然后在 `index.ejs` 文件中引用刚刚创建的 script.ejs 文件：
+
+{% folding cyan, 引用 ejs 文件 %}
+```ejs 在 layout/_partial/scripts/index.ejs 中添加对 script 的引用
+<% if (theme.pages.friends.layout_scheme == 'traditional') { %>
+  <%- partial('../../_third-party/friends/script') %>
+<% %>
+```
+{% endfolding %}
+
 ## 四、通用类
 
 此部分与主题关联不大，属于可以作为通用使用的新增功能。
@@ -1143,7 +1230,6 @@ const changeTitle = () => {
 }
 ```
 {% endfolding %}
-
 
 ## 五、小技巧
 
