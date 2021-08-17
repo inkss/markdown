@@ -7,7 +7,7 @@ tag:
   - Volantis
 categories: 教程
 date: '2021-08-05 09:20'
-updated: '2021-08-15 00:00'
+updated: '2021-08-17 00:00'
 hideTitle: true
 headimg: ../../img/article/Volantis主题个性化修改合集/main.gif
 description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
@@ -23,7 +23,30 @@ abbrlink: 610620a9
 
 {% note quote, 基础环境：基于 Volantis v5.0 β %}
 {% note warning, 本篇内容仅供参考，一切以实际呈现为准。 %}
-{% note bug red, 已大致完善。 %}
+
+{% folding cyan, 更新历史</span> %}
+{% timeline %}
+
+{% timenode 2021/08/17 %}
+
+去掉部分模糊的描述，修改错别字等等。
+
+{% endtimenode %}
+
+{% timenode 2021/08/15  %}
+
+大致完善了更改记录（虽然删除了部分预先打算写的内容）。
+
+{% endtimenode %}
+
+{% timenode 2021/08/05  %}
+
+开坑文章：《Volantis 主题个性化修改合集》
+
+{% endtimenode %}
+
+{% endtimeline %}
+{% endfolding %}
 
 ## 一、引言
 
@@ -33,7 +56,7 @@ abbrlink: 610620a9
 
 所谓主题修改无外乎改改样式，加加新功能，事实上 Volantis 已经抽出各种选项到配置文件了，如果只是修改*滚动条*、*导航栏*、*自定义字体*、*颜色*等等，都可以在配置文件中完成，所以建议先熟读文档 [主题配置](https://volantis.js.org/v5/theme-settings/) 一节，当然文档的维护不一定赶得上开发进度，一切以主题下的配置文件为主。
 
-而若是新增主题没有的功能，确实得改主题了，只需要新增 `js`、`css` 这种文件的可以参考文档的这节内容：[使用 Import 导入外部文件](https://volantis.js.org/v5/site-settings/#%E4%BD%BF%E7%94%A8-Import-%E5%AF%BC%E5%85%A5%E5%A4%96%E9%83%A8%E6%96%87%E4%BB%B6)。
+而若是新增主题没有的功能，确实得改主题了，只需新增 `js`、`css` 这种文件的可以参考文档的这节内容：[使用 Import 导入外部文件](https://volantis.js.org/v5/site-settings/#%E4%BD%BF%E7%94%A8-Import-%E5%AF%BC%E5%85%A5%E5%A4%96%E9%83%A8%E6%96%87%E4%BB%B6)。
 
 > *Volantis 用户可以在不修改主题文件的情况下向 head 和 body 中添加各种标签。`meta` 和 `link` 对应 head 中的 <meta> 和 <link> 标签。`script` 可以在 body 末尾导入 js 代码。*
 
@@ -69,7 +92,7 @@ abbrlink: 610620a9
 
 #### 2.1.2 移动端不显示卡片
 
-调整移动端的显示，平铺显示，效果参考本站移动端下的显示。
+调整移动端的显示，平铺展示，效果参考本站移动端下的显示。
 
 {% folding cyan, 将卡片的边距去除  %}
 ```styl 
@@ -107,7 +130,7 @@ abbrlink: 610620a9
 效果：<span class="allow-select">我可以被选中</span>，<span class="not-select">我不可以被选中</span>。
 
 {% folding cyan, 禁用了部分类型的文字选中 %}
-```styl
+```styl 本站同时禁止了大部分元素的选中
 .not-select,
 figcaption,
 footer,
@@ -121,7 +144,10 @@ details summary,
   -moz-user-select none
   -ms-user-select none
   user-select none
-  p
+  & p,
+  & span
+    cursor: $default,default
+  &.default-cursor
     cursor: $default,default !important
 .allow-select
   -webkit-touch-callout all
@@ -158,25 +184,28 @@ details summary,
 ```
 {% endfolding %}
 
-#### 2.1.5 修改二级标题的样式
+#### 2.1.5 修改标题的样式
 
-样式借鉴了 Handsome 主题，效果参考本文二级标题。
+样式借鉴了 Handsome 主题，效果参考本文二、三级标题。
 
-{% folding cyan, 样式修订 HandSome H1 H2 标题 %}
+{% folding cyan, 样式修订 HandSome H1 H2 H3 标题 %}
 ```styl
 article#post
-  & > h1,h2
+  & > h1,h2,h3
     font-weight: 700
     background: linear-gradient(to bottom,transparent 60%,rgba(189,202,219,.3) 0) no-repeat
     display: initial
     width: auto
     border-bottom: none
+  & > h3
+    font-weight: 500
+    position: initial
 ```
 {% endfolding %}
 
 #### 2.1.6 封面标题居中
 
-效果参考：[ES6](/tags/ES6/)
+修改文章列表页^[展示文章列表的页面，例如首页、标签页和 `list` 类型的页面等。]的显示效果，效果参考：[ES6](/tags/ES6/)
 
 {% folding cyan, 列表页的内容居中，内容居左且首行缩进 %}
 ```styl
@@ -195,26 +224,26 @@ article#post
 
 #### 2.1.7 卡片透明模式
 
-效果参见本站，文章页透明会影响阅读体验，所以文章下没加透明度的。
+效果参见本站，文章页^[Layout 为 post 类型的页面，例如放在 `_posts` 目录下的文章均为此类。]透明会影响阅读体验，所以文章下没加透明度的。
 
 {% folding cyan, 卡片添加透明度 %}
 ```styl
 // 添加透明度
 #l_header
-  background-color: hsla(0,0%,100%,.9)
+  background-color: rgba(255,255,255,0.9)
 #l_main .post,
 #l_side .widget
   background-color: rgba(255,255,255,0.9)
   box-shadow: 0 4px 10px -4px #ebedf0
 // 文章不透明
 #post.post
-  background-color: #ffffff
+  background-color: var(--color-card)
 ```
 {% endfolding %}
 
 #### 2.1.8 文章页不显示头图
 
-即头图只在列表页显示，进入文章时不显示。
+即头图只在列表页显示，进入文章页时不显示。
 
 {% folding cyan, 文章页不显示头图 %}
 ```styl
@@ -229,11 +258,11 @@ article#post
 
 #### 2.2.1 自定义 Note 图标
 
-此处特指主题的 `note` 和 `noteblock` 标签，如果需要更多类型的图片就需要自己添加了。新建 `note.styl` 文件，个人新增的图标都存在此处。
+此处特指主题的 `note` 和 `noteblock` 标签，如果需要更多类型的图标就需要自己添加了。新建 `note.styl` 文件，个人新增的图标都存在此处。
 
-然后是找图标，我们需要图标的代码而不是名称，进入 [fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2)，打开 **开发人员工具**，使用 {% kbd Ctrl %} + {% kbd Shift %} + {% kbd C %} 选取需要新增的图标，在 **元素** 选项卡右侧的 **样式** 栏，找到对应内容：
+然后是找图标，我们需要图标的十六进制代码而不是名称，进入 [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2)，打开 **开发人员工具**，使用 {% kbd Ctrl %} + {% kbd Shift %} + {% kbd C %} 选取需要新增的图标，在 **样式** 栏，找到 `::before` 节点：
 
-{% folding cyan, “\f368” 就是我们需要的代码 %}
+{% folding cyan, 其中 “\f368” 就是我们需要的代码 %}
 ```css
 .fa-accessible-icon:before {
   content: "\f368";
@@ -241,7 +270,7 @@ article#post
 ```
 {% endfolding %}
 
-接着在 note.styl 一个个添加就好了：
+接着在 note.styl 一个个添加就好了，使用时依旧通过名称调用：
 
 {% folding cyan, 自定义 Note %}
 ```styl
@@ -255,7 +284,7 @@ div.note
 
 #### 2.2.2 页脚响应式处理
 
-所谓响应式处理主要是利用 CSS 的媒体查询，利用 `max-width` 和 `display`，可以达到当小于一定可视范围时主动隐藏某些元素，这样在使用时只需要添加对应的类名即可，具体的尺寸根据实际情况实际对待。注：主题在 500px 以下便会显示移动端样式。
+所谓响应式处理主要是利用 CSS 的媒体查询，通过设定 `max-width` 和 `display`，可以达到当小于一定可视范围时主动隐藏某些元素，我们将其抽成可复用的样式类，这样在使用时只需要添加对应的类名即可，具体的尺寸根据实际情况选择^[几个关键的尺寸：500 以下为移动端、500-1024 为平板端，大于 1024 为桌面端。]。
 
 {% folding cyan, .footerMax560 %}
 ```styl
@@ -328,6 +357,10 @@ h1.title.common_read_h1
 .note strong
   font-size: 1.5rem
   font-family: 'sxls'
+
+// 修改文章行间距
+article > p
+  line-height: 2 !important;
 ```
 <!-- endtab -->
 
@@ -444,7 +477,7 @@ details summary
 阅读模式有部分配色，需要在暗黑模式下修改，在 `source/css/_plugins/dark.styl` 文件内添加：
 
 {% folding cyan, 暗色系配色 %}
-```styl
+```styl 此部分配色可根据你网站的实际情况进行修改
 #read_bkg
   background: #21252b !important
 .post_read
@@ -454,26 +487,49 @@ details summary
 
 #### 3.1.2 添加元素代码
 
-在 `layout/_partial/rightmenu.ejs` 文件中的 `<% } else if (item == 'print') { %>` 下新加一个判断：
+在 `layout/_partial/rightmenu.ejs` 文件中新加对右键选项的判断，使用时只需在配置文件的 `rightmenu.layout` 中添加 `reading` 即可。
 
 {% folding cyan, 新建一个对 reading 的判断 %}
-```ejs
+{% codeblock 添加高亮行内容 lang:ejs mark:8-13 %}
+//...
+<% } else if (item == 'print') { %>
+  <li class='option menuOption-Content'>
+    <span class='vlts-menu opt fix-cursor-default' id='printHtml'>
+      <i class='<%= theme.rightmenu.print.icon %> fa-fw '></i> <%- trim(theme.rightmenu.print.name) %>
+    </span>
+  </li>  
 <% } else if (item == 'reading') { %>
   <li class='option menuOption-Content'>
     <span class='vlts-menu opt fix-cursor-default' id='readingModel'>
       <i class='<%= theme.rightmenu.reading.icon %> fa-fw '></i> <%- trim(theme.rightmenu.reading.name) %>
     </span>
-  </li> 
+  </li>  
+<% } else if (item == 'music' && theme.plugins.aplayer.enable == true) { %>
+  <div id="menuMusic">
+//...
+{% endcodeblock %}
+{% endfolding %}
+
+另外目前开发版的右键已经移除了对 Jquery 的依赖，但是目前使用的右键依旧需要 Jquery 的支持，所以还需要修改 `rightmenu.js` 的导入方式。
+
+{% folding cyan, 引入 Jquery 资源 %}
+```
+volantis.import.jQuery().then(()=>{
+  volantis.js('<%- theme.cdn.map.js.rightMenu %>') // 阅读模式依赖 JQ
+})
 ```
 {% endfolding %}
 
 #### 3.1.3 添加事件代码
 
-在 `source/js/rightMenu.js` 处添它的逻辑处理部分，注意：目前开发版的右键已经移除了对 Jquery 的依赖，但是目前使用的右键依旧需要 Jquery 的支持，此处需要留意。
+在 `source/js/rightMenu.js` 处添它的逻辑处理部分。
 
 {% folding cyan, 添加事件代码 %}
 {% tabs rightMenu  %}
 <!-- tab 选取阅读模式 -->
+
+*可以添加在 `const urlRegx = ` 下方*
+
 ```js 在前面的选择器部分新增阅读模式
 const _readingModel = document.getElementById('readingModel'),
   _readBkg = document.getElementById('read_bkg');
@@ -481,6 +537,9 @@ const _readingModel = document.getElementById('readingModel'),
 <!-- endtab -->
 
 <!-- tab 初始化加载阅读模式 -->
+
+*对 `fn.init` 的内容进行修改*
+
 ```js 在 fn.init() 函数中添加阅读模式的底层背景
 fn.init = () => {
   fn.visible(_menuMusic, false);
@@ -497,6 +556,9 @@ fn.init = () => {
 <!-- endtab -->
 
 <!-- tab 逻辑处理 -->
+
+*全局搜索 `if (!!_printArticle) {` 定位修改位置*
+
 ```js 阅读模式与打印逻辑相似，只在文章页下展示，修改如下
 if (!!_printArticle) {
   fn.visible(_printHtml);
@@ -527,6 +589,9 @@ if (!!_printArticle) {
 <!-- endtab -->
 
 <!-- tab 调用函数 -->
+
+*可以放在 `fn.printHtml = () => {` **函数体** 的下方*
+
 ```js 阅读模式
 fn.readingModel = () => {
   if (typeof ScrollReveal === 'function') ScrollReveal().clean('#comments');
@@ -566,6 +631,18 @@ fn.readingModel = () => {
 }
 ```
 <!-- endtab -->
+
+<!-- tab 关闭阅读模式 -->
+
+*添加到 `if (volantis.rightMenu.defaultStyles === true) {` 上方*
+
+{% codeblock 打印时关闭可能开启的阅读模式 lang:js mark:2 %}
+fn.printHtml = () => {
+  if (volantis.isReadModel) fn.readingModel();
+  if (volantis.rightMenu.defaultStyles === true) {
+{% endcodeblock %}
+
+<!-- endtab -->
 {% endtabs %}
 {% endfolding %}
 
@@ -573,12 +650,15 @@ fn.readingModel = () => {
 
 为列表页的阅读更多添加一个动画，不过按照 @xaoxuu 的意见，`v5.0` 未来会去掉「阅读全文」「去原站阅读」等废话，整个卡片是一整个按钮，分类、标签等不可点击，看情况选择啦。
 
-效果参考：<a style="text-indent: 0;margin: 0 10px;" class="link-fx-1 color-contrast-higher" href="#3-1-%E6%B7%BB%E5%8A%A0%E9%98%85%E8%AF%BB%E6%A8%A1%E5%BC%8F">
+效果参考：<a style="text-indent: 0;margin: 0 10px;" class="link-fx-1 color-contrast-higher" href="#3-2-%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A%E6%A0%B7%E5%BC%8F%E6%9B%B4%E6%94%B9">
   <span><i class="fal fa-books fa-fw" aria-hidden="true" title="Read Me"></i>阅读更多</span>
   <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
 </a>
 
 #### 3.2.1 添加样式文件
+
+{% note warning, 此后除特殊说明外，所有的 *添加样式文件* 、 *样式新增* 均放在自定义文件夹 `source/css/_szyink` 中，具体放在那个文件中自拟。 %}
+
 
 {% folding cyan, 阅读更多的样式 %}
 ```styl
@@ -737,7 +817,7 @@ fn.readingModel = () => {
 
 ### 3.5 列表页文章标题开关
 
-如你所见，列表页的头图在已经包含了文章标题的情况下，再显示文章标题有些多余了，此处通过 `page.hideTitle` 控制是否显示文章标题，此处的修改也是非常简单，更改 `post.ejs` 的判断即可：
+如你所见，如果列表页的头图已经包含了文章标题，再显示标题有些多余了，此处通过 `page.hideTitle` 控制是否显示文章标题，这里的修改也是非常简单，更改 `post.ejs` 的判断即可：
 
 {% folding cyan, /layout/_partial/post.ejs %}
 ```ejs 在判断区域中新增一个判断即可
@@ -747,7 +827,7 @@ if (post.hideTitle && post.hideTitle === true) {
 ```
 {% endfolding %}
 
-### 3.6 自定义右键开关
+### 3.6 网站自定义右键开关
 
 在写右键的时候，其实是提供了右键的注册和注销函数，所以可以实现用户侧在使用过程中主动关闭对右键事件的监听。使用起来就很灵活了，可以用变量记录开关状态，也可以将状态写入到 `LocalStorage` 中持久化。
 
@@ -770,7 +850,7 @@ if (post.hideTitle && post.hideTitle === true) {
 
 ### 3.7 整合文章归档模板
 
-把归档和标签整合在一起，没必要整那么多分类，以归档也为主，将标签页内容输出到归档也前面，效果：[文章归档](/navigation/archives/)。
+把归档和标签整合在一起，没必要整那么多分类。以归档为主，将标签页内容输出到归档列表的前面，效果：[文章归档](/navigation/archives/)。
 
 {% folding cyan, /layout/archive.ejs %}
 ```ejs 在 article id 上方添加如下内容
@@ -794,14 +874,14 @@ if (post.hideTitle && post.hideTitle === true) {
 
 ### 4.1 引入 Iconfont 图标
 
-也就是引用阿里巴巴矢量图标库的图标，按照它的说明，推荐的是 symbol 引用^[这种用法其实是做了一个 svg 的集合，支持多色图标了，不再受单色限制。]。
+引用阿里巴巴矢量图标库的图标，按照它的说明，推荐的是 symbol 引用^[这种用法其实是做了一个 svg 的集合，支持多色图标了，不再受单色限制。]。
 
 #### 4.1.1 引用资源文件和样式
 
 将你下载的 JS 文件拷贝到 `/source/js/` 目录中，接着修改 `cdnCtrl.ejs` 引用文件。
 
 {% folding cyan, /layout/_partial/scripts/_ctrl/cdnCtrl.ejs %}
-```ejs 在最下面引用文件，iconfontInkss 为你的 JS 文件名称
+```ejs 在最下面引用文件，iconfont 为你的 JS 文件名称
 theme.cdn.addJS("iconfont")
 ```
 {% endfolding %}
@@ -825,7 +905,7 @@ theme.cdn.addJS("iconfont")
 
 #### 4.1.2 制作自定义标签
 
-为了方便使用引用的图标，将其制作成自定义标签，新建 `icon.js` 文件写入如下内容，这样在使用时只需要 `{% emoji aixin %}`，后跟对应类名成即可。
+为了方便使用对应的图标，将其制作成自定义标签，新建 `icon.js` 文件并写入如下内容，使用时只需要类似 `{% emoji aixin %}` 这样写即可，aixin 为图标/表情的名称。
 
 {% folding cyan, /scripts/tags/icon.js %}
 ```js
@@ -888,7 +968,7 @@ hexo.extend.tag.register('emoji', emoji)
 
 #### 4.3.1 添加样式文件
 
-参考 [timeline.styl](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/source/css/_szyink/profile.styl) 中的内容，引入到主题中即可。
+参考 [profile.styl](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/source/css/_szyink/profile.styl) 中的内容，引入到主题中即可。
 
 #### 4.3.2 主题文件修改
 
@@ -919,7 +999,7 @@ hexo.extend.tag.register('emoji', emoji)
 
 ### 4.4 全局 Img 加载失败的默认提示
 
-为图片加载失败时添加一个默认的错误显示，实现思路参考了：[图片加载失败后CSS样式处理最佳实践](https://www.zhangxinxu.com/wordpress/2020/10/css-style-image-load-fail/) 一文，效果如下：
+为图片加载失败时添加一个默认的错误输出，实现思路参考了：[图片加载失败后CSS样式处理最佳实践](https://www.zhangxinxu.com/wordpress/2020/10/css-style-image-load-fail/) 一文，效果如下：
 
 <p class="center"><img no-lazy src=" " alt="一个图片加载失败的示例"></p>
 
@@ -930,7 +1010,7 @@ hexo.extend.tag.register('emoji', emoji)
 {% folding cyan, 图片加载失败的样式 %}
 {% tabs img-error %}
 
-<!-- tab 公共样式 -->
+<!-- tab 基础样式 -->
 ```styl 默认样式
 img.error
   opacity: unset !important
@@ -1042,6 +1122,29 @@ document.addEventListener("error", function(e) {
 ```
 {% endfolding %}
 
+### 4.6 动态修改网页标题
+
+没有做过多的侵入（*个人认为把标题修改为 ‘你去哪儿了，快回来’ 等类似的行为相当幼稚、无趣、讨人厌*），只是在离开标签时去除文章标题，只保留网站标题。
+
+{% folding cyan, /source/js/app.js %}
+*可以在 locationHash(); 下方添加 changeTitle() 的调用*
+```js 动态修改标题
+const changeTitle = () => {
+  sessionStorage.setItem("domTitle", document.title);
+  document.addEventListener('visibilitychange', function () {
+    const title = sessionStorage.getItem("domTitle") || document.title;
+    const titleArr = title.split(' - ') || [];
+    if (document.visibilityState == 'hidden') {
+      document.title = titleArr.length === 2 ? titleArr[1] : titleArr[0];
+    } else {
+      document.title = title;
+    }
+  });
+}
+```
+{% endfolding %}
+
+
 ## 五、小技巧
 
 ### 透明图片的背景色设定
@@ -1059,23 +1162,3 @@ document.addEventListener("error", function(e) {
 
 <p class="p center logo large"><em>Volantis 主题个性化修改<sup>V1.0</sup></em></p>
 
-### 动态修改网页标题
-
-没有做过多的侵入，只是在离开标签时去除文章标题。
-
-{% folding cyan, /source/js/app.js %}
-```js 动态修改标题
-const changeTitle = () => {
-  sessionStorage.setItem("domTitle", document.title);
-  document.addEventListener('visibilitychange', function () {
-    const title = sessionStorage.getItem("domTitle") || document.title;
-    const titleArr = title.split(' - ') || [];
-    if (document.visibilityState == 'hidden') {
-      document.title = titleArr.length === 2 ? titleArr[1] : titleArr[0];
-    } else {
-      document.title = title;
-    }
-  });
-}
-```
-{% endfolding %}
