@@ -850,11 +850,11 @@ if (post.hideTitle && post.hideTitle === true) {
 
 <div style="min-height: 30px;font-family: 'sxls';font-size: 1.5rem;font-weight: 600;">
   <div id="destroyRightContent" style="display: none">
-    <p class="article center" style="text-align: center;">关闭自定义右键：<span id="destroyRightMenu" class="btn">
+    <p class="article center" style="text-align: center;text-indent: inherit;">关闭自定义右键：<span id="destroyRightMenu" class="btn">
         <a class="button" href="javascript:;" title="注销右键">注销右键</a></span>
     </p>
   </div>
-  <p id="initRightContent" class="article center" style="text-align: center;display: none">激活自定义右键：<span
+  <p id="initRightContent" class="article center" style="text-align: center;display: none;text-indent: inherit;">激活自定义右键：<span
       id="initRightMenu" class="btn"><a class="button" href="javascript:;" title="激活右键">激活右键</a></span></p>
 </div>
 
