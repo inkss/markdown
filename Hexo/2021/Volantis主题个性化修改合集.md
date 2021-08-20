@@ -24,7 +24,7 @@ abbrlink: 610620a9
 {% note quote, 基础环境：基于 Volantis v5.0 β %}
 {% note warning, 本篇内容仅供参考，一切以实际呈现为准。 %}
 
-{% folding cyan, 更新历史</span> %}
+{% folding cyan, 更新历史 %}
 {% timeline %}
 
 {% timenode 2021/08/17 %}
