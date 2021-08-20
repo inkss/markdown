@@ -359,7 +359,7 @@ h1.title.common_read_h1
   font-family: 'sxls'
 
 // 修改文章行间距
-article > p
+article p
   line-height: 2 !important;
 ```
 <!-- endtab -->
@@ -807,13 +807,21 @@ fn.printHtml = () => {
 接着就只需要添加这个样式的实现：
 
 {% folding cyan, 在样式文件中添加 %}
-```ejs 
-#l_main > article.cus-indent > p
-  text-indent: 2em
-  &.center
-    text-indent: initial
-  i
-    text-indent: initial
+```ejs
+#l_main > article.cus-indent
+  p
+    text-indent 2em
+    &.p
+      text-indent initial 
+  details,
+  blockquote,
+  section,
+  .prev-next,
+  .new-meta-box,
+  .note,
+  .tag
+    p
+      text-indent initial 
 ```
 {% endfolding %}
 
