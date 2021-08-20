@@ -10,7 +10,7 @@ categories: 资料
 date: '2021-08-20 21:38'
 updated: '2021-08-20 22:35'
 hideTitle: true
-headimg: ../../img/article/腾讯云CDN证书自部署方案/Hexo 博客封面.png
+headimg: ../../img/article/腾讯云CDN证书自部署方案/Hexo博客封面.png
 description: 利用腾讯云 SDK 自动更新内容分发的域名所使用的证书。
 abbrlink: 6b3511b1
 ---
