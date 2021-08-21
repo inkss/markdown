@@ -9,7 +9,7 @@ categories: 教程
 date: '2021-08-05 09:20'
 updated: '2021-08-17 00:00'
 hideTitle: true
-headimg: ../../img/article/Volantis主题个性化修改合集/main-new.gif
+headimg: ../../img/article/Volantis主题个性化修改合集/main.webp
 description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
 music:
   enable: true
