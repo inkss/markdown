@@ -7,7 +7,7 @@ tag:
   - Volantis
 categories: 教程
 date: '2021-08-05 09:20'
-updated: '2021-08-17 00:00'
+updated: '2021-08-23 00:00'
 hideTitle: true
 headimg: ../../img/article/Volantis主题个性化修改合集/main.webp
 description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
@@ -26,6 +26,12 @@ abbrlink: 610620a9
 
 {% folding cyan, 更新历史 %}
 {% timeline %}
+
+{% timenode 2021/08/23 %}
+
+个性化主题的注入点说明。
+
+{% endtimenode %}
 
 {% timenode 2021/08/17 %}
 
@@ -72,6 +78,15 @@ abbrlink: 610620a9
 @import '_szyink/*'   
 ```
 {% endfolding %}
+
+
+### 2.0 Custom Files 自定义文件
+
+{% note red up::更新：Volantis 支持了样式文件注入，可以在完全不修改主题的情况下添加样式。—— 21/08/23 %}
+
+所以对自定义文件的存储位置可稍作修改，可将原 `/blog/theme/volantis/source/css/_szyink/` 转移到 `/blog/source/_volantis/` 。当然效果是一样的，更多信息请参阅开发文档。
+
+{% link Custom Files 自定义文件, https://volantis.js.org/v5/development-api/#Custom-Files-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6 %}
 
 ### 2.1 样式覆盖
 

@@ -7,7 +7,7 @@ tag:
   - Gulp
 categories: 资料
 date: '2021-08-21 14:30'
-updated: '2021-08-21 15:13'
+updated: '2021-08-23 10:32'
 hideTitle: true
 headimg: ../../img/article/Gulp&Hexo压缩/ezgif-6-4787e793eead.webp
 description: 'Gulp & Hexo：通过 Gulp 对 Hexo 博客进行 html,css,js 压缩，img 转 webp 和替换图片访问链接。'
@@ -161,3 +161,39 @@ gulp.task('img', gulp.parallel(
 
 gulp.task('default', gulp.series('one'));
 ```
+
+## 四、归纳
+
+咳咳，上文其实说起来只算是抛{% psw 水 %}砖{% psw 文 %}引{% psw 章 %}玉{% psw 呢 %}，压缩类的正常使用即可，下面介绍下图片的替换：核心是用到了 `<picture>` 标签。
+
+{% note quote, HTML `<picture>` 元素通过包含零或多个 `<source>` 元素和一个 `<img>` 元素来为不同的显示/设备场景提供图像版本。浏览器会选择最匹配的子 `<source>` 元素，如果没有匹配的，就选择 `<img>` 元素的 src 属性中的URL。然后，所选图像呈现在 `<img>` 元素占据的空间中。 %}
+
+{% tiy %}
+<picture>
+    <source srcset="https://static.inkss.cn/img/article/Volantis主题个性化修改合集/people.webp" type="image/webp">
+    <img src="https://static.inkss.cn/img/article/Volantis主题个性化修改合集/people.png" style="height:280px">
+</picture>
+<script>
+console.info('右键新标签打开图片观察文件后缀')
+</script>
+{% endtiy %}
+
+原理就是这个样子了，接下来就是选取 HTML 的 `<img>` 标签，在它的外层包裹 `<picture>` 就大功告成，现在需要的就是定位 img 和需要被替换的 img 标签。定位 img 可以用正则也可以简单的用 `startWith` 判断 `<img` ，而定位需要被替换的图片这点算是取巧了。
+
+我的基础文件路径如下：
+
+```sh
+.
+└── source
+    ├── img
+    │   ├── article
+    │   │   └── file
+    │   │       └── bkg.png
+    │   ├── bkg
+    │   └── friend
+    └── _posts
+        └── 2021
+            └── file.md
+```
+
+文章调用图片是通过 Typora 处理，核心规则是**复制到指定路径**：`../../img/article/${filename}/` 。所以如果图片标签的 `src` 地址包含了 `../../img` 就可以认为是博客用到的图片，需要被替换标签，当然主要是有这样的特殊路径就直接拿来使用了。
