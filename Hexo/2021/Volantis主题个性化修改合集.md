@@ -371,7 +371,7 @@ h1.title.common_read_h1
 // noteblock 标题字号增大
 .note strong
   font-size: 1.5rem
-  font-family: 'sxls'
+  font-family: 'SentyGoldenBell'
 
 // 修改文章行间距
 article p
@@ -863,7 +863,7 @@ if (post.hideTitle && post.hideTitle === true) {
 
 效果：
 
-<div style="min-height: 30px;font-family: 'sxls';font-size: 1.5rem;font-weight: 600;">
+<div style="min-height: 30px;font-family: 'SentyGoldenBell';font-size: 1.5rem;font-weight: 600;">
   <div id="destroyRightContent" style="display: none">
     <p class="article center" style="text-align: center;text-indent: inherit;">关闭自定义右键：<span id="destroyRightMenu" class="btn">
         <a class="button" href="javascript:;" title="注销右键">注销右键</a></span>
