@@ -7,7 +7,6 @@ tag:
   - Volantis
 categories: 教程
 date: '2021-08-05 09:20'
-updated: '2021-08-23 00:00'
 hideTitle: true
 headimg: ../../img/article/Volantis主题个性化修改合集/main.webp
 description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
@@ -666,11 +665,6 @@ fn.printHtml = () => {
 ### 3.2 阅读更多样式更改
 
 为列表页的阅读更多添加一个动画，不过按照 @xaoxuu 的意见，`v5.0` 未来会去掉「阅读全文」「去原站阅读」等废话，整个卡片是一整个按钮，分类、标签等不可点击，看情况选择啦。
-
-效果参考：<a style="text-indent: 0;margin: 0 10px;" class="link-fx-1 color-contrast-higher" href="#3-2-%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A%E6%A0%B7%E5%BC%8F%E6%9B%B4%E6%94%B9">
-  <span><i class="fal fa-books fa-fw" aria-hidden="true" title="Read Me"></i>阅读更多</span>
-  <svg class="icon" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="15.5"></circle><line x1="10" y1="18" x2="16" y2="12"></line><line x1="16" y1="12" x2="22" y2="18"></line></g></svg>
-</a>
 
 #### 3.2.1 添加样式文件
 
