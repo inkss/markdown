@@ -36,7 +36,7 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo b
 
 需要注意的是： 在 WSL1 时代，如果计算机设置为可供 LAN 访问，那么在 WSL 中运行的应用程序也可供在 LAN 中访问。而在 WSL2 中，其有一个带有其自己独一无二的 IP 地址的虚拟化以太网适配器，所以局域网中无法通过宿主机的地址访问 WSL 中的应用。
 
-你可以参考如下链接找到解决方案：[为 WSL2 一键设置代理](https://zhuanlan.zhihu.com/p/153124468) *{% psw 如果只是本机访问就不用管 %}*
+你可以参考如下链接找到解决方案：[为 WSL2 一键设置代理](https://zhuanlan.zhihu.com/p/153124468)。  *{% psw 如果只是本机访问就不用管 %}*
 
 {% gallery::stretch %}
 ![宝塔面板](../../img/article/WSL的利用/Snipaste_2021-09-29_14-18-45.png)
