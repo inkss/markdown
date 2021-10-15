@@ -1,17 +1,16 @@
 ---
-title: WSL 之宝塔面板的部署
+title: WSL：宝塔面板的安装与使用
 toc: true
 indent: true
 date: 2021/09/29
-updated: 2021/09/29
+updated: 2021/10/15
 tag:
   - WSL
   - Linux
+  - Windows
 categories: 资料
-descriptions: Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables (in ELF format) natively on Windows 10 and Windows Server 2019.
+description: Windows Subsystem for Linux (WSL) is a compatibility layer for running Linux binary executables (in ELF format) natively on Windows 10 and Windows Server 2019.
 abbrlink: b2b02edd
-headimgs: ../../img/article/WSL的利用/main.png
-hideTitles: true
 ---
 
 最近重装了系统，使用的是 Windows11 Beta 版本，所以重新安装配置了这些，于此记录。与 Win10 相比，默认安装的是 WSL2 版本，默认的 Ubuntu 也升级到了 20.04LTS。
