@@ -3,7 +3,7 @@ title: WSL：Linux GUI 的深度体验
 toc: true
 indent: true
 date: 2021/10/15
-updated: 2021/10/15
+updated: 2021/10/17
 tag:
   - WSL
   - Linux
@@ -13,21 +13,35 @@ abbrlink: b5085776
 description: WSL2 带来了 Linux GUI 的支持，现在你可以在 Windows 上以原生应用的方式运行 Linux GUI applications (X11 and Wayland)。本文记录了对其的尝试过程，包括基础的环境配置：中文环境及输入法配置；基本应用的体验：网易云、QQ 音乐、百度网盘等 Linux 版本的使用。
 headimg: ../../img/article/WSLGUI/main.png
 hideTitle: true
+references:
+  - title: 'Run Linux GUI apps on the Windows Subsystem for Linux'
+    url: 'https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps'
+  - title: 'How to use wsl development environment in product'
+    url: 'https://www.jetbrains.com/help/idea/how-to-use-wsl-development-environment-in-product.html'
+  - title: Chinese input method doesn't work when launching app from Start Menu
+    url: 'https://github.com/microsoft/wslg/issues/278'
+  - title: 'WSL (Windows 10) - OI Wiki'
+    url: 'https://oi-wiki.org/tools/wsl/' 
+  - title: 'wslg 初体验：最佳 Linux 发行版？'
+    url: 'https://ddadaal.me/articles/wslg-first-experience'
+  - title: 在 WSL 上配置输入法
+    url: https://patrickwu.space/2019/10/28/wsl-fcitx-setup-cn/
 ---
 
-WSLG 是微软爸爸的一个开源项目，允许你原生使用 Linux GUI 程序，你可以在[此处](https://github.com/microsoft/wslg)找到项目地址。此外你可以安装相应显卡的 vGPU 的驱动程序以进行 GPU 加速，可以达到类似原生 Win 应用的使用体验。
+WSLg 是微软爸爸的一个开源项目，允许你原生使用 Linux GUI 程序，你可以在[此处](https://github.com/microsoft/wslg)找到项目地址。此外你可以安装相应显卡的 vGPU 的驱动程序以进行 GPU 加速，可以达到类似原生 Win 应用的使用体验。
 
-下图为 WSLG 和 英伟达 CUDA 架构图：
+下图为 WSLg 和 英伟达 CUDA 架构图：
 
-{% gallery::stretch %}
+{% gallery stretch::::diagram %}
 ![WSLg Architecture Overview](../../img/article/WSLGUI/WSLg_ArchitectureOverview.png)
 
 ![WSL launch stack diagram](../../img/article/WSLGUI/WSL-launch-stack-diagram-HR-r4.png)
+
 {% endgallery %}
 
 ## 一、安装
 
-在 Windwos 系统中启用 WSL2 的 GUI 支持的前置条件：
+在 Windows 系统中启用 WSL2 的 GUI 支持的前置条件：
 
 {% tabs wsl %}
 <!-- tab 前置条件 -->
@@ -43,6 +57,182 @@ WSLG 是微软爸爸的一个开源项目，允许你原生使用 Linux GUI 程�
 <!-- endtab -->
 {% endtabs %}
 
-## 二、基础环境
+## 二、配置
 
-未完待续
+WSLg 项目推荐了一些基础的软件，比如 Gedit, GIMP, Nautilus, Chrome 等，这里摘抄一下。
+
+{% folding cyan, Install and run GUI apps %}
+
+> If you want to get started with some GUI apps, you can run the following commands from your Linux terminal to download and install some popular applications. If you are using a different distribution than Ubuntu, it may be using a different package manager.
+
+```sh
+
+## Update list of available packages
+sudo apt update
+
+## Gedit
+sudo apt install gedit -y
+
+## GIMP
+sudo apt install gimp -y
+
+## Nautilus
+sudo apt install nautilus -y
+
+## VLC
+sudo apt install vlc -y
+
+## X11 apps
+sudo apt install x11-apps -y
+
+## Google Chrome
+cd /tmp
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb 
+sudo apt install --fix-broken -y
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+## Microsoft Teams
+cd /tmp
+sudo curl -L -o "./teams.deb" "https://teams.microsoft.com/downloads/desktopurl?env=production&plat=linux&arch=x64&download=true&linuxArchiveType=deb"
+sudo apt install ./teams.deb -y
+
+## Microsoft Edge Browser
+sudo curl https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-dev/microsoft-edge-dev_93.0.946.1-1_amd64.deb -o /tmp/edge.deb
+sudo apt install /tmp/edge.deb -y
+```
+
+> Once these applications are installed, you'll find them in your start menu under the distro name. For example `Ubuntu -> Microsoft Edge`. You can also launch these from your terminal window using the commands:
+
+{% endfolding %}
+
+你可以参考一下上述内容安装一些基础软件，比如 Gedit 和 Nautilus，虽说可以在 Windows 中直接管理 WSL 文件了但最起码还是原生的用着舒服不是吗。
+
+### 中文环境
+
+初始状态下，WSL 中的系统是不包含中文语言环境的，如果只在终端时使用便也无所谓了，可现在可以使用桌面程序，这样的话还是配置一下语言比较好。
+
+```sh 安装中文语言包
+sudo apt install language-pack-zh-hans
+```
+
+```sh 编译语言
+sudo locale-gen zh_CN.UTF-8
+```
+
+```sh 安装一些中文字体
+sudo apt install fontconfig -y
+sudo apt install fonts-noto-cjk -y
+sudo apt install fonts-wqy-microhei -y
+sudo apt install fonts-wqy-zenhei -y
+```
+
+```sh 设置默认语言，找到 zh_CN.UTF-8 选择
+sudo dpkg-reconfigure locales
+```
+
+{% gallery stretch %}
+![软件包设置](../../img/article/WSLGUI/Snipaste_2021-10-11_18-11-43.png)
+{% endgallery %}
+
+完成上述操作后，关闭 WSL 并重启，登录查看即可。
+
+### 中文输入法
+
+关于中文输入法，由于最开始想使用搜狗输入法，所以框架选用了 Fcitx。不过实际体验后发现软件方面的问题太多严重影响使用，最后也是放弃它了。至于另一个备选方案中州韵也是因为懒得去搜配置文件也是放弃了。最后是使用的是谷歌拼音输入法（*合着之前就是瞎折腾*）
+
+以上是前提，接着就是安装配置 Fcitx 和谷歌拼音输入法。
+
+```sh 安装 Fcitx 核心
+sudo apt install fcitx fcitx-googlepinyin fonts-noto-cjk fonts-noto-color-emoji dbus-x11
+```
+
+```sh 配置环境变量
+# 如果你当前 shell 为 bash，粘贴以下内容到 ~/.bash_profile
+# 如果你当前 shell 为 zsh， 粘贴一下内容到 ~/.zprofile
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+```
+
+完成以上步骤后，可以在软件列表中双击打开 Fcitx 配置（也可终端下执行 `fcitx-config-gtk3`）选择输入法，如果列表中为空，可以终端输入 `fcitx -r` 重启后查看。
+
+{% gallery stretch %}
+![语言支持](../../img/article/WSLGUI/image-20211017025544310.png)
+![输入法配置](../../img/article/WSLGUI/image-20211017031108882.png)
+{% endgallery %}
+
+{% gallery stretch %}
+![输入体验](../../img/article/WSLGUI/动画.gif)
+{% endgallery %}
+
+## 三、软件
+
+### 国产软件
+
+仅我所知的，可以在 Linux 系统中使用的国产软件就有：QQ 音乐、网易云音乐、百度云盘、WPS、福昕 PDF，而他们可以通过 WSLg 运行。
+
+这类软件的安装很简单就详细说明了，基本都是去各自官网下载 deb 安装包，然后安装即可。
+
+{% gallery stretch::1 %}
+![网易云音乐](../../img/article/WSLGUI/image-20211017033824274.png)
+![QQ 音乐](../../img/article/WSLGUI/image-20211017033924592.png)
+{% endgallery %}
+
+### 编程软件
+
+相比于日常应用的使用，编程软件才是关注的重点。首先是大型的 IDE 如 Jetbrains 全家桶自然支持 Ubuntu，并且有报道说明 Linux 下的应用速度或优于 Windows 下的速度。此外得益于 WSL2 的完整内容，已经可以在 Windows 下利用 WSL 跑深度学习了。
+
+而日常的简单开发，可以利用微软的 VS Code，一方面你可以直接在 WSL 中安装应用使用，另一方面你也可以利用 Windows 下的 Vs Code 通过 *Remote - WSL* 扩展连接到 WSL 系统中。
+
+未来，可也将更多的开发环境从 Windows 下迁移到 WSL 子系统里。编程开发有时候还是觉得 Linux 方便一些，比如在前一篇文章 [《WSL：宝塔面板的安装与使用》](/blog/b2b02edd/) 中所描述的，通过在 WSL 安装宝塔面板来管理 Nginx, MySql, PHP，在使用习惯上更贴近于服务器下的使用逻辑，更加方便。
+
+总之，WSL 与 WSLg 带来的这一切真的很令人兴奋。
+
+## 四、补充
+
+### 关于 systemd
+
+{% note info, WSL2 是用的自己的 init，不是用的 systemd，不直接支持传统的 systemd/init.d 脚本，所以 /etc/init.d 下的程序不会自动运行。 %}
+
+这意味着一些软件无法开机自启，中文输入也在被影响的范围内，好在可以手动启动，通过以下命令启动输入法，具体的为什么就不作解释了，*{% psw 好吧，其实真相是我也只是知其然 (●'◡'●)。 %}*。
+
+```sh 启动 DBUS 与 Fcitx
+sudo /etc/init.d/dbus start
+fcitx -d
+```
+
+WSL 无法开启自启，但是可以利用 Windows 脚本启动它：新建文件 wsl.vbs 并写入如下内容：
+
+```vbs
+Set ws = CreateObject("Wscript.Shell")
+ws.run "wsl -d Ubuntu -u root /etc/init.wsl", vbhide
+ws.run "wsl -d Ubuntu -u szyink fcitx", vbhide
+```
+
+最后按 <kbd>Win</kbd> + <kbd>R</kbd> 输入 `shell:startup` 将该 vbs 文件放启动目录中。
+
+### 关于备份/恢复/删除
+
+```powershell
+# 查看当前已经安装的子系统
+wsl --list
+
+# 删除已经安装的子系统
+wsl --unregister wsl-name
+
+# 导出子系统到指定路径
+wsl --export wsl-name /path/to/backup-file.tar
+
+# 导入子系统到指定路径
+wsl --import wsl-name /wsl/path/ /path/to/backup-file.tar
+```
+
+### 关于应用
+
+如果需要应用图标在 Windows 软件列表中，需要其图标位于 `/usr/share/applications` 中。
+
+{% gallery stretch::1 %}
+![](../../img/article/WSLGUI/image-20211017035446015.png)
+{% endgallery %}
