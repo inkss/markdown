@@ -14,7 +14,7 @@ abbrlink: e7617c8b
 description: 本文共包含以下内容：Nginx 泛域名解析、根据 subdomain 匹配反代地址、防止恶意泛域名解析、BasicAuth 的认证校验、宝塔面板的反代访问、泛域名 SSL 证书申请、泛域名 CDN 分发和泛域名证书的自部署。
 headimg: ../../img/article/Nginx泛域名解析配置/main.png
 background: ../../img/article/Nginx泛域名解析配置/wallhaven-k778dq.jpg
-hideTitle: true
+hideTitle: false
 ---
 
 首先，七一快乐哇~ 热烈庆祝建党一百周年的说~ <span class="rem2">{% iconfont jr-qiyijiandangjie %}</span>

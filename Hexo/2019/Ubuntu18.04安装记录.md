@@ -15,7 +15,7 @@ icons:
   - fab fa-ubuntu red
 headimg: ../../img/article/Ubuntu18.04安装记录/main.png
 background: ../../img/article/Ubuntu18.04安装记录/image-20200507110318847.png
-hideTitle: true
+hideTitle: false
 ---
 
 {% p center logo ultra, '<i class="fab fa-linux"></i>' %}
