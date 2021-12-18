@@ -20,3 +20,5 @@ abbrlink: fe7b9c5c
 | [remy / nodemon](https://github.com/remy/nodemon)            | Monitor for any changes in your node.js application and automatically restart the server - perfect for development | 持续化 |
 | [sequelize / sequelize](https://github.com/sequelize/sequelize) | An easy-to-use and promise-based multi SQL dialects ORM tool for Node.js | ORM    |
 | [motdotla](https://github.com/motdotla)/[dotenv](https://github.com/motdotla/dotenv) | Loads environment variables from .env for nodejs projects.   | 环境   |
+
+![](../../img/article/NodeJsApi使用/wallhaven-rde2xw.jpg)
