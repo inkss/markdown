@@ -10,7 +10,7 @@ date: '2021-09-18 02:29'
 updated: '2021-09-18'
 hideTitle: false
 headimg: ../../img/article/腾讯云Webify轻体验/ezgif-6-8de51b74f543.webp
-background: ../../img/article/腾讯云Webify轻体验/wallhaven-rdplk7.jpg
+backgrounds: ../../img/article/腾讯云Webify轻体验/wallhaven-rdplk7.jpg
 description: 腾讯云站点扶持计划 —— Webify，博客托管的新选择。
 music:
   enable: true
@@ -18,6 +18,7 @@ music:
   type: song
   id: 000RSpQM0n7KBP
 abbrlink: 5134cc9f
+hidden: true
 ---
 
 

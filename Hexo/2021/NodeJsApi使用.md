@@ -11,6 +11,7 @@ tag:
 categories: 资料
 description: "利用 Koa 搭建一个简单的 Api 服务，Node 全栈开发~ \U0001F60F"
 abbrlink: fe7b9c5c
+hidden: true
 ---
 
 | 项目                                                         | 描述                                                         | 备注   |
@@ -20,5 +21,3 @@ abbrlink: fe7b9c5c
 | [remy / nodemon](https://github.com/remy/nodemon)            | Monitor for any changes in your node.js application and automatically restart the server - perfect for development | 持续化 |
 | [sequelize / sequelize](https://github.com/sequelize/sequelize) | An easy-to-use and promise-based multi SQL dialects ORM tool for Node.js | ORM    |
 | [motdotla](https://github.com/motdotla)/[dotenv](https://github.com/motdotla/dotenv) | Loads environment variables from .env for nodejs projects.   | 环境   |
-
-![](../../img/article/NodeJsApi使用/wallhaven-rde2xw.jpg)
