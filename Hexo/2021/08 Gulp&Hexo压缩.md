@@ -168,16 +168,6 @@ gulp.task('default', gulp.series('one'));
 
 {% note quote, HTML `<picture>` 元素通过包含零或多个 `<source>` 元素和一个 `<img>` 元素来为不同的显示/设备场景提供图像版本。浏览器会选择最匹配的子 `<source>` 元素，如果没有匹配的，就选择 `<img>` 元素的 src 属性中的URL。然后，所选图像呈现在 `<img>` 元素占据的空间中。 %}
 
-{% tiy %}
-<picture>
-    <source srcset="https://static.inkss.cn/img/article/Volantis主题个性化修改合集/people.webp" type="image/webp">
-    <img src="https://static.inkss.cn/img/article/Volantis主题个性化修改合集/people.png" style="height:280px">
-</picture>
-<script>
-console.info('右键新标签打开图片观察文件后缀')
-</script>
-{% endtiy %}
-
 原理就是这个样子了，接下来就是选取 HTML 的 `<img>` 标签，在它的外层包裹 `<picture>` 就大功告成，现在需要的就是定位 img 和需要被替换的 img 标签。定位 img 可以用正则也可以简单的用 `startWith` 判断 `<img` ，而定位需要被替换的图片这点算是取巧了。
 
 我的基础文件路径如下：
