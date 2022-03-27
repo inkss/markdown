@@ -112,7 +112,7 @@ git clone https://github.com/coreruleset/coreruleset.git
 - ② 检出到最新正式版，具体版本见：[coreruleset/releases](https://github.com/coreruleset/coreruleset/releases)
 
 ```sh
-cd ModSecurity-nginx
+cd coreruleset
 git checkout v3.3.2
 ```
 
