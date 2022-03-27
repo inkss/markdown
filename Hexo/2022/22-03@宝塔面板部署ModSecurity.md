@@ -11,7 +11,7 @@ tag:
 categories: 教程
 description: 本文介绍了如何部署开源免费的 ModSecurity 防火墙，并导入相应的规则集文件等。
 date: '2022-03-25 12:46'
-updated: '2022-03-25 12:46'
+updated: '2022-03-27 18:00'
 references:
   - title: Compilation recipes for v3.x
     url: >-
