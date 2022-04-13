@@ -6,7 +6,6 @@ tag:
   - 宝塔
   - Nginx
   - Ubuntu
-  - ModSecurity
   - WAF
 categories: 教程
 description: 本文介绍了如何部署开源免费的 ModSecurity 防火墙，并导入相应的规则集文件等。
