@@ -81,12 +81,12 @@ WSL 还能做什么？真的很多，由于 WSL2 已经是一个拥有完整 Lin
 
 ### GUI 程序
 
-{% noteblock quote %}
+{% blocknote quote %}
 - 从应用程序启动 Linux Windows "开始" 菜单。
 - 将 Linux 应用固定到 Windows 任务栏。
 - 使用 alt-tab 在 Linux 和 Windows 应用之间切换。
 - 跨应用和 Linux Windows 剪切 + 粘贴。
-{% endnoteblock %}
+{% endblocknote %}
 
 与安装桌面不同，在 Windows11 下可以近乎得到一种原生程序的启动体验，相应的软件甚至可以出现在 Window 的软件列表中，这种状态下，类似于 VMware 下的 Unity 模式，操作上有些许相似。
 

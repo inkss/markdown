@@ -25,7 +25,7 @@ hideTitle: false
 
 <br>
 
-{% noteblock quote, 本文共包含以下内容： %}
+{% blocknote quote, 本文共包含以下内容： %}
 
 - Nginx 泛域名解析
 - 根据 subdomain 匹配反代地址
@@ -36,7 +36,7 @@ hideTitle: false
 - 泛域名 CDN 分发、
 - 泛域名证书的自部署
 
-{% endnoteblock %}
+{% endblocknote %}
 
 ## 一、Nginx 侧配置
 

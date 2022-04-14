@@ -273,7 +273,7 @@ article#post
 
 #### 2.2.1 自定义 Note 图标
 
-此处特指主题的 `note` 和 `noteblock` 标签，如果需要更多类型的图标就需要自己添加了。新建 `note.styl` 文件，个人新增的图标都存在此处。
+此处特指主题的 `note` 和 `blocknote` 标签，如果需要更多类型的图标就需要自己添加了。新建 `note.styl` 文件，个人新增的图标都存在此处。
 
 然后是找图标，我们需要图标的十六进制代码而不是名称，进入 [Fontawesome](https://fontawesome.com/v5.15/icons?d=gallery&p=2)，打开 **开发人员工具**，使用 {% kbd Ctrl %} + {% kbd Shift %} + {% kbd C %} 选取需要新增的图标，在 **样式** 栏，找到 `::before` 节点：
 
@@ -368,7 +368,7 @@ h1.title.common_read_h1
   text-align: center !important
   font-size: 2.5rem !important
 
-// noteblock 标题字号增大
+// blocknote 标题字号增大
 .note strong
   font-size: 1.5rem
   font-family: 'SentyGoldenBell'
