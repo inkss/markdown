@@ -450,7 +450,7 @@ Hexo 生成的网页是全静态的，为了提高 CDN 命中率，可以把全�
 Github **本身是支持** 设置 Https 链接的，证书由 Github 自动颁发、续期。不过需要手动开启：`Enforce HTTPS`
 
 {% gallery %}
-![Github 开启 Https 链接](../../img/article/Hexo博客搭建/01.png!inkss)
+![Github 开启 Https 链接](../../img/article/Hexo博客搭建/01.png)
 {% endgallery %}
 
 此外，如果使用了和本博客类似的手段：DNS 根据 IP 指向不同域名的话，**在访问者位于国内时，仍需要配置一个证书**。原因是国内的 IP 被 DNS 指向了 CDN 域名了，没有指向 Github ，那么 Github 给的证书便是无效不起作用，这里有两种选择：

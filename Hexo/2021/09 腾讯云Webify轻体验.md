@@ -53,11 +53,11 @@ CI，Webify 具有自动部署的能力，类似于 Github Action，不过目前
 其实按照提示 Hexo 模板只是执行了 `npx hexo generate` 命令，有些时候可能不够用，你可以在 `package.json` 中添加自定义 `scripts` 命令，举个栗子：`"rebuild": "hexo clean && hexo g && && gulp"`，如此调用命令修改为 `npm run rebuild` 也不是说不行。
 
 {% gallery::3::show %}
-![纯静态部署](../../img/article/腾讯云Webify轻体验/image-20210918015250502.png!inkss)
+![纯静态部署](../../img/article/腾讯云Webify轻体验/image-20210918015250502.png)
 
-![预设框架：Hexo](../../img/article/腾讯云Webify轻体验/image-20210918015319447.png!inkss)
+![预设框架：Hexo](../../img/article/腾讯云Webify轻体验/image-20210918015319447.png)
 
-![自定义设置](../../img/article/腾讯云Webify轻体验/image-20210918015341483.png!inkss)
+![自定义设置](../../img/article/腾讯云Webify轻体验/image-20210918015341483.png)
 {% endgallery %}
 
 ## 三、More

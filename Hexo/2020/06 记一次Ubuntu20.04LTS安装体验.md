@@ -47,15 +47,15 @@ hideTitle: false
 默认浏览器是火狐，75 版本，我在下载一些东西后，嗯，世界太大，网速太慢，不部署 Clash 真能把你给墨迹死。所以，愉快的就下载 Chrome 啦，本来想下载 Edge 的，但是发现还没 Linux 版本，不过都已经放出消息了，总归会有的。
 
 {% gallery stretch, 2, one %}
-![火狐](../../img/article/记一次Ubuntu20.04LTS安装体验/img06.png!inkss)
-![Chrome, Yes!](../../img/article/记一次Ubuntu20.04LTS安装体验/img07.png!inkss)
+![火狐](../../img/article/记一次Ubuntu20.04LTS安装体验/img06.png)
+![Chrome, Yes!](../../img/article/记一次Ubuntu20.04LTS安装体验/img07.png)
 {% endgallery %}
 
  软件生态呢？据我所知，国内软件上，输入法有搜狗和百度，文档有 WPS ，听歌有~~网易云~~（但是我讨厌它，各种原因导致的），网盘有百度云、坚果云。诸如此类吧，不赘述了，更多的去深度那边看应该更详细吧，哈哈。其实除了这些，还有 snap 呀，有更广泛的选择，比如我就在应用商店里看到了这个，前几天我就用它从 I tell u 下载 2004 的 Win10 镜像：
 
 {% gallery stretch, 2, two %}
-![Motrix](../../img/article/记一次Ubuntu20.04LTS安装体验/img08.png!inkss)
-![国产好软，全平台兼容](../../img/article/记一次Ubuntu20.04LTS安装体验/img10.png!inkss)
+![Motrix](../../img/article/记一次Ubuntu20.04LTS安装体验/img08.png)
+![国产好软，全平台兼容](../../img/article/记一次Ubuntu20.04LTS安装体验/img10.png)
 {% endgallery %}
 
 ## 四、后续
@@ -65,6 +65,6 @@ hideTitle: false
 最后，确实调整了加载顺序，目前来说，软件的缺失对我影响还是蛮大的，等待一段时间吧，补两张图：
 
 {% gallery stretch, 2, three %}
-![主题配置信息](../../img/article/记一次Ubuntu20.04LTS安装体验/img09.png!inkss)
-![操作系统信息](../../img/article/记一次Ubuntu20.04LTS安装体验/img11.png!inkss)
+![主题配置信息](../../img/article/记一次Ubuntu20.04LTS安装体验/img09.png)
+![操作系统信息](../../img/article/记一次Ubuntu20.04LTS安装体验/img11.png)
 {% endgallery %}

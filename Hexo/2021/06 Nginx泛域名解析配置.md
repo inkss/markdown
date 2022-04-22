@@ -52,7 +52,7 @@ hideTitle: false
 server_name  ~^(?<subdomain>.+)\.domain\.com$;
 ```
 
-![泛域名监听](../../img/article/Nginx泛域名解析配置/image-20210720224409500.png!inkss)
+![泛域名监听](../../img/article/Nginx泛域名解析配置/image-20210720224409500.png)
 
 ### 根据二级域匹配地址
 
@@ -188,7 +188,7 @@ SSL 是必须的，泛域名解析自然需要泛域名证书，我们移步 `ww
 
 宝塔的泛域名证书可以手动设置定时任务，一般还剩 30 天时就会自动进行申请，这点无需担心。
 
-![泛域名证书申请](../../img/article/Nginx泛域名解析配置/image-20210720224604524.png!inkss)
+![泛域名证书申请](../../img/article/Nginx泛域名解析配置/image-20210720224604524.png)
 
 ## 二、CDN 侧配置
 

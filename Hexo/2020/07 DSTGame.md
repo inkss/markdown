@@ -26,7 +26,7 @@ hideTitle: false
 
 大致的流程是这样的：
 
-![](../../img/article/DSTGame/image-20200718154336813.png!inkss)
+![](../../img/article/DSTGame/image-20200718154336813.png)
 
 {% tabs Steam %}
 
@@ -213,7 +213,7 @@ chmod u+x ./startDST.sh
 {% folding cyan, 额外添加了三个人物 %}
 
 {% gallery %}
-![饥荒](../../img/article/DSTGame/image-20200718164133476.png!inkss)
+![饥荒](../../img/article/DSTGame/image-20200718164133476.png)
 {% endgallery %}
 
 {% endfolding %}
