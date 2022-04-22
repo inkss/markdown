@@ -19,7 +19,7 @@ backgrounds: ../../img/article/WSL的利用/wallhaven-8o96xo.jpg
 <!-- more -->
 
 {% gallery::stretch %}
-![Terminal](../../img/article/WSL的利用/Snipaste_2021-09-29_13-53-20.png)
+![Terminal](../../img/article/WSL的利用/Snipaste_2021-09-29_13-53-20.png!inkss)
 {% endgallery %}
 
 在程序和功能中开启 **适用于 Linux 的 Windows 子系统** 后，进入 Windows 应用商店选择安装 [Ubuntu](https://www.microsoft.com/zh-cn/p/ubuntu/9nblggh4msv6)。不过之后倒是出现了一个意料之外的情况：`WslRegisterDistribution failed with error: 0x800701bc`，解决方案^[[microsoft/WSL/issues/5393](https://github.com/microsoft/WSL/issues/5393)]如下：[下载 Linux 内核更新包](https://docs.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)。
@@ -39,7 +39,7 @@ wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh && sudo b
 你可以参考如下链接找到解决方案：[为 WSL2 一键设置代理](https://zhuanlan.zhihu.com/p/153124468)。  *{% psw 如果只是本机访问就不用管 %}*
 
 {% gallery::stretch %}
-![宝塔面板](../../img/article/WSL的利用/Snipaste_2021-09-29_14-18-45.png)
+![宝塔面板](../../img/article/WSL的利用/Snipaste_2021-09-29_14-18-45.png!inkss)
 {% endgallery %}
 
 ## 二、启动
@@ -68,7 +68,7 @@ WSL 还能做什么？真的很多，由于 WSL2 已经是一个拥有完整 Lin
 在 Windows 文件管理器中可以原生的管理 WSL 中的文件。
 
 {% gallery::stretch %}
-![文件管理器](../../img/article/WSL的利用/Snipaste_2021-09-29_14-25-42.png)
+![文件管理器](../../img/article/WSL的利用/Snipaste_2021-09-29_14-25-42.png!inkss)
 {% endgallery %}
 
 ### Node 环境
@@ -76,7 +76,7 @@ WSL 还能做什么？真的很多，由于 WSL2 已经是一个拥有完整 Lin
 可以在 Ubuntu 中配置 Node 环境，然后在 VS Code 中调用 WSL(Ubuntu) 终端正常使用。
 
 {% gallery::stretch %}
-![VS Code](../../img/article/WSL的利用/Snipaste_2021-09-29_14-30-52.png)
+![VS Code](../../img/article/WSL的利用/Snipaste_2021-09-29_14-30-52.png!inkss)
 {% endgallery %}
 
 ### GUI 程序
@@ -91,7 +91,7 @@ WSL 还能做什么？真的很多，由于 WSL2 已经是一个拥有完整 Lin
 与安装桌面不同，在 Windows11 下可以近乎得到一种原生程序的启动体验，相应的软件甚至可以出现在 Window 的软件列表中，这种状态下，类似于 VMware 下的 Unity 模式，操作上有些许相似。
 
 {% gallery::stretch %}
-![GIMP](../../img/article/WSL的利用/Snipaste_2021-09-29_13-13-51.png)
+![GIMP](../../img/article/WSL的利用/Snipaste_2021-09-29_13-13-51.png!inkss)
 {% endgallery %}
 
 #### WSL GUI 安装

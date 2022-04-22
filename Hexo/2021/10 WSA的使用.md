@@ -17,7 +17,7 @@ abbrlink: b21c8751
 前排提醒：本文章完成于 21/10/23 日，内容或有所变动，请留意。
 
 {% gallery::stretch %}
-![Windows Subsystem for Android™](../../img/article/WSA的使用/image-20211023025904144.png)
+![Windows Subsystem for Android™](../../img/article/WSA的使用/image-20211023025904144.png!inkss)
 {% endgallery %}
 
 ## 一、系统部署
@@ -55,8 +55,8 @@ PS：酷安登录时，可能会出现登录按钮无法点击等情况，此类
 以上两个应用均可在酷安中搜到，得益于 WSA 时基于 Android 11 的系统，我们可以利用无限调式激活 Shizuku，然后授权给安装狮，并开启静默安装。
 
 {% gallery::stretch %}
-![Shizuku](../../img/article/WSA的使用/image-20211023023506029.png)
-![安装狮](../../img/article/WSA的使用/image-20211023023520137.png)
+![Shizuku](../../img/article/WSA的使用/image-20211023023506029.png!inkss)
+![安装狮](../../img/article/WSA的使用/image-20211023023520137.png!inkss)
 {% endgallery %}
 
 ## 三、测评体验
@@ -68,7 +68,7 @@ PS：酷安登录时，可能会出现登录按钮无法点击等情况，此类
 我的笔记本 CPU 为 8 代 i5，由于之前使用 WSL 时已经安装了 WSLg 所需的驱动。按照描述 WSA 与 WSL 部分技术相同，所以 GPU 倒也能跑出一些分数，虽说就是惨不忍睹罢了。CPU 部分发挥的不错，起码还行，GPU 部分就惨不忍睹了，跑分时显卡占用很少，几乎没怎么调用。不过考虑到 WSL 的 VGPU 驱动毕竟时面向深度学习等设计的，或许与此还是不完全适用吧。
 
 {% gallery::stretch %}
-![安兔兔跑分](../../img/article/WSA的使用/image-20211023024100764.png)
+![安兔兔跑分](../../img/article/WSA的使用/image-20211023024100764.png!inkss)
 {% endgallery %}
 
 ### 3.2 视频播放
@@ -84,5 +84,5 @@ PS：酷安登录时，可能会出现登录按钮无法点击等情况，此类
 额外：WSA 的内存占用几乎是 WSL 的两倍（日常 3G 左右），虽说微软建议 WSA 的最低运行内存为 8G，但这里我是建议最低 16G，32G 及以上更佳。
 
 {% gallery::stretch %}
-![位于 WSL 中的网易云音乐和位于 WSA 中的 QQ 音乐](../../img/article/WSA的使用/image-20211023025652981.png)
+![位于 WSL 中的网易云音乐和位于 WSA 中的 QQ 音乐](../../img/article/WSA的使用/image-20211023025652981.png!inkss)
 {% endgallery %}
