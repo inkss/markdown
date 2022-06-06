@@ -5,7 +5,7 @@ indent: true
 tag:
   - Hexo
   - Volantis
-categories: 教程
+categories: 博客
 date: '2021-08-05 09:20'
 updated: '2021-08-23'
 hideTitle: false

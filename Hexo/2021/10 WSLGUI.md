@@ -1,5 +1,5 @@
 ---
-title: WSL：Linux GUI 的深度体验
+title: WSL：Linux GUI 的安装与使用
 toc: true
 indent: true
 date: 2021/10/15

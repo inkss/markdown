@@ -7,7 +7,7 @@ tag:
   - Adguard
   - DNS
   - DOH
-categories: 随笔
+categories: 杂谈
 description: 从 Http 到 Https ，从 DNS 到 SDNS ，人们在追究安全的脚步上从未停歇。
 abbrlink: c949262
 date: 2020-08-23 17:36
@@ -19,6 +19,8 @@ references:
     url: https://cloud.tencent.com/developer/news/670618
 headimg: ../../img/article/AdGuard_保护隐私 _拦截广告 _DOH_支持/main.png
 hideTitle: false
+copyright:
+  type: type2
 ---
 
 {% note radiation yellow, 这是一篇水文。 %}

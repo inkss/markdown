@@ -14,6 +14,8 @@ description: 城市天际线是我最喜欢的一款游戏，也有可能是我�
 icons: [fas fa-gamepad-alt blue]
 headimg: ../../img/article/城市天际线基础MOD/48F8A1FBF1679BA6ABF33F56762996D72F88F700.png
 background: ../../img/article/城市天际线基础MOD/C4C5D29A4D48DB5E6B432ED1408933CA4C0E574E.png
+copyright:
+  type: type5
 ---
 
 {% gallery stretch, 1, one %}
