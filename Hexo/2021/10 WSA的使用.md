@@ -11,6 +11,7 @@ tag:
 categories: 资料
 description: Windows Subsystem for Android：Windows 的安卓子系统，简称 WSA，此次简单体验一番。
 backgrounds: ../../img/article/WSA的使用/image-20211023172702878.png
+headimg: ../../img/article/WSA的使用/Hexo博客封面.png
 abbrlink: b21c8751
 ---
 
