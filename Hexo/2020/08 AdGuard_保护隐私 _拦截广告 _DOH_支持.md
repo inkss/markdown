@@ -6,7 +6,6 @@ tag:
   - 隐私
   - Adguard
   - DNS
-  - DOH
 categories: 杂谈
 description: 从 Http 到 Https ，从 DNS 到 SDNS ，人们在追究安全的脚步上从未停歇。
 abbrlink: c949262
