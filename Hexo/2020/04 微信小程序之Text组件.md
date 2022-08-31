@@ -1,4 +1,5 @@
 ---
+uuid: 1bf9e6d4-283a-11ed-a81c-e5c20e2f9c97
 title: 微信小程序之 Text 组件
 toc: false
 indent: true

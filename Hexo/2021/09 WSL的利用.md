@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa34f5-283a-11ed-a81c-e5c20e2f9c97
 title: WSL：宝塔面板的安装与使用
 toc: true
 indent: true

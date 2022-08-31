@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa8312-283a-11ed-a81c-e5c20e2f9c97
 title: Hexo 博客搭建
 toc: true
 indent: true

@@ -1,4 +1,5 @@
 ---
+uuid: 1bf9e6d7-283a-11ed-a81c-e5c20e2f9c97
 title: 记一次Ubuntu20.04LTS安装体验
 toc: true
 indent: true

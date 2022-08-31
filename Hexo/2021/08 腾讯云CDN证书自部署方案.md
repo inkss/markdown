@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa34f4-283a-11ed-a81c-e5c20e2f9c97
 title: 腾讯云 CDN 证书自部署方案
 seo_title: 腾讯云 CDN 证书自部署方案
 toc: true

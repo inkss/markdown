@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa0de0-283a-11ed-a81c-e5c20e2f9c97
 title: Don't Starve Together
 toc: true
 indent: true

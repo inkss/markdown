@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa8315-283a-11ed-a81c-e5c20e2f9c97
 title: Office 365 免费订阅申请
 tags:
   - Office

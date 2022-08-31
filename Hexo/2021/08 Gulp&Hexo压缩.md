@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa34f3-283a-11ed-a81c-e5c20e2f9c97
 title: Gulp & Hexo 处理方案
 toc: true
 indent: true

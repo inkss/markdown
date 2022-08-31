@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa0de1-283a-11ed-a81c-e5c20e2f9c97
 title: AdGuard | 保护隐私 | 拦截广告 | DOH 支持
 toc: true
 indent: true

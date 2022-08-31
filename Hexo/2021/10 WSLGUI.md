@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa5c03-283a-11ed-a81c-e5c20e2f9c97
 title: WSL：Linux GUI 的安装与使用
 toc: true
 indent: true

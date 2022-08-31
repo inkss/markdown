@@ -1,4 +1,5 @@
 ---
+uuid: 1bf9e6d2-283a-11ed-a81c-e5c20e2f9c97
 title: Hexo 博客部署 Pjax 局部刷新
 seo_title: Hexo 博客部署 Pjax 局部刷新
 toc: true

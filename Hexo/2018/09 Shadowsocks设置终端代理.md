@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa8314-283a-11ed-a81c-e5c20e2f9c97
 title: Linux Shell 设置 Proxy
 toc: true
 indent: false

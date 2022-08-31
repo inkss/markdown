@@ -1,4 +1,5 @@
 ---
+uuid: 1bf9bfc1-283a-11ed-a81c-e5c20e2f9c97
 title: Ubuntu 18.04 安装笔记
 seo_title: Ubuntu 18.04 安装笔记
 toc: true

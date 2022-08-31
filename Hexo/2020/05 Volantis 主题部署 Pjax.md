@@ -1,4 +1,5 @@
 ---
+uuid: 1bf9e6d6-283a-11ed-a81c-e5c20e2f9c97
 title: Volantis 主题部署 Pjax
 seo_title: Volantis 主题部署 Pjax
 toc: true

@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa34f0-283a-11ed-a81c-e5c20e2f9c97
 title: 泛域名解析配置：从 Nginx 到 CDN
 toc: true
 indent: true

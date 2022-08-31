@@ -1,4 +1,5 @@
 ---
+uuid: 1bfa0de3-283a-11ed-a81c-e5c20e2f9c97
 title: Ant Design of Angular 快速上手系列
 seo_title: Ant Design of Angular 快速上手系列
 toc: true

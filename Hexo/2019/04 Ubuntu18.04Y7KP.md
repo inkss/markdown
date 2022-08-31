@@ -1,4 +1,5 @@
 ---
+uuid: 1bf9bfc0-283a-11ed-a81c-e5c20e2f9c97
 title: Ubuntu 下联想 Y7KP 显卡和网卡驱动配置
 toc: true
 indent: true
