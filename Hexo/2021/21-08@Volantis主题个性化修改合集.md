@@ -1,5 +1,6 @@
 ---
 title: Volantis 主题个性化修改合集
+hiddenTitle: true
 toc: true
 indent: true
 tag:
@@ -9,7 +10,7 @@ categories: 博客
 date: '2021-08-05 09:20'
 updated: '2021-08-23'
 hideTitle: false
-headimg: ../../img/article/21-08@21-08@Volantis主题个性化修改合集/main.webp
+headimg: ../../img/article/21-08@Volantis主题个性化修改合集/main.webp
 description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
 music:
   enable: true

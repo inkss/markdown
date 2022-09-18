@@ -1,5 +1,6 @@
 ---
 title: WSL：Linux GUI 的安装与使用
+hiddenTitle: true
 toc: true
 indent: true
 date: 2021/10/15

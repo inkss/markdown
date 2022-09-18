@@ -1,5 +1,4 @@
 ---
-uuid: 1bfa5c06-283a-11ed-a81c-e5c20e2f9c97
 title: 基于 Node.js 的简单 Api 实现
 toc: true
 indent: true

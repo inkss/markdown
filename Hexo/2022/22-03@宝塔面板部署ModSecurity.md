@@ -1,8 +1,8 @@
 ---
-uuid: 1bfa5c09-283a-11ed-a81c-e5c20e2f9c97
 title: 宝塔面板部署 ModSecurity
 toc: true
 indent: true
+hiddenTitle: true
 tag:
   - 宝塔
   - Nginx
