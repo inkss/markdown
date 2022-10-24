@@ -61,5 +61,7 @@ Artalk 后端同时提供了前端所需的 JS/CSS 文件，且这个文件百�
 
 本站所用评论在样式上稍作修改，如有需求，将相关引用资源替换为：
 
-    - css: https://o.static.szyink.com/storage/artalk/Artalk.css
-    - js: https://o.static.szyink.com/storage/artalk/Artalk.js
+```code
+- css: https://o.static.szyink.com/storage/artalk/Artalk.css
+- js: https://o.static.szyink.com/storage/artalk/Artalk.js
+```
