@@ -8,7 +8,7 @@ tag:
 categories: 杂谈
 description: 在我看来，Artalk 真正吸引我的点在于拥有独立的『通知中心』，评论内容不再是孤单的只与具体的页面存在联系。无论是访客还是管理员，拥有了一个统一的页面去管理所有的评论，同时它也能提醒用户未读消息的数目，在邮件通知之外又多了一层消息提醒能力，属于网站本身的通知。
 date: '2022-05-25 15:30'
-updated: '2022-07-22 00:30'
+updated: '2023-01-07 11:37'
 abbrlink: 8f37d8c3
 headimg: ../../img/article/22-05@评论系统推荐之Artalk/artalk.png
 copyright:
@@ -57,7 +57,7 @@ Artalk 后端同时提供了前端所需的 JS/CSS 文件，且这个文件百�
 
 字面意思，支持多个网站，同时每个网站的管理员互相独立，另外还有一个全局管理员。
 
-## 三、额外
+## 三、自定义
 
 本站所用评论在样式上稍作修改，如有需求，将相关引用资源替换为：
 
@@ -65,3 +65,10 @@ Artalk 后端同时提供了前端所需的 JS/CSS 文件，且这个文件百�
 - css: https://o.static.szyink.com/storage/artalk/Artalk.css
 - js: https://o.static.szyink.com/storage/artalk/Artalk.js
 ```
+
+与原版的差异项如下：
+
+{% checkbox checked::自带一个表情放大功能 %}
+{% checkbox checked::表情弹窗显示 %}
+{% checkbox checked::控制中心弹窗显示 %}
+{% checkbox checked::部分样式修订 %}
