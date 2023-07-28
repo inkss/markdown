@@ -12,8 +12,6 @@ description: '利用极空间虚拟机安装 Ubunut Server，并部署 1Panel �
 abbrlink: 4e35fed5
 ---
 
-[TOC]
-
 ## 一、Ubuntu Server 安装
 
 ### 1.1 虚拟机创建
@@ -105,8 +103,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ![oh-my-zsh](../../img/article/23-07@极空间虚拟机部署UbuntuServer/image-20230728160659509.png)
-
-![虚拟机安装完成](../../img/article/23-07@极空间虚拟机部署UbuntuServer/image-20230728150314266.png)
 
 ## 二、1Panel 面板安装
 
