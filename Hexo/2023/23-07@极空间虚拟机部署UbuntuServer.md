@@ -9,6 +9,7 @@ categories: 教程
 date: '2023-07-28 17:00'
 updated: '2023-07-28 17:00'
 description: '利用极空间虚拟机安装 Ubunut Server，并部署 1Panel 面板。'
+headimg: ../../img/article/23-07@极空间虚拟机部署UbuntuServer/image-20230829010315912.png
 abbrlink: 4e35fed5
 ---
 
