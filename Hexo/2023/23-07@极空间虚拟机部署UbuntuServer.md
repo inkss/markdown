@@ -1,5 +1,5 @@
 ---
-title: 极空间虚拟机部署 Ubuntu Server
+title: 极空间虚拟机
 toc: true
 indent: true
 tag:
