@@ -9,8 +9,8 @@ categories: 资料
 date: '2021-09-18 02:29'
 updated: '2021-09-18'
 hideTitle: false
-headimg: ../../img/article/21-09@腾讯云Webify轻体验/ezgif-6-8de51b74f543.webp
-backgrounds: ../../img/article/21-09@腾讯云Webify轻体验/wallhaven-rdplk7.jpg
+headimg: ../../img/article/21-09@腾讯云Webify轻体验/Hexo博客封面.png
+background: ../../img/article/21-09@腾讯云Webify轻体验/wallhaven-rdplk7.jpg
 description: 腾讯云站点扶持计划 —— Webify，博客托管的新选择。
 music:
   enable: true
@@ -18,7 +18,7 @@ music:
   type: song
   id: 000RSpQM0n7KBP
 abbrlink: 5134cc9f
-hidden: true
+hidden: false
 ---
 
 前些日子收到了一封腾讯云的站内信『Webify 个人网站扶持计划：免费托管你的网站』，秉着体验的态度测试了下，一句话概括如下：
@@ -51,14 +51,6 @@ CI，Webify 具有自动部署的能力，类似于 Github Action，不过目前
 
 其实按照提示 Hexo 模板只是执行了 `npx hexo generate` 命令，有些时候可能不够用，你可以在 `package.json` 中添加自定义 `scripts` 命令，举个栗子：`"rebuild": "hexo clean && hexo g && && gulp"`，如此调用命令修改为 `npm run rebuild` 也不是说不行。
 
-{% gallery::3::show %}
-![纯静态部署](../../img/article/腾讯云Webify轻体验/image-20210918015250502.png)
-
-![预设框架：Hexo](../../img/article/腾讯云Webify轻体验/image-20210918015319447.png)
-
-![自定义设置](../../img/article/腾讯云Webify轻体验/image-20210918015341483.png)
-{% endgallery %}
-
 ## 三、More
 
 本站目前已经迁移到腾讯云 Webify 中，欢迎交流，以及这里是一些额外的信息：
@@ -69,6 +61,6 @@ CI，Webify 具有自动部署的能力，类似于 Github Action，不过目前
 }
 </style>  
 
-{% link 云开发 Webify 官网::https://webify.cloudbase.net/::../../img/article/腾讯云Webify轻体验/favicon.png %}
+{% link 云开发 Webify 官网::https://webify.cloudbase.net/:: ../../img/article/21-09@腾讯云Webify轻体验/favicon.png %}
 
-{% link Webify 个人站点扶持计划::https://cloud.tencent.com/developer/article/1871549::../../img/article/21-09@腾讯云Webify轻体验/favicon.png %}
+{% link Webify 个人站点扶持计划::https://cloud.tencent.com/developer/article/1871549:: ../../img/article/21-09@腾讯云Webify轻体验/favicon.png %}

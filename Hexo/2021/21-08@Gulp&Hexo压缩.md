@@ -9,7 +9,7 @@ categories: 资料
 date: '2021-08-21 14:30'
 updated: '2021-08-23 10:32'
 hideTitle: false
-headimg: ../../img/article/21-08@Gulp&Hexo压缩/ezgif-6-4787e793eead.webp
+headimg: ../../img/article/21-08@Gulp&Hexo压缩/Hexo博客封面.png
 description: 'Gulp & Hexo：通过 Gulp 对 Hexo 博客进行 html,css,js 压缩，img 转 webp 和替换图片访问链接。'
 abbrlink: e19bba83
 ---
