@@ -9,7 +9,7 @@ tag:
 categories: 游戏
 descriptions: Don't Starve Together Server !!!
 abbrlink: 8fafff0e
-icons: [fas fa-gamepad-alt blue]
+icons: [far fa-gamepad-alt blue]
 headimg: ../../img/article/20-07@DSTGame/main.jpg
 hideTitle: false
 copyright:
