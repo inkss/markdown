@@ -1036,13 +1036,13 @@ hexo.extend.tag.register('emoji', emoji)
 
 {% timelines '一个自制时间线（标题可选）' %}
 
-{% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
-{% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
-{% timenodes fal fa-genderless %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
-{% timenodes fal fa-narwhal %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
-{% timenodes fal fa-genderless %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
-{% timenodes fal fa-genderless %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
-{% timenodes fal fa-fan fa-spin %}这里是时间线的起点~{% endtimenodes %}
+{% timenodes %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
+{% timenodes %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
+{% timenodes %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
+{% timenodes %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
+{% timenodes %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
+{% timenodes %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
+{% timenodes %}这里是时间线的起点~{% endtimenodes %}
 
 {% endtimelines %}
 
@@ -1058,13 +1058,13 @@ hexo.extend.tag.register('emoji', emoji)
 ```md
 {% timelines '一个自制时间线（标题可选）' %}
 
-{% timenodes fal fa-bat %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
-{% timenodes fal fa-glass-cheers %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
-{% timenodes fal fa-genderless %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
-{% timenodes fal fa-narwhal %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
-{% timenodes fal fa-genderless %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
-{% timenodes fal fa-genderless %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
-{% timenodes fal fa-fan fa-spin %}这里是时间线的起点~{% endtimenodes %}
+{% timenodes %} 2021/13/32 巴啦啦小魔仙。{% endtimenodes %}
+{% timenodes %} 2021/13/16 好好学习，天天向上。 {% endtimenodes %}
+{% timenodes %} 2021/13/15 风声雨声读书声声声入耳，国事家事天下事事事关心。 {% endtimenodes %}
+{% timenodes %} 2021/13/10 楼主以屎，有事烧纸。 {% endtimenodes %}
+{% timenodes %} 2021/13/08 那么就可以有星期八了。 {% endtimenodes %}
+{% timenodes %} 2021/13/01 是的没错，这里是 13 月。 {% endtimenodes %}
+{% timenodes %}这里是时间线的起点~{% endtimenodes %}
 
 {% endtimelines %}
 ```
