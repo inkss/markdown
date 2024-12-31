@@ -43,8 +43,8 @@ abbrlink: e19bba83
 
 <div style="width: 50%;margin: 0 auto;">
 {% btns rounded grid2 %}
-{% cell gulpfile.js::https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/gulpfile.js::fab fa-js-square %}
-{% cell gulp-webp-html.js::https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/gulp-webp-html.js::fab fa-js-square %}
+{% cell gulpfile.js::https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/gulpfile.js:: %}
+{% cell gulp-webp-html.js::https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/gulp-webp-html.js:: %}
 {% endbtns %}
 </div>
 
