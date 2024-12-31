@@ -291,12 +291,12 @@ article#post
 {% folding cyan, 自定义 Note %}
 ```styl
 div.note
-  &.alien-monster::before
+  &.cpu::before
     content: '\f8f6'
 ```
 {% endfolding %}
 
-{% note alien-monster blue, 效果见本条内容：note alien-monster blue  %}
+{% note cpu blue, 效果见本条内容：note cpu blue  %}
 
 #### 2.2.2 页脚响应式处理
 
