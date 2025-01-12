@@ -18,6 +18,7 @@ music:
   id: 22703777
 mathjax: false
 icons: [fas fa-fire]
+headimg: ../../img/article/19-12@部署Pjax到Hexo博客/Hexo博客封面.png
 ---
 
 <p class="p center logo large"><em>Hexo 博客部署 Pjax 局部刷新 <sup>理论篇</sup></em></p>

@@ -18,6 +18,7 @@ references:
     url: 'https://aiezu.com/article/linux_bash_set_proxy.html'
 icons:
   - fab fa-ubuntu red
+headimg: ../../img/article/18-09@Shadowsocks设置终端代理/Hexo博客封面.png
 ---
 
 ## 一、Git Proxy

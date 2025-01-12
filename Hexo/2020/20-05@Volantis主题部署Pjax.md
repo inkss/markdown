@@ -12,6 +12,7 @@ tag:
 categories: 博客
 description: 本篇文章记录了我对 Volantis 主题做 Pjax 兼容的种种，大抵算是种记录吧~
 abbrlink: '76993423'
+headimg: ../../img/article/20-05@Volantis主题部署Pjax/Hexo博客封面.png
 ---
 
 <p class="p center logo large"><em>Volantis 主题部署 Pjax <sup>应用篇</sup></em></p>
@@ -139,7 +140,7 @@ document.addEventListener('pjax:complete', function () {
     function gtag(){dataLayer.push(arguments);}
     gtag('config', '<%- config.google_analytics_key %>', {'page_path': document.location.pathname});
   <% } %>
-  
+
   $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
   $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
   $('script[data-pjax], .pjax-reload script').each(function () {
