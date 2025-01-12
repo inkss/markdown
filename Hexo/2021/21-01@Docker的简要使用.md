@@ -1,6 +1,5 @@
 ---
 title: Docker 的简要使用
-seo_title: Docker 的简要使用
 toc: true
 tag:
   - Code-server

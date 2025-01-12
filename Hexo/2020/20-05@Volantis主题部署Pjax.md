@@ -1,6 +1,5 @@
 ---
 title: Volantis 主题部署 Pjax
-seo_title: Volantis 主题部署 Pjax
 toc: true
 indent: true
 date: 2020/05/17 01:27
@@ -15,9 +14,7 @@ abbrlink: '76993423'
 headimg: ../../img/article/20-05@Volantis主题部署Pjax/Hexo博客封面.png
 ---
 
-<p class="p center logo large"><em>Volantis 主题部署 Pjax <sup>应用篇</sup></em></p>
-<br>
-<br>
+
 
 {% p center, 前言：本篇定位于主题的各类处理上，理论篇见 <a href="/post/80b5f235/">Hexo 博客部署 Pjax 局部刷新</a>。 %}
 {% p center, 不多废话，那么，让我们开始吧！ %}

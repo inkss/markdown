@@ -1,6 +1,6 @@
 ---
 title: Volantis 主题个性化修改合集
-hiddenTitle: true
+hiddenTitle: false
 toc: true
 indent: true
 tag:
@@ -1263,9 +1263,9 @@ const changeTitle = () => {
 {% image ../../img/article/21-08@Volantis主题个性化修改合集/people.png, bg=var(--color-white-png), height=260px, alt='var(--color-white-png)' %}
 {% endgallery %}
 
-### 替代标题 Meta 的显示
+### 替代标题的显示
 
-如果文章设置了 `seo_title` 则不会显示默认的顶部 Meta 块儿，此处可以整个更花哨的标题：
+更花哨的标题：
 
 <p class="p center logo large"><em>Volantis 主题个性化修改<sup>V1.0</sup></em></p>
 

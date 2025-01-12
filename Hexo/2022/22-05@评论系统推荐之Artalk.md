@@ -2,7 +2,7 @@
 title: Artalk 评论系统推荐
 toc: true
 indent: true
-hiddenTitle: true
+hiddenTitle: false
 tag:
   - Artalk
 categories: 杂谈
@@ -10,7 +10,7 @@ description: 在我看来，Artalk 真正吸引我的点在于拥有独立的『
 date: '2022-05-25 15:30'
 updated: '2023-01-07 11:37'
 abbrlink: 8f37d8c3
-headimg: ../../img/article/22-05@评论系统推荐之Artalk/artalk.png
+headimg: ../../img/article/22-05@评论系统推荐之Artalk/Hexo博客封面.png
 copyright:
   type: type2
 ---

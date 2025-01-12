@@ -1,6 +1,6 @@
 ---
 title: 泛域名解析配置：从 Nginx 到 CDN
-hiddenTitle: true
+hiddenTitle: false
 toc: true
 indent: true
 tag:

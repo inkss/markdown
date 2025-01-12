@@ -2,7 +2,7 @@
 title: 宝塔面板部署 ModSecurity
 toc: true
 indent: true
-hiddenTitle: true
+hiddenTitle: false
 tag:
   - 宝塔
   - Nginx

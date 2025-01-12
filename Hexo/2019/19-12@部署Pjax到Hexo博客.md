@@ -1,6 +1,5 @@
 ---
 title: Hexo 博客部署 Pjax 局部刷新
-seo_title: Hexo 博客部署 Pjax 局部刷新
 toc: true
 indent: true
 date: 2019/12/12 23:56
@@ -20,9 +19,6 @@ mathjax: false
 icons: [fas fa-fire]
 headimg: ../../img/article/19-12@部署Pjax到Hexo博客/Hexo博客封面.png
 ---
-
-<p class="p center logo large"><em>Hexo 博客部署 Pjax 局部刷新 <sup>理论篇</sup></em></p>
-<br><br>
 
 本篇定位于 **理论知识** ，实际应用见 [Volantis 主题部署 Pjax](/post/76993423/)，前置知识，SPA 页面。
 

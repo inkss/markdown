@@ -1,6 +1,5 @@
 ---
 title: Ant Design of Angular 快速上手系列
-seo_title: Ant Design of Angular 快速上手系列
 toc: true
 indent: true
 tag:
@@ -18,9 +17,6 @@ headimg: ../../img/article/20-11@AntDesignOfAngular快读上手/1.png
 hideTitle: false
 icons: [fab fa-angular red]
 ---
-
-
-<p class="p center logo large"><em>Angular 快速上手系列</em></p><br><br>
 
 准确来说，我不是职业前端，因为需要使用 Angular 框架完成项目，所以顺带了解到了 NG-ZORRO 这套前端框架。整个过程处于边学习边使用的状态，主要的方式也是偏向于完成设计内容而非了解其实现原理。系统前端这块儿，使用的是 `Node 12.19.0` 和 `NG-ZORRO 9.3.0` ，开发软件 `WebStorm` 。
 
