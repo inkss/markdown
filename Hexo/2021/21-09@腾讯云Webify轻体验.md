@@ -10,7 +10,7 @@ date: '2021-09-18 02:29'
 updated: '2021-09-18'
 hideTitle: false
 headimg: ../../img/article/21-09@腾讯云Webify轻体验/Hexo博客封面.png
-background: ../../img/article/21-09@腾讯云Webify轻体验/wallhaven-rdplk7.jpg
+background: ../../img/article/21-09@腾讯云Webify轻体验/wallhaven-rdplk7.avif
 description: 腾讯云站点扶持计划 —— Webify，博客托管的新选择。
 music:
   enable: true
