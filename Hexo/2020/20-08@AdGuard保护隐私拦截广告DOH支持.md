@@ -3,7 +3,7 @@ title: AdGuard | 保护隐私 | 拦截广告 | DOH 支持
 toc: true
 indent: true
 tag:
-  - 隐私
+  - 隐私保护
   - Adguard
   - DNS
 categories: 杂谈

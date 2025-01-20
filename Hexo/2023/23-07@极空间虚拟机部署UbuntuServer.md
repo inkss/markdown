@@ -3,7 +3,9 @@ title: 极空间虚拟机部署UbuntuServer
 toc: true
 indent: true
 tag:
-  - NAS
+  - Ubuntu Server
+  - 1Panel 面板
+  - 虚拟机
   - 极空间
 categories: 教程
 date: '2023-07-28 17:00'
