@@ -6,9 +6,8 @@ comments: false
 date: 2018/09/10 21:26
 updated: 2021/08/09 09:28
 tag:
-  - Shell
   - Proxy
-categories: 教程
+categories: 文档
 abbrlink: f44c3b52
 description: Linux Shell 设置 Proxy。
 references:

@@ -5,7 +5,7 @@ indent: true
 tag:
   - Hexo
   - Webify
-categories: 资料
+categories: 文档
 date: '2021-09-18 02:29'
 updated: '2021-09-18'
 hideTitle: false

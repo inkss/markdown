@@ -5,9 +5,9 @@ indent: true
 tag:
   - Ubuntu Server
   - 1Panel 面板
-  - 虚拟机
+  - Linux
   - 极空间
-categories: 教程
+categories: 文档
 date: '2023-07-28 17:00'
 updated: '2023-07-28 17:00'
 description: '利用极空间虚拟机安装 Ubunut Server，并部署 1Panel 面板。'

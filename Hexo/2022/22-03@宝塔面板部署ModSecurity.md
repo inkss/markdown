@@ -5,10 +5,11 @@ indent: true
 hiddenTitle: false
 tag:
   - 宝塔面板
-  - ModSecurity
-  - 服务器安全
+  - 服务器
+  - 开源项目
+  - 网络安全
   - Nginx
-categories: 教程
+categories: 文档
 description: 本文介绍了如何部署开源免费的 ModSecurity 防火墙，并导入相应的规则集文件等。
 date: '2022-03-25 12:46'
 updated: '2022-04-01 19:13'

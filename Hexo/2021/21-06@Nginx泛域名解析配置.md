@@ -6,9 +6,8 @@ indent: true
 tag:
   - Nginx
   - CDN
-  - 泛域名
-  - 宝塔
-categories: 教程
+  - 宝塔面板
+categories: 文档
 date: '2021-06-29 18:53'
 updated: '2021-07-26 15:50'
 abbrlink: e7617c8b

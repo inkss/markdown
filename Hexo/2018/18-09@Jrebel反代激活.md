@@ -5,9 +5,8 @@ indent: true
 date: 2018/09/08 13:48
 updated: 2020/04/16 16:03
 tag:
-  - Java
-  - 破解
-categories: 资料
+  - JRebel
+categories: 文档
 abbrlink: 89be439
 description: JRebel 的社区激活取消了，搜索了一番本地激活方法，于此记录。
 references:

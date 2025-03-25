@@ -2,9 +2,8 @@
 title: Docker 的简要使用
 toc: true
 tag:
-  - Code-server
   - Docker
-categories: 资料
+categories: 文档
 description: Docker 的简要使用与 code-service 的安装 🎉。
 date: '2021-01-29 16:00'
 updated: '2021-02-01 12:00'
