@@ -105,7 +105,7 @@ networks:
 
 ```
 
-```conf Nginx 配置
+```nginx Nginx 配置
 server {
     listen 443 ssl http2 ; 
     listen [::]:443 ssl http2 ; 
@@ -162,7 +162,7 @@ server {
 
 - 关于环境变量`RELAY`
 
-  - 用于 ID 服务器告诉客户端中继服务器的地址。
+  - 用于 ID 服务器通知客户端中继服务器的地址。
   - 当然你也可以不配置该变量，而是在客户端手动输入中继服务器的值。
 
 - 关于客户端配置：
