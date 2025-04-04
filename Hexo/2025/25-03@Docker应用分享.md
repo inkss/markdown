@@ -155,20 +155,14 @@ server {
 - **关于 ID 服务器**
 
   - 如果输入的是 IP，RustDesk 只会按照 IP （V4/V6）类型进行 NAT 检测。
-
-
   - 所以建议输入双栈域名，同时解析 AAAA 和 A，让客户端自行选择。
-
-
   - 推荐使用：[Free dynamic DNS for IPv6](https://dynv6.com/)。
-
 
 - **关于环境变量 `RELAY`**
 
   - 用于 ID 服务器通知客户端中继服务器的地址。
 
   - 当然你也可以不配置该变量，而是在客户端手动输入中继服务器的值。
-
 
 - **关于客户端配置**
 
@@ -206,14 +200,12 @@ server {
 
   - 桥接模式下，务必保持映射前后的端口一致。
 
-
 - **关于防火墙**
 
   - 至少需要放行最小运行端口（21115-21117）。
 
   - 如果使用官方的 Web Client 还需要放行 21118，但在连接时需要在该网站 ID, IP, Key 等信息：
     - `<ID>@<服务器地址>?key=<密钥>`^[个人不习惯这种行为，如果有使用网页客户端需求，不如部署 rustdesk-api。]。
-
 
 - **关于** **[rustdesk-api](https://github.com/lejianwen/rustdesk-api)**
 
@@ -224,14 +216,10 @@ server {
       - 解决方案一：登录账户同步信息后，使用前退出登录。
       - 解决方案二：修改部分代码，自编译一个客户端。
 
-
 - **碎碎念**
 
   - {% psw Rustdesk 的文档稀烂 %} ，关于自定义端口的描述是翻阅 issue 得知的。
-
   - 中国反诈中心似乎在扫描部署了 RustDesk 的境内服务器，进而封禁 IP，不建议使用默认端口。
-
-
 
 ## PT 一体化工具
 
@@ -328,12 +316,6 @@ services:
 {% endfolding %}
 
 ### 附录
-
-- 可在下载器中，设置 *torrent 完成时运行外部程序* 手动触发 MoviePilot 的媒体入库动作。
-
-```bash
-curl "http://moviepilot_ip:23301/api/v1/transfer/now?token=moviepilot_token"
-```
 
 - 使用指南
 
