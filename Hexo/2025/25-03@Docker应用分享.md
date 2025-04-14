@@ -9,7 +9,7 @@ categories: 文档
 description: >-
   一些 Docker 应用分享及使用配置附录，包含远程控制（RustDesk，RustDesk-Api），PT 一体化工具（MoviePilot, Qbittorrent, Transmission, Audiobookshelf）和内网浏览器（Firefox）。
 date: '2025-03-26 08:55'
-updated: '2025-03-28 18:00'
+updated: '2025-04-14 23:35'
 headimg: ../../img/article/25-03@Docker应用分享/Hexo博客封面.png
 abbrlink: 3f9c44bf
 ---
@@ -227,13 +227,14 @@ server {
 - Audiobookshelf：自托管有声书架。
 - QBittorrent：常见 PT 站所允许的下载器。
 - Transmission：带快校的下载（保种）器。
+- iyuuplus：辅种、转种。
 
 ### Docker Compose
 
-{% folding cyan, moviepilot-v2、qbittorrent、transmission、audiobookshelf %}
+{% folding cyan, moviepilot-v2、qbittorrent、transmission、audiobookshelf、iyuuplus %}
 
 ```yaml
-version: "3.3"
+version: "3.8"
 services:
   moviepilot:
     stdin_open: true
@@ -241,7 +242,8 @@ services:
     image: jxxghp/moviepilot-v2:latest
     container_name: moviepilot-v2
     restart: always
-    network_mode: bridge
+    networks:
+      - pt-network
     ports:
       - "23301:3000"
       - "23302:3001"
@@ -256,14 +258,14 @@ services:
       - "PGID=0"
       - "UMASK=000"
       - "TZ=Asia/Shanghai"
-      - "MOVIEPILOT_AUTO_UPDATE=false"
-      - "PROXY_HOST=http://10.0.10.3:1080"   # 代理
       - "SUPERUSER=admin"                    # 管理员账户
+      # - "PROXY_HOST=http://10.0.10.3:1080"   # 代理
   qbittorrent:
     image: linuxserver/qbittorrent:latest
     container_name: qbittorrent
     restart: always
-    network_mode: bridge
+    networks:
+      - pt-network
     volumes:
       - "/opt/Docker/qBittorrent:/config"
       - "/媒体库目录:/媒体库目录"
@@ -278,10 +280,11 @@ services:
       - "WEBUI_PORT=8080"
       - "TORRENTING_PORT=6881"
   transmission:
-    image: chisbread/transmission:latest
+    image: linuxserver/transmission:4.0.5
     container_name: transmission
     restart: always
-    network_mode: bridge
+    networks:
+      - pt-network
     volumes:
       - "/opt/Docker/transmission:/config"
       - "/媒体库目录:/媒体库目录"
@@ -297,11 +300,14 @@ services:
       - "RPCPORT=51413"
       - "USER=username"
       - "PASS=password"
+      # https://github.com/ronggang/transmission-web-control
+      - "TRANSMISSION_WEB_HOME=/config/web-control/" 
   audiobookshelf:
     image: advplyr/audiobookshelf:latest
     container_name: audiobookshelf
     restart: always
-    network_mode: bridge
+    networks:
+      - pt-network
     volumes:
       - "/opt/Docker/audiobook/metadata:/metadata"
       - "/opt/Docker/audiobook/podcasts:/podcasts"
@@ -311,6 +317,32 @@ services:
       - "23307:80"
     environment:
       - "TZ=Asia/Shanghai"
+  iyuuplus-dev:
+    image: iyuucn/iyuuplus-dev:latest
+    container_name: IYUUPlus
+    stdin_open: true
+    tty: true
+    restart: always
+    networks:
+      - pt-network
+    volumes:
+      - "/opt/Docker/iyuu/iyuu:/iyuu"
+      - "/opt/Docker/iyuu/data:/data"
+      - "/opt/Docker/qBittorrent/qBittorrent/BT_backup:/qb_torrent"
+      - "/opt/Docker/transmission/torrents:/tr_torrent"
+    ports:
+      - "23308:8780"
+
+networks:
+  pt-network:
+    driver: bridge
+    enable_ipv6: true
+    ipam:
+      config:
+        - subnet: "172.19.0.0/16"
+          gateway: "172.19.0.1"
+        - subnet: "fd00:db8::/48"
+          gateway: "fd00:db8::1"
 ```
 
 {% endfolding %}
