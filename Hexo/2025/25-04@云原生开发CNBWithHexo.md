@@ -18,7 +18,7 @@ abbrlink: 95d58968
 
 云开发 + 云构建能激起怎样的火花，快来尝试下腾讯云原生构建项目 [CNB - Cloud Native Build](https://cnb.cool/)。
 
-*<!-- more -->*
+<!-- more -->
 
 瓦解推荐，腾讯云新产品，目前处于公测状态，且免费额度很大：
 
