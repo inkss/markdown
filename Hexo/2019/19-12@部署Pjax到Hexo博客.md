@@ -5,10 +5,11 @@ indent: true
 date: 2019/12/12 23:56
 updated: 2020/08/05 23:56
 tag:
-  - Hexo
-  - Pjax
+  - Hexo 博客
+  - Pjax 部署
+  - 局部刷新
 categories: 博客
-description: 本篇定位于理论知识，概述性简介如何处理 Pjax 与 Hexo 的兼容过程。
+description: 本文介绍 Hexo 博客部署 Pjax 局部刷新的相关内容，包括 Pjax 加速原理、前期准备（页面结构划分、配置项设置）、后期兼容处理（JS 文件重载、函数重新绑定等），并提及参考链接与测试情况。
 abbrlink: 80b5f235
 music:
   enable: true

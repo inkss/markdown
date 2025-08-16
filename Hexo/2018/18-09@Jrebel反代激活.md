@@ -6,9 +6,11 @@ date: 2018/09/08 13:48
 updated: 2020/04/16 16:03
 tag:
   - JRebel
-categories: 文档
+  - 反代激活
+  - IDEA 插件
+categories: 工具
 abbrlink: 89be439
-description: JRebel 的社区激活取消了，搜索了一番本地激活方法，于此记录。
+description: 本文介绍 JRebel 的反代激活方法，包括所需工具（ilanyu/ReverseProxy、GUID 生成器等）、激活步骤及设置离线模式（180 天）等内容。
 references:
   - title: ReverseProxy
     url: 'https://github.com/ilanyu/ReverseProxy'

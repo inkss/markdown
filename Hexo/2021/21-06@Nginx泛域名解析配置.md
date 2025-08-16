@@ -4,14 +4,14 @@ hiddenTitle: false
 toc: true
 indent: true
 tag:
-  - Nginx
-  - CDN
-  - 宝塔面板
-categories: 文档
+  - 泛域名解析
+  - Nginx 配置
+  - CDN 部署
+categories: 网络技术
 date: '2021-06-29 18:53'
 updated: '2021-07-26 15:50'
 abbrlink: e7617c8b
-description: 本文共包含以下内容：Nginx 泛域名解析、根据 subdomain 匹配反代地址、防止恶意泛域名解析、BasicAuth 的认证校验、宝塔面板的反代访问、泛域名 SSL 证书申请、泛域名 CDN 分发和泛域名证书的自部署。
+description: 本文详细介绍泛域名解析的配置过程，涵盖 Nginx 侧的泛域名监听、反代设置、恶意解析防护及 SSL 证书申请，以及 CDN 侧的分发配置、证书部署与自动更新，还包括真实 IP 获取、垃圾 UA 和恶意 IP 屏蔽等内容。
 headimg: ../../img/article/21-06@Nginx泛域名解析配置/main.png
 background: ../../img/article/21-06@Nginx泛域名解析配置/wallhaven-k778dq.jpg
 hideTitle: false

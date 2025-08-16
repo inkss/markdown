@@ -3,15 +3,16 @@ title: Ant Design of Angular 快速上手系列
 toc: true
 indent: true
 tag:
-  - Angular
+  - Ant Design of Angular
   - NG-ZORRO
+  - Angular 组件
 categories: 前端
 references:
   - title: Ant Design of Angular
     url: 'https://ng.ant.design/docs/introduce/zh'
 date: '2020-11-21 17:10'
 abbrlink: 8ab78feb
-description: '一句话概括那就是：这是一份后端开发所写的前端学习内容~，面向于快速上手这种哒。'
+description: 本文介绍 Ant Design of Angular（ng-zorro-antd）的快速上手方法，包括公共配置（属性基础配置、样式覆盖配置）和表单组件的使用，以响应式表单为例讲解表单设定与赋值，附相关代码示例。
 updated: '2020-12-30 10:40'
 headimg: ../../img/article/20-11@AntDesignOfAngular快读上手/Hexo博客封面.png
 hideTitle: false

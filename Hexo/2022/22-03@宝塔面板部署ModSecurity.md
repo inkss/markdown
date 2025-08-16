@@ -5,12 +5,10 @@ indent: true
 hiddenTitle: false
 tag:
   - 宝塔面板
-  - 服务器
-  - 开源项目
-  - 网络安全
+  - ModSecurity
   - Nginx
-categories: 文档
-description: 本文介绍了如何部署开源免费的 ModSecurity 防火墙，并导入相应的规则集文件等。
+categories: 网络技术
+description: 本文介绍在宝塔面板中部署开源防火墙 ModSecurity 的方法，包括编译安装 ModSecurity、配置连接件与 Nginx 模块、整合规则集，以及测试生效、白名单设置等步骤，适用于 Nginx 环境，提供具体命令与配置示例。
 date: '2022-03-25 12:46'
 updated: '2022-04-01 19:13'
 references:

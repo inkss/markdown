@@ -4,13 +4,12 @@ toc: true
 indent: true
 tag:
   - Ubuntu Server
-  - 1Panel 面板
-  - Linux
+  - 虚拟机部署
   - 极空间
-categories: 文档
+categories: Linux
 date: '2023-12-05 19:25'
 updated: '2024-11-09 22:26'
-description: '利用极空间虚拟机安装 Ubunut Server，并部署 1Panel 面板。'
+description: 本文记录在极空间虚拟机中部署 Ubuntu Server（选择 Ubuntu 22.04.3 LTS 桌面版）的过程，包括系统安装的前置条件与步骤、开箱后的系统设置（更新、远程访问、个性化定制等）、系统美化（主题、图标、扩展配置），以及后续的 1Panel 面板安装、SMB 挂载、文件同步等完善操作，提供详细命令与配置参考。
 headimg: ../../img/article/23-07@极空间虚拟机部署UbuntuServer/Hexo博客封面.png
 abbrlink: 4e35fed5
 ---

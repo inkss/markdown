@@ -7,11 +7,11 @@ date: 2021/10/15
 updated: 2021/10/17
 tag:
   - WSL
-  - Linux
-  - Windows
-categories: 文档
+  - Linux GUI
+  - 中文环境配置
+categories: Linux
 abbrlink: b5085776
-description: WSL2 带来了 Linux GUI 的支持，现在你可以在 Windows 上以原生应用的方式运行 Linux GUI applications (X11 and Wayland)。本文记录了对其的尝试过程，包括基础的环境配置：中文环境及输入法配置；基本应用的体验：网易云、QQ 音乐、百度网盘等 Linux 版本的使用。
+description: 本文介绍 WSL（Windows Subsystem for Linux）中 Linux GUI 的安装与使用，包括前置条件、基础软件安装、中文环境配置（语言包、字体、输入法），提及国产软件和编程软件的使用，以及 systemd 支持、备份恢复等补充内容，附详细命令示例。
 headimg: ../../img/article/21-10@WSLGUI/Hexo博客封面.png
 backgrounds: ../../article/img/21-10@WSLGUI/wallhaven-rd6d81.png
 hideTitle: false

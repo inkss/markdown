@@ -6,10 +6,12 @@ comments: false
 date: 2018/09/10 21:26
 updated: 2021/08/09 09:28
 tag:
-  - Proxy
+  - Linux Shell
+  - Git Proxy
+  - 代理配置
 categories: 文档
 abbrlink: f44c3b52
-description: Linux Shell 设置 Proxy。
+description: 本文介绍 Linux Shell 设置代理的方法，包括 Git 命令代理配置（含 Windows 下 Clash 代理 Github 方式）、终端环境变量代理设置及相关测试与配置命令。
 references:
   - title: 终端加速 git clone
     url: 'https://blog.fazero.me/2015/07/11/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/'

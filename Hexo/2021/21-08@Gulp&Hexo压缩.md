@@ -5,12 +5,13 @@ indent: true
 tag:
   - Hexo
   - Gulp
+  - 博客优化
 categories: 博客
 date: '2021-08-21 14:30'
 updated: '2021-08-23 10:32'
 hideTitle: false
 headimg: ../../img/article/21-08@Gulp&Hexo压缩/Hexo博客封面.png
-description: 'Gulp & Hexo：通过 Gulp 对 Hexo 博客进行 html,css,js 压缩，img 转 webp 和替换图片访问链接。'
+description: 本文介绍 Gulp 与 Hexo 的结合处理方案，包括 Gulp 依赖环境配置，以及利用 Gulp 实现 HTML、JS、CSS 压缩，图片压缩、转 WebP 格式及图片链接替换等操作，附具体代码示例与调用流程。
 abbrlink: e19bba83
 ---
 

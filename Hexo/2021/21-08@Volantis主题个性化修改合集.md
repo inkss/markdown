@@ -4,14 +4,15 @@ hiddenTitle: false
 toc: true
 indent: true
 tag:
-  - Hexo
-  - Volantis
+  - Volantis 主题
+  - 个性化修改
+  - 博客美化
 categories: 博客
 date: '2021-08-05 09:20'
 updated: '2021-08-23'
 hideTitle: false
 headimg: ../../img/article/21-08@Volantis主题个性化修改合集/Hexo博客封面.png
-description: '记录一下 Volantis 主题的修改内容 ( •̀ ω •́ )✧'
+description: 本文记录 Volantis 主题的个性化修改内容，涵盖样式类（导航栏、卡片、链接等样式调整）、功能类（阅读模式、自定义背景、右键开关等新增功能）及通用类（图标引入、时间线样式等）的实现方法，附具体代码示例与修改要点。
 music:
   enable: true
   server: tencent
