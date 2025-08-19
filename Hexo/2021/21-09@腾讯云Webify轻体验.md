@@ -11,7 +11,7 @@ date: '2021-09-18 02:29'
 updated: '2021-09-18'
 hideTitle: false
 headimg: ../../img/article/21-09@腾讯云Webify轻体验/Hexo博客封面.png
-background: ../../img/article/21-09@腾讯云Webify轻体验/wallhaven-rdplk7.avif
+background: ../../img/background/wallhaven-rdplk7.avif
 description: 本文分享腾讯云 Webify 的轻体验，介绍其作为静态博客托管新选择的特点，包括对 Hexo 的支持、境内托管优势、自动部署（CI）功能及与其他托管方式的对比，提及个人站点扶持计划及使用要点。
 music:
   enable: true

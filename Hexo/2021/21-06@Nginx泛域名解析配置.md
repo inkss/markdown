@@ -13,7 +13,7 @@ updated: '2021-07-26 15:50'
 abbrlink: e7617c8b
 description: 本文详细介绍泛域名解析的配置过程，涵盖 Nginx 侧的泛域名监听、反代设置、恶意解析防护及 SSL 证书申请，以及 CDN 侧的分发配置、证书部署与自动更新，还包括真实 IP 获取、垃圾 UA 和恶意 IP 屏蔽等内容。
 headimg: ../../img/article/21-06@Nginx泛域名解析配置/main.png
-background: ../../img/article/21-06@Nginx泛域名解析配置/wallhaven-k778dq.jpg
+background: ../../img/background/wallhaven-k778dq.jpg
 hideTitle: false
 ---
 
