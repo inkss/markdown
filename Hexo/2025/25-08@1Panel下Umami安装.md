@@ -15,7 +15,7 @@ updated: '2025-08-19 17:20'
 copyright:
   type: type5
 headimg: ../../img/article/25-08@1Panel下Umami安装/Hexo博客封面.png
-background: ../../img/background/wallhaven-k778dq.jpg
+background: ../../img/background/wallhaven-k778dq.avif
 abbrlink: 9eba8252
 ---
 
