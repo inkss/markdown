@@ -60,7 +60,7 @@ FUNCTION umami.BIN_TO_UUID does not exist
 Please check the query number 2 from the migration file.
 ```
 
-这是由于 MariaDB 和 MySQL 的差异所导致的报错，`BIN_TO_UUID` 是 MySQL 8.0+ 内置的函数（用于将二进制数据转换为 UUID 字符串）。MariaDB 没有该函数，但我们可以手动创建。
+这是由于 MariaDB 和 MySQL 的差异所导致的报错，`BIN_TO_UUID` 是 MySQL 8.0+ 内置的函数（用于将二进制数据转换为 UUID 字符串）。MariaDB (v11.8.3) 没有该函数，但我们可以手动创建。
 
 首先清空 Umami 数据库，确保其不存在未完成的错误迁移记录，接着连接到数据库执行以下 SQL 语句手动创建该函数：
 
