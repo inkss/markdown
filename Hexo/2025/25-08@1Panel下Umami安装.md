@@ -41,7 +41,7 @@ Please make sure to provide valid database credentials for the database server a
 DATABASE_URL: ${PANEL_DB_TYPE}://${PANEL_DB_USER}:${PANEL_DB_USER_PASSWORD}@${PANEL_DB_HOST}:${PANEL_DB_PORT}/${PANEL_DB_NAME}
 ```
 
-而在数据库服务选择了 MySQL 后，`PANEL_DB_HOST` 将被设置为 `mysql`，除非你的 MariaDB 数据库镜像的容器名称设置的也是改值，否则启动镜像后 Umami 将会无法连接到数据库。我们可以点击高级设置 - 编辑 compose 文件，手动指定连接信息为 MariaDB 容器的名称，也可以进入 Umami 的安装目录，修改 `.env` 文件，更改 `PANEL_DB_HOST` 的值。两者皆可，根据个人习惯选择。
+而在数据库服务选择了 MySQL 后，`PANEL_DB_HOST` 将被设置为 `mysql`，除非你的 MariaDB 数据库镜像的容器名称设置的也是该值，否则启动镜像后 Umami 将会无法连接到数据库。我们可以点击高级设置 - 编辑 compose 文件，手动指定连接信息为 MariaDB 容器的名称，也可以进入 Umami 的安装目录，修改 `.env` 文件，更改 `PANEL_DB_HOST` 的值。两者皆可，根据个人习惯选择。
 
 ## 问题二：迁移失败（函数不存在）
 
