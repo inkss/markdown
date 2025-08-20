@@ -13,7 +13,7 @@ description: >-
 date: '2025-08-19 17:20'
 updated: '2025-08-19 17:20'
 copyright:
-  type: type5
+  type: type1
 headimg: ../../img/article/25-08@1Panel下Umami安装/Hexo博客封面.png
 background: ../../img/background/wallhaven-k778dq.avif
 abbrlink: 9eba8252
@@ -87,6 +87,12 @@ END //
 DELIMITER ;
 ```
 
-## 总结
+## 其他
 
-至此，配置已完成、问题解决😄。经过上述两项调整后，即可在 1Panel 面板中使用 MariaDB 成功部署 Umami 应用。
+如果你不幸的忘记了密码，可以通过连接数据库，手动将用户表中的 `password` 字段修改为以下值：
+
+```txt
+$2b$10$BUli0c.muyCW1ErNJc3jL.vFRFtFJWrT8/GcR4A.sUdCznaXiqFXa
+```
+
+完成修改后，即可使用默认密码重新登录系统：`umami`。
