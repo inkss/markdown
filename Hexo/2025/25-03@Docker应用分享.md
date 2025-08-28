@@ -2,7 +2,6 @@
 title: Docker 应用分享
 toc: true
 indent: true
-hiddenTitle: false
 tag:
   - Docker
   - 远程控制

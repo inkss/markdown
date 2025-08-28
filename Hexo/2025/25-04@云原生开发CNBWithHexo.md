@@ -2,7 +2,6 @@
 title: 云原生开发 CNB With Hexo
 toc: true
 indent: true
-hiddenTitle: false
 tag:
   - Hexo
   - 腾讯云

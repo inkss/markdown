@@ -2,7 +2,6 @@
 title: 宝塔面板部署 ModSecurity
 toc: true
 indent: true
-hiddenTitle: false
 tag:
   - 宝塔面板
   - ModSecurity

@@ -1,6 +1,5 @@
 ---
 title: Volantis 主题个性化修改合集
-hiddenTitle: false
 toc: true
 indent: true
 tag:

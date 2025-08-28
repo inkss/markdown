@@ -2,7 +2,6 @@
 title: Artalk 评论系统推荐
 toc: true
 indent: true
-hiddenTitle: false
 tag:
   - Artalk
   - 评论系统
