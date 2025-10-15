@@ -11,7 +11,7 @@ description: >-
   本文介绍将 Hexo 博客与腾讯云原生构建（CNB）结合的云原生开发方式，包括 CNB 的免费额度信息，讲解将博客源码迁移至 CNB、配置云原生构建（实现部署到腾讯云对象存储及同步至 GitHub）和自定义云原生开发环境（基于 code-server）的过程，附相关配置示例。
 date: '2025-04-20 15:20'
 updated: '2025-04-20 15:20'
-headimg: ../../img/article/25-04@云原生开发CNBWithHexo/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-04@云原生开发CNBWithHexo/Hexo博客封面.png
 abbrlink: 95d58968
 ---
 
@@ -152,7 +152,7 @@ main:
       # 同上，省略...
 ```
 
-![云原生构建](../../img/article/25-04@云原生开发CNBWithHexo/25-04-20_153103.png)
+![云原生构建](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-04@云原生开发CNBWithHexo/25-04-20_153103.png)
 
 ### 云原生开发
 
@@ -235,4 +235,4 @@ $:
 - 安装`Oh My Zsh`并修改用户的默认 Shell，为了终端下方便自动补全。
 - 安装了一些基本的 code-server 扩展，并设定主题和图标。
 
-![云原生开发](../../img/article/25-04@云原生开发CNBWithHexo/25-04-20_153229.png)
+![云原生开发](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-04@云原生开发CNBWithHexo/25-04-20_153229.png)

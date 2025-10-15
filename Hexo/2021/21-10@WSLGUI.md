@@ -11,7 +11,7 @@ tag:
 categories: Linux
 abbrlink: b5085776
 description: 本文介绍 WSL（Windows Subsystem for Linux）中 Linux GUI 的安装与使用，包括前置条件、基础软件安装、中文环境配置（语言包、字体、输入法），提及国产软件和编程软件的使用，以及 systemd 支持、备份恢复等补充内容，附详细命令示例。
-headimg: ../../img/article/21-10@WSLGUI/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/Hexo博客封面.png
 backgrounds: ../../article/img/21-10@WSLGUI/wallhaven-rd6d81.png
 hideTitle: false
 references:
@@ -34,9 +34,9 @@ WSLg 是微软的一个开源项目，允许你在 WSL 的基础上原生使用 
 下图为 WSLg 和 英伟达 CUDA 架构图：
 
 {% gallery stretch::::diagram %}
-![WSLg Architecture Overview](../../img/article/21-10@WSLGUI/WSLg_ArchitectureOverview.png)
+![WSLg Architecture Overview](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/WSLg_ArchitectureOverview.png)
 
-![WSL launch stack diagram](../../img/article/21-10@WSLGUI/WSL-launch-stack-diagram-HR-r4.png)
+![WSL launch stack diagram](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/WSL-launch-stack-diagram-HR-r4.png)
 
 {% endgallery %}
 
@@ -133,7 +133,7 @@ sudo dpkg-reconfigure locales
 ```
 
 {% gallery stretch %}
-![软件包设置](../../img/article/21-10@WSLGUI/Snipaste_2021-10-11_18-11-43.png)
+![软件包设置](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/Snipaste_2021-10-11_18-11-43.png)
 {% endgallery %}
 
 完成上述操作后，关闭 WSL 并重启，登录查看即可。
@@ -160,12 +160,12 @@ export XMODIFIERS=@im=fcitx
 完成以上步骤后，可以在软件列表中双击打开 Fcitx 配置（也可终端下执行 `fcitx-config-gtk3`）选择输入法，如果列表为空，可以终端输入 `fcitx -r` 重启后查看。
 
 {% gallery stretch %}
-![语言支持](../../img/article/21-10@WSLGUI/image-20211017025544310.png)
-![输入法配置](../../img/article/21-10@WSLGUI/image-20211017031108882.png)
+![语言支持](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/image-20211017025544310.png)
+![输入法配置](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/image-20211017031108882.png)
 {% endgallery %}
 
 {% gallery stretch %}
-![输入体验](../../img/article/21-10@WSLGUI/动画.gif)
+![输入体验](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/动画.gif)
 {% endgallery %}
 
 ## 三、软件
@@ -177,8 +177,8 @@ export XMODIFIERS=@im=fcitx
 这类软件安装很简单就不详细说明了，基本都是去各自官网下载 deb 安装包，然后安装即可。
 
 {% gallery stretch::1 %}
-![网易云音乐](../../img/article/21-10@WSLGUI/image-20211017033824274.png)
-![QQ 音乐](../../img/article/21-10@WSLGUI/image-20211017033924592.png)
+![网易云音乐](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/image-20211017033824274.png)
+![QQ 音乐](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/image-20211017033924592.png)
 {% endgallery %}
 
 一些额外的话，国内软件普遍大而臃肿，甚至还有不少的流氓行为。在 Windows 中我个人确实不太想一个个安装他们，但是放在 Linux 系统里我就无所谓了，因为个人资料很少，他们没有嚯嚯的空间。以网易云音乐为例，自从它将应用商店的 UWP 版本替换成 Win32 转制版本，我是再也没碰过网易云音乐，此次通过 WSL 倒也算的上是一次回归了。
@@ -196,7 +196,7 @@ export XMODIFIERS=@im=fcitx
 总之，WSL 与 WSLg 带来的这一切真的很令人兴奋。
 
 {% gallery stretch::1 %}
-![Windows 下的 Vs Code 通过 Remote - WSL 扩展连接到 WSL 中](../../img/article/21-10@WSLGUI/image-20211017150123885.png)
+![Windows 下的 Vs Code 通过 Remote - WSL 扩展连接到 WSL 中](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/image-20211017150123885.png)
 {% endgallery %}
 
 ## 四、补充
@@ -243,5 +243,5 @@ wsl --import wsl-name /wsl/path/ /path/to/backup-file.tar
 如果需要应用出现在 Windows 软件列表中，需要其启动图标位于 `/usr/share/applications` 中。
 
 {% gallery stretch::1 %}
-![](../../img/article/21-10@WSLGUI/image-20211017035446015.png)
+![](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-10@WSLGUI/image-20211017035446015.png)
 {% endgallery %}

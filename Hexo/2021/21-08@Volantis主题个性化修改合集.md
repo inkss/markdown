@@ -10,7 +10,7 @@ categories: 博客
 date: '2021-08-05 09:20'
 updated: '2021-08-23'
 hideTitle: false
-headimg: ../../img/article/21-08@Volantis主题个性化修改合集/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-08@Volantis主题个性化修改合集/Hexo博客封面.png
 description: 本文记录 Volantis 主题的个性化修改内容，涵盖样式类（导航栏、卡片、链接等样式调整）、功能类（阅读模式、自定义背景、右键开关等新增功能）及通用类（图标引入、时间线样式等）的实现方法，附具体代码示例与修改要点。
 music:
   enable: true
@@ -1259,8 +1259,8 @@ const changeTitle = () => {
 透明图可以利用 `image` 标签 的 `bg` 参数，设定不同的背景色，在暗黑模式中下图有不同的表现。
 
 {% gallery center::2::png %}
-{% image ../../img/article/21-08@Volantis主题个性化修改合集/people.png, bg=var(--color-card), height=260px, alt='var(--color-card)' %}
-{% image ../../img/article/21-08@Volantis主题个性化修改合集/people.png, bg=var(--color-white-png), height=260px, alt='var(--color-white-png)' %}
+{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-08@Volantis主题个性化修改合集/people.png, bg=var(--color-card), height=260px, alt='var(--color-card)' %}
+{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-08@Volantis主题个性化修改合集/people.png, bg=var(--color-white-png), height=260px, alt='var(--color-white-png)' %}
 {% endgallery %}
 
 ### 替代标题的显示

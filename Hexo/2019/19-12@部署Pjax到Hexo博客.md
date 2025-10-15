@@ -18,7 +18,7 @@ music:
   id: 22703777
 mathjax: false
 icons: [fas fa-fire]
-headimg: ../../img/article/19-12@部署Pjax到Hexo博客/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/19-12@部署Pjax到Hexo博客/Hexo博客封面.png
 ---
 
 本篇定位于 **理论知识** ，实际应用见 [Volantis 主题部署 Pjax](/post/76993423/)，前置知识，SPA 页面。
@@ -216,7 +216,7 @@ Fancybox 在每一页重新绑定，同类的代码都可以采用以上的处�
 
 {% gallery %}
 
-![失落的宇宙](../../img/article/19-12@部署Pjax到Hexo博客/1570189514.jpg)
+![失落的宇宙](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/19-12@部署Pjax到Hexo博客/1570189514.jpg)
 
 {% endgallery %}
 
@@ -228,7 +228,7 @@ Fancybox 在每一页重新绑定，同类的代码都可以采用以上的处�
 
 {% folding 查看图片测试 %}
 
-![](../../img/article/19-12@部署Pjax到Hexo博客/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
+![](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/19-12@部署Pjax到Hexo博客/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg)
 
 {% endfolding %}
 

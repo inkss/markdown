@@ -16,7 +16,7 @@ references:
     url: 'https://github.com/ilanyu/ReverseProxy'
   - title: Online GUID / UUID Generator
     url: 'https://www.guidgenerator.com/online-guid-generator.aspx'  
-headimg: ../../img/article/18-09@Jrebel反代激活/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/18-09@Jrebel反代激活/Hexo博客封面.png
 ---
 
 JRebel 的社区激活取消了，不能用分享到脸书的方式激活插件了，有点桑心。搜索了一番激活方法，于此记录。

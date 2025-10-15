@@ -10,7 +10,7 @@ categories: 博客
 date: '2021-08-21 14:30'
 updated: '2021-08-23 10:32'
 hideTitle: false
-headimg: ../../img/article/21-08@Gulp&Hexo压缩/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-08@Gulp&Hexo压缩/Hexo博客封面.png
 description: 本文介绍 Gulp 与 Hexo 的结合处理方案，包括 Gulp 依赖环境配置，以及利用 Gulp 实现 HTML、JS、CSS 压缩，图片压缩、转 WebP 格式及图片链接替换等操作，附具体代码示例与调用流程。
 abbrlink: e19bba83
 ---
@@ -187,4 +187,4 @@ gulp.task('default', gulp.series('one'));
             └── file.md
 ```
 
-文章调用图片是通过 Typora 处理，核心规则是**复制到指定路径**：`../../img/article/${filename}/` 。所以如果图片标签的 `src` 地址包含了 `../../img` 就可以认为是博客用到的图片，需要被替换标签，当然主要是有这样的特殊路径就直接拿来使用了。
+文章调用图片是通过 Typora 处理，核心规则是**复制到指定路径**：`https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/${filename}/` 。所以如果图片标签的 `src` 地址包含了 `../../img` 就可以认为是博客用到的图片，需要被替换标签，当然主要是有这样的特殊路径就直接拿来使用了。

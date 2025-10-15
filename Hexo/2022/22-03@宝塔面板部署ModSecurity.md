@@ -23,7 +23,7 @@ references:
   - title: ModSecurity 中文手册（推荐查阅）
     url: 'http://www.modsecurity.cn/'
 abbrlink: f0451fab
-headimg: ../../img/article/22-03@宝塔面板部署ModSecurity/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/22-03@宝塔面板部署ModSecurity/Hexo博客封面.png
 ---
 
 宝塔面板的 WAF 防火墙太贵啦，买不起的说，不如支持下社区开源免费的 ModSecurity 防火墙啦。下面是本次使用到的环境：
@@ -38,7 +38,7 @@ headimg: ../../img/article/22-03@宝塔面板部署ModSecurity/Hexo博客封面.
 
 总的流程如下：
 
-![流程](../../img/article/22-02@宝塔面板配置/流程.svg)
+![流程](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/22-02@宝塔面板配置/流程.svg)
 
 ### 1. 编译部署 ModSecurity
 

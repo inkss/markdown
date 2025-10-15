@@ -14,8 +14,8 @@ date: '2025-08-19 17:20'
 updated: '2025-08-19 17:20'
 copyright:
   type: type1
-headimg: ../../img/article/25-08@1Panel下Umami安装/Hexo博客封面.png
-background: ../../img/background/wallhaven-k778dq.avif
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-08@1Panel下Umami安装/Hexo博客封面.png
+background: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/background/wallhaven-k778dq.avif
 abbrlink: 9eba8252
 ---
 

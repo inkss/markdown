@@ -14,7 +14,7 @@ date: '2020-11-21 17:10'
 abbrlink: 8ab78feb
 description: 本文介绍 Ant Design of Angular（ng-zorro-antd）的快速上手方法，包括公共配置（属性基础配置、样式覆盖配置）和表单组件的使用，以响应式表单为例讲解表单设定与赋值，附相关代码示例。
 updated: '2020-12-30 10:40'
-headimg: ../../img/article/20-11@AntDesignOfAngular快读上手/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/20-11@AntDesignOfAngular快读上手/Hexo博客封面.png
 hideTitle: false
 icons: [fab fa-angular red]
 ---

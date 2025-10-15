@@ -11,8 +11,8 @@ date: '2021-06-29 18:53'
 updated: '2021-07-26 15:50'
 abbrlink: e7617c8b
 description: 本文详细介绍泛域名解析的配置过程，涵盖 Nginx 侧的泛域名监听、反代设置、恶意解析防护及 SSL 证书申请，以及 CDN 侧的分发配置、证书部署与自动更新，还包括真实 IP 获取、垃圾 UA 和恶意 IP 屏蔽等内容。
-headimg: ../../img/article/21-06@Nginx泛域名解析配置/main.png
-background: ../../img/background/wallhaven-k778dq.avif
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-06@Nginx泛域名解析配置/main.png
+background: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/background/wallhaven-k778dq.avif
 hideTitle: false
 ---
 
@@ -51,7 +51,7 @@ hideTitle: false
 server_name  ~^(?<subdomain>.+)\.domain\.com$;
 ```
 
-![泛域名监听](../../img/article/21-06@Nginx泛域名解析配置/image-20210720224409500.png)
+![泛域名监听](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-06@Nginx泛域名解析配置/image-20210720224409500.png)
 
 ### 根据二级域匹配地址
 
@@ -140,7 +140,7 @@ location ^~ / {
 
 如此，需要加密的二级域，只需要添加 `set $client_verify "Authorization";` 即可。
 
-{% image ../../img/article/21-06@Nginx泛域名解析配置/image-20210721005003928.png, alt='验证不通过将返回 401 Authorization Required', height=250px, bg=var(--color-card) %}
+{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-06@Nginx泛域名解析配置/image-20210721005003928.png, alt='验证不通过将返回 401 Authorization Required', height=250px, bg=var(--color-card) %}
 
 ### 宝塔面板的反代访问
 
@@ -187,7 +187,7 @@ SSL 是必须的，泛域名解析自然需要泛域名证书，我们移步 `ww
 
 宝塔的泛域名证书可以手动设置定时任务，一般还剩 30 天时就会自动进行申请，这点无需担心。
 
-![泛域名证书申请](../../img/article/21-06@Nginx泛域名解析配置/image-20210720224604524.png)
+![泛域名证书申请](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-06@Nginx泛域名解析配置/image-20210720224604524.png)
 
 亦可使用 ACME 进行申请，某些时候比宝塔面板好一些，参见：[SSL 泛域名证书申请](/post/8967398c/#%E4%BA%8C%E3%80%81SSL-%E6%B3%9B%E5%9F%9F%E5%90%8D%E8%AF%81%E4%B9%A6%E7%94%B3%E8%AF%B7)
 

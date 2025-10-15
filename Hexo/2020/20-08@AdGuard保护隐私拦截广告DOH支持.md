@@ -16,7 +16,7 @@ references:
     url: https://blog.cloudflare.com/zh/dns-encryption-explained-zh/
   - title: 超越DoH（DNS over HTTPS）：看DNS隐私不可信任的问题
     url: https://cloud.tencent.com/developer/news/670618
-headimg: ../../img/article/20-08@AdGuard保护隐私拦截广告DOH支持/main.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/20-08@AdGuard保护隐私拦截广告DOH支持/main.png
 hideTitle: false
 copyright:
   type: type2

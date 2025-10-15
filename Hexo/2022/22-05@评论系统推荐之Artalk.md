@@ -11,7 +11,7 @@ description: 本文推荐 Artalk 评论系统，介绍其作为自托管系统�
 date: '2022-05-25 15:30'
 updated: '2023-01-07 11:37'
 abbrlink: 8f37d8c3
-headimg: ../../img/article/22-05@评论系统推荐之Artalk/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/22-05@评论系统推荐之Artalk/Hexo博客封面.png
 copyright:
   type: type2
 ---
@@ -28,7 +28,7 @@ copyright:
 
 接下来是数据迁移，事实上我最初的迁移过程中面临了不少麻烦，But 人家 Artalk 的作者更新快，这期间迭代了不少版本的说。不过数据都存储到数据库中了，手撸 SQL 也不是说不行。比如因 Jsdelivr 的 ICP 备案被取消造成的历史表情访问失败的这类问题，就可以直接替换修改啦：
 
-![简单粗暴的替换成文字](../../img/article/22-05@评论系统推荐之Artalk/image-20220526235210557.png)
+![简单粗暴的替换成文字](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/22-05@评论系统推荐之Artalk/image-20220526235210557.png)
 
 Artalk 前后端分离，后端 Go 语言不会，没学过不作研究，但是！我可以自行调用后端提供的 Api，例如博客首页的热门文章/热评文章/最新评论这个侧边栏卡片的实现；前端这类 TypeScript 的到可以上下其手。所以事实上本博引用的前端样式是稍作修改的，以去线留白为核心，按照个人喜好修改了一小部分样式呈现。
 

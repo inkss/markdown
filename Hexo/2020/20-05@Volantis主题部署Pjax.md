@@ -11,7 +11,7 @@ tag:
 categories: 博客
 description: 本文介绍 Volantis 主题部署 Pjax 的具体实现，包括主题整体与插件分析、插件处理方法（函数封装调用、事件处理等）、核心代码（搜索、导航栏、封面）处理及 Pjax 事件配置等内容。
 abbrlink: '76993423'
-headimg: ../../img/article/20-05@Volantis主题部署Pjax/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/20-05@Volantis主题部署Pjax/Hexo博客封面.png
 ---
 
 

@@ -11,7 +11,7 @@ description: >-
   本文分享多种 Docker 应用及配置，包括远程控制工具（rustdesk-server-s6、rustdesk-api）、PT 一体化工具（MoviePilot、Qbittorrent 等）和内网浏览器（Firefox），提供 Docker Compose 配置、Nginx 反代设置及使用注意事项，附相关附录信息。
 date: '2025-03-26 08:55'
 updated: '2025-04-14 23:35'
-headimg: ../../img/article/25-03@Docker应用分享/Hexo博客封面.png
+headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-03@Docker应用分享/Hexo博客封面.png
 abbrlink: 3f9c44bf
 ---
 
