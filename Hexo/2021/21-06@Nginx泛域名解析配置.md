@@ -3,9 +3,9 @@ title: 泛域名解析配置：从 Nginx 到 CDN
 toc: true
 indent: true
 tag:
-  - 泛域名解析
-  - Nginx 配置
-  - CDN 部署
+  - Nginx
+  - CDN
+  - DNS
 categories: 网络技术
 date: '2021-06-29 18:53'
 updated: '2021-07-26 15:50'

@@ -3,9 +3,8 @@ title: Ant Design of Angular 快速上手系列
 toc: true
 indent: true
 tag:
-  - Ant Design of Angular
   - NG-ZORRO
-  - Angular 组件
+  - Angular
 categories: 前端
 references:
   - title: Ant Design of Angular

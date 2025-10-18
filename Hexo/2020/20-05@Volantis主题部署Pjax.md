@@ -5,9 +5,9 @@ indent: true
 date: 2020/05/17 01:27
 updated: 2020/06/02 14:18
 tag:
-  - Volantis 主题
-  - Pjax 部署
-  - Hexo 博客
+  - Volantis
+  - Pjax
+  - Hexo
 categories: 博客
 description: 本文介绍 Volantis 主题部署 Pjax 的具体实现，包括主题整体与插件分析、插件处理方法（函数封装调用、事件处理等）、核心代码（搜索、导航栏、封面）处理及 Pjax 事件配置等内容。
 abbrlink: '76993423'

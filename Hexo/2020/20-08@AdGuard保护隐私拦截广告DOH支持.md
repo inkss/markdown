@@ -4,8 +4,7 @@ toc: true
 indent: true
 tag:
   - Adguard
-  - DOH
-  - 隐私保护
+  - DNS
 categories: 工具
 description: 本文介绍 AdGuard 的隐私保护功能（如处理跟踪器、拦截第三方信息等），详解 DOH 与 DOT 等 DNS 加密方式，提及 AdGuard Home 自建 DNS 系统的相关要点，附阿里、腾讯、谷歌的 DOH 地址。
 abbrlink: c949262

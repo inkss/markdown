@@ -3,9 +3,9 @@ title: 腾讯云 Webify 轻体验
 toc: true
 indent: true
 tag:
-  - 腾讯云 Webify
-  - Hexo 托管
-  - 静态网站
+  - 腾讯云
+  - Hexo
+  - Webify
 categories: 网络技术
 date: '2021-09-18 02:29'
 updated: '2021-09-18'

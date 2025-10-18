@@ -3,8 +3,7 @@ title: Docker 的简要使用
 toc: true
 tag:
   - Docker
-  - 容器部署
-  - 常用命令
+  - Shell
 categories: 文档
 description: 本文介绍 Docker 的简要使用方法，包括常用命令（镜像与容器的查看、下载、删除、启动等操作）、容器部署的相关参数及具体示例（如部署 portainer、code-service），还附带 oh-my-zsh 和 Node 的安装命令。
 date: '2021-01-29 16:00'

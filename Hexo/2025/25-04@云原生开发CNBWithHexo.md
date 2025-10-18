@@ -1,11 +1,11 @@
 ---
-title: 云原生开发 CNB With Hexo
+title: 云原生开发  With Hexo
 toc: true
 indent: true
 tag:
   - Hexo
+  - CNB
   - 腾讯云
-  - 云原生开发
 categories: 网络技术
 description: >-
   本文介绍将 Hexo 博客与腾讯云原生构建（CNB）结合的云原生开发方式，包括 CNB 的免费额度信息，讲解将博客源码迁移至 CNB、配置云原生构建（实现部署到腾讯云对象存储及同步至 GitHub）和自定义云原生开发环境（基于 code-server）的过程，附相关配置示例。

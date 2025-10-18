@@ -6,8 +6,7 @@ date: 2021/10/15
 updated: 2021/10/17
 tag:
   - WSL
-  - Linux GUI
-  - 中文环境配置
+  - Shell
 categories: Linux
 abbrlink: b5085776
 description: 本文介绍 WSL（Windows Subsystem for Linux）中 Linux GUI 的安装与使用，包括前置条件、基础软件安装、中文环境配置（语言包、字体、输入法），提及国产软件和编程软件的使用，以及 systemd 支持、备份恢复等补充内容，附详细命令示例。

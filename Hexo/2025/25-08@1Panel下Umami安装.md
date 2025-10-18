@@ -4,7 +4,7 @@ toc: true
 indent: true
 tag:
   - Umami
-  - 网站统计
+  - 1Panel
   - 数据分析
 categories: 工具
 description: >-

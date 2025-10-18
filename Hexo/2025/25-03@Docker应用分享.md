@@ -4,8 +4,6 @@ toc: true
 indent: true
 tag:
   - Docker
-  - 远程控制
-  - PT 工具
 categories: 文档
 description: >-
   本文分享多种 Docker 应用及配置，包括远程控制工具（rustdesk-server-s6、rustdesk-api）、PT 一体化工具（MoviePilot、Qbittorrent 等）和内网浏览器（Firefox），提供 Docker Compose 配置、Nginx 反代设置及使用注意事项，附相关附录信息。

@@ -3,8 +3,8 @@ title: 极空间虚拟机部署UbuntuServer
 toc: true
 indent: true
 tag:
-  - Ubuntu Server
-  - 虚拟机部署
+  - Ubuntu
+  - Shell
   - 极空间
 categories: Linux
 date: '2023-12-05 19:25'

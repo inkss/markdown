@@ -6,9 +6,9 @@ comments: false
 date: 2018/09/10 21:26
 updated: 2021/08/09 09:28
 tag:
-  - Linux Shell
-  - Git Proxy
-  - 代理配置
+  - Git
+  - Proxy
+  - Shell
 categories: 文档
 abbrlink: f44c3b52
 description: 本文介绍 Linux Shell 设置代理的方法，包括 Git 命令代理配置（含 Windows 下 Clash 代理 Github 方式）、终端环境变量代理设置及相关测试与配置命令。

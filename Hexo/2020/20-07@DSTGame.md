@@ -5,9 +5,8 @@ indent: true
 date: 2020/07/17 13:58
 updated: 2020/07/18 16:45
 tag:
-  - 饥荒联机版
-  - DST 搭建
-  - 游戏服务器
+  - 饥荒
+  - Steam
 categories: 游戏
 descriptions: 本文记录饥荒联机版（Don't Starve Together）的搭建流程，包括安装 SteamCMD、饥荒服务端、解决依赖、配置文件上传及启动脚本创建，同时附服务器信息与 MOD 订阅详情。
 abbrlink: 8fafff0e

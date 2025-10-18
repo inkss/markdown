@@ -3,9 +3,8 @@ title: Volantis 主题个性化修改合集
 toc: true
 indent: true
 tag:
-  - Volantis 主题
-  - 个性化修改
-  - 博客美化
+  - Volantis
+  - Hexo
 categories: 博客
 date: '2021-08-05 09:20'
 updated: '2021-08-23'
