@@ -176,7 +176,7 @@ details summary,
 
 #### 2.1.4 修改链接的下划线样式
 
-效果参考：[枋柚梓的猫会发光](/)
+效果参考：[枋柚梓](/)
 
 {% folding cyan, 修改下划线的 hover 样式 %}
 ```styl
@@ -316,7 +316,7 @@ div.note
     <div><div class="footerMax490">本站使用 <a href="https://github.com/volantis-x/hexo-theme-volantis" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Volantis</a> 作为主题 | 通过 <a href="https://hexo.io/zh-cn/" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">Hexo</a> 渲染生成 | <span>由腾讯云 <a href="https://cloud.tencent.com/product/cdn" target="_blank" class="codename" rel="external nofollow noopener noreferrer" data-pjax-state="">CDN</a> 分发</span></div> </div>
     <div><div class="footerMax490">辽 ICP 备 <a href="https://beian.miit.gov.cn/" target="_blank" rel="external nofollow noopener noreferrer" style="cursor:wait;" data-pjax-state="">16006560</a> 号 | 辽公网安备 <a href="https://www.beian.gov.cn/" rel="external nofollow noopener noreferrer" target="_blank" style="cursor:wait;" data-pjax-state="">21021702000331</a> 号</div> </div>
     <div><div class="footerMax490">Copyright 2018 - 2021 szyink. All Rights Reserved</div></div>
-    <div><a href="/" data-pjax-state="">枋柚梓的猫会发光</a></div>
+    <div><a href="/" data-pjax-state="">枋柚梓</a></div>
     <div><i class="fad fa-spider-black-widow POMEGRANATE"></i></div>
 </div>
 
