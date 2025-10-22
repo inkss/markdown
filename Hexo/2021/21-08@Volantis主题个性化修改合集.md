@@ -86,7 +86,7 @@ abbrlink: 610620a9
 
 所以对自定义文件的存储位置可稍作修改，可将原 `/blog/theme/volantis/source/css/_szyink/` 转移到 `/blog/source/_volantis/` 。当然效果是一样的，更多信息请参阅开发文档。
 
-{% link Custom Files 自定义文件, https://volantis.js.org/v5/development-api/#Custom-Files-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6 %}
+{% link Custom Files 自定义文件, "https://volantis.js.org/v5/development-api/#Custom-Files-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6" %}
 
 ### 2.1 样式覆盖
 
