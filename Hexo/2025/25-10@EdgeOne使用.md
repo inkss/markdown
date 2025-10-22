@@ -7,7 +7,7 @@ tag:
   - 腾讯云
 categories: 文档
 date: '2025-10-21 18:00'
-updated: '2025-10-21 18:00'
+updated: '2025-10-22 12:05'
 hidden: false
 description: 本文分享腾讯云 EdgeOne 三个月使用心得，涵盖免费版 / 付费版套餐选择技巧（首单优惠、会员续费攻略）、域名接入（DNSPod 托管、CNAME 接入注意事项）、IPv6 回源配置、安全防护（Web 防护规则、防盗链）、站点加速（CORS 设置、边缘函数应用）等实战内容，帮助用户高效使用 EdgeOne 实现全球加速与内网服务访问。
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/Hexo博客封面.png
@@ -148,7 +148,7 @@ async function handleRequest(request) {
 
 - **评论过滤**
 
-我的生活博客采用 Typecho 框架，主题为 Handsome。其原生评论系统目前尚不支持黑名单过滤机制。 
+我的[生活博客](https://me.szyink.com/)采用 Typecho 框架，主题为 Handsome。其原生评论系统目前尚不支持黑名单过滤机制。 
 
 在分析默认的评论提交逻辑后，可以通过边缘函数补全这一功能：即处理 Host 为 `me.szyink.com`，URL Path 为 `/*/comment` 的请求，提取评论内容字段 `text`，并与预设的黑名单列表进行匹配。若命中黑名单，则由边缘函数直接拦截，避免评论进入后端处理流程。
 
@@ -188,9 +188,9 @@ if (isBlocked) {
 
 ### 部署方式
 
-![部署方式-原](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/部署方式-原.png)
+{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/部署方式-原.png, alt=部署方式-原 %}
 
-![部署方式-新](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/部署方式-新.png)
+{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/部署方式-新.png, alt=部署方式-新 %}
 
 自建博客至今，部署方式经历了多轮迭代。早期采用 DNS 分流策略：境内流量指向腾讯云 CDN，境外流量则由 GitHub Pages 进行内容分发。如今已迁移至 EdgeOne，得益于其全球可用区，理论上可实现全站统一分发。但考虑到曾收到腾讯云备案审查的“违禁文章”通知，那时为博客添加了内容过滤机制，设定部分文章在境内访问时不可见，例如此篇：[Package Manager Proxy Settings - 枋柚梓](https://inkss.cn/post/35854240/)。
 
