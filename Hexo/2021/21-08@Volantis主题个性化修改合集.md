@@ -220,7 +220,7 @@ article#post
 
 #### 2.1.6 封面标题居中
 
-修改文章列表页^[展示文章列表的页面，例如首页、标签页和 `list` 类型的页面等。]的显示效果，效果参考：[ES6](/tags/ES6/)
+修改文章列表页^[展示文章列表的页面，例如首页、标签页和 `list` 类型的页面等。]的显示效果。
 
 {% folding cyan, 列表页的内容居中，内容居左且首行缩进 %}
 ```styl
@@ -1047,11 +1047,11 @@ hexo.extend.tag.register('emoji', emoji)
 
 #### 4.2.1 添加样式文件
 
-参考 [timeline.styl](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/source/css/_szyink/timeline.styl) 中的内容，引入到主题中即可。
+参考 *timelines.js* 中的内容，引入到主题中即可。
 
 #### 4.2.2 添加渲染器
 
-为了方便使用，将其做成了一个标签。新建 `imelines.js` 文件到 `/scripts/tags/` 目录中，将 [timelines.js](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/scripts/tags/timelines.js) 的内容复制到文件中，使用方式：
+为了方便使用，将其做成了一个标签。新建 `imelines.js` 文件到 `/scripts/tags/` 目录中，将 *timelines.js* 的内容复制到文件中，使用方式：
 
 {% folding cyan, 一个自制时间线 %}
 ```md
@@ -1075,7 +1075,7 @@ hexo.extend.tag.register('emoji', emoji)
 
 #### 4.3.1 添加样式文件
 
-参考 [profile.styl](https://gitea.szyink.com/szyink/Hexo-Blog/src/branch/main/themes/volantis/source/css/_szyink/profile.styl) 中的内容，引入到主题中即可。
+参考 *profile.styl* 中的内容，引入到主题中即可。
 
 #### 4.3.2 主题文件修改
 
