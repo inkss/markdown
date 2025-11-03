@@ -7,7 +7,7 @@ tag:
   - 腾讯云
 categories: 文档
 date: '2025-10-21 18:00'
-updated: '2025-10-22 12:05'
+updated: '2025-11-04 00:05'
 hidden: false
 description: 本文分享腾讯云 EdgeOne 三个月使用心得，涵盖免费版 / 付费版套餐选择技巧（首单优惠、会员续费攻略）、域名接入（DNSPod 托管、CNAME 接入注意事项）、IPv6 回源配置、安全防护（Web 防护规则、防盗链）、站点加速（CORS 设置、边缘函数应用）等实战内容，帮助用户高效使用 EdgeOne 实现全球加速与内网服务访问。
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/Hexo博客封面.png
@@ -63,7 +63,7 @@ EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有�
 
 ### 站点加速
 
-- **全局 CORS 设定**
+- **CORS 设定**
 
 在「规则引擎」中创建规则，匹配类型设置为 **HTTP 请求头**、头部名称  `Origin`，头部值为需要允许的域名（例如 `https://inkss.cn`），接着在操作中选取**修改 HTTP 节点响应头**，分别填入如下内容：
 
@@ -73,7 +73,7 @@ EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有�
 | 设置 | `Access-Control-Allow-Methods`     | `GET,POST,PUT,DELETE,PATCH,OPTIONS` |
 | 设置 | `Access-Control-Allow-Credentials` | `true`                              |
 
-- **Referer 校验 | 防盗链配置**
+- **Referer 校验**
 
 相比于 CDN 的防盗链配置，EdgeOne 只能通过正则匹配进行 Referer 校验。同样新建规则，匹配类型 **HTTP 请求头**、头部名称 `Referer`、运算符**正则不匹配**，头部值如下：
 
@@ -82,6 +82,20 @@ EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有�
 ```
 
 操作可以选择 **HTTP 应答**，响应状态码 **[403](https://inkss.cn/403)/[444](https://inkss.cn/test-444)**，响应页面：自行创建一个 *text/html* 页面。
+
+- **User-Agent 校验**
+
+和 Referer 校验类似，同样为 **HTTP 请求头**匹配，检验 User-Agent 是否存在、正则匹配：
+
+```txt 根据个人需求过滤 User-Agent
+(?i)(Go-http-client|WanScannerBot|Wget|Python|okhttp|Scrapy)
+```
+
+- **图片防盗链替换**
+
+相比于使用 403 返回错误状态码，使用一张预设图片返回^[此处节点缓存 TTL 务必要设置为**不缓存**，以免节点将预设图片当作正常图片缓存。]，提醒盗链行为的效果更佳。
+
+{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/403.png, alt=预设图片 %}
 
 ### 边缘函数
 
@@ -146,9 +160,13 @@ async function handleRequest(request) {
 }
 ```
 
+也可尝试将节点获得到的 **客户端 IP**  插入到 `<head>` 字段中，以供静态博客展示。
+
+<iframe src="https://www.adc.ink/" width="100%" height="450" frameborder="0" scrolling="yes" allowfullscreen></iframe> 
+
 - **评论过滤**
 
-我的[生活博客](https://me.szyink.com/)采用 Typecho 框架，主题为 Handsome。其原生评论系统目前尚不支持黑名单过滤机制。 
+我的[生活博客](https://me.szyink.com/)采用 Typecho 框架，主题为 Handsome。其原生评论系统目前尚不支持黑名单过滤机制。
 
 在分析默认的评论提交逻辑后，可以通过边缘函数补全这一功能：即处理 Host 为 `me.szyink.com`，URL Path 为 `/*/comment` 的请求，提取评论内容字段 `text`，并与预设的黑名单列表进行匹配。若命中黑名单，则由边缘函数直接拦截，避免评论进入后端处理流程。
 
@@ -200,7 +218,7 @@ if (isBlocked) {
 
 ### 最终点评
 
-EdgeOne 给我带来的最大优势是无限流量，其次是 IPv6 自定义端口回源。前者减少了支出（腾讯云 CDN 即使是优惠价 100GB 流量也要 14 元 ），后者则实现了在 IPv4 环境下访问家中内网服务。另外一些优势还包括：全球加速、自动续签 SSL 证书，以及付费版可转为免费版以支持更多域名等。
+EdgeOne 给我带来的最大优势是无限流量，其次是 IPv6 自定义端口回源。前者减少了支出（腾讯云 CDN 即使是优惠价 100GB 流量也要 14 元 ），后者则实现了==在 IPv4 环境下访问家中内网==服务。另外一些优势还包括：全球加速、自动续签 SSL 证书，以及付费版可转为免费版以支持更多域名等。
 
 但是，此类优惠能持续多久呢？这是一个未知数。以 CDN 为例，早些年腾讯云每月会自动赠送免费额度，后来改为用户需每月领取优惠券以激活免费额度，再后来 CDN 的免费额度彻底取消了。 作为腾讯云的老用户，目前我的账户中尚且存在的福利仅剩下对象存储的免费额度资源包了^[每月赠送 50GB 容量包、10GB 下行流量包、200 万次读写请求]。
 
