@@ -7,7 +7,7 @@ tag:
   - 腾讯云
 categories: 文档
 date: '2025-10-21 18:00'
-updated: '2025-11-04 00:05'
+updated: '2025-11-10 16:05'
 hidden: false
 description: 本文分享腾讯云 EdgeOne 三个月使用心得，涵盖免费版 / 付费版套餐选择技巧（首单优惠、会员续费攻略）、域名接入（DNSPod 托管、CNAME 接入注意事项）、IPv6 回源配置、安全防护（Web 防护规则、防盗链）、站点加速（CORS 设置、边缘函数应用）等实战内容，帮助用户高效使用 EdgeOne 实现全球加速与内网服务访问。
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/Hexo博客封面.png
@@ -63,7 +63,7 @@ EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有�
 
 ### 站点加速
 
-- **CORS 设定**
+- **① CORS 设定**
 
 在「规则引擎」中创建规则，匹配类型设置为 **HTTP 请求头**、头部名称  `Origin`，头部值为需要允许的域名（例如 `https://inkss.cn`），接着在操作中选取**修改 HTTP 节点响应头**，分别填入如下内容：
 
@@ -73,7 +73,7 @@ EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有�
 | 设置 | `Access-Control-Allow-Methods`     | `GET,POST,PUT,DELETE,PATCH,OPTIONS` |
 | 设置 | `Access-Control-Allow-Credentials` | `true`                              |
 
-- **Referer 校验**
+- **② Referer 校验**
 
 相比于 CDN 的防盗链配置，EdgeOne 只能通过正则匹配进行 Referer 校验。同样新建规则，匹配类型 **HTTP 请求头**、头部名称 `Referer`、运算符**正则不匹配**，头部值如下：
 
@@ -83,19 +83,31 @@ EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有�
 
 操作可以选择 **HTTP 应答**，响应状态码 **[403](https://inkss.cn/403)/[444](https://inkss.cn/test-444)**，响应页面：自行创建一个 *text/html* 页面。
 
-- **User-Agent 校验**
+- **③ User-Agent 校验**
 
 和 Referer 校验类似，同样为 **HTTP 请求头**匹配，检验 User-Agent 是否存在、正则匹配：
 
 ```txt 根据个人需求过滤 User-Agent
-(?i)(Go-http-client|WanScannerBot|Wget|Python|okhttp|Scrapy)
+(?i)(Go-http-client|WanScannerBot|Wget|Python|okhttp|Scrapy|HeadlessChrome)
 ```
 
-- **图片防盗链替换**
+- **④ 图片防盗链替换**
 
 相比于使用 403 返回错误状态码，使用一张预设图片返回^[此处节点缓存 TTL 务必要设置为**不缓存**，以免节点将预设图片当作正常图片缓存。]，提醒盗链行为的效果更佳。
 
-{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/403.png, alt=预设图片 %}
+```txt 尝试在无痕窗口打开此链接
+https://static.inkss.cn/img/article/25-10@EdgeOne使用/Hexo博客封面.png
+```
+
+{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/403.png %}
+
+![图片防盗链](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/image-20251110145426062.png)
+
+TIP：必须将节点缓存 TTL 设置为**不缓存**以避免节点缓存防盗链图片。
+
+- **⑤ 突破安全防护规则数量限制**
+
+免费版的安全防护功能最多支持 5 条自定义规则。不过，可以借助规则引擎稍作突破：将所有需处理的请求通过 URL 重定向集中到一个固定地址，然后在自定义规则中对该地址进行拦截，从而实现统一过滤。
 
 ### 边缘函数
 
