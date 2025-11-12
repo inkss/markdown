@@ -20,7 +20,7 @@ abbrlink: 4a1a172a
 
 ## EdgeOne
 
-腾讯云 EdgeOne 每个账户支持兑换一个[免费版套餐](https://cloud.tencent.com/act/pro/eo-freeplan#choujiang)，当账户中**存在免费套餐**时，付费套餐订阅到期后将自动[转为免费版](https://cloud.tencent.com/document/product/1552/118985#12d4468c-64fb-4679-b511-ba420f4f5451)而非隔离（停服）。所以如果有多个域名需要接入 EdgeOne 可自行付费购买个人版，待过期后降级为免费版。为了最大化薅腾讯云羊毛，建议先以[首单优惠](https://cloud.tencent.com/act/pro/warmup202506)资格以 *4.8* 元购买一个月的 EO 个人版套餐，之后如需另加域名，除免费套餐外，还可以在[会员续费](https://cloud.tencent.com/act/pro/yunmember)页面以 *6.8* 元订阅个人版套餐。
+腾讯云 EdgeOne 每个账户支持兑换一个[免费版套餐](https://cloud.tencent.com/act/pro/eo-freeplan#choujiang)，当账户中**存在免费套餐**时，付费套餐订阅到期后将自动[转为免费版](https://cloud.tencent.com/document/product/1552/118985#12d4468c-64fb-4679-b511-ba420f4f5451)^[付费套餐到期后并非及时转为免费版的，此过程需要约 24h，这段时间按量计费。]而非隔离（停服）。所以如果有多个域名需要接入 EdgeOne 可自行付费购买个人版，待过期后降级为免费版。为了最大化薅腾讯云羊毛，建议先以[首单优惠](https://cloud.tencent.com/act/pro/warmup202506)资格以 *4.8* 元购买一个月的 EO 个人版套餐，之后如需另加域名，除免费套餐外，还可以在[会员续费](https://cloud.tencent.com/act/pro/yunmember)页面以 *6.8* 元订阅个人版套餐。
 
 {% gallery stretch, 2, one %}
 {% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/image-20251020234615515.png, height=235px, alt=首单优惠 %}
@@ -59,7 +59,7 @@ EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有�
 
 ![免费漏洞防护规则集](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/image-20251021010105877.png)
 
-从整体来看，免费版套餐在此模块中可供调整的参数较为有限，难以满足复杂场景的定制需求。
+从整体来看，免费版套餐在此模块中可供调整的参数较为有限^[根据 EO 付费版转免费版约定，超出配额的各项规则依然生效，故可在降级前完成设定。]，难以满足复杂场景的定制需求。
 
 ### 站点加速
 
