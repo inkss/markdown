@@ -7,14 +7,14 @@ tag:
   - 腾讯云
 categories: 文档
 date: '2025-10-21 18:00'
-updated: '2025-11-10 16:05'
+updated: '2026-03-15 21:05'
 hidden: false
-description: 本文分享腾讯云 EdgeOne 三个月使用心得，涵盖免费版 / 付费版套餐选择技巧（首单优惠、会员续费攻略）、域名接入（DNSPod 托管、CNAME 接入注意事项）、IPv6 回源配置、安全防护（Web 防护规则、防盗链）、站点加速（CORS 设置、边缘函数应用）等实战内容，帮助用户高效使用 EdgeOne 实现全球加速与内网服务访问。
+description: 本文分享腾讯云 EdgeOne 使用心得，涵盖免费版 / 付费版套餐选择技巧（首单优惠、会员续费攻略）、域名接入（DNSPod 托管、CNAME 接入注意事项）、IPv6 回源配置、安全防护（Web 防护规则、防盗链）、站点加速（CORS 设置、边缘函数应用）等实战内容，帮助用户高效使用 EdgeOne 实现全球加速与内网服务访问。
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/Hexo博客封面.png
 abbrlink: 4a1a172a
 ---
 
-腾讯云 EdgeOne 我已使用三月有余，整体表现优异，体验良好。于此记录下使用中的部分心得。
+腾讯云 EdgeOne 我已使用一阵子，整体表现优异，体验良好。于此记录下使用中的部分心得。
 
 <!-- more -->
 
@@ -49,7 +49,11 @@ abbrlink: 4a1a172a
 
 坦白地讲，EdgeOne Web 防护的默认拦截页面（见下图），丑得别具一格。根据官方套餐规则，仅基础版及以上版本才支持自定义拦截页面。因为它太丑外加不能自定义这点，我个人不是很愿意用，相较而言更乐意使用加速规则引擎或者边缘函数实现相关逻辑。
 
+{% folding cyan, 默认拦截页面 %}
+
 ![默认拦截页面](https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/image-20251021004931639.png)
+
+{% endfolding %}
 
 EdgeOne 安全服务的优先级很高，起码在整个 EO 体系中是没有办法绕过默认拦截页面的。
 
@@ -174,37 +178,7 @@ async function handleRequest(request) {
 
 也可尝试将节点获得到的 **客户端 IP**  插入到 `<head>` 字段中，以供静态博客展示。
 
-<iframe src="https://www.adc.ink/" width="100%" height="450" frameborder="0" scrolling="yes" allowfullscreen></iframe> 
-
-- **评论过滤**
-
-我的[生活博客](https://me.szyink.com/)采用 Typecho 框架，主题为 Handsome。其原生评论系统目前尚不支持黑名单过滤机制。
-
-在分析默认的评论提交逻辑后，可以通过边缘函数补全这一功能：即处理 Host 为 `me.szyink.com`，URL Path 为 `/*/comment` 的请求，提取评论内容字段 `text`，并与预设的黑名单列表进行匹配。若命中黑名单，则由边缘函数直接拦截，避免评论进入后端处理流程。
-
-根据 EdgeOne 文档，单个站点最多支持 100 个边缘函数，每个边缘函数支持 64 个环境变量与密钥，每个值最多可存储 5KB 数据，足够用来存储黑名单值。因此，此处使用环境变量 `BLACKLIST` 存储黑名单， *String* 类型，逗号分隔。
-
-{% link EdgeOne 评论拦截过滤, https://gist.github.com/inkss/4a9928fcbc8f6d1f0cc1e4dca3e71ee1 %}
-
-```js typecho-handsome-comment.js 部分，完整代码见上方链接。
-const blockedWords = env.BLACKLIST.split(',').map(word => word.trim()).filter(word => word);
-const isBlocked = blockedWords.some(word => text.includes(word));
-
-if (isBlocked) {
-  const matchedWord = blockedWords.find(word => text.includes(word));
-  return new Response(
-    `<div class="container">评论包含敏感内容「${matchedWord}」。</div>`,
-    {
-      status: 403,
-      headers: {
-        'Content-Type': 'text/html; charset=utf-8',
-      },
-    }
-  );
-}
-```
-
-{% image https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/25-10@EdgeOne使用/image-20251021160537137.png, alt=拦截示意 %}
+<iframe src="https://me.adc.ink/" width="100%" height="450" frameborder="0" scrolling="yes" allowfullscreen></iframe> 
 
 ## 体验总结
 
