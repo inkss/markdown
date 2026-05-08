@@ -1,6 +1,6 @@
 ---
 title: 太鼓の達人 For Nintendo Switch
-cover: true
+headimg_overlay: true
 comments: false
 date: '2019-09-25 23:15'
 updated: '2019-09-25 23:15'
