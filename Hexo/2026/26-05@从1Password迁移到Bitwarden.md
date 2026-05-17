@@ -12,7 +12,7 @@ description: >-
   因 1Password 订阅涨价 33%，从使用六年的 1Password 迁移到自部署的
   Bitwarden。本文记录迁移的原因、过程，以及迁移后发现的不兼容问题。
 date: '2026-05-08 11:55'
-updated: '2026-05-08 11:55'
+updated: '2026-05-17 16:45'
 abbrlink: 5a013cf6
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/26-05@从1Password迁移到Bitwarden/Hexo博客封面.png
 headimg_display: false
@@ -28,7 +28,7 @@ headimg_display: false
 
 > “We are investing heavily in new technologies, including AI‑powered capabilities, to improve how you protect and access your data.”
 
-问题是，这些所谓的“AI 功能”^[AI 辅助安全检查、自动填写与识别敏感信息、风险判断与反钓鱼提示等。]我几乎用不到，却要为此多付 **33%**。怎么算都不划算。邮件收到的当天就去后台取消了订阅。这不是冲动，而是认真评估后的结论——它真的不值。
+问题是，这些所谓的“AI 功能”^[AI 辅助安全检查、自动填写与识别敏感信息、风险判断与反钓鱼提示等。]我几乎用不到，却要为此多付 **33%**。怎么算都不划算，邮件收到的当天就去后台取消了订阅🤡。
 
 ## 二、与 1Password 的六年
 
