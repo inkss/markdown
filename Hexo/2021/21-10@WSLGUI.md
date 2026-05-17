@@ -2,8 +2,8 @@
 title: WSL：Linux GUI 的安装与使用
 toc: true
 indent: true
-date: 2021/10/15
-updated: 2021/10/17
+date: '2021/10/15 01:05'
+updated: '2021/10/17 01:15'
 tag:
   - WSL
   - Shell

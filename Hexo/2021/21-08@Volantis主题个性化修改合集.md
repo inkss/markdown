@@ -7,7 +7,7 @@ tag:
   - Hexo
 categories: 博客
 date: '2021-08-05 09:20'
-updated: '2021-08-23'
+updated: '2021-08-23 09:20'
 hideTitle: false
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/21-08@Volantis主题个性化修改合集/Hexo博客封面.png
 description: 本文记录 Volantis 主题的个性化修改内容，涵盖样式类（导航栏、卡片、链接等样式调整）、功能类（阅读模式、自定义背景、右键开关等新增功能）及通用类（图标引入、时间线样式等）的实现方法，附具体代码示例与修改要点。
