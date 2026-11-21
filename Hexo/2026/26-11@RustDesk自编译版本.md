@@ -13,8 +13,8 @@ categories: 工具
 description: >-
   基于上游 RustDesk 的自编译版本，内置私有 ID/Relay 服务器，分发后无需手动填写服务器配置。
   本文介绍通过 GitHub Actions 自动同步上游、编译 Windows、Linux、Android 客户端的流程，以及 Android 端去弹窗、调整授权等定制改动。
-date: '2026-11-21 18:00'
-updated: '2026-11-21 18:00'
+date: '2026-11-21 17:58'
+updated: '2026-11-21 17:58'
 abbrlink: a889ded0
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/26-11@RustDesk自编译版本/2.png
 ---
