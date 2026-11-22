@@ -14,7 +14,7 @@ description: >-
   基于上游 RustDesk 的自编译版本，内置私有 ID/Relay 服务器，分发后无需手动填写服务器配置。
   本文介绍通过 GitHub Actions 自动同步上游、编译 Windows、Linux、Android 客户端的流程，以及 Android 端去弹窗、调整授权等定制改动。
 date: '2026-11-21 17:58'
-updated: '2026-11-22 00:50'
+updated: '2026-11-22 20:00'
 abbrlink: a889ded0
 headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/26-11@RustDesk自编译版本/2.png
 ---
@@ -30,7 +30,8 @@ headimg: https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@main/img/article/26-11@Rust
 | ID/API 服务器 | 编译时内置，客户端默认隐藏不显示 | 默认官方服务器 |
 | 连接认证 | 未设固定密码时直接连接；但保留安全能力 | 默认需要密码或点击同意 |
 | 连接窗口 | 连接时默认最小化，用户可从任务栏恢复 | 连接时弹出并置顶，3 秒后最小化 |
-| Windows x64 无人值守版 | 无托盘、连接时不显示窗口、后台运行；普通版保留完整窗口/托盘 | 无此形态 |
+| Android | 修改包名避免国内 OS 反诈检测，移除软件内反诈弹窗 | 无此定制 |
+| Windows | 额外增加无人值守版，无托盘、仅后台运行 | 仅普通版本 |
 
 项目地址：
 
